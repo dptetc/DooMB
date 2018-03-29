@@ -1,0 +1,58 @@
+#*      makedos.wc
+#*
+#* Watcom DOS make script
+#*
+#* Copyright 1996,1997 Housemarque Inc.
+#*
+#* This file is part of MIDAS Digital Audio System, and may only be
+#* used, modified and distributed under the terms of the MIDAS
+#* Digital Audio System license, "license.txt". By continuing to use,
+#* modify or distribute this file you indicate that you have
+#* read the license and understand and accept it fully.
+#*
+
+# Directories:
+MIDASDIR = ..\..
+MIDASINCDIR = $(MIDASDIR)\include
+MIDASLIB = $(MIDASDIR)\lib\dos\wcretail\midas.lib
+
+
+# Compiler: Watcom C:
+CC = wcc386
+
+# Compiler Options: Warning level 3, all warnings are errors, SS!=DGROUP,
+# DS pegged to DGROUP, DOS code, include directory, maximum speed 
+# optimizations
+CCOPTS = -w3 -we -zu -zdp -bt=dos -i=$(MIDASINCDIR) -oneatx
+
+# Linker: Watcom linker:
+LINK = wlink
+
+# Linker options: Build a DOS/4GW program, link in MIDAS library,
+# case sensitive
+LINKOPTS = system dos4g library $(MIDASLIB) option caseexact
+
+
+
+
+# Targets:
+
+all :           effects.exe all.exe module.exe
+
+all.exe :	all.obj
+		$(LINK) $(LINKOPTS) name all.exe file all.obj
+
+all.obj :       all.c
+		$(CC) $(CCOPTS) all.c
+
+effects.exe :   effects.obj
+		$(LINK) $(LINKOPTS) name effects.exe file effects.obj
+
+effects.obj :   effects.c
+		$(CC) $(CCOPTS) effects.c
+
+module.exe :    module.obj
+		$(LINK) $(LINKOPTS) name module.exe file module.obj
+
+module.obj :    module.c
+                $(CC) $(CCOPTS) module.c

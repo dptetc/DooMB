@@ -1,0 +1,120 @@
+        MIDAS Module Player for Linux 0.2.0 Alpha
+        -----------------------------------------
+
+MIDAS MODULE PLAYER IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND,
+EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, WARRANTIES
+OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT
+WILL ANY OF THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY DAMAGES
+CAUSED BY THE USE, OR INABILITY TO USE, OF MIDAS MODULE PLAYER.
+
+MIDAS Module Player may freely be distributed as long as no money is
+charged for it, and no attempt is made to restrict further copying,
+distribution and using of MIDAS Module Player. If you have problems
+with this, or do not understand this, contact us.
+
+MIDAS Digital Audio System is Copyright 1996, 1997 Housemarque Inc. It may
+only be used, modified and distributed under the terms of the MIDAS Digital
+Audio System license, license.txt.
+
+
+1. Foreword
+-----------
+
+Thank you for downloading MIDAS Module Player, and, above all, thank
+you for reading the documentation. This is now the third publicly
+announced release of MIDAS Module Player for Linux, but, as the version
+number should suggest, far from a final version. The user interface is
+still practically non-existant and there is very little documentation
+(ie. read the source), but the most important feature is here (or at least
+should be ;) : correct playback.
+
+So what is MIDP anyway? MIDP is a free module player for Linux (and 
+possibly [Free|Net]BSD/LITES). It plays Protracker (MOD), Scream 
+Tracker 3 (S3M) and FastTracker 2 (XM) modules on all sound cards that
+Open Sound System (formerly known as Un*x Sound System, Voxware and TASD)
+supports.
+
+MIDP might seem very unfinished and in general look like a music system
+test program more than anything else - and that is exactly what it is.
+The main intention of MIDP is to test MIDAS Digital Audio System and give you
+an impression what it sounds like - that's why our emphasis is on playback
+quality instead of the user interface. Moreover, MIDAS is still very much
+under development, so all feedback you can give is appreciated.
+
+
+
+2. Using MIDP/Linux
+-------------------
+
+Using MIDP is simple - just start it with a module name and you are on
+your way to play music. At the moment the "user interface" consists of
+sample names and a simple progress display.  If someone is willing to
+do a better looking one, be my guest.  Some interaction is achieved by
+using keys:
+
+ESC       		Exit
+,/.			Go backward/forward in the song
++/-			Control master volume
+
+
+
+Also, this version of MIDP/Linux uses a .midasrc file in your home
+directory and a sample .midasrc-file is available here. It's
+self-documenting or at least is supposed to be. If it's not or you
+want to share your echo effects with us and the rest of the world,
+mail me.
+	 
+And that's about it.
+
+
+
+
+
+3. Other information
+--------------------
+
+MIDP/Linux has been developed under kernel versions 1.99.3 - 2.1.48, using 
+Unix Sound System 3.5.2 - 3.8beta and gcc 2.7.2/2.7.2p/2.7.2.1/2.7.2.2, but
+it should work with modestly older versions too.  Tell me if it doesn't.
+
+If you want to compile MIDP yourself, Linuxthreads-package is now
+required and can be found from:
+
+ftp://ftp.inria.fr/INRIA/Projects/cristal/Xavier.Leroy/linuxthreads.tar.gz
+
+
+Known quirks in this beta are (at least):
+
+	- only one module (the last one on the command line) is played
+
+	- GUS doesn't seem to work properly in 16-bit mode 44100 Hz
+	  stereo.  Try a) switching to 8-bit
+	               b) switching to mono
+		       c) reducing mixing rate
+	  
+	  Also drivers from the UltraSound Project seem to work much
+	  better with this kind of software and are available from
+	  http://www.pf.jcu.cz/~perex/ultra
+	
+
+4. Contact information
+----------------------
+
+Comments, bug reports and improvement ideas are always welcome. At this
+point I hope you only send MIDP/Linux-related comments via e-mail to
+jpaana@iki.fi. Generic MIDAS related mail should be sent to
+pekangas@sci.fi. Our other contact info can be found from the MIDAS
+pages below.
+
+The latest version of MIDP/Linux is always available at
+http://www.s2.org/midas/midp.html, and more information about
+MIDAS Digital Audio System can be found at http://www.s2.org/midas/
+
+
+
+On behalf of the Linux version,
+
+	Jarno Paananen
+
+
+[$Id: README,v 1.6 1997/08/02 00:54:39 jpaana Exp $]

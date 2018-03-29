@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 96.1-h (September 30, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<HTML>
+<HEAD>
+<TITLE>3.3 Using modules</TITLE>
+<META NAME="description" CONTENT="3.3 Using modules">
+<META NAME="keywords" CONTENT="prgguide">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<LINK REL=STYLESHEET HREF="prgguide.css">
+</HEAD>
+<BODY LANG="EN" >
+ <A NAME="tex2html254" HREF="node15.html"><IMG WIDTH=37 HEIGHT=24 ALIGN=BOTTOM ALT="next" SRC="../icons/next_motif.gif"></A> <A NAME="tex2html252" HREF="node11.html"><IMG WIDTH=26 HEIGHT=24 ALIGN=BOTTOM ALT="up" SRC="../icons/up_motif.gif"></A> <A NAME="tex2html246" HREF="node13.html"><IMG WIDTH=63 HEIGHT=24 ALIGN=BOTTOM ALT="previous" SRC="../icons/previous_motif.gif"></A> <A NAME="tex2html256" HREF="node1.html"><IMG WIDTH=65 HEIGHT=24 ALIGN=BOTTOM ALT="contents" SRC="../icons/contents_motif.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html255" HREF="node15.html">3.4 Using samples</A>
+<B>Up:</B> <A NAME="tex2html253" HREF="node11.html">3 Using MIDAS Digital </A>
+<B> Previous:</B> <A NAME="tex2html247" HREF="node13.html">3.2 Uninitializing MIDAS</A>
+<BR> <P>
+<H1><A NAME="SECTION00430000000000000000">3.3 Using modules</A></H1>
+<P>
+Digital music modules provide an easy to use and space-efficient method for
+storing music and more complicated sound effects. MIDAS Digital Audio System
+supports Protracker (.mod), Scream Tracker 3 (.s3m), FastTracker 2 (.xm) and
+Impulse Tracker (.it) modules. All types of modules are used through the same
+simple API functions described in the subsections below.
+<P>
+<H2><A NAME="SECTION00431000000000000000">3.3.1 Loading and deallocating modules</A></H2>
+<P>
+Loading modules with MIDAS Digital Audio System is very simple, just call
+<EM>MIDASloadModule</EM>, giving as an argument the name of the module
+file. <EM>MIDASloadModule</EM> returns a module handle of type
+<EM>MIDASmodule</EM>, which can then be used to refer to the module. After
+the module is no longer used, it should be deallocated with
+<EM>MIDASfreeModule</EM>.
+<P>
+<H2><A NAME="SECTION00432000000000000000">3.3.2 Playing modules</A></H2>
+<P>
+Modules that have been loaded into memory can be played by calling
+<EM>MIDASplayModule</EM>. <EM>MIDASplayModule</EM> takes as an argument the
+module handle for the module, and a boolean flag that indicates whether or not
+the module playback should loop or not. It returns a module playback handle of
+type <EM>MIDASmodulePlayHandle</EM> that can be used to refer to the module
+as it is being played.
+<P>
+<EM>MIDASplayModuleSection</EM> can be used to play just a portion of the
+module. A single module could, for example, contain several different songs,
+and <EM>MIDASplayModuleSection</EM> can be used to select which one of them
+to play.
+<P>
+MIDAS is also capable of playing several modules simultaneously, or
+even the same module several times from different positions. There are some
+limitations, however, see <EM>MIDASplayModule</EM> documentation for
+details. This can be useful for using module sections as sound effects, or
+fading between two modules.
+<P>
+Module playback can be stopped by calling <EM>MIDASstopModule</EM>, passing
+it as an argument the module playback handle returned by
+<EM>MIDASplayModule</EM>.
+<P>
+<H2><A NAME="SECTION00433000000000000000">3.3.3 Controlling module playback</A></H2>
+<P>
+Although typically module playback just proceeds without user intervention, it
+is also possible to control the playback of the
+module. <EM>MIDASsetPosition</EM> can be used to change the current playing
+position, <EM>MIDASsetMusicVolume</EM> to set the master volume of the music,
+and <EM>MIDASfadeMusicChannel</EM> to fade individual music channels in or
+out. All of these functions require as their first argument the module playing
+handle from <EM>MIDASplayModule</EM>.
+<P>
+<H2><A NAME="SECTION00434000000000000000">3.3.4 Getting module information</A></H2>
+<P>
+In MIDAS Digital Audio System, it is possible to query information about a
+module or the status of module playback. This information can be used to
+update an user interface, or synchronize the program operation to the music
+playback.
+<P>
+Basic information about the module, such as its name, is available
+by calling <EM>MIDASgetModuleInfo</EM>. The function requires as an argument
+a module handle returned by <EM>MIDASloadModule</EM>, and a pointer to a
+<EM>MIDASmoduleInfo</EM> structure, which it then will fill with the module
+information. A similar function, <EM>MIDASgetInstrumentInfo</EM>, is
+available for reading information about individual instruments in the
+module.
+<P>
+The current status of the playback of a module can be read with
+<EM>MIDASgetPlayStatus</EM>. It is passed a module playback handle from
+<EM>MIDASplayModule</EM>, and a pointer to a <EM>MIDASplayStatus</EM>
+structure, which it will then fill with the playback status information. The
+playback status information includes the current module playback position,
+pattern number in that position and the current playback row, as well as the
+most recent music synchronization command infobyte.
+<P>
+MIDAS Digital Audio System also supports a music synchronization callback
+function, which will be called each time the player encounters a music
+synchronization command. The synchronization command is <B>Wxx</B> for Scream
+Tracker 3 and FastTracker 2 modules, and <B>Zxx</B> for Impulse Tracker
+modules. The callback can be set or removed with the function
+<EM>MIDASsetMusicSyncCallback</EM>. As the music synchronization callback is
+called in MIDAS player context, it should be kept as short and simple as
+possible, and it may not call MIDAS functions.
+<P>
+<HR><A NAME="tex2html254" HREF="node15.html"><IMG WIDTH=37 HEIGHT=24 ALIGN=BOTTOM ALT="next" SRC="../icons/next_motif.gif"></A> <A NAME="tex2html252" HREF="node11.html"><IMG WIDTH=26 HEIGHT=24 ALIGN=BOTTOM ALT="up" SRC="../icons/up_motif.gif"></A> <A NAME="tex2html246" HREF="node13.html"><IMG WIDTH=63 HEIGHT=24 ALIGN=BOTTOM ALT="previous" SRC="../icons/previous_motif.gif"></A> <A NAME="tex2html256" HREF="node1.html"><IMG WIDTH=65 HEIGHT=24 ALIGN=BOTTOM ALT="contents" SRC="../icons/contents_motif.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html255" HREF="node15.html">3.4 Using samples</A>
+<B>Up:</B> <A NAME="tex2html253" HREF="node11.html">3 Using MIDAS Digital </A>
+<B> Previous:</B> <A NAME="tex2html247" HREF="node13.html">3.2 Uninitializing MIDAS</A>
+<P><ADDRESS>
+<I>Petteri Kangaslampi <BR>
+Sun Mar  1 22:25:31 EET 1998</I>
+</ADDRESS>
+</BODY>
+</HTML>

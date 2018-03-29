@@ -1,0 +1,57 @@
+#*      makefile.wc
+#*
+#* Visual C Win32 make script for common samples
+#*
+#* Copyright 1996,1997 Housemarque Inc.
+#*
+#* This file is part of MIDAS Digital Audio System, and may only be
+#* used, modified and distributed under the terms of the MIDAS
+#* Digital Audio System license, "license.txt". By continuing to use,
+#* modify or distribute this file you indicate that you have
+#* read the license and understand and accept it fully.
+#*
+
+# Directories:
+MIDASDIR = ..\..
+MIDASINCDIR = $(MIDASDIR)\include
+MIDASLIB = $(MIDASDIR)\lib\win32\vcretail\midasdll.lib
+
+
+# Compiler: Visual C:
+CC = cl
+
+# Compiler Options: Compile only, Warning level 3, all warning are errors,
+# structure packing 1, maximum speed optimizations, include directory
+CCOPTS = -c -W3 -WX -Zp1 -O2 -Ox -Ot -GA -I$(MIDASINCDIR)
+
+# Linker: Microsoft linker:
+LINK = link
+
+# Linker options: link in MIDAS library, link in winmm.lib
+LINKOPTS = $(MIDASLIB) winmm.lib
+
+
+
+
+# Targets:
+
+all :           effects.exe all.exe module.exe
+
+all.exe :	all.obj
+		$(LINK) $(LINKOPTS) -out:all.exe all.obj
+
+all.obj :       all.c
+		$(CC) $(CCOPTS) all.c
+
+effects.exe :   effects.obj
+		$(LINK) $(LINKOPTS) -out:effects.exe effects.obj
+
+effects.obj :   effects.c
+		$(CC) $(CCOPTS) effects.c
+
+module.exe :    module.obj
+		$(LINK) $(LINKOPTS) -out:module.exe module.obj
+
+module.obj :    module.c
+                $(CC) $(CCOPTS) module.c
+

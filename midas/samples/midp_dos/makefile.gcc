@@ -1,0 +1,21 @@
+# Compilers and options:
+
+ALLEGRODIR = c:/djgpp/allegro
+MIDASDIR = ../..
+LIBDIR = $(MIDASDIR)/lib/dos/gcdebug
+MIDASINCS = $(MIDASDIR)/src/midas
+
+CC = gcc
+CCOPTS = -c -O2 -fpack-struct -Wall -Werror -DDEBUG -I$(MIDASINCS)
+
+midp.exe :      midp.o midpdisp.o $(MIDASLIB)
+	gcc midp.o midpdisp.o -L$(ALLEGRODIR) -L$(LIBDIR) -lmidas -lalleg -o midp
+
+midp.o : midp.c midp.h
+	$(CC) midp.c $(CCOPTS)
+
+midpdisp.o : midpdisp.c midp.h
+	$(CC) midpdisp.c $(CCOPTS) 
+
+clean distclean cvsclean:
+	

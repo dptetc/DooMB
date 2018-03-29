@@ -1,0 +1,2991 @@
+%!PS-Adobe-2.0
+%%Creator: dvipsk 5.58f Copyright 1986, 1994 Radical Eye Software
+%%Title: apiref.dvi
+%%Pages: 123
+%%PageOrder: Ascend
+%%BoundingBox: 0 0 596 842
+%%DocumentFonts: Times-Roman Times-Bold Symbol Courier Times-Italic
+%%DocumentPaperSizes: A4
+%%EndComments
+%DVIPSCommandLine: dvips -t a4 -o apiref.ps apiref
+%DVIPSParameters: dpi=600, comments removed
+%DVIPSSource:  TeX output 1998.03.01:2220
+%%BeginProcSet: tex.pro
+/TeXDict 250 dict def TeXDict begin /N{def}def /B{bind def}N /S{exch}N
+/X{S N}B /TR{translate}N /isls false N /vsize 11 72 mul N /hsize 8.5 72
+mul N /landplus90{false}def /@rigin{isls{[0 landplus90{1 -1}{-1 1}
+ifelse 0 0 0]concat}if 72 Resolution div 72 VResolution div neg scale
+isls{landplus90{VResolution 72 div vsize mul 0 exch}{Resolution -72 div
+hsize mul 0}ifelse TR}if Resolution VResolution vsize -72 div 1 add mul
+TR[matrix currentmatrix{dup dup round sub abs 0.00001 lt{round}if}
+forall round exch round exch]setmatrix}N /@landscape{/isls true N}B
+/@manualfeed{statusdict /manualfeed true put}B /@copies{/#copies X}B
+/FMat[1 0 0 -1 0 0]N /FBB[0 0 0 0]N /nn 0 N /IE 0 N /ctr 0 N /df-tail{
+/nn 8 dict N nn begin /FontType 3 N /FontMatrix fntrx N /FontBBox FBB N
+string /base X array /BitMaps X /BuildChar{CharBuilder}N /Encoding IE N
+end dup{/foo setfont}2 array copy cvx N load 0 nn put /ctr 0 N[}B /df{
+/sf 1 N /fntrx FMat N df-tail}B /dfs{div /sf X /fntrx[sf 0 0 sf neg 0 0]
+N df-tail}B /E{pop nn dup definefont setfont}B /ch-width{ch-data dup
+length 5 sub get}B /ch-height{ch-data dup length 4 sub get}B /ch-xoff{
+128 ch-data dup length 3 sub get sub}B /ch-yoff{ch-data dup length 2 sub
+get 127 sub}B /ch-dx{ch-data dup length 1 sub get}B /ch-image{ch-data
+dup type /stringtype ne{ctr get /ctr ctr 1 add N}if}B /id 0 N /rw 0 N
+/rc 0 N /gp 0 N /cp 0 N /G 0 N /sf 0 N /CharBuilder{save 3 1 roll S dup
+/base get 2 index get S /BitMaps get S get /ch-data X pop /ctr 0 N ch-dx
+0 ch-xoff ch-yoff ch-height sub ch-xoff ch-width add ch-yoff
+setcachedevice ch-width ch-height true[1 0 0 -1 -.1 ch-xoff sub ch-yoff
+.1 sub]{ch-image}imagemask restore}B /D{/cc X dup type /stringtype ne{]}
+if nn /base get cc ctr put nn /BitMaps get S ctr S sf 1 ne{dup dup
+length 1 sub dup 2 index S get sf div put}if put /ctr ctr 1 add N}B /I{
+cc 1 add D}B /bop{userdict /bop-hook known{bop-hook}if /SI save N @rigin
+0 0 moveto /V matrix currentmatrix dup 1 get dup mul exch 0 get dup mul
+add .99 lt{/QV}{/RV}ifelse load def pop pop}N /eop{SI restore userdict
+/eop-hook known{eop-hook}if showpage}N /@start{userdict /start-hook
+known{start-hook}if pop /VResolution X /Resolution X 1000 div /DVImag X
+/IE 256 array N 0 1 255{IE S 1 string dup 0 3 index put cvn put}for
+65781.76 div /vsize X 65781.76 div /hsize X}N /p{show}N /RMat[1 0 0 -1 0
+0]N /BDot 260 string N /rulex 0 N /ruley 0 N /v{/ruley X /rulex X V}B /V
+{}B /RV statusdict begin /product where{pop product dup length 7 ge{0 7
+getinterval dup(Display)eq exch 0 4 getinterval(NeXT)eq or}{pop false}
+ifelse}{false}ifelse end{{gsave TR -.1 .1 TR 1 1 scale rulex ruley false
+RMat{BDot}imagemask grestore}}{{gsave TR -.1 .1 TR rulex ruley scale 1 1
+false RMat{BDot}imagemask grestore}}ifelse B /QV{gsave newpath transform
+round exch round exch itransform moveto rulex 0 rlineto 0 ruley neg
+rlineto rulex neg 0 rlineto fill grestore}B /a{moveto}B /delta 0 N /tail
+{dup /delta X 0 rmoveto}B /M{S p delta add tail}B /b{S p tail}B /c{-4 M}
+B /d{-3 M}B /e{-2 M}B /f{-1 M}B /g{0 M}B /h{1 M}B /i{2 M}B /j{3 M}B /k{
+4 M}B /w{0 rmoveto}B /l{p -4 w}B /m{p -3 w}B /n{p -2 w}B /o{p -1 w}B /q{
+p 1 w}B /r{p 2 w}B /s{p 3 w}B /t{p 4 w}B /x{0 S rmoveto}B /y{3 2 roll p
+a}B /bos{/SS save N}B /eos{SS restore}B end
+%%EndProcSet
+%%BeginFont: Times-Roman
+% @@psencodingfile@{
+%   author = "S. Rahtz, P. MacKay, Alan Jeffrey, B. Horn, K. Berry",
+%   version = "0.6",
+%   date = "22 June 1996",
+%   filename = "8r.enc",
+%   email = "kb@@mail.tug.org",
+%   address = "135 Center Hill Rd. // Plymouth, MA 02360",
+%   codetable = "ISO/ASCII",
+%   checksum = "119     662    4424",
+%   docstring = "Encoding for TrueType or Type 1 fonts to be used with TeX."
+% @}
+% 
+% Idea is to have all the characters normally included in Type 1 fonts
+% available for typesetting. This is effectively the characters in Adobe
+% Standard Encoding + ISO Latin 1 + extra characters from Lucida.
+% 
+% Character code assignments were made as follows:
+% 
+% (1) the Windows ANSI characters are almost all in their Windows ANSI
+% positions, because some Windows users cannot easily reencode the
+% fonts, and it makes no difference on other systems. The only Windows
+% ANSI characters not available are those that make no sense for
+% typesetting -- rubout (127 decimal), nobreakspace (160), softhyphen
+% (173). quotesingle and grave are moved just because it's such an
+% irritation not having them in TeX positions.
+% 
+% (2) Remaining characters are assigned arbitrarily to the lower part
+% of the range, avoiding 0, 10 and 13 in case we meet dumb software.
+% 
+% (3) Y&Y Lucida Bright includes some extra text characters; in the
+% hopes that other PostScript fonts, perhaps created for public
+% consumption, will include them, they are included starting at 0x12.
+% 
+% (4) Remaining positions left undefined are for use in (hopefully)
+% upward-compatible revisions, if someday more characters are generally
+% available.
+% 
+% (5) hyphen appears twice for compatibility with both ASCII and Windows.
+% 
+/TeXBase1Encoding [
+% 0x00 (encoded characters from Adobe Standard not in Windows 3.1)
+  /.notdef /dotaccent /fi /fl
+  /fraction /hungarumlaut /Lslash /lslash
+  /ogonek /ring /.notdef
+  /breve /minus /.notdef 
+% These are the only two remaining unencoded characters, so may as
+% well include them.
+  /Zcaron /zcaron 
+% 0x10
+ /caron /dotlessi 
+% (unusual TeX characters available in, e.g., Lucida Bright)
+ /dotlessj /ff /ffi /ffl 
+ /.notdef /.notdef /.notdef /.notdef
+ /.notdef /.notdef /.notdef /.notdef
+ % very contentious; it's so painful not having quoteleft and quoteright
+ % at 96 and 145 that we move the things normally found there down to here.
+ /grave /quotesingle 
+% 0x20 (ASCII begins)
+ /space /exclam /quotedbl /numbersign
+ /dollar /percent /ampersand /quoteright
+ /parenleft /parenright /asterisk /plus /comma /hyphen /period /slash
+% 0x30
+ /zero /one /two /three /four /five /six /seven
+ /eight /nine /colon /semicolon /less /equal /greater /question
+% 0x40
+ /at /A /B /C /D /E /F /G /H /I /J /K /L /M /N /O
+% 0x50
+ /P /Q /R /S /T /U /V /W
+ /X /Y /Z /bracketleft /backslash /bracketright /asciicircum /underscore
+% 0x60
+ /quoteleft /a /b /c /d /e /f /g /h /i /j /k /l /m /n /o
+% 0x70
+ /p /q /r /s /t /u /v /w
+ /x /y /z /braceleft /bar /braceright /asciitilde
+ /.notdef % rubout; ASCII ends
+% 0x80
+ /.notdef /.notdef /quotesinglbase /florin
+ /quotedblbase /ellipsis /dagger /daggerdbl
+ /circumflex /perthousand /Scaron /guilsinglleft
+ /OE /.notdef /.notdef /.notdef
+% 0x90
+ /.notdef /.notdef /.notdef /quotedblleft
+ /quotedblright /bullet /endash /emdash
+ /tilde /trademark /scaron /guilsinglright
+ /oe /.notdef /.notdef /Ydieresis
+% 0xA0
+ /.notdef % nobreakspace
+ /exclamdown /cent /sterling
+ /currency /yen /brokenbar /section
+ /dieresis /copyright /ordfeminine /guillemotleft
+ /logicalnot
+ /hyphen % Y&Y (also at 45); Windows' softhyphen
+ /registered
+ /macron
+% 0xD0
+ /degree /plusminus /twosuperior /threesuperior
+ /acute /mu /paragraph /periodcentered
+ /cedilla /onesuperior /ordmasculine /guillemotright
+ /onequarter /onehalf /threequarters /questiondown
+% 0xC0
+ /Agrave /Aacute /Acircumflex /Atilde /Adieresis /Aring /AE /Ccedilla
+ /Egrave /Eacute /Ecircumflex /Edieresis
+ /Igrave /Iacute /Icircumflex /Idieresis
+% 0xD0
+ /Eth /Ntilde /Ograve /Oacute
+ /Ocircumflex /Otilde /Odieresis /multiply
+ /Oslash /Ugrave /Uacute /Ucircumflex
+ /Udieresis /Yacute /Thorn /germandbls
+% 0xE0
+ /agrave /aacute /acircumflex /atilde
+ /adieresis /aring /ae /ccedilla
+ /egrave /eacute /ecircumflex /edieresis
+ /igrave /iacute /icircumflex /idieresis
+% 0xF0
+ /eth /ntilde /ograve /oacute
+ /ocircumflex /otilde /odieresis /divide
+ /oslash /ugrave /uacute /ucircumflex
+ /udieresis /yacute /thorn /ydieresis
+] def
+%%EndFont
+%%BeginProcSet: texps.pro
+TeXDict begin /rf{findfont dup length 1 add dict begin{1 index /FID ne 2
+index /UniqueID ne and{def}{pop pop}ifelse}forall[1 index 0 6 -1 roll
+exec 0 exch 5 -1 roll VResolution Resolution div mul neg 0 0]/Metrics
+exch def dict begin Encoding{exch dup type /integertype ne{pop pop 1 sub
+dup 0 le{pop}{[}ifelse}{FontMatrix 0 get div Metrics 0 get div def}
+ifelse}forall Metrics /Metrics currentdict end def[2 index currentdict
+end definefont 3 -1 roll makefont /setfont load]cvx def}def
+/ObliqueSlant{dup sin S cos div neg}B /SlantFont{4 index mul add}def
+/ExtendFont{3 -1 roll mul exch}def /ReEncodeFont{/Encoding exch def}def
+end
+%%EndProcSet
+TeXDict begin 39158280 55380996 1000 600 600 (apiref.dvi)
+@start /Fa 134[44 44 66 44 50 28 39 39 1[50 50 50 72
+28 44 1[28 50 50 28 44 50 44 50 50 8[61 83 61 72 55 50
+61 1[61 72 66 83 55 2[33 72 72 61 61 72 66 61 61 19[33
+42[50 2[{ TeXBase1Encoding ReEncodeFont }46 100.000003
+/Times-Italic rf /Fb 134[60 60 86 60 66 40 47 53 1[66
+60 66 100 33 66 1[33 66 60 40 53 66 53 66 60 9[120 86
+1[80 66 86 1[73 93 1[113 80 2[47 93 1[73 80 86 86 80
+86 7[60 60 60 60 60 60 60 60 60 60 1[30 43[66 2[{
+ TeXBase1Encoding ReEncodeFont }52 119.999948 /Times-Bold
+rf /Fc 130[51 1[51 1[51 51 51 51 51 51 51 51 1[51 51
+51 51 51 51 1[51 51 51 51 51 51 51 51 51 1[51 1[51 1[51
+3[51 51 1[51 51 51 1[51 51 51 51 51 51 1[51 51 1[51 51
+51 51 51 51 5[51 7[51 51 3[51 1[51 1[51 51 51 40[{
+ .85 ExtendFont TeXBase1Encoding ReEncodeFont }55 100.000003
+/Courier rf /Fd 256[{}0 100.000003 /Symbol rf /Fe 133[64
+72 3[80 48 56 64 1[80 72 80 120 3[40 80 72 1[64 80 64
+80 72 26[88 1[104 104 1[104 9[72 72 72 72 72 72 72 2[36
+46[{ TeXBase1Encoding ReEncodeFont }30 143.999997 /Times-Bold
+rf /Ff 165[61 72 3[72 61 55 66 1[55 72 72 89 61 72 1[33
+72 72 55 61 72 66 66 72 9[50 50 50 50 50 50 3[25 1[25
+44[{ .167 SlantFont TeXBase1Encoding ReEncodeFont }29
+100.000003 /Times-Roman rf /Fg 104[100 50 1[44 44 24[44
+50 50 72 50 50 28 39 33 50 50 50 50 78 28 50 28 28 50
+50 33 44 50 44 50 44 3[33 1[33 61 72 72 94 72 72 61 55
+66 72 55 72 72 89 61 1[39 33 72 72 55 61 72 66 66 72
+3[56 2[28 50 50 50 50 50 50 50 50 50 50 28 25 33 25 56
+50 33 33 33 35[55 55 2[{ TeXBase1Encoding ReEncodeFont }80
+100.000003 /Times-Roman rf /Fh 133[44 50 50 72 50 55
+33 39 44 1[55 50 55 83 28 55 1[28 55 50 33 44 55 44 55
+50 6[66 72 72 100 72 72 66 55 72 78 61 78 72 94 66 78
+50 39 78 78 61 66 72 72 66 72 8[50 50 50 50 50 50 50
+50 50 1[25 33 25 1[50 8[33 29[55 55 2[{ TeXBase1Encoding ReEncodeFont }
+66 100.000003 /Times-Bold rf /Fi 133[92 103 3[115 69
+80 92 1[115 103 115 172 57 115 1[57 115 103 1[92 115
+92 115 103 13[115 5[195 3[80 5[149 11[103 103 103 103
+103 103 103 4[52 41[115 2[{ TeXBase1Encoding ReEncodeFont }33
+207.333362 /Times-Bold rf /Fj 139[33 47 40 1[60 1[60
+93 33 2[33 60 60 1[53 1[53 1[53 16[66 2[106 1[86 17[60
+60 6[60 4[30 44[{ TeXBase1Encoding ReEncodeFont }20 119.999948
+/Times-Roman rf /Fk 134[86 3[86 48 67 57 2[86 86 134
+48 2[48 1[86 57 76 86 76 1[76 13[96 115 1[96 2[153 3[57
+4[124 2[124 65[{ TeXBase1Encoding ReEncodeFont }23 172.833377
+/Times-Roman rf end
+%%EndProlog
+%%BeginSetup
+%%Feature: *Resolution 600dpi
+TeXDict begin
+%%PaperSize: A4
+
+%%EndSetup
+%%Page: 1 1
+1 0 bop 952 2165 a Fk(MID)-7 b(AS)44 b(Digital)f(Audio)h(System)1489
+2580 y(API)g(Reference)1512 3111 y Fj(Petteri)31 b(Kang)o(aslampi)1648
+3493 y(March)f(1,)g(1998)p eop
+%%Page: 1 2
+1 1 bop 109 1220 a Fi(Contents)109 1855 y Fh(1)99 b(Intr)n(oduction)
+3041 b(1)258 2059 y Fg(1.1)104 b(About)24 b(this)g(document)80
+b(.)50 b(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)
+h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)168
+b(1)258 2262 y(1.2)104 b(Document)24 b(or)n(ganization)55
+b(.)49 b(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)
+g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)168
+b(1)109 2565 y Fh(2)99 b(Con\002guration,)26 b(initialization)e(and)h
+(contr)n(ol)1883 b(2)258 2768 y Fg(2.1)104 b(Constants)74
+b(.)50 b(.)g(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)
+g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g
+(.)g(.)f(.)168 b(2)487 2972 y(2.1.1)119 b(MID)l(ASdsoundModes)93
+b(.)50 b(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)
+g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)168 b(3)487 3175
+y(2.1.2)119 b(MID)l(AS\002lterModes)45 b(.)50 b(.)f(.)h(.)g(.)g(.)f(.)h
+(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)
+g(.)g(.)f(.)168 b(4)487 3379 y(2.1.3)119 b(MID)l(ASmixingModes)24
+b(.)49 b(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)
+g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)168 b(5)487 3582
+y(2.1.4)119 b(MID)l(ASmodes)95 b(.)49 b(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h
+(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)
+g(.)g(.)f(.)168 b(6)487 3785 y(2.1.5)119 b(MID)l(ASoptions)61
+b(.)49 b(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)
+g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)168
+b(7)258 3989 y(2.2)104 b(Data)25 b(types)44 b(.)50 b(.)g(.)g(.)f(.)h(.)
+g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h
+(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)168
+b(9)258 4192 y(2.3)104 b(Functions)74 b(.)50 b(.)g(.)g(.)f(.)h(.)g(.)g
+(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)
+f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119 b(10)487
+4396 y(2.3.1)g(MID)l(ASclose)76 b(.)50 b(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)
+f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f
+(.)h(.)g(.)g(.)f(.)119 b(11)487 4599 y(2.3.2)g(MID)l(AScon\002g)32
+b(.)50 b(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)
+h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119
+b(12)487 4803 y(2.3.3)g(MID)l(ASdetectSoundCard)43 b(.)50
+b(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h
+(.)g(.)f(.)h(.)g(.)g(.)f(.)119 b(13)487 5006 y(2.3.4)g(MID)l
+(ASgetDisplayRefreshRate)29 b(.)50 b(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)
+f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119 b(15)487
+5209 y(2.3.5)g(MID)l(ASgetOption)30 b(.)50 b(.)g(.)f(.)h(.)g(.)g(.)f(.)
+h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h
+(.)g(.)g(.)f(.)119 b(17)487 5413 y(2.3.6)g(MID)l(ASinit)72
+b(.)50 b(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)
+f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119
+b(18)487 5616 y(2.3.7)g(MID)l(ASloadCon\002g)62 b(.)50
+b(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g
+(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119 b(19)1985
+5943 y(i)p eop
+%%Page: 2 3
+2 2 bop 109 208 a Ff(CONTENTS)3204 b Fg(ii)487 473 y(2.3.8)119
+b(MID)l(ASreadCon\002gRe)o(gistry)100 b(.)49 b(.)h(.)g(.)f(.)h(.)g(.)g
+(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119
+b(20)487 676 y(2.3.9)g(MID)l(ASsa)n(v)o(eCon\002g)60
+b(.)50 b(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)
+h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119 b(21)487
+880 y(2.3.10)69 b(MID)l(ASsetOption)41 b(.)50 b(.)g(.)f(.)h(.)g(.)g(.)f
+(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)
+h(.)g(.)g(.)f(.)119 b(22)487 1083 y(2.3.11)69 b(MID)l(ASstartup)84
+b(.)49 b(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)
+g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119
+b(23)487 1287 y(2.3.12)69 b(MID)l(ASwriteCon\002gRe)o(gistry)d(.)49
+b(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f
+(.)h(.)g(.)g(.)f(.)119 b(24)109 1590 y Fh(3)99 b(System)25
+b(contr)n(ol)2900 b(25)258 1793 y Fg(3.1)104 b(Constants)74
+b(.)50 b(.)g(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)
+g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g
+(.)g(.)f(.)119 b(25)258 1996 y(3.2)104 b(Data)25 b(types)44
+b(.)50 b(.)g(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)
+g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g
+(.)g(.)f(.)119 b(26)258 2200 y(3.3)104 b(Functions)74
+b(.)50 b(.)g(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)
+g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g
+(.)g(.)f(.)119 b(27)487 2403 y(3.3.1)g(MID)l(ASallocateChannel)87
+b(.)50 b(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)
+f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119 b(28)487 2607 y(3.3.2)g(MID)l
+(AScloseChannels)78 b(.)50 b(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)
+h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119
+b(29)487 2810 y(3.3.3)g(MID)l(ASfreeChannel)94 b(.)49
+b(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g
+(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119 b(30)487 3013
+y(3.3.4)g(MID)l(ASgetErrorMessage)48 b(.)i(.)g(.)f(.)h(.)g(.)f(.)h(.)g
+(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119
+b(31)487 3217 y(3.3.5)g(MID)l(ASgetLastError)76 b(.)49
+b(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g
+(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119 b(32)487 3420
+y(3.3.6)g(MID)l(ASgetV)-11 b(ersionString)58 b(.)50 b(.)g(.)f(.)h(.)g
+(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)
+g(.)f(.)119 b(33)487 3624 y(3.3.7)g(MID)l(ASopenChannels)89
+b(.)50 b(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)
+g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119 b(34)487 3827
+y(3.3.8)g(MID)l(ASpoll)50 b(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h
+(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)
+g(.)g(.)f(.)119 b(35)487 4030 y(3.3.9)g(MID)l(ASremo)o(v)o(eT)m
+(imerCallbacks)97 b(.)50 b(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g
+(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119 b(36)487 4234
+y(3.3.10)69 b(MID)l(ASresume)f(.)49 b(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h
+(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)
+g(.)g(.)f(.)119 b(37)487 4437 y(3.3.11)69 b(MID)l(ASsetAmpli\002cation)
+63 b(.)50 b(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g
+(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119 b(38)487 4641
+y(3.3.12)69 b(MID)l(ASsetT)m(imerCallbacks)59 b(.)50
+b(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g
+(.)f(.)h(.)g(.)g(.)f(.)119 b(39)487 4844 y(3.3.13)69
+b(MID)l(ASstartBackgroundPlay)43 b(.)49 b(.)h(.)g(.)f(.)h(.)g(.)g(.)f
+(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119
+b(41)487 5047 y(3.3.14)69 b(MID)l(ASstopBackgroundPlay)48
+b(.)h(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g
+(.)f(.)h(.)g(.)g(.)f(.)119 b(42)487 5251 y(3.3.15)69
+b(MID)l(ASsuspend)34 b(.)49 b(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f
+(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)
+f(.)119 b(43)p eop
+%%Page: 3 4
+3 3 bop 109 208 a Ff(CONTENTS)3176 b Fg(iii)109 473 y
+Fh(4)99 b(Module)26 b(playback)2792 b(44)258 676 y Fg(4.1)104
+b(Constants)74 b(.)50 b(.)g(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g
+(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)
+g(.)f(.)h(.)g(.)g(.)f(.)119 b(44)258 880 y(4.2)104 b(Data)25
+b(types)44 b(.)50 b(.)g(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g
+(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)
+f(.)h(.)g(.)g(.)f(.)119 b(45)487 1083 y(4.2.1)g(MID)l(ASinstrumentInfo)
+60 b(.)50 b(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g
+(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119 b(46)487 1287
+y(4.2.2)g(MID)l(ASmodule)56 b(.)49 b(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)
+g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g
+(.)g(.)f(.)119 b(47)487 1490 y(4.2.3)g(MID)l(ASmoduleInfo)39
+b(.)50 b(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)
+h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119 b(48)487
+1693 y(4.2.4)g(MID)l(ASmodulePlayHandle)39 b(.)50 b(.)f(.)h(.)g(.)f(.)h
+(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)
+119 b(49)487 1897 y(4.2.5)g(MID)l(ASplayStatus)89 b(.)50
+b(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g
+(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119 b(50)258 2100
+y(4.3)104 b(Functions)74 b(.)50 b(.)g(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g
+(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)
+g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119 b(51)487 2304
+y(4.3.1)g(MID)l(ASf)o(adeMusicChannel)52 b(.)e(.)f(.)h(.)g(.)f(.)h(.)g
+(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119
+b(52)487 2507 y(4.3.2)g(MID)l(ASfreeModule)40 b(.)50
+b(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g
+(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119 b(53)487 2710
+y(4.3.3)g(MID)l(ASgetInstrumentInfo)83 b(.)50 b(.)f(.)h(.)g(.)f(.)h(.)g
+(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119
+b(54)487 2914 y(4.3.4)g(MID)l(ASgetModuleInfo)55 b(.)50
+b(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f
+(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119 b(55)487 3117 y(4.3.5)g(MID)l
+(ASgetPlayStatus)37 b(.)49 b(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)
+f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119
+b(56)487 3321 y(4.3.6)g(MID)l(ASloadModule)97 b(.)49
+b(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g
+(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119 b(57)487 3524
+y(4.3.7)g(MID)l(ASplayModule)97 b(.)49 b(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)
+h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f
+(.)119 b(58)487 3727 y(4.3.8)g(MID)l(ASplayModuleSection)97
+b(.)49 b(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)
+g(.)f(.)h(.)g(.)g(.)f(.)119 b(59)487 3931 y(4.3.9)g(MID)l
+(ASsetMusicSyncCallback)39 b(.)50 b(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f
+(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119 b(61)487
+4134 y(4.3.10)69 b(MID)l(ASsetMusicV)-13 b(olume)59 b(.)50
+b(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h
+(.)g(.)f(.)h(.)g(.)g(.)f(.)119 b(62)487 4338 y(4.3.11)69
+b(MID)l(ASsetPosition)d(.)50 b(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g
+(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119
+b(63)487 4541 y(4.3.12)69 b(MID)l(ASstopModule)27 b(.)50
+b(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g
+(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119 b(64)109 4844
+y Fh(5)99 b(Sample)26 b(playback)2803 b(65)258 5047 y
+Fg(5.1)104 b(Constants)74 b(.)50 b(.)g(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g
+(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)
+g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119 b(65)487 5251
+y(5.1.1)g(MID)l(ASchannels)81 b(.)50 b(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g
+(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)
+g(.)f(.)119 b(66)487 5454 y(5.1.2)g(MID)l(ASloop)28 b(.)50
+b(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h
+(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119
+b(67)487 5658 y(5.1.3)g(MID)l(ASpanning)34 b(.)49 b(.)h(.)g(.)f(.)h(.)g
+(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)
+g(.)f(.)h(.)g(.)g(.)f(.)119 b(68)p eop
+%%Page: 4 5
+4 4 bop 109 208 a Ff(CONTENTS)3184 b Fg(i)n(v)487 473
+y(5.1.4)119 b(MID)l(ASsamplePlayStatus)25 b(.)50 b(.)g(.)f(.)h(.)g(.)f
+(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)
+f(.)119 b(69)487 676 y(5.1.5)g(MID)l(ASsampleT)-8 b(ypes)61
+b(.)49 b(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)
+g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119 b(70)258
+880 y(5.2)104 b(Data)25 b(types)44 b(.)50 b(.)g(.)g(.)f(.)h(.)g(.)g(.)f
+(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)
+h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119 b(71)487
+1083 y(5.2.1)g(MID)l(ASsample)73 b(.)49 b(.)h(.)g(.)f(.)h(.)g(.)g(.)f
+(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)
+h(.)g(.)g(.)f(.)119 b(72)487 1287 y(5.2.2)g(MID)l(ASsamplePlayHandle)56
+b(.)50 b(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)
+h(.)g(.)f(.)h(.)g(.)g(.)f(.)119 b(73)258 1490 y(5.3)104
+b(Functions)74 b(.)50 b(.)g(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g
+(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)
+g(.)f(.)h(.)g(.)g(.)f(.)119 b(74)487 1693 y(5.3.1)g(MID)l
+(ASallocAutoEf)n(fectChannels)97 b(.)49 b(.)h(.)g(.)g(.)f(.)h(.)g(.)f
+(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119 b(75)487
+1897 y(5.3.2)g(MID)l(ASfreeAutoEf)n(fectChannels)62 b(.)50
+b(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g
+(.)g(.)f(.)119 b(76)487 2100 y(5.3.3)g(MID)l(ASfreeSample)52
+b(.)e(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h
+(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119 b(77)487
+2304 y(5.3.4)g(MID)l(ASgetSamplePlayStatus)37 b(.)49
+b(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f
+(.)h(.)g(.)g(.)f(.)119 b(78)487 2507 y(5.3.5)g(MID)l(ASloadRa)o
+(wSample)77 b(.)50 b(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)
+h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119 b(79)487
+2710 y(5.3.6)g(MID)l(ASloadW)-8 b(a)n(v)o(eSample)37
+b(.)50 b(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)
+f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119 b(80)487 2914 y(5.3.7)g(MID)l
+(ASplaySample)34 b(.)50 b(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g
+(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119
+b(81)487 3117 y(5.3.8)g(MID)l(ASsetSampleP)o(anning)68
+b(.)50 b(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)
+h(.)g(.)f(.)h(.)g(.)g(.)f(.)119 b(83)487 3321 y(5.3.9)g(MID)l
+(ASsetSamplePriority)89 b(.)50 b(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)
+g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119
+b(84)487 3524 y(5.3.10)69 b(MID)l(ASsetSampleRate)62
+b(.)50 b(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)
+g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119 b(85)487 3727
+y(5.3.11)69 b(MID)l(ASsetSampleV)-13 b(olume)85 b(.)50
+b(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g
+(.)f(.)h(.)g(.)g(.)f(.)119 b(86)487 3931 y(5.3.12)69
+b(MID)l(ASstopSample)39 b(.)50 b(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)
+g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119
+b(87)109 4234 y Fh(6)99 b(Str)n(eam)26 b(playback)2811
+b(88)258 4437 y Fg(6.1)104 b(Constants)74 b(.)50 b(.)g(.)g(.)f(.)h(.)g
+(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)
+g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119
+b(88)258 4641 y(6.2)104 b(Data)25 b(types)44 b(.)50 b(.)g(.)g(.)f(.)h
+(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)
+h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119
+b(89)487 4844 y(6.2.1)g(MID)l(ASstreamHandle)26 b(.)49
+b(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g
+(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119 b(90)258 5047
+y(6.3)104 b(Functions)74 b(.)50 b(.)g(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g
+(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)
+g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119 b(91)487 5251
+y(6.3.1)g(MID)l(ASfeedStreamData)88 b(.)50 b(.)g(.)f(.)h(.)g(.)f(.)h(.)
+g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119
+b(92)487 5454 y(6.3.2)g(MID)l(ASgetStreamBytesBuf)n(fered)46
+b(.)k(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h
+(.)g(.)g(.)f(.)119 b(93)487 5658 y(6.3.3)g(MID)l(ASpauseStream)71
+b(.)49 b(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)
+g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119 b(94)p eop
+%%Page: 5 6
+5 5 bop 109 208 a Ff(CONTENTS)3209 b Fg(v)487 473 y(6.3.4)119
+b(MID)l(ASplayStreamFile)45 b(.)50 b(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)
+g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119
+b(95)487 676 y(6.3.5)g(MID)l(ASplayStreamW)-8 b(a)n(v)o(eFile)49
+b(.)g(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g
+(.)f(.)h(.)g(.)g(.)f(.)119 b(97)487 880 y(6.3.6)g(MID)l
+(ASplayStreamPolling)61 b(.)50 b(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)
+g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119
+b(98)487 1083 y(6.3.7)g(MID)l(ASresumeStream)84 b(.)50
+b(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f
+(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)119 b(99)487 1287 y(6.3.8)g(MID)l
+(ASsetStreamP)o(anning)85 b(.)50 b(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h
+(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)69
+b(100)487 1490 y(6.3.9)119 b(MID)l(ASsetStreamRate)79
+b(.)50 b(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)
+g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)69 b(101)487 1693
+y(6.3.10)g(MID)l(ASsetStreamV)-13 b(olume)27 b(.)50 b(.)g(.)f(.)h(.)g
+(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)
+g(.)f(.)69 b(102)487 1897 y(6.3.11)g(MID)l(ASstopStream)56
+b(.)50 b(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)
+h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)69 b(103)109
+2200 y Fh(7)99 b(Miscellaneous)2883 b(104)258 2403 y
+Fg(7.1)104 b(Constants)74 b(.)50 b(.)g(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g
+(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)
+g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)69 b(104)487 2607
+y(7.1.1)119 b(MID)l(ASechoFilterT)-8 b(ypes)89 b(.)50
+b(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h
+(.)g(.)f(.)h(.)g(.)g(.)f(.)69 b(105)487 2810 y(7.1.2)119
+b(MID)l(ASpostProcPosition)52 b(.)e(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f
+(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)69
+b(106)258 3013 y(7.2)104 b(Data)25 b(types)44 b(.)50
+b(.)g(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f
+(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)
+f(.)69 b(106)487 3217 y(7.2.1)119 b(MID)l(ASecho)93 b(.)50
+b(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g
+(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)69
+b(107)487 3420 y(7.2.2)119 b(MID)l(ASechoHandle)29 b(.)50
+b(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g
+(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)69 b(108)487 3624
+y(7.2.3)119 b(MID)l(ASechoSet)41 b(.)49 b(.)h(.)g(.)f(.)h(.)g(.)g(.)f
+(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)
+h(.)g(.)g(.)f(.)69 b(109)487 3827 y(7.2.4)119 b(MID)l(ASpostProcessor)
+26 b(.)49 b(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h
+(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)69 b(110)487
+4030 y(7.2.5)119 b(MID)l(ASpostProcFunction)25 b(.)50
+b(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h
+(.)g(.)f(.)h(.)g(.)g(.)f(.)69 b(112)258 4234 y(7.3)104
+b(Functions)74 b(.)50 b(.)g(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g
+(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)
+g(.)f(.)h(.)g(.)g(.)f(.)69 b(113)487 4437 y(7.3.1)119
+b(MID)l(ASaddEchoEf)n(fect)64 b(.)50 b(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g
+(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)69
+b(114)487 4641 y(7.3.2)119 b(MID)l(ASaddPostProcessor)26
+b(.)50 b(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)
+f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)69 b(115)487 4844 y(7.3.3)119
+b(MID)l(ASremo)o(v)o(eEchoEf)n(fect)61 b(.)50 b(.)f(.)h(.)g(.)f(.)h(.)g
+(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)69
+b(116)487 5047 y(7.3.4)119 b(MID)l(ASremo)o(v)o(ePostProcessor)97
+b(.)50 b(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)f(.)h(.)g(.)g(.)f(.)h(.)g(.)
+f(.)h(.)g(.)g(.)f(.)69 b(117)p eop
+%%Page: 1 7
+1 6 bop 109 1220 a Fi(Chapter)51 b(1)109 1718 y(Intr)l(oduction)-57
+2316 y Fe(1.1)142 b(About)35 b(this)g(document)109 2623
+y Fg(This)d(document)g(contains)g(a)h(full)g(programmer')-5
+b(s)32 b(reference)i(for)g(the)e(MID)l(AS)h(Application)f(Program-)109
+2743 y(ming)27 b(interf)o(ace.)42 b(It)28 b(includes)g(complete)f
+(descriptions)g(of)i(all)f(constants,)g(data)g(structure)g(and)g
+(functions)109 2863 y(a)n(v)n(ailable)h(in)h(the)g(API,)h(plus)f(e)o
+(xamples)f(on)h(ho)n(w)f(to)h(use)g(them.)47 b(It)30
+b(is)g(not)g(intended)f(to)h(be)h(a)f(tutorial)g(on)109
+2984 y(using)23 b(MID)l(AS)i(\227)g(for)g(that)f(kind)g(of)h
+(information)f(see)h(MID)l(AS)g(Programmer')-5 b(s)24
+b(Guide.)-57 3406 y Fe(1.2)142 b(Document)34 b(or)o(ganization)109
+3713 y Fg(The)d(document)f(itself)h(is)g(di)n(vided)f(into)h(se)n(v)o
+(en)f(dif)n(ferent)h(chapters,)i(according)e(to)g(dif)n(ferent)g
+(functional)109 3833 y(groups.)71 b(In)39 b(addition)f(to)g(this)g
+(introduction,)i(the)f(chapters)g(co)o(v)o(er)f(con\002guration)g(and)h
+(initialization,)109 3954 y(o)o(v)o(erall)19 b(system)h(control,)h
+(module)f(playback,)h(sample)g(playback,)g(stream)f(playback,)i(and)f
+(miscellaneous)109 4074 y(system)k(functions.)34 b(Each)27
+b(chapter)g(is)f(further)g(di)n(vided)f(into)h(three)h(sections:)32
+b(constants,)26 b(data)g(types)g(and)109 4194 y(functions.)1974
+5943 y(1)p eop
+%%Page: 2 8
+2 7 bop 109 1220 a Fi(Chapter)51 b(2)109 1718 y(Con\002guration,)g
+(initialization)j(and)e(contr)l(ol)-57 2316 y Fe(2.1)142
+b(Constants)109 2623 y Fg(This)29 b(section)g(describes)g(all)h
+(constants)e(used)i(in)f(MID)l(AS)h(initialization)d(and)j
+(con\002guration.)45 b(The)o(y)29 b(are)109 2743 y(grouped)24
+b(according)h(to)f(the)h Fc(enum)f Fg(used)h(to)f(de\002ne)h(them.)1974
+5943 y(2)p eop
+%%Page: 3 9
+3 8 bop 109 208 a Ff(CHAPTER)25 b(2.)56 b(CONFIGURA)-11
+b(TION,)26 b(INITIALIZA)-11 b(TION)25 b(AND)f(CONTR)l(OL)773
+b Fg(3)-57 473 y Fb(2.1.1)118 b(MID)l(ASdsoundModes)109
+744 y Fc(enum)50 b(MIDASdsoundModes)-57 1093 y Fh(Description)109
+1363 y Fg(These)31 b(constants)f(are)h(used)g(to)g(describe)g(dif)n
+(ferent)g(MID)l(AS)g(DirectSound)g(usage)f(modes.)49
+b(By)32 b(def)o(ault)109 1484 y(MID)l(AS)38 b(does)g(not)f(use)h
+(DirectSound)g(at)g(all,)j(and)d(DirectSound)g(usage)g(can)g(be)h
+(enabled)f(by)f(setting)109 1604 y Fa(MID)m(AS)p 411
+1604 30 4 v 35 w(OPTION)p 805 1604 V 36 w(DSOUND)p 1245
+1604 V 36 w(MODE)p Fg(.)h(Note)h(that)f Fa(MID)m(AS)p
+2349 1604 V 35 w(OPTION)p 2743 1604 V 37 w(DSOUND)p 3184
+1604 V 35 w(HWND)h Fg(needs)g(to)109 1724 y(be)29 b(set)g(when)h(using)
+e(DirectSound.)45 b(A)29 b(complete)g(discussion)e(of)j(using)e
+(DirectSound)i(with)e(MID)l(AS)i(is)109 1845 y(a)n(v)n(ailable)24
+b(at)h(MID)l(AS)f(Programmer')-5 b(s)25 b(Guide.)-57
+2194 y Fh(V)-9 b(alues)109 2423 y(MID)m(AS)p 444 2423
+V 35 w(DSOUND)p 900 2423 V 36 w(DISABLED)50 b Fg(DirectSound)24
+b(usage)h(is)f(disabled)109 2627 y Fh(MID)m(AS)p 444
+2627 V 35 w(DSOUND)p 900 2627 V 36 w(STREAM)50 b Fg(DirectSound)31
+b(is)g(used)h(in)f(stream)h(mode)f(\226)h(MID)l(AS)g(will)f(play)h(to)f
+(a)353 2747 y(DirectSound)25 b(stream)g(b)n(uf)n(fer)-5
+b(.)32 b(DirectSound)25 b(usage)h(is)f(disabled)g(if)g(DirectSound)g
+(runs)g(in)h(emula-)353 2867 y(tion)d(mode.)109 3071
+y Fh(MID)m(AS)p 444 3071 V 35 w(DSOUND)p 900 3071 V 36
+w(PRIMAR)m(Y)47 b Fg(DirectSound)23 b(is)g(used)g(in)g(primary)g(b)n
+(uf)n(fer)g(mode)g(if)g(possible)f(\226)h(MI-)353 3191
+y(D)l(AS)28 b(will)g(play)g(directly)g(to)g(DirectSound)g(primary)g(b)n
+(uf)n(fer)-5 b(.)42 b(If)29 b(primary)f(b)n(uf)n(fer)g(is)g(not)g(a)n
+(v)n(ailable)353 3311 y(for)d(writing,)e(this)h(mode)g(beha)n(v)o(es)h
+(lik)o(e)f(MID)l(AS)p 2085 3311 V 36 w(DSOUND)p 2536
+3311 V 36 w(STREAM.)109 3515 y Fh(MID)m(AS)p 444 3515
+V 35 w(DSOUND)p 900 3515 V 36 w(FORCE)p 1285 3515 V 35
+w(STREAM)50 b Fg(Beha)n(v)o(es)42 b(lik)o(e)f(MID)l(AS)p
+2678 3515 V 36 w(DSOUND)p 3129 3515 V 36 w(STREAM,)h(e)o(xcept)353
+3635 y(that)24 b(DirectSound)g(is)h(used)f(al)o(w)o(ays,)h(e)n(v)o(en)f
+(in)g(emulation)g(mode.)p eop
+%%Page: 4 10
+4 9 bop 109 208 a Ff(CHAPTER)25 b(2.)56 b(CONFIGURA)-11
+b(TION,)26 b(INITIALIZA)-11 b(TION)25 b(AND)f(CONTR)l(OL)773
+b Fg(4)-57 473 y Fb(2.1.2)118 b(MID)l(AS\002lterModes)109
+744 y Fc(enum)50 b(MIDASfilterModes)-57 1093 y Fh(Description)109
+1363 y Fg(These)25 b(constants)f(are)i(used)f(to)g(describe)h(dif)n
+(ferent)f(MID)l(AS)g(output)f(\002lter)i(modes.)31 b(By)26
+b(def)o(ault,)f(MID)l(AS)109 1484 y(Digital)e(Audio)h(System)f(will)h
+(select)g(the)h(most)e(appropriate)h(\002lter)h(for)f(the)h(mixing)e
+(mode)g(automatically)-6 b(,)109 1604 y(b)n(ut)36 b(in)i(some)e(cases)i
+(manually)e(o)o(v)o(erriding)g(the)h(selection)g(can)h(result)e(in)h
+(better)h(sound.)67 b(Also,)40 b(if)e(all)109 1724 y(sounds)21
+b(are)j(played)f(e)o(xactly)f(at)h(the)g(mixing)e(rate,)j(the)f(output)
+e(\002ltering)i(should)f(be)h(disabled)f(to)h(get)f(better)109
+1845 y(sound)j(quality)-6 b(.)34 b(Finally)-6 b(,)25
+b(\002ltering)h(is)g(not)f(normally)h(used)g(with)f(high-quality)g
+(mixing,)g(and)h(is)g(therefore)109 1965 y(disabled)e(with)g(it)g(by)g
+(def)o(ault.)109 2169 y(The)29 b(\002lter)h(mode)f(can)h(be)g(set)g(by)
+f(changing)g(the)g(option)g Fa(MID)m(AS)p 2457 2169 30
+4 v 35 w(OPTION)p 2851 2169 V 37 w(FIL)n(TER)p 3212 2169
+V 36 w(MODE)h Fg(with)e(the)109 2289 y(function)c Fa(MID)m(ASsetOption)
+p Fg(.)-57 2638 y Fh(V)-9 b(alues)109 2867 y(MID)m(AS)p
+444 2867 V 35 w(FIL)g(TER)p 840 2867 V 37 w(NONE)48 b
+Fg(No)25 b(\002ltering)109 3071 y Fh(MID)m(AS)p 444 3071
+V 35 w(FIL)-9 b(TER)p 840 3071 V 37 w(LESS)50 b Fg(Some)25
+b(\002ltering)109 3274 y Fh(MID)m(AS)p 444 3274 V 35
+w(FIL)-9 b(TER)p 840 3274 V 37 w(MORE)48 b Fg(More)25
+b(\002ltering)109 3477 y Fh(MID)m(AS)p 444 3477 V 35
+w(FIL)-9 b(TER)p 840 3477 V 37 w(A)k(UT)n(O)49 b Fg(Automatic)23
+b(\002lter)i(selection)f(\(def)o(ault\))p eop
+%%Page: 5 11
+5 10 bop 109 208 a Ff(CHAPTER)25 b(2.)56 b(CONFIGURA)-11
+b(TION,)26 b(INITIALIZA)-11 b(TION)25 b(AND)f(CONTR)l(OL)773
+b Fg(5)-57 473 y Fb(2.1.3)118 b(MID)l(ASmixingModes)109
+744 y Fc(enum)50 b(MIDASmixingModes)-57 1093 y Fh(Description)109
+1363 y Fg(These)20 b(constants)f(de\002ne)h(the)g(dif)n(ferent)g(MID)l
+(AS)g(Digital)f(Audio)g(System)h(mixing)f(modes)g(a)n(v)n(ailable.)28
+b(The)109 1484 y(high-quality)23 b(mixing)h(mode)h(yields)g(better)h
+(sound)e(quality)-6 b(,)24 b(with)h(virtually)g(no)g(aliasing)g(noise,)
+g(b)n(ut)g(uses)109 1604 y(much)33 b(more)h(CPU)h(po)n(wer)f(than)g
+(normal)f(mixing,)i(and)f(is)g(mainly)f(intended)g(for)i(stand-alone)e
+(module)109 1724 y(players)24 b(and)h(similar)f(applications.)29
+b(By)c(def)o(ault,)g(MID)l(AS)g(uses)f(the)h(normal)f(mixing)f(quality)
+-6 b(.)109 1928 y(The)32 b(mixing)f(mode)i(can)g(be)g(set)f(by)g
+(changing)g(the)h(option)e Fa(MID)m(AS)p 2581 1928 30
+4 v 35 w(OPTION)p 2975 1928 V 37 w(MIXING)p 3360 1928
+V 37 w(MODE)h Fg(with)109 2048 y(the)24 b(function)g
+Fa(MID)m(ASsetOption)p Fg(.)-57 2397 y Fh(V)-9 b(alues)109
+2627 y(MID)m(AS)p 444 2627 V 35 w(MIX)p 684 2627 V 36
+w(NORMAL)p 1174 2627 V 35 w(Q)o(U)j(ALITY)49 b Fg(Normal)24
+b(quality)g(mixing)109 2830 y Fh(MID)m(AS)p 444 2830
+V 35 w(MIX)p 684 2830 V 36 w(HIGH)p 993 2830 V 34 w(Q)o(U)-6
+b(ALITY)49 b Fg(High-quality)23 b(interpolating)g(mixing)p
+eop
+%%Page: 6 12
+6 11 bop 109 208 a Ff(CHAPTER)25 b(2.)56 b(CONFIGURA)-11
+b(TION,)26 b(INITIALIZA)-11 b(TION)25 b(AND)f(CONTR)l(OL)773
+b Fg(6)-57 473 y Fb(2.1.4)118 b(MID)l(ASmodes)109 744
+y Fc(enum)50 b(MIDASmodes)-57 1093 y Fh(Description)109
+1363 y Fg(These)31 b(constants)f(are)h(used)g(to)g(describe)g(dif)n
+(ferent)f(MID)l(AS)h(output)f(modes.)48 b(The)o(y)31
+b(are)h(used)e(with)g(the)109 1484 y(function)24 b Fa(MID)m
+(ASsetOption)p Fg(,)e(when)j(changing)f(the)h(setting)e
+Fa(MID)m(AS)p 2568 1484 30 4 v 35 w(OPTION)p 2962 1484
+V 37 w(OUTPUTMODE)p Fg(.)-57 1833 y Fh(V)-9 b(alues)109
+2062 y(MID)m(AS)p 444 2062 V 35 w(MODE)p 789 2062 V 36
+w(8BIT)p 1046 2062 V 36 w(MONO)48 b Fg(8-bit)24 b(mono)g(output)109
+2265 y Fh(MID)m(AS)p 444 2265 V 35 w(MODE)p 789 2265
+V 36 w(16BIT)p 1096 2265 V 36 w(MONO)48 b Fg(16-bit)24
+b(mono)g(output)109 2469 y Fh(MID)m(AS)p 444 2469 V 35
+w(MODE)p 789 2469 V 36 w(8BIT)p 1046 2469 V 36 w(STEREO)50
+b Fg(8-bit)24 b(stereo)h(output)109 2672 y Fh(MID)m(AS)p
+444 2672 V 35 w(MODE)p 789 2672 V 36 w(16BIT)p 1096 2672
+V 36 w(STEREO)50 b Fg(16-bit)24 b(stereo)h(output)p eop
+%%Page: 7 13
+7 12 bop 109 208 a Ff(CHAPTER)25 b(2.)56 b(CONFIGURA)-11
+b(TION,)26 b(INITIALIZA)-11 b(TION)25 b(AND)f(CONTR)l(OL)773
+b Fg(7)-57 473 y Fb(2.1.5)118 b(MID)l(ASoptions)109 744
+y Fc(enum)50 b(MIDASoptions)-57 1093 y Fh(Description)109
+1363 y Fg(These)29 b(constants)g(are)i(used)e(with)g(the)h(function)f
+Fa(MID)m(ASsetOption)e Fg(to)j(change)g(dif)n(ferent)f(MID)l(AS)h(con-)
+109 1484 y(\002guration)24 b(options,)f(and)i Fa(MID)m(ASg)o(etOption)e
+Fg(to)h(query)h(their)f(current)h(settings.)-57 1833
+y Fh(V)-9 b(alues)109 2062 y(MID)m(AS)p 444 2062 30 4
+v 35 w(OPTION)p 873 2062 V 35 w(MIXRA)g(TE)49 b Fg(Output)23
+b(mixing)h(rate)109 2265 y Fh(MID)m(AS)p 444 2265 V 35
+w(OPTION)p 873 2265 V 35 w(OUTPUTMODE)49 b Fg(Output)23
+b(mode,)i(see)g Fc(enum)f Fa(MID)m(ASmodes)109 2469 y
+Fh(MID)m(AS)p 444 2469 V 35 w(OPTION)p 873 2469 V 35
+w(MIXB)o(UFLEN)50 b Fg(Mixing)23 b(b)n(uf)n(fer)i(length,)f(in)g
+(milliseconds)109 2672 y Fh(MID)m(AS)p 444 2672 V 35
+w(OPTION)p 873 2672 V 35 w(MIXB)o(UFBLOCKS)49 b Fg(The)37
+b(number)g(of)h(blocks)e(the)i(b)n(uf)n(fer)f(should)f(be)i(di)n(vided)
+353 2793 y(into)109 2996 y Fh(MID)m(AS)p 444 2996 V 35
+w(OPTION)p 873 2996 V 35 w(DSOUND)p 1329 2996 V 35 w(MODE)49
+b Fg(DirectSound)43 b(mode)g(to)f(use,)48 b(see)43 b
+Fc(enum)g Fa(MID)m(ASdsound-)353 3116 y(Modes)109 3320
+y Fh(MID)m(AS)p 444 3320 V 35 w(OPTION)p 873 3320 V 35
+w(DSOUND)p 1329 3320 V 35 w(HWND)48 b Fg(W)l(indo)n(w)21
+b(handle)h(for)g(DirectSound)g(support.)29 b(The)22 b(windo)n(w)353
+3440 y(handle)29 b(is)h(used)g(by)g(DirectSound)g(to)g(determine)g
+(which)g(windo)n(w)e(has)i(the)h(focus.)46 b(The)31 b(windo)n(w)353
+3560 y(handle)24 b(has)h(to)f(be)h(set)g(when)f(using)g(DirectSound.)
+109 3764 y Fh(MID)m(AS)p 444 3764 V 35 w(OPTION)p 873
+3764 V 35 w(DSOUND)p 1329 3764 V 35 w(OBJECT)50 b Fg(The)25
+b(DirectSound)f(object)h(that)f(should)g(be)h(used.)31
+b(Setting)353 3884 y(this)23 b(option)h(forces)h(DirectSound)g(support)
+f(on.)109 4088 y Fh(MID)m(AS)p 444 4088 V 35 w(OPTION)p
+873 4088 V 35 w(DSOUND)p 1329 4088 V 35 w(B)o(UFLEN)50
+b Fg(Output)40 b(b)n(uf)n(fer)g(length)g(fot)g(DirectSound,)k(in)d
+(millisec-)353 4208 y(onds.)60 b(This)35 b(option)e(is)i(used)g
+(instead)f(of)h(MID)l(AS)p 2207 4208 V 36 w(OPTION)p
+2608 4208 V 36 w(MIXB)o(UFLEN)g(when)g(using)f(Di-)353
+4328 y(rectSound)24 b(without)g(emulation.)109 4532 y
+Fh(MID)m(AS)p 444 4532 V 35 w(OPTION)p 873 4532 V 35
+w(16BIT)p 1179 4532 V 36 w(ULA)-13 b(W)p 1512 4532 V
+36 w(A)-5 b(UT)n(OCONVER)l(T)49 b Fg(Controls)35 b(whether)h(16-bit)f
+(samples)g(will)353 4652 y(be)25 b(automatically)e(con)l(v)o(erted)h
+(to)h(u-la)o(w)f(or)h(not.)30 b(Enabled)25 b(by)f(def)o(ault.)31
+b(The)25 b(autocon)l(v)o(ersion)e(only)353 4773 y(applies)33
+b(to)h(Sound)f(De)n(vices)h(which)g(can)g(nati)n(v)o(ely)e(play)i(u-la)
+o(w)g(format)f(data,)k(and)d(will)f(only)g(be)353 4893
+y(used)24 b(if)h(it)f(results)g(in)h(smaller)f(CPU)h(use.)109
+5096 y Fh(MID)m(AS)p 444 5096 V 35 w(OPTION)p 873 5096
+V 35 w(FIL)-9 b(TER)p 1269 5096 V 37 w(MODE)48 b Fg(Output)37
+b(\002lter)g(mode,)j(see)e Fc(enum)f Fa(MID)m(AS\002lterModes)p
+Fg(.)66 b(The)353 5217 y(\002lter)25 b(is)f(selected)h(automatically)e
+(by)i(def)o(ault.)109 5420 y Fh(MID)m(AS)p 444 5420 V
+35 w(OPTION)p 873 5420 V 35 w(MIXING)p 1302 5420 V 35
+w(MODE)48 b Fg(Mixing)41 b(mode,)46 b(af)n(fects)d(the)f(output)f
+(sound)h(quality)-6 b(.)81 b(See)353 5541 y Fc(enum)24
+b Fa(MID)m(ASmixingModes)p Fg(.)p eop
+%%Page: 8 14
+8 13 bop 109 208 a Ff(CHAPTER)25 b(2.)56 b(CONFIGURA)-11
+b(TION,)26 b(INITIALIZA)-11 b(TION)25 b(AND)f(CONTR)l(OL)773
+b Fg(8)109 473 y Fh(MID)m(AS)p 444 473 30 4 v 35 w(OPTION)p
+873 473 V 35 w(DEF)-9 b(A)k(UL)c(T)p 1360 473 V 37 w(STEREO)p
+1800 473 V 37 w(SEP)i(ARA)e(TION)48 b Fg(Controls)26
+b(the)g(def)o(ault)g(stereo)h(separa-)353 593 y(tion)j(for)h(modules)f
+(with)g(no)h(panning)f(information)f(\(MODs)i(and)f(old)h(S3Ms\).)49
+b(64)31 b(is)f(maximum)353 714 y(stereo)24 b(separation,)h(0)f(none.)31
+b(Def)o(ault)24 b(64.)109 917 y Fh(MID)m(AS)p 444 917
+V 35 w(OPTION)p 873 917 V 35 w(FORCE)p 1257 917 V 36
+w(NO)p 1443 917 V 35 w(SOUND)48 b Fg(F)o(orces)28 b(the)g(No)g(Sound)g
+(Sound)f(De)n(vice)h(to)f(be)h(used)g(for)353 1037 y(playback.)i
+(Useful)24 b(for)i(trying)d(to)i(run)g(MID)l(AS)g(with)f(no)g(sound)g
+(if)h Fa(MID)m(ASinit)e Fg(f)o(ails.)p eop
+%%Page: 9 15
+9 14 bop 109 208 a Ff(CHAPTER)25 b(2.)56 b(CONFIGURA)-11
+b(TION,)26 b(INITIALIZA)-11 b(TION)25 b(AND)f(CONTR)l(OL)773
+b Fg(9)-57 473 y Fe(2.2)142 b(Data)35 b(types)109 779
+y Fg(This)24 b(section)g(describes)g(all)h(data)g(types)f(used)h(in)f
+(MID)l(AS)h(initialization)e(and)h(con\002guration.)p
+eop
+%%Page: 10 16
+10 15 bop 109 208 a Ff(CHAPTER)25 b(2.)56 b(CONFIGURA)-11
+b(TION,)26 b(INITIALIZA)-11 b(TION)25 b(AND)f(CONTR)l(OL)724
+b Fg(10)-57 473 y Fe(2.3)142 b(Functions)109 779 y Fg(This)24
+b(section)g(describes)g(all)h(functions)f(a)n(v)n(ailable)g(for)h(MID)l
+(AS)g(initialization)d(and)j(con\002guration.)p eop
+%%Page: 11 17
+11 16 bop 109 208 a Ff(CHAPTER)25 b(2.)56 b(CONFIGURA)-11
+b(TION,)26 b(INITIALIZA)-11 b(TION)25 b(AND)f(CONTR)l(OL)724
+b Fg(11)-57 473 y Fb(2.3.1)118 b(MID)l(ASclose)109 744
+y Fc(BOOL)50 b(MIDASclose\(void\))109 1055 y Fg(Uninitializes)23
+b(MID)l(AS)i(Digital)e(Audio)h(System.)-57 1404 y Fh(Input)109
+1675 y Fg(None.)-57 2024 y Fh(Description)109 2294 y
+Fg(This)34 b(function)g(uninitializes)f(all)i(MID)l(AS)g(Digital)f
+(Audio)g(System)g(components,)i(deallocates)f(all)g(re-)109
+2415 y(sources)26 b(allocated,)g(and)g(shuts)f(do)n(wn)h(all)f(MID)l
+(AS)i(processing.)34 b(This)25 b(function)h(must)f(al)o(w)o(ays)h(be)g
+(called)109 2535 y(before)35 b(e)o(xiting)e(under)h(MS-DOS)h(and)g(is)f
+(also)g(strongly)g(recommended)g(under)g(other)h(operating)f(sys-)109
+2656 y(tems.)h(After)27 b(this)f(function)g(has)g(been)h(called,)g(no)g
+(MID)l(AS)f(function)g(may)h(be)f(called)h(unless)f(MID)l(AS)h(is)109
+2776 y(initialized)c(again.)-57 3125 y Fh(Retur)o(n)i(v)o(alue)109
+3396 y Fg(TR)l(UE)g(if)f(successful,)h(F)-7 b(ALSE)25
+b(if)g(not.)-57 3745 y Fh(Operating)g(systems)109 4015
+y Fg(All)-57 4365 y Fh(See)g(also)109 4635 y Fa(MID)m(ASinit)p
+eop
+%%Page: 12 18
+12 17 bop 109 208 a Ff(CHAPTER)25 b(2.)56 b(CONFIGURA)-11
+b(TION,)26 b(INITIALIZA)-11 b(TION)25 b(AND)f(CONTR)l(OL)724
+b Fg(12)-57 473 y Fb(2.3.2)118 b(MID)l(AScon\002g)109
+736 y Fc(BOOL)50 b(MIDASconfig\(void\))109 978 y Fg(Runs)24
+b(manual)h(MID)l(AS)g(setup.)-57 1311 y Fh(Input)109
+1574 y Fg(None.)-57 1907 y Fh(Description)109 2170 y
+Fg(This)20 b(function)g(runs)h(the)g(manual)f(MID)l(AS)h(Digital)f
+(Audio)g(System)h(con\002guration.)29 b(It)20 b(queries)h(the)g(sound)
+109 2290 y(card)32 b(to)g(use)g(and)g(desired)g(sound)f(quality)f(and)i
+(output)f(mode)h(from)f(the)h(user)-5 b(.)52 b(The)32
+b(setup)g(entered)g(can)109 2411 y(be)23 b(sa)n(v)o(ed)f(do)h(disk)f
+(with)g Fa(MID)m(ASsaveCon\002g)h Fg(and)g(loaded)f(back)h(with)g
+Fa(MID)m(ASloadCon\002g)p Fg(,)e(or)i(written)g(to)109
+2531 y(re)o(gistry)f(with)g Fa(MID)m(ASwriteCon\002gRe)l(gistry)g
+Fg(and)h(read)h(back)f(with)g Fa(MID)m(ASr)l(eadCon\002gRe)l(gistry)p
+Fg(.)28 b(These)109 2651 y(functions)18 b(can)i(be)g(used)g(to)f
+(create)h(a)h(simple)d(e)o(xternal)h(setup)g(program,)i(or)e(just)g(sa)
+n(v)o(e)g(the)h(settings)e(between)109 2772 y(tw)o(o)28
+b(runs)g(of)h(the)g(program.)42 b(After)29 b(this)f(function)g(has)g
+(been)h(called,)h Fa(MID)m(ASsetOption)c Fg(can)j(be)g(used)g(to)109
+2892 y(change)c(the)f(output)g(mode)g(options,)f(to,)i(for)g(e)o
+(xample,)f(force)h(mono)f(output.)109 3088 y(This)i(function)h(returns)
+g(TR)l(UE)g(if)g(the)h(setup)e(w)o(as)i(completed)e(successfully)-6
+b(,)26 b(F)-7 b(ALSE)28 b(if)f(not.)38 b(The)27 b(setup)109
+3208 y(can)g(f)o(ail)g(for)g(tw)o(o)g(reasons:)35 b(either)27
+b(the)f(user)i(aborted)e(it)h(by)g(pressing)f(escape)i(or)f(clicking)f
+(Cancel,)i(or)f(an)109 3329 y(error)33 b(occured.)55
+b(As)32 b(errors)h(during)f(the)g(setup)g(are)i(e)o(xtremely)d(unlik)o
+(ely)-6 b(,)33 b(it)f(is)g(safe)i(to)e(simply)f(e)o(xit)g(the)109
+3449 y(program)e(if)h(this)g(function)f(returns)h(F)-7
+b(ALSE.)30 b Fa(MID)m(ASg)o(etLastErr)l(or)d Fg(can)k(be)f(used)g(to)g
+(check)g(if)g(an)h(error)109 3569 y(occured)25 b(\227)f(if)h(the)g
+(return)g(v)n(alue)f(is)g(zero,)h(the)g(user)g(just)f(pressed)h
+(cancelled)g(the)f(setup.)109 3765 y(This)g(function)g(must)f(be)i
+(called)g(before)g Fa(MID)m(ASinit)p Fg(,)e(b)n(ut)i(after)g
+Fa(MID)m(ASstartup)p Fg(.)-57 4098 y Fh(Retur)o(n)g(v)o(alue)109
+4361 y Fg(TR)l(UE)g(if)f(successful,)h(F)-7 b(ALSE)25
+b(if)g(not)f(\(the)h(user)f(cancelled)i(the)e(con\002guration,)g(or)h
+(an)g(error)h(occurred\))-57 4694 y Fh(Operating)f(systems)109
+4957 y Fg(MS-DOS,)g(W)l(in32)-57 5290 y Fh(See)g(also)109
+5553 y Fa(MID)m(ASsaveCon\002g)p Fg(,)44 b Fa(MID)m(ASloadCon\002g)p
+Fg(,)f Fa(MID)m(ASsetOption)p Fg(,)g Fa(MID)m(ASg)o(etOption)p
+Fg(,)g Fa(MID)m(ASinit)p Fg(,)g Fa(MI-)109 5674 y(D)m
+(ASwriteCon\002gRe)l(gistry)p Fg(,)22 b Fa(MID)m(ASr)l(eadCon\002gRe)l
+(gistry)p eop
+%%Page: 13 19
+13 18 bop 109 208 a Ff(CHAPTER)25 b(2.)56 b(CONFIGURA)-11
+b(TION,)26 b(INITIALIZA)-11 b(TION)25 b(AND)f(CONTR)l(OL)724
+b Fg(13)-57 473 y Fb(2.3.3)118 b(MID)l(ASdetectSoundCard)109
+740 y Fc(BOOL)50 b(MIDASdetectSoundCard\(void\))109 1018
+y Fg(Attempts)23 b(to)h(detect)h(the)g(sound)f(card)h(to)f(use.)-57
+1359 y Fh(Input)109 1626 y Fg(None.)-57 1967 y Fh(Description)109
+2234 y Fg([MS-DOS)h(only])109 2434 y(This)c(function)h(attempts)g(to)g
+(detect)g(the)h(sound)e(card)j(that)e(should)f(be)i(used.)30
+b(It)22 b(will)g(set)g(up)g(MID)l(AS)h(to)f(use)109 2554
+y(the)29 b(detected)g(card,)h(and)f(return)h(TR)l(UE)f(if)g(a)g(sound)g
+(card)g(w)o(as)g(found,)h(F)-7 b(ALSE)29 b(if)g(not.)43
+b(If)30 b(this)e(function)109 2675 y(returns)33 b(F)-7
+b(ALSE,)34 b(you)g(should)e(run)i Fa(MID)m(AScon\002g)f
+Fg(to)g(let)h(the)g(user)g(manually)e(select)i(the)g(sound)f(card.)109
+2795 y(Note)28 b(that)g(you)g Fh(can)h Fg(use)g(MID)l(AS)f(e)n(v)o(en)g
+(if)h(no)f(sound)f(card)i(has)g(been)g(selected)f(-)h(MID)l(AS)g(will)e
+(just)h(not)109 2916 y(play)c(sound)g(in)g(that)h(case.)109
+3115 y(If)31 b(no)f(sound)g(card)h(has)g(been)g(manually)e(set)i(up,)h
+Fa(MID)m(ASinit)d Fg(will)h(automatically)f(detect)h(it,)i(or)f(use)f
+(No)109 3236 y(Sound)f(if)g(none)g(is)g(a)n(v)n(ailable.)44
+b(Therefore)30 b(this)e(function)h(does)g(not)g(ha)n(v)o(e)g(to)g(be)g
+(called)h(if)f(manual)g(setup)109 3356 y(will)24 b(not)g(be)h(used.)109
+3556 y(Note)g(that,)h(as)f(there)i(is)e(no)g(w)o(ay)h(to)g(safely)f
+(autodetect)h(the)f(W)l(indo)n(ws)f(Sound)i(System)f(cards)h(under)g
+(MS-)109 3676 y(DOS,)36 b(MID)l(AS)h(will)f(not)g(attempt)f(to)h
+(detect)h(them)f(at)h(all.)65 b(If)37 b(you)f(do)h(not)f(pro)o(vide)f
+(a)i(manual)f(setup)109 3796 y(possibility)27 b(to)j(your)g(program)g
+(\(via)h Fa(MID)m(AScon\002g)p Fg(\),)g(WSS)g(users)f(will)g(not)f(be)i
+(able)f(to)g(get)g(an)o(y)g(sound.)109 3917 y(The)25
+b(computer)g(may)g(also)g(ha)n(v)o(e)g(se)n(v)o(eral)g(sound)f(cards,)i
+(and)f(the)g(user)h(may)f(wish)f(not)h(to)g(use)g(the)h(one)f(au-)109
+4037 y(tomatically)e(detected)i(by)f(MID)l(AS.)h(Therefore)h(it)e(is)g
+(a)h(v)o(ery)g(good)f(idea)h(to)f(include)g(an)h(optional)f(manual)109
+4158 y(sound)g(setup)g(to)g(all)h(programs.)109 4357
+y(This)31 b(discussion)f(naturally)h(applies)g(to)g(MS-DOS)h(only)-6
+b(,)32 b(under)g(W)l(in32)f(and)g(Linux)g(MID)l(AS)h(uses)f(the)109
+4478 y(sound)22 b(card)h(through)f(the)h(system)f(audio)g(de)n(vices,)h
+(and)g(no)g(sound)f(card)h(selection)g(or)g(setup)f(is)h(necessary)-6
+b(.)-57 4819 y Fh(Retur)o(n)25 b(v)o(alue)109 5086 y
+Fg(TR)l(UE)g(if)f(a)i(sound)e(card)h(w)o(as)g(detected,)f(F)-7
+b(ALSE)25 b(if)g(not.)-57 5427 y Fh(Operating)g(systems)109
+5694 y Fg(MS-DOS)p eop
+%%Page: 14 20
+14 19 bop 109 208 a Ff(CHAPTER)25 b(2.)56 b(CONFIGURA)-11
+b(TION,)26 b(INITIALIZA)-11 b(TION)25 b(AND)f(CONTR)l(OL)724
+b Fg(14)-57 473 y Fh(See)25 b(also)109 744 y Fa(MID)m(AScon\002g)p
+Fg(,)e Fa(MID)m(ASinit)p eop
+%%Page: 15 21
+15 20 bop 109 208 a Ff(CHAPTER)25 b(2.)56 b(CONFIGURA)-11
+b(TION,)26 b(INITIALIZA)-11 b(TION)25 b(AND)f(CONTR)l(OL)724
+b Fg(15)-57 473 y Fb(2.3.4)118 b(MID)l(ASgetDisplayRefr)n(eshRate)109
+744 y Fc(DWORD)50 b(MIDASgetDisplayRefreshRate\(void\))109
+1055 y Fg(Gets)24 b(the)h(current)g(display)f(refresh)h(rate.)-57
+1404 y Fh(Input)109 1675 y Fg(None.)-57 2024 y Fh(Description)109
+2294 y Fg(This)c(function)h(tries)g(to)g(determine)g(the)h(current)f
+(display)g(refresh)h(rate.)30 b(It)23 b(is)f(used)g(with)g
+Fa(MID)m(ASsetT)-5 b(imer)n(-)109 2415 y(Callbac)n(ks)33
+b Fg(to)g(set)g(a)h(display-synchronized)d(timer)i(callback.)57
+b(It)33 b(returns)g(the)h(current)f(display)g(refresh)109
+2535 y(rate)g(in)f(milliHertz)f(\(ie.)54 b(1000*Hz,)33
+b(50Hz)f(becomes)h(50000,)g(70Hz)f(70000)g(etc\),)j(or)d(0)h(if)f(it)g
+(could)g(not)109 2656 y(determine)27 b(the)h(refresh)g(rate.)41
+b(The)28 b(refresh)g(rate)h(may)e(be)h(una)n(v)n(ailable)f(when)h
+(running)f(under)h(W)l(in95)f(or)109 2776 y(a)32 b(similar)e(OS,)i(or)g
+(when)f(the)h(V)o(GA)f(card)h(does)g(return)f(V)-11 b(ertical)32
+b(Retraces)h(correctly)f(\(as)f(some)h(SV)o(GA)109 2896
+y(cards)e(do)g(in)f(SV)o(GA)h(modes\).)46 b(Therefore)30
+b(it)g(is)f(important)g(to)h(check)g(the)g(return)g(v)n(alue,)g(and)g
+(substitute)109 3017 y(some)24 b(def)o(ault)g(v)n(alue)h(if)f(it)h(is)f
+(zero.)109 3220 y(Unlik)o(e)j(most)h(other)g(MID)l(AS)h(functions,)f
+(this)f(function)h(must)f(be)i(called)f Fh(bef)n(or)n(e)i
+Fa(MID)m(ASinit)c Fg(is)i(called,)109 3340 y(as)d(the)f(MID)l(AS)h
+(timer)f(may)h(interfere)g(with)f(the)h(measurements.)109
+3544 y(Note)31 b(that)g(the)g(display)f(refresh)i(rate)g(is)f
+Fh(display)g(mode)h(speci\002c)p Fg(.)51 b(Therefore)33
+b(you)e(need)g(to)g(set)g(up)g(the)109 3664 y(display)26
+b(mode)g(with)h(which)f(you)h(w)o(ant)g(to)f(use)h
+(display-synchronized)f(timer)g(callbacks)h Fh(bef)n(or)n(e)h
+Fg(calling)109 3785 y(this)j(function.)53 b(Also,)34
+b(if)e(your)h(application)e(uses)h(se)n(v)o(eral)g(display)g(modes,)h
+(you)f(must)g(get)g(the)g(display)109 3905 y(refresh)h(rate)g(for)g
+(each)g(mode)f(separately)-6 b(,)34 b(and)f(remo)o(v)o(e)e(and)i
+(restart)g(the)f(display-synchronized)f(timer)109 4025
+y(callbacks)24 b(at)h(each)h(mode)e(change.)109 4229
+y(This)g(function)g(is)g(only)g(a)n(v)n(ailable)g(in)h(MS-DOS.)-57
+4578 y Fh(Retur)o(n)g(v)o(alue)109 4849 y Fg(The)f(current)i(display)d
+(refresh)j(rate,)f(in)f(milliHertz,)g(or)h(0)f(if)h(una)n(v)n(ailable.)
+-57 5198 y Fh(Operating)g(systems)109 5468 y Fg(MS-DOS)p
+eop
+%%Page: 16 22
+16 21 bop 109 208 a Ff(CHAPTER)25 b(2.)56 b(CONFIGURA)-11
+b(TION,)26 b(INITIALIZA)-11 b(TION)25 b(AND)f(CONTR)l(OL)724
+b Fg(16)-57 473 y Fh(See)25 b(also)109 744 y Fa(MID)m(ASsetT)-5
+b(imerCallbac)n(ks)p eop
+%%Page: 17 23
+17 22 bop 109 208 a Ff(CHAPTER)25 b(2.)56 b(CONFIGURA)-11
+b(TION,)26 b(INITIALIZA)-11 b(TION)25 b(AND)f(CONTR)l(OL)724
+b Fg(17)-57 473 y Fb(2.3.5)118 b(MID)l(ASgetOption)109
+744 y Fc(DWORD)50 b(MIDASgetOption\(int)d(option\))109
+1055 y Fg(Gets)24 b(a)h(MID)l(AS)g(option.)-57 1404 y
+Fh(Input)109 1633 y(option)49 b Fg(Option)23 b(number)i(\(see)g
+Fc(enum)f Fa(MID)m(ASoptions)f Fg(abo)o(v)o(e\))-57 1982
+y Fh(Description)109 2253 y Fg(This)38 b(function)f(reads)i(the)g
+(current)g(v)n(alue)f(of)h(a)g(MID)l(AS)f(option.)71
+b(The)39 b(dif)n(ferent)f(number)g(codes)h(for)109 2373
+y(dif)n(ferent)24 b(options)f(are)j(described)f(abo)o(v)o(e.)-57
+2722 y Fh(Retur)o(n)g(v)o(alue)109 2993 y Fg(TR)l(UE)g(if)f
+(successful,)h(F)-7 b(ALSE)25 b(if)g(not.)-57 3342 y
+Fh(Operating)g(systems)109 3613 y Fg(All)-57 3962 y Fh(See)g(also)109
+4233 y Fa(MID)m(ASsetOption)p eop
+%%Page: 18 24
+18 23 bop 109 208 a Ff(CHAPTER)25 b(2.)56 b(CONFIGURA)-11
+b(TION,)26 b(INITIALIZA)-11 b(TION)25 b(AND)f(CONTR)l(OL)724
+b Fg(18)-57 473 y Fb(2.3.6)118 b(MID)l(ASinit)109 744
+y Fc(BOOL)50 b(MIDASinit\(void\))109 1055 y Fg(Initializes)23
+b(MID)l(AS)i(Digital)f(Audio)g(System.)-57 1404 y Fh(Input)109
+1675 y Fg(None.)-57 2024 y Fh(Description)109 2294 y
+Fg(This)33 b(function)f(initializes)g(all)i(MID)l(AS)g(Digital)e(Audio)
+h(System)g(components,)h(and)g(sets)f(up)g(the)h(API.)109
+2415 y(Apart)23 b(from)g(con\002guration)f(functions,)g(this)g
+(function)h(must)e(be)j(called)f(before)g(an)o(y)g(other)g(MID)l(AS)g
+(func-)109 2535 y(tions)g(are)j(used.)109 2739 y(If)i(this)e(function)h
+(f)o(ails)g(with)g(no)g(apparent)h(reason,)g(it)f(is)g(v)o(ery)g
+(probable)g(that)g(some)g(other)g(application)g(is)109
+2859 y(using)e(the)h(sound)g(card)g(hardw)o(are)h(or)g(the)f(user)g
+(has)h(badly)e(mis-con\002gured)h(MID)l(AS.)g(Therefore,)i(if)e(this)
+109 2979 y(function)j(f)o(ails,)j(it)e(is)g(recommended)g(to)g(gi)n(v)o
+(e)f(the)i(user)f(a)h(possibility)d(to)i(close)h(other)f(applications)f
+(and)109 3100 y(retry)-6 b(,)28 b(continue)f(with)g(no)h(sound)f(\(set)
+h(option)f Fa(MID)m(AS)p 2071 3100 30 4 v 35 w(OPTION)p
+2465 3100 V 37 w(FORCE)p 2823 3100 V 36 w(NO)p 2997 3100
+V 36 w(SOUND)p Fg(\),)h(or)g(possibly)109 3220 y(re-con\002gure)d(MID)l
+(AS.)-57 3569 y Fh(Retur)o(n)g(v)o(alue)109 3840 y Fg(TR)l(UE)g(if)f
+(successful,)h(F)-7 b(ALSE)25 b(if)g(not.)-57 4189 y
+Fh(Operating)g(systems)109 4460 y Fg(All)-57 4809 y Fh(See)g(also)109
+5079 y Fa(MID)m(ASsetOption)p Fg(,)d Fa(MID)m(ASclose)p
+eop
+%%Page: 19 25
+19 24 bop 109 208 a Ff(CHAPTER)25 b(2.)56 b(CONFIGURA)-11
+b(TION,)26 b(INITIALIZA)-11 b(TION)25 b(AND)f(CONTR)l(OL)724
+b Fg(19)-57 473 y Fb(2.3.7)118 b(MID)l(ASloadCon\002g)109
+744 y Fc(BOOL)50 b(MIDASloadConfig\(char)d(*fileName\))109
+1055 y Fg(Load)24 b(MID)l(AS)h(setup)f(from)h(disk.)-57
+1404 y Fh(Input)109 1633 y(\002leName)49 b Fg(Setup)25
+b(\002le)g(name)-57 1982 y Fh(Description)109 2253 y
+Fg(This)20 b(function)h(loads)g(MID)l(AS)g(setup)g(from)h(disk.)28
+b(The)22 b(setup)f(must)f(ha)n(v)o(e)h(been)h(sa)n(v)o(ed)f(with)g
+Fa(MID)m(ASsave-)109 2373 y(Con\002g)p Fg(.)30 b Fa(MID)m(ASsetOption)
+23 b Fg(can)i(be)g(used)f(afterw)o(ards)i(to)e(change,)h(for)g(e)o
+(xample,)f(the)h(output)e(mode.)109 2577 y(This)h(function)g(must)f(be)
+i(called)g(before)g Fa(MID)m(ASinit)p Fg(,)e(b)n(ut)i(after)g
+Fa(MID)m(ASstartup)p Fg(.)-57 2926 y Fh(Retur)o(n)g(v)o(alue)109
+3196 y Fg(TR)l(UE)g(if)f(successful,)h(F)-7 b(ALSE)25
+b(if)g(not.)-57 3546 y Fh(Operating)g(systems)109 3816
+y Fg(MS-DOS,)g(W)l(in32)-57 4165 y Fh(See)g(also)109
+4436 y Fa(MID)m(AScon\002g)p Fg(,)e Fa(MID)m(ASsaveCon\002g)p
+eop
+%%Page: 20 26
+20 25 bop 109 208 a Ff(CHAPTER)25 b(2.)56 b(CONFIGURA)-11
+b(TION,)26 b(INITIALIZA)-11 b(TION)25 b(AND)f(CONTR)l(OL)724
+b Fg(20)-57 473 y Fb(2.3.8)118 b(MID)l(ASr)n(eadCon\002gRegistry)109
+744 y Fc(BOOL)50 b(MIDASreadConfigRegistry\(DWORD)45
+b(key,)50 b(char)g(*subKey\);)109 1055 y Fg(Reads)25
+b(MID)l(AS)g(con\002guration)f(from)h(a)g(re)o(gistry)f(k)o(e)o(y)-6
+b(.)-57 1404 y Fh(Input)109 1633 y(k)o(ey)49 b Fg(A)25
+b(currently)f(open)h(re)o(gistry)f(k)o(e)o(y)-6 b(,)23
+b(for)i(e)o(xample)f Fh(H)p 2104 1633 30 4 v 36 w(KEY)p
+2356 1633 V 35 w(CURRENT)p 2883 1633 V 37 w(USER)109
+1837 y(subK)n(ey)48 b Fg(The)25 b(name)g(of)f(the)h(subk)o(e)o(y)f(of)h
+Fh(k)o(ey)g Fg(that)f(contains)g(the)h(con\002guration)-57
+2186 y Fh(Description)109 2456 y Fg(This)e(function)h(reads)h(the)f
+(MID)l(AS)g(con\002guration)g(from)g(a)h(re)o(gistry)e(k)o(e)o(y)-6
+b(.)30 b(The)24 b(con\002guration)g(must)g(ha)n(v)o(e)109
+2577 y(been)31 b(written)f(there)h(with)f Fa(MID)m(ASwriteCon\002gRe)l
+(gistry)p Fg(.)47 b Fa(MID)m(ASsetOption)29 b Fg(can)i(be)g(used)g
+(afterw)o(ards)109 2697 y(to)23 b(chance,)h(for)g(e)o(xample,)f(the)g
+(output)g(mode,)g(and)h Fa(MID)m(AScon\002g)e Fg(to)h(prompt)g(the)g
+(user)h(for)g(ne)n(w)f(settings.)109 2900 y(This)h(function)g(must)f
+(be)i(called)g(before)g Fa(MID)m(ASinit)p Fg(,)e(b)n(ut)i(after)g
+Fa(MID)m(ASstartup)p Fg(.)-57 3250 y Fh(Retur)o(n)g(v)o(alue)109
+3520 y Fg(TR)l(UE)g(if)f(successful,)h(F)-7 b(ALSE)25
+b(if)g(not.)-57 3869 y Fh(Operating)g(systems)109 4140
+y Fg(W)l(in32)-57 4489 y Fh(See)g(also)109 4760 y Fa(MID)m(AScon\002g)p
+Fg(,)e Fa(MID)m(ASwriteCon\002gRe)l(gistry)p eop
+%%Page: 21 27
+21 26 bop 109 208 a Ff(CHAPTER)25 b(2.)56 b(CONFIGURA)-11
+b(TION,)26 b(INITIALIZA)-11 b(TION)25 b(AND)f(CONTR)l(OL)724
+b Fg(21)-57 473 y Fb(2.3.9)118 b(MID)l(ASsa)m(v)o(eCon\002g)109
+744 y Fc(BOOL)50 b(MIDASsaveConfig\(char)d(*fileName\))109
+1055 y Fg(Sa)n(v)o(es)25 b(the)f(MID)l(AS)h(setup)f(to)h(a)g(\002le.)
+-57 1404 y Fh(Input)109 1633 y(\002leName)49 b Fg(Setup)25
+b(\002le)g(name)-57 1982 y Fh(Description)109 2253 y
+Fg(This)d(function)g(sa)n(v)o(es)g(the)g(MID)l(AS)h(setup)f(entered)h
+(with)f Fa(MID)m(AScon\002g)g Fg(to)g(a)h(\002le)g(on)g(disk.)29
+b(It)23 b(can)g(be)g(then)109 2373 y(loaded)h(with)g
+Fa(MID)m(ASloadCon\002g)p Fg(.)-57 2722 y Fh(Retur)o(n)h(v)o(alue)109
+2993 y Fg(TR)l(UE)g(if)f(successful,)h(F)-7 b(ALSE)25
+b(if)g(not.)-57 3342 y Fh(Operating)g(systems)109 3613
+y Fg(MS-DOS,)g(W)l(in32)-57 3962 y Fh(See)g(also)109
+4233 y Fa(MID)m(AScon\002g)p Fg(,)e Fa(MID)m(ASloadCon\002g)p
+eop
+%%Page: 22 28
+22 27 bop 109 208 a Ff(CHAPTER)25 b(2.)56 b(CONFIGURA)-11
+b(TION,)26 b(INITIALIZA)-11 b(TION)25 b(AND)f(CONTR)l(OL)724
+b Fg(22)-57 473 y Fb(2.3.10)118 b(MID)l(ASsetOption)109
+744 y Fc(BOOL)50 b(MIDASsetOption\(int)d(option,)j(DWORD)f(value\))109
+1055 y Fg(Sets)25 b(a)g(MID)l(AS)g(option.)-57 1404 y
+Fh(Input)109 1633 y(option)49 b Fg(Option)23 b(number)i(\(see)g
+Fc(enum)f Fa(MID)m(ASoptions)f Fg(abo)o(v)o(e\))109 1837
+y Fh(v)o(alue)48 b Fg(Ne)n(w)25 b(v)n(alue)f(for)h(option)-57
+2186 y Fh(Description)109 2456 y Fg(This)e(function)g(sets)h(a)g(v)n
+(alue)f(to)h(a)g(MID)l(AS)h(option.)k(The)24 b(dif)n(ferent)f(number)h
+(codes)g(for)g(dif)n(ferent)g(options)109 2577 y(are)32
+b(described)f(abo)o(v)o(e.)50 b(All)30 b(MID)l(AS)i(con\002guration)f
+(options)f(must)g(be)i(set)f(with)f(this)h(function)f
+Fh(bef)n(or)n(e)109 2697 y Fa(MID)m(ASinit)23 b Fg(is)h(called.)-57
+3046 y Fh(Retur)o(n)h(v)o(alue)109 3317 y Fg(TR)l(UE)g(if)f
+(successful,)h(F)-7 b(ALSE)25 b(if)g(not.)-57 3666 y
+Fh(Operating)g(systems)109 3937 y Fg(All)-57 4286 y Fh(See)g(also)109
+4556 y Fa(MID)m(ASinit)p eop
+%%Page: 23 29
+23 28 bop 109 208 a Ff(CHAPTER)25 b(2.)56 b(CONFIGURA)-11
+b(TION,)26 b(INITIALIZA)-11 b(TION)25 b(AND)f(CONTR)l(OL)724
+b Fg(23)-57 473 y Fb(2.3.11)118 b(MID)l(ASstartup)109
+744 y Fc(BOOL)50 b(MIDASstartup\(void\))109 1055 y Fg(Prepares)26
+b(MID)l(AS)e(Digital)g(Audio)g(System)g(for)i(initialization)c(and)j
+(use.)-57 1404 y Fh(Input)109 1675 y Fg(None.)-57 2024
+y Fh(Description)109 2294 y Fg(This)31 b(function)h(sets)g(all)g(MID)l
+(AS)h(Digital)e(Audio)h(System)g(con\002guration)g(v)n(ariables)g(to)g
+(def)o(ault)g(v)n(alues)109 2415 y(and)f(prepares)i(MID)l(AS)f(for)g
+(use.)52 b(It)31 b(must)g(be)h(called)g(before)g(an)o(y)g(other)f(MID)l
+(AS)h(function,)h(including)109 2535 y Fa(MID)m(ASinit)19
+b Fg(and)i Fa(MID)m(ASsetOption)p Fg(,)e(is)i(called.)29
+b(After)21 b(this)f(function)g(has)h(been)g(called,)h
+Fa(MID)m(ASclose)e Fg(can)109 2656 y(be)27 b(safely)g(called)g(at)f(an)
+o(y)h(point)f(and)g(an)o(y)h(number)f(of)h(times,)g(re)o(gardless)e(of)
+i(whether)g(MID)l(AS)g(has)g(been)109 2776 y(initialized)g(or)h(not.)41
+b(After)28 b(calling)g(this)f(function,)i(you)f(can)g(use)g
+Fa(MID)m(ASsetOption)f Fg(to)h(change)g(MID)l(AS)109
+2896 y(con\002guration)k(before)h(initializing)d(MID)l(AS)j(with)f
+Fa(MID)m(ASinit)p Fg(,)h(or)g(call)f Fa(MID)m(AScon\002g)g
+Fg(to)g(prompt)f(the)109 3017 y(user)25 b(for)g(con\002guration)f
+(options.)-57 3366 y Fh(Retur)o(n)h(v)o(alue)109 3636
+y Fg(TR)l(UE)g(if)f(successful,)h(F)-7 b(ALSE)25 b(if)g(not.)-57
+3986 y Fh(Operating)g(systems)109 4256 y Fg(All)-57 4605
+y Fh(See)g(also)109 4876 y Fa(MID)m(ASsetOption)p Fg(,)d
+Fa(MID)m(ASinit)p Fg(,)h Fa(MID)m(ASclose)p eop
+%%Page: 24 30
+24 29 bop 109 208 a Ff(CHAPTER)25 b(2.)56 b(CONFIGURA)-11
+b(TION,)26 b(INITIALIZA)-11 b(TION)25 b(AND)f(CONTR)l(OL)724
+b Fg(24)-57 473 y Fb(2.3.12)118 b(MID)l(ASwriteCon\002gRegistry)109
+744 y Fc(BOOL)50 b(MIDASwriteConfigRegistry\(DWORD)45
+b(key,)50 b(char)g(*subKey\);)109 1055 y Fg(Writes)24
+b(the)h(MID)l(AS)g(con\002guration)f(to)g(a)h(re)o(gistry)f(k)o(e)o(y)
+-6 b(.)-57 1404 y Fh(Input)109 1633 y(k)o(ey)49 b Fg(A)25
+b(currently)f(open)h(re)o(gistry)f(k)o(e)o(y)-6 b(,)23
+b(for)i(e)o(xample)f Fh(H)p 2104 1633 30 4 v 36 w(KEY)p
+2356 1633 V 35 w(CURRENT)p 2883 1633 V 37 w(USER)109
+1837 y(subK)n(ey)48 b Fg(The)22 b(name)h(of)f(the)h(subk)o(e)o(y)e(of)h
+Fh(k)o(ey)h Fg(where)g(the)g(con\002guration)f(will)f(be)i(written.)29
+b(The)o(y)22 b(k)o(e)o(y)g(does)353 1957 y(not)i(need)h(to)f(e)o(xist.)
+-57 2306 y Fh(Description)109 2577 y Fg(This)29 b(function)g(sa)n(v)o
+(es)g(the)h(current)g(MID)l(AS)h(con\002guration,)f(usually)f(entered)h
+(with)g Fa(MID)m(AScon\002g)e Fg(to)i(a)109 2697 y(re)o(gistry)23
+b(k)o(e)o(y)-6 b(.)30 b(The)25 b(con\002guration)f(can)h(then)g(be)g
+(read)g(with)f Fa(MID)m(ASr)l(eadCon\002gRe)l(gistry)p
+Fg(.)-57 3046 y Fh(Retur)o(n)h(v)o(alue)109 3317 y Fg(TR)l(UE)g(if)f
+(successful,)h(F)-7 b(ALSE)25 b(if)g(not.)-57 3666 y
+Fh(Operating)g(systems)109 3937 y Fg(W)l(in32)-57 4286
+y Fh(See)g(also)109 4556 y Fa(MID)m(AScon\002g)p Fg(,)e
+Fa(MID)m(ASr)l(eadCon\002gRe)l(gistry)p eop
+%%Page: 25 31
+25 30 bop 109 1220 a Fi(Chapter)51 b(3)109 1718 y(System)g(contr)l(ol)
+-57 2316 y Fe(3.1)142 b(Constants)109 2623 y Fg(This)19
+b(section)h(describes)g(all)g(constants)f(used)h(in)g(MID)l(AS)g
+(system)f(control.)29 b(The)o(y)20 b(are)h(grouped)e(according)109
+2743 y(to)24 b(the)h Fc(enum)f Fg(used)g(to)h(de\002ne)g(them.)1949
+5943 y(25)p eop
+%%Page: 26 32
+26 31 bop 109 208 a Ff(CHAPTER)25 b(3.)56 b(SYSTEM)25
+b(CONTR)l(OL)2187 b Fg(26)-57 473 y Fe(3.2)142 b(Data)35
+b(types)109 779 y Fg(This)24 b(section)g(describes)g(all)h(data)g
+(types)f(used)h(in)f(MID)l(AS)h(system)f(control.)p eop
+%%Page: 27 33
+27 32 bop 109 208 a Ff(CHAPTER)25 b(3.)56 b(SYSTEM)25
+b(CONTR)l(OL)2187 b Fg(27)-57 473 y Fe(3.3)142 b(Functions)109
+779 y Fg(This)31 b(section)g(describes)h(all)f(functions)g(a)n(v)n
+(ailable)g(for)h(MID)l(AS)g(system)f(control.)51 b(This)32
+b(includes)f(error)109 900 y(handling.)p eop
+%%Page: 28 34
+28 33 bop 109 208 a Ff(CHAPTER)25 b(3.)56 b(SYSTEM)25
+b(CONTR)l(OL)2187 b Fg(28)-57 473 y Fb(3.3.1)118 b(MID)l
+(ASallocateChannel)109 744 y Fc(DWORD)50 b
+(MIDASallocateChannel\(void\))109 1055 y Fg(Allocates)24
+b(a)h(single)f(Sound)g(De)n(vice)h(channel.)-57 1404
+y Fh(Input)109 1675 y Fg(None.)-57 2024 y Fh(Description)109
+2294 y Fg(This)j(function)h(allocates)g(a)g(single)f(Sound)i(De)n(vice)
+f(channel,)h(and)f(returns)g(its)f(number)-5 b(.)44 b(Sound)29
+b(De)n(vice)109 2415 y(are)36 b(used)g(for)h(all)e(sound)h(playback,)i
+(b)n(ut)e(most)f(functions)g(tak)o(e)h(care)h(of)f(allocating)f(and)h
+(deallocating)109 2535 y(channels)22 b(automatically)-6
+b(.)28 b(If)23 b(you)f(wish)f(to)h(play)g(a)h(sample)f(on)g(a)h
+(speci\002c)g(channel,)f(to)g(ensure)h(it)f(w)o(on')n(t)g(be)109
+2656 y(replaced)31 b(by)g(other)g(samples,)g(you')o(ll)f(need)h(to)g
+(pass)f Fa(MID)m(ASplaySample)f Fg(a)j(speci\002c)f(channel)g(number)l
+(,)109 2776 y(and)24 b(this)g(function)g(is)h(used)f(to)h(allocate)f
+(those)g(channels.)109 2979 y(Channels)k(allocated)g(with)f(this)h
+(function)f(need)i(to)f(be)g(deallocated)g(with)g Fa(MID)m(ASfr)l
+(eeChannel)p Fg(.)40 b(Before)109 3100 y(an)o(y)23 b(channels)h(can)g
+(be)g(allocated,)g(some)f(sound)g(channels)h(need)g(to)f(be)h(opened)g
+(with)f Fa(MID)m(ASopenChan-)109 3220 y(nels)p Fg(.)-57
+3569 y Fh(Retur)o(n)i(v)o(alue)109 3840 y Fg(Channel)g(number)f(for)h
+(the)g(allocated)f(channel,)h(or)g(MID)l(AS)p 2258 3840
+30 4 v 36 w(ILLEGAL)p 2715 3840 V 35 w(CHANNEL)g(if)g(f)o(ailed.)-57
+4189 y Fh(Operating)g(systems)109 4460 y Fg(All)-57 4809
+y Fh(See)g(also)109 5079 y Fa(MID)m(ASopenChannels)p
+Fg(,)e Fa(MID)m(ASfr)l(eeChannel)p Fg(.)p eop
+%%Page: 29 35
+29 34 bop 109 208 a Ff(CHAPTER)25 b(3.)56 b(SYSTEM)25
+b(CONTR)l(OL)2187 b Fg(29)-57 473 y Fb(3.3.2)118 b(MID)l
+(AScloseChannels)109 744 y Fc(BOOL)50 b(MIDAScloseChannels\(void\))109
+1055 y Fg(Closes)24 b(Sound)h(De)n(vice)f(channels)h(opened)f(with)h
+Fa(MID)m(ASopenChannels)p Fg(.)-57 1404 y Fh(Input)109
+1675 y Fg(None.)-57 2024 y Fh(Description)109 2294 y
+Fg(This)c(function)g(closes)h(Sound)g(De)n(vice)g(channels)g(that)f
+(were)i(opened)f(with)f Fa(MID)m(ASopenChannels)p Fg(.)29
+b(Note)109 2415 y(that)h(you)g(may)g Fh(not)h Fg(use)g(this)e(function)
+h(to)g(close)h(channels)f(that)g(were)h(opened)g(by)f
+Fa(MID)m(ASplayModule)109 2535 y Fg(\227)24 b Fa(MID)m(ASstopModule)f
+Fg(will)h(do)g(that)h(automatically)-6 b(.)-57 2884 y
+Fh(Retur)o(n)25 b(v)o(alue)109 3155 y Fg(TR)l(UE)g(if)f(successful,)h
+(F)-7 b(ALSE)25 b(if)g(not.)-57 3504 y Fh(Operating)g(systems)109
+3775 y Fg(All)-57 4124 y Fh(See)g(also)109 4394 y Fa(MID)m
+(ASopenChannels)p Fg(,)e Fa(MID)m(ASplayModule)p Fg(,)g
+Fa(MID)m(ASstopModule)p eop
+%%Page: 30 36
+30 35 bop 109 208 a Ff(CHAPTER)25 b(3.)56 b(SYSTEM)25
+b(CONTR)l(OL)2187 b Fg(30)-57 473 y Fb(3.3.3)118 b(MID)l(ASfr)n
+(eeChannel)109 744 y Fc(BOOL)50 b(MIDASfreeChannel\(DWORD)c(channel\))
+109 1055 y Fg(Deallocates)24 b(a)h(single)f(Sound)h(De)n(vice)f
+(channel.)-57 1404 y Fh(Input)109 1633 y(channel)50 b
+Fg(The)24 b(channel)h(number)f(to)h(deallocate,)g(from)f
+Fa(MID)m(ASallocateChannel)-57 1982 y Fh(Description)109
+2253 y Fg(This)37 b(function)f(deallocates)i(a)g(single)f(Sound)g(De)n
+(vice)g(channel)h(that)f(has)h(pre)n(viously)e(been)i(allocated)109
+2373 y(with)33 b Fa(MID)m(ASallocateChannel)p Fg(.)57
+b(An)o(y)33 b(sound)g(playback)h(on)g(the)g(channel)g(should)e(be)j
+(stopped)e(before)109 2494 y(deallocating)24 b(it.)-57
+2843 y Fh(Retur)o(n)h(v)o(alue)109 3113 y Fg(TR)l(UE)g(if)f
+(successful,)h(F)-7 b(ALSE)25 b(if)g(not.)-57 3463 y
+Fh(Operating)g(systems)109 3733 y Fg(All)-57 4082 y Fh(See)g(also)109
+4353 y Fa(MID)m(ASallocateChannel)p eop
+%%Page: 31 37
+31 36 bop 109 208 a Ff(CHAPTER)25 b(3.)56 b(SYSTEM)25
+b(CONTR)l(OL)2187 b Fg(31)-57 473 y Fb(3.3.4)118 b(MID)l(ASgetErr)n
+(orMessage)109 744 y Fc(char)50 b(*MIDASgetErrorMessage\(int)c
+(errorCode\))109 1055 y Fg(Gets)24 b(an)h(error)h(message)e
+(corresponding)g(to)g(an)h(error)h(code.)-57 1404 y Fh(Input)109
+1633 y(err)n(orCode)50 b Fg(The)25 b(error)g(code)g(from)g
+Fa(MID)m(ASg)o(etLastErr)l(or)-57 1982 y Fh(Description)109
+2253 y Fg(This)i(function)h(returns)g(a)h(te)o(xtual)e(error)i(message)
+f(corresponding)f(to)h(a)h(MID)l(AS)f(error)h(code.)42
+b(It)28 b(can)h(be)109 2373 y(used)20 b(for)h(displaying)e(an)i(error)g
+(message)f(to)h(the)f(user)-5 b(.)29 b(Use)21 b Fa(MID)m(ASg)o
+(etLastErr)l(or)d Fg(to)i(determine)g(the)h(error)109
+2494 y(code.)109 2697 y(This)j(function)g(can)h(be)g(called)g(at)f(an)o
+(y)h(point)e(after)j Fa(MID)m(ASstartup)c Fg(has)j(been)g(called.)-57
+3046 y Fh(Retur)o(n)g(v)o(alue)109 3317 y Fg(Error)g(message)f(string)g
+(corresponding)g(to)g(the)h(error)g(code.)-57 3666 y
+Fh(Operating)g(systems)109 3937 y Fg(All)-57 4286 y Fh(See)g(also)109
+4556 y Fa(MID)m(ASg)o(etLastErr)l(or)p eop
+%%Page: 32 38
+32 37 bop 109 208 a Ff(CHAPTER)25 b(3.)56 b(SYSTEM)25
+b(CONTR)l(OL)2187 b Fg(32)-57 473 y Fb(3.3.5)118 b(MID)l(ASgetLastErr)n
+(or)109 744 y Fc(int)50 b(MIDASgetLastError\(void\))109
+1055 y Fg(Gets)24 b(the)h(MID)l(AS)g(error)g(code)g(for)g(last)g(error)
+-5 b(.)-57 1404 y Fh(Input)109 1675 y Fg(None.)-57 2024
+y Fh(Description)109 2294 y Fg(This)28 b(function)g(can)h(be)g(used)g
+(to)f(read)h(the)g(error)h(code)f(for)g(most)e(recent)j(f)o(ailure.)43
+b(When)29 b(a)g(MID)l(AS)g(API)109 2415 y(function)g(returns)g(an)h
+(error)h(condition,)f(this)e(function)i(can)g(be)g(used)f(to)h
+(determine)f(the)h(actual)g(cause)g(of)109 2535 y(the)g(error)l(,)i
+(and)f(this)e(error)i(can)g(then)f(be)h(reported)f(to)g(the)g(user)h
+(or)f(ignored,)i(depending)d(on)h(the)h(kind)e(of)109
+2656 y(response)k(needed.)56 b(Use)34 b Fa(MID)m(ASg)o(etErr)l(orMessa)
+o(g)o(e)c Fg(to)j(get)h(a)f(te)o(xtual)g(message)g(corresponding)f(to)h
+(an)109 2776 y(error)25 b(code.)109 2979 y(This)f(function)g(can)h(be)g
+(called)g(at)f(an)o(y)h(point)e(after)j Fa(MID)m(ASstartup)c
+Fg(has)j(been)g(called.)-57 3328 y Fh(Retur)o(n)g(v)o(alue)109
+3599 y Fg(MID)l(AS)g(error)g(code)g(for)g(the)g(most)e(recent)j(error)
+-5 b(.)-57 3948 y Fh(Operating)25 b(systems)109 4219
+y Fg(All)-57 4568 y Fh(See)g(also)109 4839 y Fa(MID)m(ASg)o(etErr)l
+(orMessa)o(g)o(e)p eop
+%%Page: 33 39
+33 38 bop 109 208 a Ff(CHAPTER)25 b(3.)56 b(SYSTEM)25
+b(CONTR)l(OL)2187 b Fg(33)-57 473 y Fb(3.3.6)118 b(MID)l(ASgetV)-12
+b(ersionString)109 744 y Fc(char)50 b(*MIDASgetVersionString\(void\))
+109 1055 y Fg(Gets)24 b(the)h(current)g(MID)l(AS)g(v)o(ersion)f(as)g(a)
+i(string.)-57 1404 y Fh(Input)109 1675 y Fg(None.)-57
+2024 y Fh(Description)109 2294 y Fg(This)c(function)h(can)g(be)h(used)e
+(to)h(determine)g(the)g(MID)l(AS)g(v)o(ersion)g(being)f(loaded.)30
+b(It)23 b(returns)g(a)h(te)o(xt)e(string)109 2415 y(description)h(of)i
+(the)g(v)o(ersion.)k(V)-11 b(ersion)24 b(numbers)g(are)i(usually)e(of)g
+(form)h(\223x.y)-6 b(.z\224,)24 b(where)i(\223x\224)f(is)f(the)h(major)
+109 2535 y(v)o(ersion)g(number)l(,)i(\223y\224)g(minor)f(v)o(ersion)f
+(number)h(and)h(\223z\224)h(patch)e(le)n(v)o(el.)35 b(In)27
+b(some)f(occasions,)h(\223z\224)g(can)g(be)109 2656 y(replaced)k(with)f
+(a)i(te)o(xtual)d(message)i(such)f(as)h(\223rc1\224)h(for)f(Release)h
+(Candidate)f(1.)49 b(All)31 b(MID)l(AS)g(v)o(ersions)109
+2776 y(with)24 b(the)h(major)g(and)g(minor)g(v)o(ersion)f(numbers)g
+(equal)i(ha)n(v)o(e)f(a)g(compatible)f(DLL)h(API,)h(and)f(can)h(be)g
+(used)109 2896 y(interchangeably)-6 b(.)-57 3245 y Fh(Retur)o(n)25
+b(v)o(alue)109 3516 y Fg(MID)l(AS)g(Digital)e(Audio)h(System)h(v)o
+(ersion)e(number)h(as)h(a)h(string.)-57 3865 y Fh(Operating)f(systems)
+109 4136 y Fg(W)l(in32,)f(Linux)-57 4485 y Fh(See)h(also)p
+eop
+%%Page: 34 40
+34 39 bop 109 208 a Ff(CHAPTER)25 b(3.)56 b(SYSTEM)25
+b(CONTR)l(OL)2187 b Fg(34)-57 473 y Fb(3.3.7)118 b(MID)l
+(ASopenChannels)109 744 y Fc(BOOL)50 b(MIDASopenChannels\(int)d
+(numChans\))109 1055 y Fg(Opens)24 b(Sound)h(De)n(vice)f(channels)h
+(for)g(sound)f(and)g(music)g(output.)-57 1404 y Fh(Input)109
+1633 y(numChans)49 b Fg(Number)25 b(of)g(channels)f(to)h(open)-57
+1982 y Fh(Description)109 2253 y Fg(This)31 b(function)h(opens)g(a)h
+(speci\002ed)g(number)f(of)h(channels)f(for)h(digital)e(sound)g(and)i
+(music)f(output.)52 b(The)109 2373 y(channels)24 b(opened)h(can)g(be)g
+(used)f(for)i(playing)d(streams,)h(samples)g(and)h(modules.)109
+2577 y(If)d(this)g(function)f(has)i(not)e(been)i(called)f(before)h
+Fa(MID)m(ASplayModule)e Fg(is)h(called,)h Fa(MID)m(ASplayModule)d
+Fg(will)109 2697 y(open)26 b(the)g(channels)g(it)g(needs)h(for)f
+(module)g(playback.)35 b(Ho)n(we)n(v)o(er)l(,)26 b(if)g(this)g
+(function)f(has)h(been)h(called,)g(b)n(ut)109 2817 y(the)h(number)g(of)
+g(a)n(v)n(ailable)g(channels)g(is)g(inadequate)g(for)h(the)f(module,)g
+Fa(MID)m(ASplayModule)f Fg(will)g(return)109 2938 y(an)e(error)g(and)g
+(refuse)g(to)g(play)f(the)h(module.)-57 3287 y Fh(Retur)o(n)g(v)o(alue)
+109 3558 y Fg(TR)l(UE)g(if)f(successful,)h(F)-7 b(ALSE)25
+b(if)g(not.)-57 3907 y Fh(Operating)g(systems)109 4177
+y Fg(All)-57 4526 y Fh(See)g(also)109 4797 y Fa(MID)m(AScloseChannels)p
+Fg(,)e Fa(MID)m(ASplayModule)p eop
+%%Page: 35 41
+35 40 bop 109 208 a Ff(CHAPTER)25 b(3.)56 b(SYSTEM)25
+b(CONTR)l(OL)2187 b Fg(35)-57 473 y Fb(3.3.8)118 b(MID)l(ASpoll)109
+744 y Fc(BOOL)50 b(MIDASpoll\(void\))109 1055 y Fg(Polls)24
+b(the)h(MID)l(AS)f(sound)g(and)h(music)f(player)-5 b(.)-57
+1404 y Fh(Input)109 1675 y Fg(None.)-57 2024 y Fh(Description)109
+2294 y Fg(This)33 b(function)g(can)i(be)f(used)g(to)g(poll)f(MID)l(AS)h
+(sound)g(and)g(music)f(player)h(manually)-6 b(.)57 b(It)35
+b(plays)e(music)109 2415 y(forw)o(ard,)40 b(mix)o(es)c(sound)g(data,)41
+b(and)c(sends)f(it)h(to)g(output.)67 b(When)37 b(using)f(manual)g
+(polling,)j(mak)o(e)e(sure)109 2535 y(you)27 b(call)h
+Fa(MID)m(ASpoll)e Fg(often)i(enough)f(to)g(mak)o(e)h(sure)g(there)g
+(are)h(no)e(breaks)h(in)g(sound)f(output)f(\227)i(at)g(least)109
+2656 y(tw)o(o)k(times)f(during)h(b)n(uf)n(fer)h(length,)g(preferably)g
+(four)g(times)e(or)i(more.)53 b(Under)33 b(multitasking)d(operating)109
+2776 y(systems)22 b(such)i(as)g(W)l(in32)f(and)g(Linux,)g(this)g(may)h
+(be)g(dif)n(\002cult,)f(so)g(v)o(ery)h(short)f(b)n(uf)n(fer)h(sizes)f
+(can')n(t)i(be)f(used)109 2896 y(reliably)-6 b(.)109
+3100 y(Also)38 b(note)g(that)g Fh(curr)n(ently)i(this)f(function)h(is)e
+(not)h(a)n(v)o(ailable)e(under)j(MS-DOS.)f Fg(Under)g(MS-DOS,)109
+3220 y(playback)24 b(is)h(al)o(w)o(ays)f(done)h(in)f(background)g
+(using)g(the)h(system)e(timer)i(\(IRQ)g(0\).)-57 3569
+y Fh(Retur)o(n)g(v)o(alue)109 3840 y Fg(TR)l(UE)g(if)f(successful,)h(F)
+-7 b(ALSE)25 b(if)g(not.)-57 4189 y Fh(Operating)g(systems)109
+4460 y Fg(W)l(in32,)f(Linux)-57 4809 y Fh(See)h(also)109
+5079 y Fa(MID)m(ASstartBac)n(kgr)l(oundPlay)p Fg(,)c
+Fa(MID)m(ASstopBac)n(kgr)l(oundPlay)p eop
+%%Page: 36 42
+36 41 bop 109 208 a Ff(CHAPTER)25 b(3.)56 b(SYSTEM)25
+b(CONTR)l(OL)2187 b Fg(36)-57 473 y Fb(3.3.9)118 b(MID)l(ASr)n(emo)o(v)
+o(eT)n(imerCallbacks)109 744 y Fc(BOOL)50 b
+(MIDASremoveTimerCallbacks\(void\))109 1055 y Fg(Remo)o(v)o(es)23
+b(the)i(user)g(timer)f(callbacks.)-57 1404 y Fh(Input)109
+1675 y Fg(None.)-57 2024 y Fh(Description)109 2294 y
+Fg(This)19 b(function)g(remo)o(v)o(es)g(the)h(user)h(timer)e(callbacks)
+h(set)g(with)g Fa(MID)m(ASsetT)-5 b(imerCallbac)n(ks)p
+Fg(.)27 b(The)20 b(callback)109 2415 y(functions)g(will)g(no)h(longer)g
+(be)g(called.)29 b(This)21 b(function)f Fh(may)h(not)h
+Fg(be)f(called)g(if)g Fa(MID)m(ASsetT)-5 b(imerCallbac)n(ks)109
+2535 y Fg(has)24 b(not)h(been)g(called)f(before.)109
+2739 y(It)35 b(is)g(not)g(necessary)g(to)g(call)h(this)e(function)h
+(without)f(e)o(xiting)g(e)n(v)o(en)g(if)h(the)h(callbacks)f(ha)n(v)o(e)
+g(been)h(used)109 2859 y(\227)f Fa(MID)m(ASclose)g Fg(will)f(remo)o(v)o
+(e)h(the)g(callbacks)h(automatically)-6 b(.)61 b(On)35
+b(the)h(other)f(hand,)j(if)e(the)f(callback)109 2979
+y(functions)d(or)i(rate)g(are)g(changed)g(with)f Fa(MID)m(ASsetT)-5
+b(imerCallbac)n(ks)p Fg(,)33 b(this)g(function)g(must)f(be)i(called)g
+(to)109 3100 y(remo)o(v)o(e)23 b(the)i(pre)n(vious)f(ones)g(\002rst.)
+-57 3449 y Fh(Retur)o(n)h(v)o(alue)109 3719 y Fg(TR)l(UE)g(if)f
+(successful,)h(F)-7 b(ALSE)25 b(if)g(not.)-57 4069 y
+Fh(Operating)g(systems)109 4339 y Fg(MS-DOS)-57 4688
+y Fh(See)g(also)109 4959 y Fa(MID)m(ASsetT)-5 b(imerCallbac)n(ks)p
+eop
+%%Page: 37 43
+37 42 bop 109 208 a Ff(CHAPTER)25 b(3.)56 b(SYSTEM)25
+b(CONTR)l(OL)2187 b Fg(37)-57 473 y Fb(3.3.10)118 b(MID)l(ASr)n(esume)
+109 744 y Fc(BOOL)50 b(MIDASresume\(void\))109 1055 y
+Fg(Resumes)24 b(MID)l(AS)h(sound)f(playback.)-57 1404
+y Fh(Input)109 1675 y Fg(None.)-57 2024 y Fh(Description)109
+2294 y Fg(This)34 b(function)g(re-allocates)h(the)g(system)f(audio)h
+(de)n(vice)f(to)h(MID)l(AS,)g(and)g(resumes)g(sound)f(playback,)109
+2415 y(after)24 b(being)f(suspended)g(with)g Fa(MID)m(ASsuspend)p
+Fg(.)28 b(See)d Fa(MID)m(ASsuspend)d Fg(documentation)g(for)i(more)f
+(infor)n(-)109 2535 y(mation)g(about)i(suspending)e(MID)l(AS.)109
+2739 y(Note)34 b(that)f(this)h(function)f(may)h(f)o(ail,)i(if)e
+(another)g(application)f(has)h(captured)g(the)g(sound)g(output)f(de)n
+(vice)109 2859 y(while)24 b(MID)l(AS)h(w)o(as)g(suspended.)-57
+3208 y Fh(Retur)o(n)g(v)o(alue)109 3479 y Fg(TR)l(UE)g(if)f
+(successful,)h(F)-7 b(ALSE)25 b(if)g(not.)-57 3828 y
+Fh(Operating)g(systems)109 4098 y Fg(W)l(in32)-57 4448
+y Fh(See)g(also)109 4718 y Fa(MID)m(ASsuspend)p eop
+%%Page: 38 44
+38 43 bop 109 208 a Ff(CHAPTER)25 b(3.)56 b(SYSTEM)25
+b(CONTR)l(OL)2187 b Fg(38)-57 473 y Fb(3.3.11)118 b(MID)l
+(ASsetAmpli\002cation)109 744 y Fc(BOOL)50 b
+(MIDASsetAmplification\(DWORD)45 b(amplification\))109
+1055 y Fg(Sets)25 b(sound)f(output)f(ampli\002cation)h(le)n(v)o(el.)-57
+1404 y Fh(Input)109 1633 y(ampli\002cation)49 b Fg(Ne)n(w)24
+b(output)g(ampli\002cation)f(le)n(v)o(el)-57 1982 y Fh(Description)109
+2253 y Fg(This)32 b(function)g(changes)g(the)h(output)e
+(ampli\002cation)h(le)n(v)o(el.)53 b(Ampli\002cation)32
+b(can)h(be)g(used)f(to)h(boost)e(the)109 2373 y(v)n(olume)e(of)h(the)f
+(music,)i(if)f(the)f(sounds)g(played)h(are)g(unusually)f(quiet,)h(or)g
+(lo)n(wer)g(it)f(if)h(the)g(output)f(seems)109 2494 y(distorted..)38
+b(The)28 b(ampli\002cation)f(le)n(v)o(el)f(is)i(gi)n(v)o(en)e(as)i(a)g
+(percentage)h(\227)e(100)h(stands)f(for)h(no)f(ampli\002cation,)109
+2614 y(200)d(for)h(double)f(v)n(olume,)g(400)g(for)h(quadruple)g(v)n
+(olue,)f(50)g(for)h(half)g(v)n(olume)f(etc.)109 2817
+y(MID)l(AS)g(has)f(some)h(b)n(uild-in)e(ampli\002cation,)h(b)n(ut)g
+(the)h(def)o(ault)g(ampli\002cation)f(is)g(designed)g(for)h(situations)
+109 2938 y(where)34 b(most)e(channels)h(ha)n(v)o(e)g(data)h(played)f
+(at)g(moderate)h(v)n(olumes)e(\(e)o(g.)56 b(module)33
+b(playback\).)56 b(If)34 b(a)g(lot)109 3058 y(of)26 b(the)g(channels)f
+(are)i(empty)-6 b(,)25 b(or)h(sounds)f(are)i(played)f(at)g(lo)n(w)f(v)n
+(olumes,)g(adding)g(ampli\002cation)g(with)g(this)109
+3179 y(function)g(can)h(help)f(to)g(get)h(the)g(total)f(sound)g(output)
+f(at)i(a)g(reasonable)g(le)n(v)o(el.)32 b(The)26 b(ampli\002cation)f
+(set)g(with)109 3299 y(this)f(function)f(acts)i(on)g(top)f(of)h(the)g
+(def)o(ault)f(MID)l(AS)h(ampli\002cation,)f(so)g(nothing)g(will)f(be)i
+(o)o(v)o(erridden.)109 3502 y(This)f(function)g(can)h(be)g(called)g(at)
+f(an)o(y)h(point)e(after)j Fa(MID)m(ASstartup)p Fg(.)-57
+3851 y Fh(Retur)o(n)f(v)o(alue)109 4122 y Fg(TR)l(UE)g(if)f
+(successful,)h(F)-7 b(ALSE)25 b(if)g(not.)-57 4471 y
+Fh(Operating)g(systems)109 4742 y Fg(All)-57 5091 y Fh(See)g(also)p
+eop
+%%Page: 39 45
+39 44 bop 109 208 a Ff(CHAPTER)25 b(3.)56 b(SYSTEM)25
+b(CONTR)l(OL)2187 b Fg(39)-57 473 y Fb(3.3.12)118 b(MID)l(ASsetT)n
+(imerCallbacks)109 744 y Fc(BOOL)50 b(MIDASsetTimerCallbacks\(DWORD)45
+b(rate,)50 b(BOOL)g(displaySync,)312 864 y(void)g(\(MIDAS_CALL)f
+(*preVR\)\(\),)g(void)h(\(MIDAS_CALL)e(*immVR\)\(\),)312
+984 y(void)i(\(MIDAS_CALL)f(*inVR\)\(\)\);)109 1296 y
+Fg(Sets)25 b(the)f(user)h(timer)f(callback)h(functions)f(and)h(their)f
+(rate.)-57 1645 y Fh(Input)109 1874 y(rate)49 b Fg(T)m(imer)24
+b(callback)h(rate,)g(in)f(milliHertz)g(\(1000*Hz,)g(100Hz)g(becomes)h
+(100000)f(etc\))109 2077 y Fh(displaySync)49 b Fg(TR)l(UE)25
+b(if)g(the)f(callbacks)h(should)f(be)g(synchronized)h(to)f(display)g
+(refresh,)h(F)-7 b(ALSE)25 b(if)g(not.)109 2281 y Fh(pr)n(eVR)49
+b Fg(preVR)26 b(callback)f(function)f(pointer)g(or)h(NULL)109
+2484 y Fh(immVR)48 b Fg(immVR)24 b(callback)h(function)f(pointer)g(or)h
+(NULL)109 2688 y Fh(inVR)48 b Fg(inVR)25 b(callback)g(function)f
+(pointer)g(or)h(NULL)-57 3037 y Fh(Description)109 3307
+y Fg(This)31 b(function)g(sets)g(the)h(user)g(timer)g(callback)g
+(functions)e(and)i(their)g(call)g(rate.)52 b(The)32 b(functions)f(will)
+g(be)109 3428 y(called)26 b(periodically)g(by)h(the)g(MID)l(AS)f(timer)
+h(interrupt,)f(one)h(after)g(another)-5 b(.)37 b(An)o(y)26
+b(of)g(the)h(callback)g(func-)109 3548 y(tion)d(pointers)f(may)i(be)g
+(set)f(to)h(NULL)f(\227)h(the)g(callback)f(is)h(then)f(ignored.)109
+3751 y(If)j Fh(displaySync)f Fg(is)g(TR)l(UE,)h(the)f(timer)g(system)f
+(attempts)h(to)g(synchronize)g(the)g(callbacks)g(to)g(the)g(display)109
+3872 y(refresh.)42 b(In)28 b(that)g(case,)i Fh(pr)n(eVR)g
+Fg(is)e(called)g(just)f(before)i(the)g(V)-11 b(ertical)28
+b(Retrace)i(starts,)f Fh(immVR)f Fg(immedi-)109 3992
+y(ately)g(after)h(it)e(has)h(started,)h(and)f Fh(inVR)h
+Fg(later)f(during)f(retrace.)42 b Fh(pr)n(eVR)30 b Fg(can)e(then)g(be)h
+(used)e(for)i(changing)109 4113 y(the)f(display)f(start)h(address,)h
+(for)f(e)o(xample.)41 b(If)29 b(display)e(synchronization)g(is)g(used,)
+i Fh(rate)g Fg(has)f(to)g(be)h(set)f(to)109 4233 y(the)c(v)n(alue)h
+(returned)f(by)h Fa(MID)m(ASg)o(etDisplayRefr)l(eshRate)p
+Fg(.)109 4436 y(If)h Fh(displaySync)h Fg(is)e(F)-7 b(ALSE,)26
+b(or)g(the)g(timer)g(system)e(is)i(unable)g(to)f(synchronize)h(to)f
+(display)g(refresh)i(\(run-)109 4557 y(ning)22 b(under)h(W)l(in95,)f
+(for)i(e)o(xample\),)e(the)h(functions)f(are)i(simply)d(called)i(one)g
+(after)h(another:)29 b(\002rst)23 b Fh(pr)n(eVR)p Fg(,)109
+4677 y(then)i Fh(immVR)g Fg(and)h(last)f Fh(inVR)p Fg(.)h(Note)f(that)g
+(display)g(synchronization)f(is)i(not)f(al)o(w)o(ays)g(possible,)g(and)
+g(this)109 4798 y(may)f(happen)h(e)n(v)o(en)f(if)h Fh(displaySync)g
+Fg(is)f(set)h(to)f(1.)109 5001 y(In)30 b(either)g(case,)i(both)d(the)h
+Fh(pr)n(eVR)h Fg(and)f Fh(immVR)g Fg(functions)f(ha)n(v)o(e)g(to)h(be)g
+(k)o(ept)g(as)g(short)g(as)g(possible,)g(to)109 5121
+y(pre)n(v)o(ent)25 b(timing)g(problems.)34 b(The)o(y)26
+b(should)f(not)h(do)g(more)g(than)g(update)h(a)f(fe)n(w)h(counters,)f
+(or)h(set)f(a)h(couple)109 5242 y(of)36 b(hardw)o(are)h(re)o(gisters.)
+64 b Fh(inVR)36 b Fg(can)h(tak)o(e)f(some)n(what)f(longer)h(time,)i
+(and)e(be)h(used)f(for)l(,)j(for)d(e)o(xample,)109 5362
+y(setting)22 b(the)h(V)o(GA)g(palette.)30 b(It)23 b(should)f(not)h(tak)
+o(e)g(more)g(than)g(one)g(quarter)h(of)f(the)h(time)e(between)h
+(callbacks)109 5482 y(though.)p eop
+%%Page: 40 46
+40 45 bop 109 208 a Ff(CHAPTER)25 b(3.)56 b(SYSTEM)25
+b(CONTR)l(OL)2187 b Fg(40)109 473 y(The)30 b(most)f(common)f(use)i(for)
+g(the)g(timer)g(callback)g(functions)f(is)g(to)h(use)f(them)h(for)g
+(controlling)e(the)i(pro-)109 593 y(gram)37 b(speed.)70
+b(There)38 b(one)g(of)g(the)g(callbacks,)i(usually)d
+Fh(pr)n(eVR)i Fg(is)e(simply)g(used)g(for)h(incrementing)f(a)109
+714 y(counter)-5 b(.)38 b(This)27 b(counter)h(then)f(can)h(be)g(used)g
+(to)f(determine)g(when)h(to)f(display)g(a)h(ne)n(w)f(frame)h(of)g
+(graphics,)109 834 y(for)d(e)o(xample,)f(or)g(ho)n(w)g(man)o(y)g
+(frames)h(of)g(mo)o(v)o(ement)e(needs)h(to)h(be)g(skipped)f(to)g
+(maintain)g(correct)h(speed.)109 1037 y(Note)36 b(that)g(this)g
+(function)g(may)g(cause)h(a)g(small)e(break)i(to)f(music)g(playback)h
+(with)e(some)h(sound)g(cards.)109 1158 y(Therefore)c(it)f(should)f(not)
+g(be)i(called)f(more)g(often)h(than)e(necessary)-6 b(.)51
+b(Also,)32 b(if)f(the)g(application)f(changes)109 1278
+y(display)f(modes,)i(an)o(y)e(display-synchronized)g(timer)h(callbacks)
+g Fh(must)g Fg(be)h(resetted,)g(and)f(a)h(separate)g(re-)109
+1399 y(fresh)25 b(rate)g(must)f(be)h(read)g(for)g(each)g(display)f
+(mode)g(used.)109 1602 y Fc(MIDAS)p 370 1602 30 4 v 35
+w(CALL)d Fg(is)g(the)g(calling)g(con)l(v)o(ention)f(used)h(for)h(the)g
+(callback)f(functions)g(\227)p 2966 1602 V 3002 1602
+V 93 w Fc(cdecl)g Fg(for)h(W)-8 b(atcom)21 b(C,)109 1722
+y(empty)27 b(\(def)o(ault\))h(for)g(DJGPP)-11 b(.)28
+b(As)g(the)g(functions)f(will)g(be)h(called)g(from)g(an)g(interrupt,)f
+(the)h(module)f(con-)109 1843 y(taining)20 b(the)h(callback)h
+(functions)e(must)g(be)i(compiled)e(with)h(the)g(\223SS==DS\224)i
+(setting)e(disabled)f(\(command)109 1963 y(line)k(ar)n(gument)g
+(\223-zu\224)i(for)f(W)-8 b(atcom)25 b(C,)g(def)o(ault)f(setting)g(for)
+h(DJGPP\).)-57 2312 y Fh(Retur)o(n)g(v)o(alue)109 2583
+y Fg(TR)l(UE)g(if)f(successful,)h(F)-7 b(ALSE)25 b(if)g(not.)-57
+2932 y Fh(Operating)g(systems)109 3203 y Fg(MS-DOS)-57
+3552 y Fh(See)g(also)109 3822 y Fa(MID)m(ASr)l(emo)o(veT)-5
+b(imerCallbac)n(ks)p Fg(,)23 b Fa(MID)m(ASg)o(etDisplayRefr)l(eshRate)p
+eop
+%%Page: 41 47
+41 46 bop 109 208 a Ff(CHAPTER)25 b(3.)56 b(SYSTEM)25
+b(CONTR)l(OL)2187 b Fg(41)-57 473 y Fb(3.3.13)118 b(MID)l
+(ASstartBackgr)n(oundPlay)109 744 y Fc(BOOL)50 b
+(MIDASstartBackgroundPlay\(DWORD)45 b(pollRate\))109
+1055 y Fg(Starts)25 b(playing)e(music)h(and)h(sound)f(in)g(the)h
+(background.)-57 1404 y Fh(Input)109 1633 y(pollRate)48
+b Fg(Polling)24 b(rate)h(\(number)g(of)g(polls)e(per)i(second\),)g(0)g
+(for)g(def)o(ault)-57 1982 y Fh(Description)109 2253
+y Fg(This)30 b(function)g(starts)g(playing)g(sound)f(and)i(music)f(in)g
+(the)h(background.)48 b Fh(pollRate)31 b Fg(controls)f(the)g(tar)n(get)
+109 2373 y(polling)d(rate)j(\227)e(number)h(of)g(polls)f(per)h(second.)
+43 b(Polling)28 b(might)g(not)g(be)h(done)g(at)g(actually)f(the)h(set)g
+(rate,)109 2494 y(although)j(usually)h(it)g(will)g(be)h(f)o(aster)-5
+b(.)57 b(Under)33 b(W)l(in32)g(and)h(Linux,)h(a)f(ne)n(w)f(thread)h
+(will)f(be)h(created)g(for)109 2614 y(playing.)68 b Fh(Under)39
+b(MS-DOS)g(this)e(function)j(is)d(curr)n(ently)i(ignor)n(ed,)j(and)d
+(backgr)n(ound)h(playback)109 2734 y(starts)24 b(immediately)h(when)h
+(MID)m(AS)e(is)h(initialized.)-57 3084 y(Retur)o(n)g(v)o(alue)109
+3354 y Fg(TR)l(UE)g(if)f(successful,)h(F)-7 b(ALSE)25
+b(if)g(not.)-57 3703 y Fh(Operating)g(systems)109 3974
+y Fg(All,)f(b)n(ut)g(see)h(MS-DOS)g(note)g(abo)o(v)o(e.)-57
+4323 y Fh(See)g(also)109 4594 y Fa(MID)m(ASstopBac)n(kgr)l(oundPlay)p
+Fg(,)c Fa(MID)m(ASpoll)p eop
+%%Page: 42 48
+42 47 bop 109 208 a Ff(CHAPTER)25 b(3.)56 b(SYSTEM)25
+b(CONTR)l(OL)2187 b Fg(42)-57 473 y Fb(3.3.14)118 b(MID)l(ASstopBackgr)
+n(oundPlay)109 744 y Fc(BOOL)50 b(MIDASstopBackgroundPlay\(void\))109
+1055 y Fg(Stops)24 b(playing)g(sound)g(and)g(music)g(in)h(the)f
+(background.)-57 1404 y Fh(Input)109 1675 y Fg(None.)-57
+2024 y Fh(Description)109 2294 y Fg(This)41 b(function)h(stops)f(music)
+h(and)g(sound)g(background)g(playback)g(that)g(has)g(been)h(started)f
+(with)g Fa(MI-)109 2415 y(D)m(ASstartBac)n(kgr)l(oundPlay)p
+Fg(.)34 b(Under)27 b(W)l(in32)g(and)g(Linux,)g(this)g(function)f(also)h
+(destro)o(ys)g(the)g(thread)g(cre-)109 2535 y(ated)38
+b(for)h(playback.)70 b Fh(Under)40 b(MS-DOS)f(this)f(function)i(is)e
+(curr)n(ently)i(ignor)n(ed,)i(and)d(backgr)n(ound)109
+2656 y(playback)25 b(starts)g(immediately)g(when)g(MID)m(AS)g(is)f
+(initialized.)109 2859 y Fg(If)39 b(background)g(playback)f(has)h(been)
+g(started)g(with)f Fa(MID)m(ASstartBac)n(kgr)l(oundPlay)p
+Fg(,)h(this)f(function)g(bf)109 2979 y(must)23 b(be)i(called)g(before)g
+(the)g(program)g(e)o(xits.)-57 3328 y Fh(Retur)o(n)g(v)o(alue)109
+3599 y Fg(TR)l(UE)g(if)f(successful,)h(F)-7 b(ALSE)25
+b(if)g(not.)-57 3948 y Fh(Operating)g(systems)109 4219
+y Fg(All,)f(b)n(ut)g(see)h(MS-DOS)g(note)g(abo)o(v)o(e.)-57
+4568 y Fh(See)g(also)109 4839 y Fa(MID)m(ASstartBac)n(kgr)l(oundPlay)p
+Fg(,)c Fa(MID)m(ASpoll)p eop
+%%Page: 43 49
+43 48 bop 109 208 a Ff(CHAPTER)25 b(3.)56 b(SYSTEM)25
+b(CONTR)l(OL)2187 b Fg(43)-57 473 y Fb(3.3.15)118 b(MID)l(ASsuspend)109
+744 y Fc(BOOL)50 b(MIDASsuspend\(void\))109 1055 y Fg(Suspends)24
+b(MID)l(AS)h(Digital)f(Audio)g(System.)-57 1404 y Fh(Input)109
+1675 y Fg(None.)-57 2024 y Fh(Description)109 2294 y
+Fg(This)30 b(function)h(suspends)f(all)h(MID)l(AS)g(Digital)g(Audio)f
+(System)h(output,)h(and)f(releases)h(the)f(system)f(au-)109
+2415 y(dio)f(de)n(vice)g(to)g(other)g(programs.)44 b(Playback)30
+b(can)g(be)g(resumed)f(with)g Fa(MID)m(ASr)l(esume)p
+Fg(.)44 b(Suspending)28 b(and)109 2535 y(resuming)23
+b(MID)l(AS)i(can)h(be)f(used)f(to)h(change)g(some)f(of)h(the)g(initial)
+e(con\002guration)i(options)e(\(set)i(with)f Fa(MI-)109
+2656 y(D)m(ASsetOption)p Fg(\))19 b(on)j(the)f(\003y)-6
+b(.)30 b(In)22 b(particular)l(,)g(the)f(DirectSound)h(mode)f(and)h
+(DirectSound)f(windo)n(w)g(handle)109 2776 y(can)33 b(be)g(changed)g
+(while)f(MID)l(AS)h(is)g(suspended,)h(and)f(the)f(ne)n(w)h(v)n(alues)f
+(tak)o(e)h(ef)n(fect)g(when)g(MDIAS)g(is)109 2896 y(restarted.)d(Buf)n
+(fer)23 b(size)f(can)h(also)f(be)h(changed,)g(although)e(this)h(is)g
+(not)g(recommended.)29 b(Output)21 b(mode)h(and)109 3017
+y(mixing)h(rate)i(cannot)g(be)g(changed)f(without)g(completely)f
+(uninitializing)g(MID)l(AS.)109 3220 y(While)i(MID)l(AS)h(is)g
+(suspended,)f(all)h(MID)l(AS)g(functions)e(can)j(be)f(called)g
+(normally)e(\227)i(the)g(sound)f(simply)109 3340 y(is)20
+b(not)g(played.)29 b(Also,)20 b(stream,)h(module)f(and)g(sample)g
+(playback)h(positions)d(do)i(not)g(change)h(while)f(MID)l(AS)109
+3461 y(is)k(suspended.)109 3664 y(Note)32 b(that)h Fa(MID)m(ASsuspend)e
+Fg(and)i Fa(MID)m(ASr)l(esume)f Fg(are)i(only)e(a)n(v)n(ailable)g(in)g
+(W)l(in32)h(systems)e(at)i(the)g(mo-)109 3785 y(ment.)-57
+4134 y Fh(Retur)o(n)25 b(v)o(alue)109 4404 y Fg(TR)l(UE)g(if)f
+(successful,)h(F)-7 b(ALSE)25 b(if)g(not.)-57 4754 y
+Fh(Operating)g(systems)109 5024 y Fg(W)l(in32)-57 5373
+y Fh(See)g(also)109 5644 y Fa(MID)m(ASr)l(esume)p eop
+%%Page: 44 50
+44 49 bop 109 1220 a Fi(Chapter)51 b(4)109 1718 y(Module)g(playback)-57
+2316 y Fe(4.1)142 b(Constants)109 2623 y Fg(This)31 b(section)h
+(describes)h(all)f(constants)f(used)i(in)f(MID)l(AS)g(module)g
+(playback.)53 b(The)o(y)32 b(are)h(grouped)g(ac-)109
+2743 y(cording)24 b(to)g(the)h Fc(enum)f Fg(used)h(to)f(de\002ne)h
+(them.)1949 5943 y(44)p eop
+%%Page: 45 51
+45 50 bop 109 208 a Ff(CHAPTER)25 b(4.)56 b(MODULE)24
+b(PLA)-10 b(YB)m(A)l(CK)2101 b Fg(45)-57 473 y Fe(4.2)142
+b(Data)35 b(types)109 779 y Fg(This)24 b(section)g(describes)g(all)h
+(data)g(types)f(used)h(in)f(MID)l(AS)h(module)f(playback.)p
+eop
+%%Page: 46 52
+46 51 bop 109 208 a Ff(CHAPTER)25 b(4.)56 b(MODULE)24
+b(PLA)-10 b(YB)m(A)l(CK)2101 b Fg(46)-57 473 y Fb(4.2.1)118
+b(MID)l(ASinstrumentInf)m(o)109 744 y Fc(typedef)49 b(struct)109
+864 y({)312 984 y(char)406 b(instName[32];)109 1105 y(})50
+b(MIDASinstrumentInfo;)109 1416 y Fg(Instrument)23 b(information)h
+(structure.)-57 1765 y Fh(Members)109 1994 y(instName)48
+b Fg(Instrument)24 b(name,)h(an)g(ASCIIZ)g(string)-57
+2343 y Fh(Description)109 2614 y Fg(This)d(structure)g(is)h(used)f
+(with)g(the)h(function)f Fa(MID)m(ASg)o(etInstrumentInfo)e
+Fg(to)j(query)f(information)g(about)g(an)109 2734 y(instrument)29
+b(in)i(a)g(module.)48 b Fa(MID)m(ASg)o(etInstrumentInfo)28
+b Fg(\002lls)j(a)g Fa(MID)m(ASinstrumentInfo)d Fg(structure)j(with)109
+2855 y(the)24 b(information.)p eop
+%%Page: 47 53
+47 52 bop 109 208 a Ff(CHAPTER)25 b(4.)56 b(MODULE)24
+b(PLA)-10 b(YB)m(A)l(CK)2101 b Fg(47)-57 473 y Fb(4.2.2)118
+b(MID)l(ASmodule)109 744 y Fc(typedef)49 b(...)h(MIDASmodule;)-57
+1093 y Fh(Description)109 1363 y Fa(MID)m(ASmodule)23
+b Fg(is)i(a)g(module)e(handle)i(that)f(de\002nes)h(a)h(module)d(that)i
+(has)f(been)h(loaded)g(into)f(memory)-6 b(.)p eop
+%%Page: 48 54
+48 53 bop 109 208 a Ff(CHAPTER)25 b(4.)56 b(MODULE)24
+b(PLA)-10 b(YB)m(A)l(CK)2101 b Fg(48)-57 473 y Fb(4.2.3)118
+b(MID)l(ASmoduleInf)m(o)109 744 y Fc(typedef)49 b(struct)109
+864 y({)312 984 y(char)406 b(songName[32];)312 1105 y(unsigned)202
+b(songLength;)312 1225 y(unsigned)g(numPatterns;)312
+1345 y(unsigned)g(numInstruments;)312 1466 y(unsigned)g(numChannels;)
+109 1586 y(})50 b(MIDASmoduleInfo;)109 1898 y Fg(Module)24
+b(information)f(structure.)-57 2247 y Fh(Members)109
+2476 y(songName)48 b Fg(Module)24 b(song)g(name,)h(an)g(ASCIIZ)h
+(string)109 2679 y Fh(songLength)50 b Fg(Module)24 b(song)g(length)g
+(in)g(number)g(of)h(positions)109 2883 y Fh(numP)o(atter)o(ns)49
+b Fg(Number)25 b(of)g(patterns)f(in)g(module)109 3086
+y Fh(numInstruments)50 b Fg(Number)25 b(of)g(instruments)e(in)h(module)
+109 3289 y Fh(numChannels)50 b Fg(The)25 b(number)f(of)h(channels)f
+(the)h(module)f(uses)-57 3639 y Fh(Description)109 3909
+y Fg(This)32 b(structure)i(is)f(used)g(with)f(the)i(function)e
+Fa(MID)m(ASg)o(etModuleInfo)g Fg(to)h(query)g(information)f(about)h(an)
+109 4030 y(module.)c Fa(MID)m(ASg)o(etModuleInfo)23 b
+Fg(\002lls)i(a)g Fa(MID)m(ASmoduleInfo)e Fg(structure)h(with)g(the)h
+(information.)p eop
+%%Page: 49 55
+49 54 bop 109 208 a Ff(CHAPTER)25 b(4.)56 b(MODULE)24
+b(PLA)-10 b(YB)m(A)l(CK)2101 b Fg(49)-57 473 y Fb(4.2.4)118
+b(MID)l(ASmodulePlayHandle)109 744 y Fc(typedef)49 b(...)h
+(MIDASmodulePlayHandle;)-57 1093 y Fh(Description)109
+1363 y Fa(MID)m(ASmodulePlayHandle)17 b Fg(is)j(a)g(module)f(playback)h
+(handle)g(that)f(de\002nes)i(a)f(module)f(or)h(module)f(section)109
+1484 y(that)24 b(is)g(being)h(played.)30 b(One)25 b(module)f(can)h(be)g
+(played)f(se)n(v)o(eral)g(times)g(simultaneously)-6 b(.)p
+eop
+%%Page: 50 56
+50 55 bop 109 208 a Ff(CHAPTER)25 b(4.)56 b(MODULE)24
+b(PLA)-10 b(YB)m(A)l(CK)2101 b Fg(50)-57 473 y Fb(4.2.5)118
+b(MID)l(ASplayStatus)109 744 y Fc(typedef)49 b(struct)109
+864 y({)312 984 y(unsigned)202 b(position;)312 1105 y(unsigned)g
+(pattern;)312 1225 y(unsigned)g(row;)312 1345 y(int)457
+b(syncInfo;)312 1466 y(unsigned)202 b(songLoopCount;)109
+1586 y(})50 b(MIDASplayStatus;)109 1898 y Fg(Module)24
+b(status)f(information)h(structure.)-57 2247 y Fh(Members)109
+2476 y(position)48 b Fg(Current)25 b(playback)g(position)e(number)109
+2679 y Fh(patter)o(n)49 b Fg(Current)26 b(playback)e(pattern)h(number)
+109 2883 y Fh(r)n(o)o(w)49 b Fg(Current)25 b(playback)f(ro)n(w)h
+(number)109 3086 y Fh(syncInf)n(o)48 b Fg(Latest)36 b(synchronization)f
+(command)h(infobyte,)i(-1)f(if)g(no)f(synchronization)f(command)g(has)
+353 3206 y(been)25 b(encountered)f(yet.)109 3410 y Fh(songLoopCount)49
+b Fg(Module)34 b(song)g(loop)f(counter)h(\227)h(incremented)f(by)g(1)g
+(e)n(v)o(ery)g(time)f(the)i(song)e(loops)353 3530 y(around.)d(Module)24
+b(looping)f(can)i(be)g(detected)g(by)g(checking)f(if)h(this)f(\002eld)h
+(is)f(nonzero.)-57 3879 y Fh(Description)109 4150 y Fg(This)f
+(structure)i(is)f(used)g(with)g(the)g(function)g Fa(MID)m(ASg)o
+(etPlayStatus)d Fg(to)j(query)h(the)f(current)h(module)e(play-)109
+4270 y(back)i(status.)k Fa(MID)m(ASg)o(etPlayStatus)23
+b Fg(\002lls)h(a)h Fa(MID)m(ASplayStatus)d Fg(structure)j(with)f(the)h
+(information.)109 4474 y(Some)34 b(more)g(information)f(about)h(the)g
+(synchronization)e(commands:)49 b(In)34 b(F)o(astT)m(rack)o(er)g(2)g
+(and)g(Scream)109 4594 y(T)m(rack)o(er)d(3)h(modules,)f(the)g(command)g
+Fc(Wxx)g Fg(is)f(used)i(as)f(a)h(music)e(synchronization)g(command.)49
+b(The)32 b(in-)109 4715 y(fobyte)24 b(of)h(this)f(command)g(is)g(a)n(v)
+n(ailable)g(as)h(the)g(music)f(synchronization)f(command)h(infobyte)g
+(abo)o(v)o(e.)p eop
+%%Page: 51 57
+51 56 bop 109 208 a Ff(CHAPTER)25 b(4.)56 b(MODULE)24
+b(PLA)-10 b(YB)m(A)l(CK)2101 b Fg(51)-57 473 y Fe(4.3)142
+b(Functions)109 779 y Fg(This)24 b(section)g(describes)g(all)h
+(functions)f(a)n(v)n(ailable)g(for)h(MID)l(AS)g(module)f(playback.)p
+eop
+%%Page: 52 58
+52 57 bop 109 208 a Ff(CHAPTER)25 b(4.)56 b(MODULE)24
+b(PLA)-10 b(YB)m(A)l(CK)2101 b Fg(52)-57 473 y Fb(4.3.1)118
+b(MID)l(ASfadeMusicChannel)109 744 y Fc(BOOL)50 b
+(MIDASfadeMusicChannel\(MIDASmodule)o(PlayH)o(andle)44
+b(playHandle,)312 864 y(unsigned)49 b(channel,)g(unsigned)h(fade\))109
+1175 y Fg(F)o(ades)25 b(a)g(music)f(channel.)-57 1524
+y Fh(Input)109 1754 y(playHandle)48 b Fg(Module)24 b(playback)h(handle)
+f(for)h(the)g(music)109 1957 y Fh(channel)50 b Fg(Module)23
+b(channel)i(number)f(to)h(control)109 2160 y Fh(fade)49
+b Fg(Channel)25 b(f)o(ade)g(v)n(alue:)30 b(64)25 b(is)f(normal)g(v)n
+(olume,)g(0)h(silence)-57 2509 y Fh(Description)109 2780
+y Fg(This)g(function)g(is)h(used)g(to)f(control)h(the)g(\223f)o
+(ade\224)h(of)f(a)g(music)f(channel.)35 b(Channel)26
+b(f)o(ade)h(acts)f(as)g(a)g(channel-)109 2900 y(speci\002c)i(master)g
+(v)n(olume:)36 b(it)28 b(can)g(be)g(used)g(to)g(quiet)f(do)n(wn)g(the)h
+(general)g(v)n(olume)g(of)g(the)g(sounds)f(played)109
+3021 y(on)d(the)h(channel,)f(while)h(an)o(y)f(v)n(olume)g(changes)h(in)
+f(the)h(music)f(still)f(tak)o(e)i(ef)n(fect.)109 3224
+y Fh(channel)k Fg(if)f(the)f Fh(module)i Fg(channel)f(number)f(for)h
+(the)g(sounds)e(to)i(control,)g(not)f(a)h(Sound)g(De)n(vice)f(channel)
+109 3345 y(number)-5 b(.)29 b(Module)24 b(channels)h(are)g(numbered)g
+(from)f(zero)h(upw)o(ards.)-57 3694 y Fh(Retur)o(n)g(v)o(alue)109
+3964 y Fg(TR)l(UE)g(if)f(successful,)h(F)-7 b(ALSE)25
+b(if)g(not.)-57 4314 y Fh(Operating)g(systems)109 4584
+y Fg(All)-57 4933 y Fh(See)g(also)109 5204 y Fa(MID)m(ASsetMusicV)-11
+b(olume)p eop
+%%Page: 53 59
+53 58 bop 109 208 a Ff(CHAPTER)25 b(4.)56 b(MODULE)24
+b(PLA)-10 b(YB)m(A)l(CK)2101 b Fg(53)-57 473 y Fb(4.3.2)118
+b(MID)l(ASfr)n(eeModule)109 744 y Fc(BOOL)50 b
+(MIDASfreeModule\(MIDASmodule)45 b(module\))109 1055
+y Fg(Deallocates)24 b(a)h(module.)-57 1404 y Fh(Input)109
+1633 y(module)49 b Fg(Module)24 b(that)g(should)g(be)h(deallocated)-57
+1982 y Fh(Description)109 2253 y Fg(This)g(function)g(deallocates)h(a)h
+(module)e(loaded)g(with)h Fa(MID)m(ASloadModule)p Fg(.)32
+b(It)26 b(should)f(be)i(called)f(to)f(free)109 2373 y(unused)f(modules)
+f(from)i(memory)-6 b(,)23 b(after)j(the)o(y)e(are)h(no)g(longer)f
+(being)h(played,)f(to)g(a)n(v)n(oid)h(memory)f(leaks.)-57
+2722 y Fh(Retur)o(n)h(v)o(alue)109 2993 y Fg(TR)l(UE)g(if)f
+(successful,)h(F)-7 b(ALSE)25 b(if)g(not.)-57 3342 y
+Fh(Operating)g(systems)109 3613 y Fg(All)-57 3962 y Fh(See)g(also)109
+4233 y Fa(MID)m(ASloadModule)p eop
+%%Page: 54 60
+54 59 bop 109 208 a Ff(CHAPTER)25 b(4.)56 b(MODULE)24
+b(PLA)-10 b(YB)m(A)l(CK)2101 b Fg(54)-57 473 y Fb(4.3.3)118
+b(MID)l(ASgetInstrumentInf)m(o)109 744 y Fc(BOOL)50 b
+(MIDASgetInstrumentInfo\(MIDASmodul)o(e)45 b(module,)312
+864 y(int)50 b(instNum,)f(MIDASinstrumentInfo)f(*info\))109
+1175 y Fg(Gets)24 b(information)g(about)g(an)h(instrument)e(in)h(a)h
+(module.)-57 1524 y Fh(Input)109 1754 y(module)49 b Fg(Module)24
+b(handle)g(for)h(the)g(module)109 1957 y Fh(instNum)49
+b Fg(Instrument)23 b(number)109 2160 y Fh(inf)n(o)48
+b Fg(Pointer)25 b(to)f(an)h(instrument)e(info)i(structure)f(where)h
+(the)g(information)e(willl)h(be)h(written)-57 2509 y
+Fh(Description)109 2780 y Fg(This)33 b(function)g(returns)h
+(information)e(about)i(an)g(instrument)e(in)i(a)g(module,)i(including)c
+(the)i(instrument)109 2900 y(name.)59 b(The)34 b(user)g(needs)h(to)f
+(pass)f(it)h(a)h(v)n(alid)e(pointer)h(to)g(a)g Fa(MID)m
+(ASinstrumentInfo)e Fg(structure)i(\()p Fh(*inf)n(o)p
+Fg(\),)109 3021 y(where)d(the)g(information)e(will)h(be)i(written.)48
+b(Y)-11 b(ou)31 b(should)e(ensure)j(that)e Fh(instNum)h
+Fg(is)g(a)g(v)n(alid)f(instrument)109 3141 y(number)-5
+b(.)32 b(Instrument)25 b(numbers)g(start)g(from)h(0,)g(although)e
+(track)o(ers)j(traditionally)d(number)h(them)g(from)g(1,)109
+3262 y(and)f(you)h(can)g(use)p Fa(MID)m(ASg)o(etModuleInfo)e
+Fg(to)h(get)h(the)f(number)h(of)f(instruments)f(a)n(v)n(ailable)h(in)h
+(a)g(module.)-57 3611 y Fh(Retur)o(n)g(v)o(alue)109 3881
+y Fg(TR)l(UE)g(if)f(successful,)h(F)-7 b(ALSE)25 b(if)g(not.)30
+b(The)24 b(instrument)g(information)f(is)h(written)g(to)h
+Fh(*inf)n(o)p Fg(.)-57 4230 y Fh(Operating)g(systems)109
+4501 y Fg(All)-57 4850 y Fh(See)g(also)109 5121 y Fa(MID)m
+(ASplayModule)p Fg(,)e Fa(MID)m(ASg)o(etModuleInfo)p
+Fg(,)f Fa(MID)m(ASmoduleInfo)p eop
+%%Page: 55 61
+55 60 bop 109 208 a Ff(CHAPTER)25 b(4.)56 b(MODULE)24
+b(PLA)-10 b(YB)m(A)l(CK)2101 b Fg(55)-57 473 y Fb(4.3.4)118
+b(MID)l(ASgetModuleInf)m(o)109 744 y Fc(BOOL)50 b
+(MIDASgetModuleInfo\(MIDASmodule)45 b(module,)312 864
+y(MIDASmoduleInfo)j(*info\))109 1175 y Fg(Gets)24 b(information)g
+(about)g(a)h(module.)-57 1524 y Fh(Input)109 1754 y(module)49
+b Fg(Module)24 b(handle)g(for)h(the)g(module)109 1957
+y Fh(inf)n(o)48 b Fg(Pointer)25 b(to)f(a)h(module)f(info)g(structure)h
+(where)g(the)g(information)e(will)h(be)h(written)-57
+2306 y Fh(Description)109 2577 y Fg(This)h(function)g(returns)g
+(information)g(about)g(a)h(module,)g(including)e(the)i(module)f(name)g
+(and)h(the)g(number)109 2697 y(of)34 b(channels)h(used.)59
+b(The)35 b(user)g(needs)f(to)g(pass)g(it)h(a)f(v)n(alid)g(pointer)g(to)
+g(a)h Fa(MID)m(ASmoduleInfo)e Fg(structure)109 2817 y(\()p
+Fh(*inf)n(o)p Fg(\),)24 b(where)i(the)e(information)g(will)f(be)i
+(written.)-57 3167 y Fh(Retur)o(n)g(v)o(alue)109 3437
+y Fg(TR)l(UE)g(if)f(successful,)h(F)-7 b(ALSE)25 b(if)g(not.)30
+b(The)24 b(module)g(information)g(is)g(written)g(to)g
+Fh(*inf)n(o)p Fg(.)-57 3786 y Fh(Operating)h(systems)109
+4057 y Fg(All)-57 4406 y Fh(See)g(also)109 4677 y Fa(MID)m
+(ASplayModule)p Fg(,)e Fa(MID)m(ASmoduleInfo)p eop
+%%Page: 56 62
+56 61 bop 109 208 a Ff(CHAPTER)25 b(4.)56 b(MODULE)24
+b(PLA)-10 b(YB)m(A)l(CK)2101 b Fg(56)-57 473 y Fb(4.3.5)118
+b(MID)l(ASgetPlayStatus)109 744 y Fc(BOOL)50 b
+(MIDASgetPlayStatus\(MIDASmodulePla)o(yHand)o(le)45 b(playHandle,)312
+864 y(MIDASplayStatus)j(*status\))109 1175 y Fg(Gets)24
+b(module)g(playback)h(status.)-57 1524 y Fh(Input)109
+1754 y(playHandle)48 b Fg(Module)24 b(playback)h(handle)f(for)h(the)g
+(music)109 1957 y Fh(status)48 b Fg(Pointer)25 b(to)g(playback)f
+(status)g(structure)h(where)g(the)f(status)g(will)g(be)h(written.)-57
+2306 y Fh(Description)109 2577 y Fg(This)d(function)g(reads)h(the)g
+(current)g(module)f(playback)h(status,)g(and)f(writes)h(it)g(to)f
+Fh(*status)p Fg(.)30 b(The)23 b(user)g(needs)109 2697
+y(to)h(pass)h(it)f(a)h(v)n(alid)f(pointer)g(to)g(a)h
+Fa(MID)m(ASplayStatus)e Fg(structure,)h(which)g(will)g(be)h(updated.)
+-57 3046 y Fh(Retur)o(n)g(v)o(alue)109 3317 y Fg(TR)l(UE)g(if)f
+(successful,)h(F)-7 b(ALSE)25 b(if)g(not.)30 b(The)24
+b(current)i(playback)e(status)g(is)g(written)g(to)h Fh(*status)p
+Fg(.)-57 3666 y Fh(Operating)g(systems)109 3937 y Fg(All)-57
+4286 y Fh(See)g(also)109 4556 y Fa(MID)m(ASplayModule)p
+Fg(,)e Fa(MID)m(ASplayStatus)p eop
+%%Page: 57 63
+57 62 bop 109 208 a Ff(CHAPTER)25 b(4.)56 b(MODULE)24
+b(PLA)-10 b(YB)m(A)l(CK)2101 b Fg(57)-57 473 y Fb(4.3.6)118
+b(MID)l(ASloadModule)109 744 y Fc(MIDASmodule)48 b
+(MIDASloadModule\(char)f(*fileName\))109 1055 y Fg(Loads)24
+b(a)h(module)f(\002le)h(into)f(memory)-6 b(.)-57 1404
+y Fh(Input)109 1633 y(\002leName)49 b Fg(Module)24 b(\002le)h(name)-57
+1982 y Fh(Description)109 2253 y Fg(This)38 b(function)g(loads)g(a)h
+(module)f(\002le)h(into)f(memory)-6 b(.)71 b(It)39 b(checks)g(the)g
+(module)f(format)g(based)h(on)f(the)109 2373 y(module)20
+b(\002le)i(header)l(,)h(and)e(in)l(v)n(ok)o(es)f(the)i(correct)g
+(loader)f(to)g(load)g(the)h(module)e(into)h(memory)f(in)h(GMPlayer)109
+2494 y(internal)f(format.)29 b(The)20 b(module)g(can)h(then)f(be)h
+(played)f(using)g Fa(MID)m(ASplayModule)p Fg(,)g(and)g(deallocated)h
+(from)109 2614 y(memory)j(with)g Fa(MID)m(ASfr)l(eeModule)p
+Fg(.)-57 2963 y Fh(Retur)o(n)h(v)o(alue)109 3234 y Fg(Module)f(handle)g
+(if)h(successful,)f(NULL)h(if)f(not.)-57 3583 y Fh(Operating)h(systems)
+109 3854 y Fg(All)-57 4203 y Fh(See)g(also)109 4473 y
+Fa(MID)m(ASplayModule)p Fg(,)e Fa(MID)m(ASfr)l(eeModule)p
+eop
+%%Page: 58 64
+58 63 bop 109 208 a Ff(CHAPTER)25 b(4.)56 b(MODULE)24
+b(PLA)-10 b(YB)m(A)l(CK)2101 b Fg(58)-57 473 y Fb(4.3.7)118
+b(MID)l(ASplayModule)109 744 y Fc(MIDASmodulePlayHandle)46
+b(MIDASplayModule\(MIDASmodule)g(module,)312 864 y(BOOL)k(loopSong\))
+109 1175 y Fg(Starts)25 b(playing)e(a)i(module.)-57 1524
+y Fh(Input)109 1754 y(module)49 b Fg(Module)24 b(to)g(be)h(played)109
+1957 y Fh(loopSong)49 b Fg(TR)l(UE)25 b(if)f(the)h(song)f(should)g(be)h
+(looped,)f(F)-7 b(ALSE)25 b(if)f(not)-57 2306 y Fh(Description)109
+2577 y Fg(This)19 b(functions)h(starts)g(playing)f(a)i(module)e(that)h
+(has)g(been)h(pre)n(viously)e(loaded)h(with)f Fa(MID)m(ASloadModule)p
+Fg(.)109 2697 y(If)31 b(channels)g(ha)n(v)o(e)g(not)f(been)h(pre)n
+(viously)f(opened)g(using)h Fa(MID)m(ASopenChannels)p
+Fg(,)f(this)h(function)f(opens)109 2817 y(the)24 b(channels)g
+(necessary)h(to)f(play)g(the)g(module.)29 b(This)24 b(function)g(plays)
+f(the)i(complete)e(module)h(\227)g(to)g(play)109 2938
+y(just)g(a)h(section)f(of)h(the)f(song)g(data,)h(use)g
+Fa(MID)m(ASplayModuleSection)p Fg(.)109 3141 y Fh(Note!)69
+b Fg(Currently)-6 b(,)40 b(when)d(multiple)e(modules)i(or)g(module)f
+(sections)h(are)h(played)f(simultaneously)-6 b(,)38 b(all)109
+3262 y(modules)27 b(should)g(ha)n(v)o(e)i(the)f(same)h(\(BPM\))g
+Fh(tempo)p Fg(.)43 b(Otherwise)28 b(some)g(modules)f(may)i(be)f(played)
+h(at)f(the)109 3382 y(wrong)c(tempo.)30 b(All)24 b(modules)g(can)h(ha)n
+(v)o(e)f(dif)n(ferent)h Fh(speed)h Fg(setting)d(though.)-57
+3731 y Fh(Retur)o(n)i(v)o(alue)109 4002 y Fg(MID)l(AS)g(module)e
+(playback)i(handle)f(for)h(the)g(module,)f(or)h(0)f(if)h(f)o(ailed.)-57
+4351 y Fh(Operating)g(systems)109 4622 y Fg(All)-57 4971
+y Fh(See)g(also)109 5241 y Fa(MID)m(ASloadModule)p Fg(,)d
+Fa(MID)m(ASstopModule)p Fg(,)h Fa(MID)m(ASplayModuleSection)p
+eop
+%%Page: 59 65
+59 64 bop 109 208 a Ff(CHAPTER)25 b(4.)56 b(MODULE)24
+b(PLA)-10 b(YB)m(A)l(CK)2101 b Fg(59)-57 473 y Fb(4.3.8)118
+b(MID)l(ASplayModuleSection)109 744 y Fc(MIDASmodulePlayHandle)46
+b(MIDASplayModuleSection\(MIDASmodule)f(module,)312 864
+y(unsigned)k(startPos,)g(unsigned)h(endPos,)f(unsigned)g(restartPos,)
+312 984 y(BOOL)h(loopSong\))109 1296 y Fg(Starts)25 b(playing)e(a)i
+(module)f(section.)-57 1645 y Fh(Input)109 1874 y(module)49
+b Fg(Module)24 b(to)g(be)h(played)109 2077 y Fh(startP)n(os)48
+b Fg(Start)25 b(song)f(position)f(for)i(the)g(section)f(to)h(play)109
+2281 y Fh(endP)n(os)49 b Fg(End)24 b(song)g(position)f(for)i(the)g
+(section)f(to)h(play)109 2484 y Fh(r)n(estartP)n(os)49
+b Fg(Restart)25 b(position)e(to)h(use)h(when)g(the)f(section)g(loops)
+109 2688 y Fh(loopSong)49 b Fg(TR)l(UE)25 b(if)f(the)h(playback)g
+(should)e(be)i(looped,)f(F)-7 b(ALSE)25 b(if)g(not)-57
+3037 y Fh(Description)109 3307 y Fg(This)36 b(module)h(starts)f
+(playing)h(a)g(section)g(of)g(a)h(module)e(that)h(has)g(been)h(pre)n
+(viously)d(loaded)i(with)g Fa(MI-)109 3428 y(D)m(ASloadModule)p
+Fg(.)65 b(If)38 b(channels)f(ha)n(v)o(e)g(not)g(been)g(pre)n(viously)f
+(opened)h(using)f Fa(MID)m(ASopenChannels)p Fg(,)109
+3548 y(this)d(function)h(opens)g(the)h(channels)f(necessary)h(to)f
+(play)h(the)f(module.)59 b(Playback)35 b(will)f(start)g(from)g(the)109
+3668 y(pattern)24 b(at)h(position)e Fh(startP)n(os)p
+Fg(,)h(and)h(after)g(the)f(pattern)h(at)g(position)e
+Fh(endP)n(os)i Fg(has)f(been)h(played,)g(playback)109
+3789 y(will)h(resume)g(from)h(the)f(pattern)h(at)f Fh(r)n(estartP)n(os)
+p Fg(.)37 b(This)26 b(function)g(can)h(thus)f(be)h(used)f(to)h(play)f
+(a)h(section)f(of)109 3909 y(a)f(module,)e(and)i(a)g(single)f(module)g
+(can)h(be)g(used)g(to)f(store)h(se)n(v)o(eral)f(songs.)109
+4113 y Fh(Note!)69 b Fg(Currently)-6 b(,)40 b(when)d(multiple)e
+(modules)i(or)g(module)f(sections)h(are)h(played)f(simultaneously)-6
+b(,)38 b(all)109 4233 y(modules)27 b(should)g(ha)n(v)o(e)i(the)f(same)h
+(\(BPM\))g Fh(tempo)p Fg(.)43 b(Otherwise)28 b(some)g(modules)f(may)i
+(be)f(played)h(at)f(the)109 4353 y(wrong)c(tempo.)30
+b(All)24 b(modules)g(can)h(ha)n(v)o(e)f(dif)n(ferent)h
+Fh(speed)h Fg(setting)d(though.)-57 4702 y Fh(Retur)o(n)i(v)o(alue)109
+4973 y Fg(MID)l(AS)g(module)e(playback)i(handle)f(for)h(the)g(module,)f
+(or)h(0)f(if)h(f)o(ailed.)-57 5322 y Fh(Operating)g(systems)109
+5593 y Fg(All)p eop
+%%Page: 60 66
+60 65 bop 109 208 a Ff(CHAPTER)25 b(4.)56 b(MODULE)24
+b(PLA)-10 b(YB)m(A)l(CK)2101 b Fg(60)-57 473 y Fh(See)25
+b(also)109 744 y Fa(MID)m(ASloadModule)p Fg(,)d Fa(MID)m(ASstopModule)p
+Fg(,)h Fa(MID)m(ASplayModule)p eop
+%%Page: 61 67
+61 66 bop 109 208 a Ff(CHAPTER)25 b(4.)56 b(MODULE)24
+b(PLA)-10 b(YB)m(A)l(CK)2101 b Fg(61)-57 473 y Fb(4.3.9)118
+b(MID)l(ASsetMusicSyncCallback)109 744 y Fc(BOOL)50 b
+(MIDASsetMusicSyncCallback\(MIDASmo)o(duleP)o(layHan)o(dle)45
+b(playHandle,)312 864 y(void)50 b(\(MIDAS_CALL)f(*callback\))312
+984 y(\(unsigned)g(syncInfo,)g(unsigned)g(position,)g(unsigned)h
+(row\)\))109 1296 y Fg(Sets)25 b(the)f(music)g(synchronization)g
+(callback.)-57 1645 y Fh(Input)109 1874 y(playHandle)48
+b Fg(Module)24 b(playback)h(handle)f(for)h(the)g(music)109
+2077 y Fh(callback)49 b Fg(Pointer)24 b(to)h(the)f(callback)h
+(function,)f(NULL)h(to)f(disable)-57 2426 y Fh(Description)109
+2697 y Fg(This)f(function)h(sets)g(the)g(music)g(synchronization)f
+(callback)h(function.)30 b(It)24 b(will)g(be)g(called)h(by)f(the)g(MID)
+l(AS)109 2817 y(music)k(player)h(each)h(time)f(a)g Fh(Wxx)g
+Fg(command)f(is)h(played)g(from)g(a)h(F)o(astT)m(rack)o(er)f(2)g(or)h
+(Scream)g(T)m(rack)o(er)f(3)109 2938 y(module,)e(or)h(a)g
+Fh(Zxx)g Fg(command)e(from)i(an)g(Impulse)e(T)m(rack)o(er)i(module.)39
+b(The)27 b(function)g(will)g(recei)n(v)o(e)g(as)h(its)109
+3058 y(ar)n(guments)i(the)h(synchronization)e(command)h(infobyte)g
+(\(xx\),)i(the)f(current)g(playback)g(position)e(and)h(the)109
+3179 y(current)25 b(playback)f(ro)n(w)-6 b(.)30 b(Setting)24
+b Fh(callback)h Fg(to)g(NULL)f(disables)g(it.)109 3382
+y Fc(MIDAS)p 370 3382 30 4 v 35 w(CALL)c Fg(is)g(the)g(calling)g(con)l
+(v)o(ention)f(used)h(for)h(the)g(callback)f(function)g(\227)p
+2917 3382 V 2952 3382 V 92 w Fc(cdecl)g Fg(for)h(W)-8
+b(atcom)20 b(and)109 3502 y(V)-6 b(isual)28 b(C/C++,)j(empty)d(\(def)o
+(ault\))h(for)h(GCC.)g(Under)f(MS-DOS)g(the)g(function)f(will)g(be)i
+(called)f(from)f(the)109 3623 y(MID)l(AS)d(timer)g(interrupt,)g(so)g
+(the)g(module)g(containing)f(the)h(callback)h(function)f(must)f(be)i
+(compiled)e(with)109 3743 y(the)31 b(\223SS==DS\224)i(setting)d
+(disabled)h(\(command)f(line)h(ar)n(gument)g(\223-zu\224)h(for)g(W)-8
+b(atcom)31 b(C,)g(def)o(ault)g(setting)109 3864 y(for)e(DJGPP\).)g
+(Under)g(W)l(in32)f(and)g(Linux)g(the)g(function)g(will)g(be)h(called)g
+(in)f(the)g(conte)o(xt)g(of)h(the)f(MID)l(AS)109 3984
+y(player)d(thread.)-57 4333 y Fh(Retur)o(n)g(v)o(alue)109
+4604 y Fg(TR)l(UE)g(if)f(successful,)h(F)-7 b(ALSE)25
+b(if)g(not.)-57 4953 y Fh(Operating)g(systems)109 5223
+y Fg(All)-57 5573 y Fh(See)g(also)p eop
+%%Page: 62 68
+62 67 bop 109 208 a Ff(CHAPTER)25 b(4.)56 b(MODULE)24
+b(PLA)-10 b(YB)m(A)l(CK)2101 b Fg(62)-57 473 y Fb(4.3.10)118
+b(MID)l(ASsetMusicV)-12 b(olume)109 744 y Fc(BOOL)50
+b(MIDASsetMusicVolume\(MIDASmodulePl)o(ayHan)o(dle)45
+b(playHandle,)312 864 y(unsigned)k(volume\))109 1175
+y Fg(Changes)25 b(music)f(playback)g(v)n(olume.)-57 1524
+y Fh(Input)109 1754 y(playHandle)48 b Fg(Module)24 b(playback)h(handle)
+f(for)h(the)g(music)109 1957 y Fh(v)o(olume)48 b Fg(Ne)n(w)25
+b(music)f(playback)g(v)n(olume)g(\(0\22664\))-57 2306
+y Fh(Description)109 2577 y Fg(This)35 b(function)h(changes)h(the)f
+(music)g(playback)g(master)g(v)n(olume.)65 b(It)37 b(can)g(be)g(used,)i
+(for)d(e)o(xample,)j(for)109 2697 y(f)o(ading)32 b(music)f(in)i(or)f
+(out)g(smoothly)-6 b(,)32 b(or)h(for)g(adjusting)e(the)h(music)g(v)n
+(olume)f(relati)n(v)o(e)g(to)i(sound)e(ef)n(fects.)109
+2817 y(The)k(v)n(olume)g(change)h(only)f(af)n(fects)h(the)g(song)f
+(that)g(is)h(currently)f(being)g(played)h(\227)f(if)h(a)g(ne)n(w)g
+(song)f(is)109 2938 y(started,)24 b(the)h(v)n(olume)f(is)g(reset.)31
+b(The)25 b(def)o(ault)f(music)g(v)n(olume)g(is)g(64)h(\(the)g
+(maximum\).)-57 3287 y Fh(Retur)o(n)g(v)o(alue)109 3558
+y Fg(TR)l(UE)g(if)f(successful,)h(F)-7 b(ALSE)25 b(if)g(not.)-57
+3907 y Fh(Operating)g(systems)109 4177 y Fg(All)-57 4526
+y Fh(See)g(also)p eop
+%%Page: 63 69
+63 68 bop 109 208 a Ff(CHAPTER)25 b(4.)56 b(MODULE)24
+b(PLA)-10 b(YB)m(A)l(CK)2101 b Fg(63)-57 473 y Fb(4.3.11)118
+b(MID)l(ASsetP)n(osition)109 744 y Fc(BOOL)50 b
+(MIDASsetPosition\(MIDASmodulePlayH)o(andle)44 b(playHandle,)312
+864 y(int)50 b(newPosition\))109 1175 y Fg(Changes)25
+b(module)e(playback)i(position.)-57 1524 y Fh(Input)109
+1754 y(playHandle)48 b Fg(Module)24 b(playback)h(handle)f(for)h(the)g
+(music)109 1957 y Fh(newP)n(osition)48 b Fg(Ne)n(w)25
+b(playback)f(position)-57 2306 y Fh(Description)109 2577
+y Fg(This)h(function)g(changes)h(the)g(current)h(module)e(playback)h
+(position.)33 b(The)26 b(song)f(starts)h(at)g(position)e(0,)i(and)109
+2697 y(the)h(length)g(is)g(a)n(v)n(ailable)g(in)g(the)g
+Fa(MID)m(ASmoduleInfo)f Fg(structure.)39 b(Y)-11 b(ou)27
+b(should)f(mak)o(e)i(sure)f(that)g Fh(position)109 2817
+y Fg(lies)33 b(inside)f(those)h(limits.)55 b(T)-8 b(o)34
+b(skip)e(backw)o(ard)i(or)g(forw)o(ard)g(a)g(single)e(position,)i
+(\002rst)g(read)g(the)f(current)109 2938 y(position)23
+b(with)h Fa(MID)m(ASg)o(etPlayStatus)p Fg(,)e(and)j(substract)f(or)g
+(add)h(one)g(to)f(the)h(current)g(position.)-57 3287
+y Fh(Retur)o(n)g(v)o(alue)109 3558 y Fg(TR)l(UE)g(if)f(successful,)h(F)
+-7 b(ALSE)25 b(if)g(not.)-57 3907 y Fh(Operating)g(systems)109
+4177 y Fg(All)-57 4526 y Fh(See)g(also)109 4797 y Fa(MID)m
+(ASplayModule)p Fg(,)e Fa(MID)m(ASg)o(etPlayStatus)p
+Fg(,)f Fa(MID)m(ASg)o(etModuleInfo)p eop
+%%Page: 64 70
+64 69 bop 109 208 a Ff(CHAPTER)25 b(4.)56 b(MODULE)24
+b(PLA)-10 b(YB)m(A)l(CK)2101 b Fg(64)-57 473 y Fb(4.3.12)118
+b(MID)l(ASstopModule)109 744 y Fc(BOOL)50 b
+(MIDASstopModule\(MIDASmodulePlayHa)o(ndle)44 b(playHandle\))109
+1055 y Fg(Stops)24 b(playing)g(a)h(module.)-57 1404 y
+Fh(Input)109 1633 y(playHandle)48 b Fg(Module)24 b(playback)h(handle)f
+(for)h(the)g(music)f(that)g(should)g(be)h(stopped.)-57
+1982 y Fh(Description)109 2253 y Fg(This)37 b(function)g(stops)g
+(playing)g(a)h(module)f(that)g(has)h(been)g(played)g(with)f
+Fa(MID)m(ASplayModule)p Fg(.)68 b(If)38 b(the)109 2373
+y(channels)29 b(were)h(opened)f(automatically)f(by)h
+Fa(MID)m(ASplayModule)p Fg(,)g(this)f(function)g(will)h(close)g(them,)h
+(b)n(ut)109 2494 y(if)24 b(the)o(y)g(were)i(opened)f(manually)e(with)h
+Fa(MID)m(ASopenChannels)p Fg(,)f(the)o(y)h(will)g(be)h(left)g(open.)-57
+2843 y Fh(Retur)o(n)g(v)o(alue)109 3113 y Fg(TR)l(UE)g(if)f
+(successful,)h(F)-7 b(ALSE)25 b(if)g(not.)-57 3463 y
+Fh(Operating)g(systems)109 3733 y Fg(All)-57 4082 y Fh(See)g(also)109
+4353 y Fa(MID)m(ASplayModule)p Fg(,)e Fa(MID)m(ASopenChannels)p
+eop
+%%Page: 65 71
+65 70 bop 109 1220 a Fi(Chapter)51 b(5)109 1718 y(Sample)g(playback)-57
+2316 y Fe(5.1)142 b(Constants)109 2623 y Fg(This)33 b(section)f
+(describes)i(all)f(constants)g(used)g(in)g(MID)l(AS)h(sample)f
+(playback.)57 b(The)o(y)33 b(are)h(grouped)g(ac-)109
+2743 y(cording)24 b(to)g(the)h Fc(enum)f Fg(used)h(to)f(de\002ne)h
+(them.)1949 5943 y(65)p eop
+%%Page: 66 72
+66 71 bop 109 208 a Ff(CHAPTER)25 b(5.)56 b(SAMPLE)25
+b(PLA)-10 b(YB)m(A)l(CK)2134 b Fg(66)-57 473 y Fb(5.1.1)118
+b(MID)l(ASchannels)109 744 y Fc(enum)50 b(MIDASchannels)-57
+1093 y Fh(Description)109 1363 y Fg(These)36 b(constants)e(are)j(used)e
+(to)h(indicate)f(the)h(channel)g(number)f(a)h(sound)f(should)g(be)h
+(played)f(on.)64 b(Le-)109 1484 y(gal)33 b(channel)h(numbers)f(range)i
+(from)f(0)g(upw)o(ards,)i(depending)d(on)h(the)f(number)h(of)g(open)g
+(channels.)58 b(In)109 1604 y(addition,)23 b(MID)l(AS)p
+808 1604 30 4 v 36 w(CHANNEL)p 1320 1604 V 36 w(A)-5
+b(UT)n(O)24 b(can)h(be)g(used)g(with)f Fa(MID)m(ASplaySample)p
+Fg(.)-57 1953 y Fh(V)-9 b(alues)109 2182 y(MID)m(AS)p
+444 2182 V 35 w(CHANNEL)p 977 2182 V 36 w(A)k(UT)n(O)49
+b Fg(Select)25 b(channel)g(automatically)-6 b(,)23 b(used)h(with)g
+Fa(MID)m(ASplaySample)109 2386 y Fh(MID)m(AS)p 444 2386
+V 35 w(ILLEGAL)p 932 2386 V 37 w(CHANNEL)49 b Fg(Ille)o(gal)19
+b(channel)i(number)l(,)g(returned)g(by)f Fa(MID)m(ASallocateChannel)353
+2506 y Fg(as)k(an)h(error)h(code.)p eop
+%%Page: 67 73
+67 72 bop 109 208 a Ff(CHAPTER)25 b(5.)56 b(SAMPLE)25
+b(PLA)-10 b(YB)m(A)l(CK)2134 b Fg(67)-57 473 y Fb(5.1.2)118
+b(MID)l(ASloop)109 744 y Fc(enum)50 b(MIDASloop)-57 1093
+y Fh(Description)109 1363 y Fg(These)24 b(constants)g(are)i(used)e(to)h
+(indicate)f(the)h(loop)f(type)g(of)h(a)g(sample)f(or)h(stream.)-57
+1712 y Fh(V)-9 b(alues)109 1942 y(MID)m(AS)p 444 1942
+30 4 v 35 w(LOOP)p 762 1942 V 35 w(NO)49 b Fg(Sample)24
+b(or)h(stream)g(does)f(not)g(loop)109 2145 y Fh(MID)m(AS)p
+444 2145 V 35 w(LOOP)p 762 2145 V 35 w(YES)50 b Fg(Sample)25
+b(or)g(stream)f(loops)p eop
+%%Page: 68 74
+68 73 bop 109 208 a Ff(CHAPTER)25 b(5.)56 b(SAMPLE)25
+b(PLA)-10 b(YB)m(A)l(CK)2134 b Fg(68)-57 473 y Fb(5.1.3)118
+b(MID)l(ASpanning)109 744 y Fc(enum)50 b(MIDASpanning)-57
+1093 y Fh(Description)109 1363 y Fg(These)27 b(constants)g(are)h(used)f
+(to)g(describe)h(the)f(panning)f(position)g(of)i(a)g(sound.)37
+b(Le)o(gal)27 b(panning)f(positions)109 1484 y(range)e(from)g(-64)g
+(\(e)o(xtreme)g(left\))h(to)e(64)h(\(e)o(xtreme)g(right\),)g(inclusi)n
+(v)o(e,)e(plus)h(MID)l(AS)p 3088 1484 30 4 v 36 w(P)-9
+b(AN)p 3314 1484 V 36 w(SURR)l(OUND)109 1604 y(for)25
+b(surround)f(sound.)-57 1953 y Fh(V)-9 b(alues)109 2182
+y(MID)m(AS)p 444 2182 V 35 w(P)i(AN)p 677 2182 V 35 w(LEFT)50
+b Fg(P)o(anning)24 b(position)f(full)i(left)109 2386
+y Fh(MID)m(AS)p 444 2386 V 35 w(P)-7 b(AN)p 677 2386
+V 35 w(MIDDLE)50 b Fg(P)o(anning)24 b(position)f(middle)109
+2589 y Fh(MID)m(AS)p 444 2589 V 35 w(P)-7 b(AN)p 677
+2589 V 35 w(RIGHT)48 b Fg(P)o(anning)24 b(position)f(full)i(right)109
+2793 y Fh(MID)m(AS)p 444 2793 V 35 w(P)-7 b(AN)p 677
+2793 V 35 w(SURR)m(OUND)49 b Fg(Surround)24 b(sound)p
+eop
+%%Page: 69 75
+69 74 bop 109 208 a Ff(CHAPTER)25 b(5.)56 b(SAMPLE)25
+b(PLA)-10 b(YB)m(A)l(CK)2134 b Fg(69)-57 473 y Fb(5.1.4)118
+b(MID)l(ASsamplePlayStatus)109 744 y Fc(enum)50 b
+(MIDASsamplePlayStatus)-57 1093 y Fh(Description)109
+1363 y Fg(These)25 b(constants)f(describe)h(the)g(possible)f(sample)h
+(playing)f(status)g(v)n(alues)g(returned)i(by)e Fa(MID)m(ASg)o(etSam-)
+109 1484 y(plePlayStatus)p Fg(.)-57 1833 y Fh(V)-9 b(alues)109
+2062 y(MID)m(AS)p 444 2062 30 4 v 35 w(SAMPLE)p 893 2062
+V 37 w(ST)n(OPPED)50 b Fg(The)22 b(sample)g(has)g(stopped)g(playing.)29
+b(Either)22 b(the)g(sample)g(has)g(ended,)353 2182 y(or)i(another)h
+(sample)f(has)h(tak)o(en)g(its)f(place)h(\(with)f(automatic)g(ef)n
+(fect)h(channels\))109 2386 y Fh(MID)m(AS)p 444 2386
+V 35 w(SAMPLE)p 893 2386 V 37 w(PLA)-10 b(YING)48 b Fg(The)25
+b(sample)f(is)h(playing)p eop
+%%Page: 70 76
+70 75 bop 109 208 a Ff(CHAPTER)25 b(5.)56 b(SAMPLE)25
+b(PLA)-10 b(YB)m(A)l(CK)2134 b Fg(70)-57 473 y Fb(5.1.5)118
+b(MID)l(ASsampleT)-9 b(ypes)109 744 y Fc(enum)50 b(MIDASsampleTypes)-57
+1093 y Fh(Description)109 1363 y Fg(These)26 b(constants)e(identify)h
+(dif)n(ferent)h(sample)f(types.)33 b(The)o(y)26 b(are)g(used)g(with)f
+(the)h(functions)f Fa(MID)m(ASload-)109 1484 y(RawSample)p
+Fg(,)f Fa(MID)m(ASplayStr)l(eamF)l(ile)e Fg(and)j Fa(MID)m(ASplayStr)l
+(eamP)-8 b(olling)21 b Fg(to)k(indicate)f(the)g(format)h(of)f(the)109
+1604 y(sample)i(data.)38 b(The)27 b(byte)g(order)g(of)g(the)g(sample)g
+(data)g(is)g(al)o(w)o(ays)f(the)h(system)f(nati)n(v)o(e)g(order)h
+(\(little)g(endian)109 1724 y(for)e(Intel)f(x86)h(systems\).)-57
+2074 y Fh(V)-9 b(alues)109 2303 y(MID)m(AS)p 444 2303
+30 4 v 35 w(SAMPLE)p 893 2303 V 37 w(8BIT)p 1151 2303
+V 36 w(MONO)48 b Fg(8-bit)24 b(mono)g(sample,)g(unsigned)109
+2506 y Fh(MID)m(AS)p 444 2506 V 35 w(SAMPLE)p 893 2506
+V 37 w(8BIT)p 1151 2506 V 36 w(STEREO)50 b Fg(8-bit)24
+b(stereo)h(sample,)f(unsigned)109 2710 y Fh(MID)m(AS)p
+444 2710 V 35 w(SAMPLE)p 893 2710 V 37 w(16BIT)p 1201
+2710 V 36 w(MONO)48 b Fg(16-bit)24 b(mono)g(sample,)g(signed)109
+2913 y Fh(MID)m(AS)p 444 2913 V 35 w(SAMPLE)p 893 2913
+V 37 w(16BIT)p 1201 2913 V 36 w(STEREO)50 b Fg(16-bit)24
+b(stereo)h(sample,)f(signed)109 3116 y Fh(MID)m(AS)p
+444 3116 V 35 w(SAMPLE)p 893 3116 V 37 w(ADPCM)p 1301
+3116 V 36 w(MONO)47 b Fg(4-bit)25 b(ADPCM)g(mono)f(sample)g(\(streams)g
+(only\))109 3320 y Fh(MID)m(AS)p 444 3320 V 35 w(SAMPLE)p
+893 3320 V 37 w(ADPCM)p 1301 3320 V 36 w(STEREO)50 b
+Fg(4-bit)24 b(ADPCM)h(stereo)g(sample)f(\(streams)g(only\))109
+3523 y Fh(MID)m(AS)p 444 3523 V 35 w(SAMPLE)p 893 3523
+V 37 w(ULA)-13 b(W)p 1227 3523 V 36 w(MONO)48 b Fg(8-bit)24
+b Fa(mu)p Fg(-la)o(w)g(mono)g(sample)109 3727 y Fh(MID)m(AS)p
+444 3727 V 35 w(SAMPLE)p 893 3727 V 37 w(ULA)-13 b(W)p
+1227 3727 V 36 w(STEREO)50 b Fg(8-bit)24 b Fa(mu)p Fg(-la)o(w)g(stereo)
+h(sample)p eop
+%%Page: 71 77
+71 76 bop 109 208 a Ff(CHAPTER)25 b(5.)56 b(SAMPLE)25
+b(PLA)-10 b(YB)m(A)l(CK)2134 b Fg(71)-57 473 y Fe(5.2)142
+b(Data)35 b(types)109 779 y Fg(This)24 b(section)g(describes)g(all)h
+(data)g(types)f(used)h(in)f(MID)l(AS)h(sample)f(playback.)p
+eop
+%%Page: 72 78
+72 77 bop 109 208 a Ff(CHAPTER)25 b(5.)56 b(SAMPLE)25
+b(PLA)-10 b(YB)m(A)l(CK)2134 b Fg(72)-57 473 y Fb(5.2.1)118
+b(MID)l(ASsample)109 744 y Fc(typedef)49 b(...)h(MIDASsample;)-57
+1093 y Fh(Description)109 1363 y Fa(MID)m(ASsample)24
+b Fg(is)h(a)g(sample)g(handle)g(that)g(de\002nes)h(a)f(sample)g(that)g
+(has)g(been)h(loaded)f(into)f(memory)-6 b(.)31 b(The)109
+1484 y(sample)24 b(handle)g(is)h(used)f(for)h(identifying)e(the)i
+(sample)f(when)h(playing)f(or)h(deallocating)e(it.)p
+eop
+%%Page: 73 79
+73 78 bop 109 208 a Ff(CHAPTER)25 b(5.)56 b(SAMPLE)25
+b(PLA)-10 b(YB)m(A)l(CK)2134 b Fg(73)-57 473 y Fb(5.2.2)118
+b(MID)l(ASsamplePlayHandle)109 744 y Fc(typedef)49 b(...)h
+(MIDASsamplePlayHandle;)-57 1093 y Fh(Description)109
+1363 y Fa(MID)m(ASsamplePlayHandle)20 b Fg(is)j(a)h(sample)e(playing)h
+(handle.)29 b(It)24 b(describes)f(a)g(sample)g(sound)f(that)h(is)g
+(being)109 1484 y(played.)44 b(The)30 b(sample)f(playing)f(handle)h(is)
+g(used)h(for)g(controlling)d(the)j(attrib)n(utes)e(of)i(the)f(sound,)h
+(such)f(as)109 1604 y(panning)24 b(or)g(v)n(olume,)g(and)h(for)g
+(stopping)e(the)i(sound.)p eop
+%%Page: 74 80
+74 79 bop 109 208 a Ff(CHAPTER)25 b(5.)56 b(SAMPLE)25
+b(PLA)-10 b(YB)m(A)l(CK)2134 b Fg(74)-57 473 y Fe(5.3)142
+b(Functions)109 779 y Fg(This)24 b(section)g(describes)g(all)h
+(functions)f(a)n(v)n(ailable)g(for)h(MID)l(AS)g(sample)f(playback.)p
+eop
+%%Page: 75 81
+75 80 bop 109 208 a Ff(CHAPTER)25 b(5.)56 b(SAMPLE)25
+b(PLA)-10 b(YB)m(A)l(CK)2134 b Fg(75)-57 473 y Fb(5.3.1)118
+b(MID)l(ASallocA)-6 b(utoEffectChannels)109 744 y Fc(BOOL)50
+b(MIDASallocAutoEffectChannels\(unsi)o(gned)44 b(numChannels\))109
+1055 y Fg(Allocates)24 b(a)h(number)f(of)h(channels)g(for)g(use)f(as)h
+(automatic)f(ef)n(fect)h(channels.)-57 1404 y Fh(Input)109
+1633 y(numChannels)50 b Fg(Number)24 b(of)h(channels)g(to)f(use)-57
+1982 y Fh(Description)109 2253 y Fg(This)37 b(function)f(allocates)i(a)
+g(number)f(of)g(channels)h(that)f(can)h(be)g(used)f(as)h(automatic)f
+(ef)n(fect)h(channels)109 2373 y(by)26 b Fa(MID)m(ASplaySample)p
+Fg(.)35 b(When)27 b Fa(MID)m(ASplaySample)e Fg(is)i(passed)f(MID)l(AS)p
+2818 2373 30 4 v 36 w(CHANNEL)p 3330 2373 V 36 w(A)-5
+b(UT)n(O)26 b(as)h(the)109 2494 y(channel)k(number)l(,)h(it)f(will)f
+(use)h(one)h(of)f(these)g(automatic)f(channels)h(to)g(play)g(the)g
+(sound.)49 b(The)32 b(channels)109 2614 y(allocated)24
+b(can)h(be)g(deallocated)g(with)f Fa(MID)m(ASfr)l(eeA)n(utoEf)n
+(fectChannels)p Fg(.)-57 2963 y Fh(Retur)o(n)h(v)o(alue)109
+3234 y Fg(TR)l(UE)g(if)f(successful,)h(F)-7 b(ALSE)25
+b(if)g(not.)-57 3583 y Fh(Operating)g(systems)109 3854
+y Fg(All)-57 4203 y Fh(See)g(also)109 4473 y Fa(MID)m(ASfr)l(eeA)n
+(utoEf)n(fectChannels)p Fg(,)d Fa(MID)m(ASplaySample)p
+eop
+%%Page: 76 82
+76 81 bop 109 208 a Ff(CHAPTER)25 b(5.)56 b(SAMPLE)25
+b(PLA)-10 b(YB)m(A)l(CK)2134 b Fg(76)-57 473 y Fb(5.3.2)118
+b(MID)l(ASfr)n(eeA)-6 b(utoEffectChannels)109 744 y Fc(BOOL)50
+b(MIDASfreeAutoEffectChannels\(void\))109 1055 y Fg(Deallocates)24
+b(the)h(channels)f(allocated)h(for)g(automatic)f(ef)n(fect)h(channels.)
+-57 1404 y Fh(Input)109 1675 y Fg(None.)-57 2024 y Fh(Description)109
+2294 y Fg(This)i(function)g(deallocates)g(the)h(channels)f(allocated)g
+(by)h Fa(MID)m(ASallocA)n(utoEf)n(fectChannels)d Fg(for)j(use)f(as)109
+2415 y(automatic)c(sound)h(ef)n(fect)i(channels.)-57
+2764 y Fh(Retur)o(n)f(v)o(alue)109 3035 y Fg(TR)l(UE)g(if)f
+(successful,)h(F)-7 b(ALSE)25 b(if)g(not.)-57 3384 y
+Fh(Operating)g(systems)109 3654 y Fg(All)-57 4003 y Fh(See)g(also)109
+4274 y Fa(MID)m(ASallocA)n(utoEf)n(fectChannels)p eop
+%%Page: 77 83
+77 82 bop 109 208 a Ff(CHAPTER)25 b(5.)56 b(SAMPLE)25
+b(PLA)-10 b(YB)m(A)l(CK)2134 b Fg(77)-57 473 y Fb(5.3.3)118
+b(MID)l(ASfr)n(eeSample)109 744 y Fc(BOOL)50 b
+(MIDASfreeSample\(MIDASsample)45 b(sample\))109 1055
+y Fg(Deallocates)24 b(a)h(sound)f(ef)n(fect)i(sample.)-57
+1404 y Fh(Input)109 1633 y(sample)48 b Fg(Sample)25 b(to)g(be)f
+(deallocated)-57 1982 y Fh(Description)109 2253 y Fg(This)42
+b(function)g(deallocates)g(a)i(sound)e(ef)n(fect)h(sample)f(that)g(has)
+h(been)g(pre)n(viously)e(loaded)i(with)f Fa(MI-)109 2373
+y(D)m(ASloadRawSample)18 b Fg(or)j Fa(MID)m(ASloadW)-9
+b(aveSample)p Fg(.)28 b(It)20 b(remo)o(v)o(es)g(the)g(sample)h(from)f
+(the)h(Sound)g(De)n(vice)109 2494 y(and)29 b(deallocates)g(the)h
+(memory)e(used.)45 b(This)29 b(function)f(may)i(not)f(be)g(called)h(if)
+f(the)h(sample)f(is)g(still)f(being)109 2614 y(played.)-57
+2963 y Fh(Retur)o(n)d(v)o(alue)109 3234 y Fg(TR)l(UE)g(if)f
+(successful,)h(F)-7 b(ALSE)25 b(if)g(not.)-57 3583 y
+Fh(Operating)g(systems)109 3854 y Fg(All)-57 4203 y Fh(See)g(also)109
+4473 y Fa(MID)m(ASloadRawSample)p Fg(,)d Fa(MID)m(ASloadW)-9
+b(aveSample)p eop
+%%Page: 78 84
+78 83 bop 109 208 a Ff(CHAPTER)25 b(5.)56 b(SAMPLE)25
+b(PLA)-10 b(YB)m(A)l(CK)2134 b Fg(78)-57 473 y Fb(5.3.4)118
+b(MID)l(ASgetSamplePlayStatus)109 744 y Fc(DWORD)50 b
+(MIDASgetSamplePlayStatus\(MIDASsa)o(mpleP)o(layHan)o(dle)45
+b(sample\);)109 1055 y Fg(Gets)24 b(the)h(sample)f(playing)g(status.)
+-57 1404 y Fh(Input)109 1633 y(sample)48 b Fg(The)25
+b(sample)f(playing)g(handle)-57 1982 y Fh(Description)109
+2253 y Fg(This)g(function)h(returns)g(the)g(playing)f(handle)h(for)h
+(the)f(sample)f(with)h(playing)f(handle)h Fh(sample)p
+Fg(.)32 b(The)25 b(play-)109 2373 y(ing)h(status)g(can)h(be)g(used)f
+(to)g(determine)h(if)f(the)h(sample)f(has)g(stopped,)h(and)f(if)h
+(another)g(sample)f(should)f(be)109 2494 y(played)i(in)h(its)f(place.)
+41 b(Normally)27 b(manually)f(checking)i(for)g(the)g(sample)f(playing)g
+(status)g(is)h(unnecessary)-6 b(,)109 2614 y(ho)n(we)n(v)o(er)l(,)23
+b(as)i(ne)n(w)f(samples)g(can)h(simply)f(be)h(played)f(on)h(top)f(of)h
+(the)f(old)h(ones.)-57 2963 y Fh(Retur)o(n)g(v)o(alue)109
+3234 y Fg(Playing)f(status)g(for)h(the)g(sample,)f(see)h
+Fc(enum)f Fa(MID)m(ASsamplePlayStatus)p Fg(.)-57 3583
+y Fh(Operating)h(systems)109 3854 y Fg(All)-57 4203 y
+Fh(See)g(also)109 4473 y Fa(MID)m(ASplaySample)p Fg(,)e
+Fa(MID)m(ASstopSample)p eop
+%%Page: 79 85
+79 84 bop 109 208 a Ff(CHAPTER)25 b(5.)56 b(SAMPLE)25
+b(PLA)-10 b(YB)m(A)l(CK)2134 b Fg(79)-57 473 y Fb(5.3.5)118
+b(MID)l(ASloadRawSample)109 744 y Fc(MIDASsample)48 b
+(MIDASloadRawSample\(char)f(*filename,)i(int)h(sampleType,)312
+864 y(int)g(loopSample\))109 1175 y Fg(Loads)24 b(a)h(ra)o(w)g(sound)f
+(ef)n(fect)h(sample.)-57 1524 y Fh(Input)109 1754 y(\002lename)49
+b Fg(Sample)25 b(\002le)g(name)109 1957 y Fh(sampleT)-7
+b(ype)49 b Fg(Sample)25 b(type,)f(see)h Fc(enum)f Fa(MID)m(ASsampleT)-7
+b(ypes)109 2160 y Fh(loopSample)49 b Fg(Sample)24 b(loop)g(type,)h(see)
+g Fc(enum)f Fa(MID)m(ASloop)-57 2509 y Fh(Description)109
+2780 y Fg(This)k(function)h(loads)g(a)h(sound)e(ef)n(fect)i(sample)f
+(into)g(memory)f(and)i(adds)f(it)g(to)g(the)g(Sound)h(De)n(vice.)44
+b(The)109 2900 y(sample)34 b(\002le)h(must)e(contain)i(just)e(the)i(ra)
+o(w)f(sample)h(data,)i(and)d(all)h(of)g(it)f(will)g(be)g(loaded)h(into)
+f(memory)-6 b(.)109 3021 y(If)37 b Fh(loopSample)h Fg(is)f(MID)l(AS)p
+1175 3021 30 4 v 36 w(LOOP)p 1471 3021 V 36 w(YES,)g(the)g(whole)g
+(sample)g(will)f(be)i(looped.)67 b(After)38 b(the)f(sample)109
+3141 y(has)30 b(been)g(loaded,)h(it)e(can)i(be)f(played)f(using)g
+Fa(MID)m(ASplaySample)p Fg(,)h(and)g(it)f(should)g(be)h(deallocated)g
+(with)109 3262 y Fa(MID)m(ASfr)l(eeSample)23 b Fg(after)j(it)e(is)g(no)
+h(longer)f(used.)-57 3611 y Fh(Retur)o(n)h(v)o(alue)109
+3881 y Fg(Sample)f(handle)h(if)g(successful,)f(NULL)h(if)f(f)o(ailed.)
+-57 4230 y Fh(Operating)h(systems)109 4501 y Fg(All)-57
+4850 y Fh(See)g(also)109 5121 y Fa(MID)m(ASplaySample)p
+Fg(,)e Fa(MID)m(ASfr)l(eeSample)p eop
+%%Page: 80 86
+80 85 bop 109 208 a Ff(CHAPTER)25 b(5.)56 b(SAMPLE)25
+b(PLA)-10 b(YB)m(A)l(CK)2134 b Fg(80)-57 473 y Fb(5.3.6)118
+b(MID)l(ASloadW)-8 b(a)m(v)o(eSample)109 744 y Fc(MIDASsample)48
+b(MIDASloadWaveSample\(char)f(*filename,)i(int)h(loopSample\))109
+1055 y Fg(Loads)24 b(a)h(RIFF)i(W)-12 b(A)f(VE)24 b(sound)g(ef)n(fect)h
+(sample.)-57 1404 y Fh(Input)109 1633 y(\002lename)49
+b Fg(Sample)25 b(\002le)g(name)109 1837 y Fh(loopSample)49
+b Fg(Sample)24 b(loop)g(type,)h(see)g Fc(enum)f Fa(MID)m(ASloop)-57
+2186 y Fh(Description)109 2456 y Fg(This)k(function)h(loads)g(a)h
+(sound)e(ef)n(fect)i(sample)f(into)g(memory)f(and)i(adds)f(it)g(to)g
+(the)g(Sound)h(De)n(vice.)44 b(The)109 2577 y(sample)37
+b(\002le)i(must)e(be)h(a)h(standard)f(RIFF)h(W)-12 b(A)f(VE)38
+b(\()p Fc(.wav)p Fg(\))g(sound)f(\002le,)42 b(containing)37
+b(ra)o(w)h(PCM)h(sound)109 2697 y(data)e(\227)g(compressed)g(W)-12
+b(A)f(VE)37 b(\002les)h(are)g(not)f(supported.)68 b(If)37
+b Fh(loopSample)h Fg(is)f(MID)l(AS)p 3349 2697 30 4 v
+36 w(LOOP)p 3645 2697 V 36 w(YES,)109 2817 y(the)e(whole)f(sample)h
+(will)f(be)h(looped.)61 b(After)35 b(the)g(sample)g(has)g(been)g
+(loaded,)i(it)e(can)g(be)h(played)e(using)109 2938 y
+Fa(MID)m(ASplaySample)p Fg(,)g(and)f(it)g(should)g(be)g(deallocated)h
+(with)e Fa(MID)m(ASfr)l(eeSample)h Fg(after)h(it)f(is)g(no)h(longer)109
+3058 y(used.)-57 3407 y Fh(Retur)o(n)25 b(v)o(alue)109
+3678 y Fg(Sample)f(handle)h(if)g(successful,)f(NULL)h(if)f(f)o(ailed.)
+-57 4027 y Fh(Operating)h(systems)109 4298 y Fg(All)-57
+4647 y Fh(See)g(also)109 4917 y Fa(MID)m(ASplaySample)p
+Fg(,)e Fa(MID)m(ASfr)l(eeSample)p eop
+%%Page: 81 87
+81 86 bop 109 208 a Ff(CHAPTER)25 b(5.)56 b(SAMPLE)25
+b(PLA)-10 b(YB)m(A)l(CK)2134 b Fg(81)-57 473 y Fb(5.3.7)118
+b(MID)l(ASplaySample)109 744 y Fc(MIDASsamplePlayHandle)46
+b(MIDASplaySample\(MIDASsample)g(sample,)312 864 y(unsigned)j(channel,)
+g(int)i(priority,)e(unsigned)g(rate,)312 984 y(unsigned)g(volume,)h
+(int)g(panning\))109 1296 y Fg(Plays)24 b(a)i(sound)e(ef)n(fect)h
+(sample.)-57 1645 y Fh(Input)109 1874 y(sample)48 b Fg(The)25
+b(sample)f(that)h(will)f(be)g(played)109 2077 y Fh(channel)50
+b Fg(The)23 b(channel)g(number)g(that)g(is)f(used)h(to)g(play)g(the)g
+(sample.)30 b(Use)23 b(MID)l(AS)p 3077 2077 30 4 v 36
+w(CHANNEL)p 3589 2077 V 36 w(A)-5 b(UT)n(O)353 2198 y(to)24
+b(let)g Fa(MID)m(ASplaySample)g Fg(select)g(the)h(channel)g
+(automatically)-6 b(.)28 b(See)e Fc(enum)e Fa(MID)m(ASc)o(hannels)p
+Fg(.)109 2401 y Fh(priority)48 b Fg(Sample)28 b(playing)f(priority)-6
+b(.)39 b(The)28 b(higher)g(the)g(v)n(alue)f(the)h(more)g(important)e
+(the)i(sample)g(is)f(con-)353 2521 y(sidered.)109 2725
+y Fh(rate)49 b Fg(Initial)24 b(sample)g(rate)h(for)g(the)g(sample)109
+2928 y Fh(v)o(olume)48 b Fg(Initial)24 b(v)n(olume)g(for)h(the)g
+(sample)109 3132 y Fh(panning)49 b Fg(Initial)24 b(panning)g(position)f
+(for)i(the)g(sample.)30 b(See)c Fc(enum)e Fa(MID)m(ASpanning)p
+Fg(.)-57 3481 y Fh(Description)109 3751 y Fg(This)f(function)f(is)i
+(used)f(to)h(play)f(a)h(sound)f(ef)n(fect)h(sample)f(on)g(a)h(gi)n(v)o
+(en)f(channel.)30 b(The)24 b(sample)f(will)g(recei)n(v)o(e)109
+3872 y(as)k(initial)e(parameters)i(the)g(v)n(alues)e(passed)i(as)g(ar)n
+(guments,)f(and)h(playing)f(the)h(sample)f(will)g(be)g(started.)37
+b(If)109 3992 y Fh(channel)22 b Fg(is)f(MID)l(AS)p 873
+3992 V 36 w(CHANNEL)p 1385 3992 V 36 w(A)-5 b(UT)n(O,)20
+b(the)i(channel)f(will)f(be)i(selected)f(automatically)-6
+b(.)28 b(The)21 b(sample)109 4113 y(playing)29 b(priority)g(is)g(used)h
+(to)g(choose)f(the)h(channel)g(the)g(sample)f(will)g(be)i(played)e(on)h
+(in)g(this)f(case.)47 b(Oth-)109 4233 y(erwise)29 b(a)h(channel)g
+(needs)f(to)g(be)h(allocated)f(with)g Fa(MID)m(ASallocateChannel)f
+Fg(before)i(the)f(sample)g(can)h(be)109 4353 y(played.)109
+4557 y(This)36 b(function)h(returns)h(a)f(sample)g(playing)g(handle,)j
+(that)d(can)h(later)g(be)g(used)f(to)g(stop)g(the)g(sample)g(or)109
+4677 y(change)c(its)f(parameters.)55 b(This)32 b(mak)o(es)g(it)h
+(possible)e(to)i(refer)h(to)e(samples)g(without)g(kno)n(wing)f(the)h(e)
+o(xact)109 4798 y(channel)24 b(the)o(y)g(are)i(played)e(on.)-57
+5147 y Fh(Retur)o(n)h(v)o(alue)109 5417 y Fg(Sample)f(playing)g(handle)
+h(if)g(successful,)f(NULL)g(if)h(f)o(ailed.)p eop
+%%Page: 82 88
+82 87 bop 109 208 a Ff(CHAPTER)25 b(5.)56 b(SAMPLE)25
+b(PLA)-10 b(YB)m(A)l(CK)2134 b Fg(82)-57 473 y Fh(Operating)25
+b(systems)109 744 y Fg(All)-57 1093 y Fh(See)g(also)109
+1363 y Fa(MID)m(ASstopSample)p Fg(,)d Fa(MID)m(ASallocA)n(utoEf)n
+(fectChannels)p eop
+%%Page: 83 89
+83 88 bop 109 208 a Ff(CHAPTER)25 b(5.)56 b(SAMPLE)25
+b(PLA)-10 b(YB)m(A)l(CK)2134 b Fg(83)-57 473 y Fb(5.3.8)118
+b(MID)l(ASsetSampleP)o(anning)109 744 y Fc(BOOL)50 b
+(MIDASsetSamplePanning\(MIDASsample)o(PlayH)o(andle)44
+b(sample,)312 864 y(int)50 b(panning\))109 1175 y Fg(Changes)25
+b(the)f(panning)g(position)f(of)i(a)g(sound)f(ef)n(fect)h(sample.)-57
+1524 y Fh(Input)109 1754 y(sample)48 b Fg(Sample)25 b(to)g(be)f
+(changed)109 1957 y Fh(panning)49 b Fg(Ne)n(w)25 b(panning)f(position)f
+(for)i(the)f(sample)h(\(see)g Fc(enum)f Fa(MID)m(ASpanning)p
+Fg(\))-57 2306 y Fh(Description)109 2577 y Fg(This)j(function)h
+(changes)h(the)f(panning)f(position)g(of)i(a)g(sound)e(ef)n(fect)i
+(sample)f(that)g(is)g(being)g(played.)41 b(See)109 2697
+y(description)23 b(of)i Fc(enum)f Fa(MID)m(ASpanning)f
+Fg(for)i(information)f(about)g(the)g(panning)g(position)f(v)n(alues.)
+-57 3046 y Fh(Retur)o(n)i(v)o(alue)109 3317 y Fg(TR)l(UE)g(if)f
+(successful,)h(F)-7 b(ALSE)25 b(if)g(not.)-57 3666 y
+Fh(Operating)g(systems)109 3937 y Fg(All)-57 4286 y Fh(See)g(also)109
+4556 y Fa(MID)m(ASplaySample)p eop
+%%Page: 84 90
+84 89 bop 109 208 a Ff(CHAPTER)25 b(5.)56 b(SAMPLE)25
+b(PLA)-10 b(YB)m(A)l(CK)2134 b Fg(84)-57 473 y Fb(5.3.9)118
+b(MID)l(ASsetSamplePriority)109 744 y Fc(BOOL)50 b
+(MIDASsetSamplePriority\(MIDASsampl)o(ePlay)o(Handle)44
+b(sample,)312 864 y(int)50 b(priority\))109 1175 y Fg(Changes)25
+b(the)f(playing)g(priority)g(of)h(a)g(sound)f(ef)n(fect)h(sample.)-57
+1524 y Fh(Input)109 1754 y(sample)48 b Fg(Sample)25 b(to)g(be)f
+(changed)109 1957 y Fh(priority)48 b Fg(Ne)n(w)25 b(playing)f(priority)
+g(for)h(the)f(sample)-57 2306 y Fh(Description)109 2577
+y Fg(This)g(function)g(changes)g(the)h(playing)f(priority)g(a)h(sound)f
+(ef)n(fect)h(sample)f(that)g(is)h(being)f(played.)-57
+2926 y Fh(Retur)o(n)h(v)o(alue)109 3196 y Fg(TR)l(UE)g(if)f
+(successful,)h(F)-7 b(ALSE)25 b(if)g(not.)-57 3546 y
+Fh(Operating)g(systems)109 3816 y Fg(All)-57 4165 y Fh(See)g(also)109
+4436 y Fa(MID)m(ASplaySample)p eop
+%%Page: 85 91
+85 90 bop 109 208 a Ff(CHAPTER)25 b(5.)56 b(SAMPLE)25
+b(PLA)-10 b(YB)m(A)l(CK)2134 b Fg(85)-57 473 y Fb(5.3.10)118
+b(MID)l(ASsetSampleRate)109 744 y Fc(BOOL)50 b
+(MIDASsetSampleRate\(MIDASsamplePla)o(yHand)o(le)45 b(sample,)312
+864 y(unsigned)k(rate\))109 1175 y Fg(Changes)25 b(the)f(sample)g(rate)
+i(for)f(a)g(sound)f(ef)n(fect)h(sample.)-57 1524 y Fh(Input)109
+1754 y(sample)48 b Fg(Sample)25 b(to)g(be)f(changed)109
+1957 y Fh(rate)49 b Fg(Ne)n(w)24 b(sample)h(rate)g(for)g(the)g(sample)
+-57 2306 y Fh(Description)109 2577 y Fg(This)f(function)g(changes)g
+(the)h(sample)f(rate)h(for)h(a)f(sound)f(ef)n(fect)h(sample)f(that)g
+(is)h(being)f(played.)-57 2926 y Fh(Retur)o(n)h(v)o(alue)109
+3196 y Fg(TR)l(UE)g(if)f(successful,)h(F)-7 b(ALSE)25
+b(if)g(not.)-57 3546 y Fh(Operating)g(systems)109 3816
+y Fg(All)-57 4165 y Fh(See)g(also)109 4436 y Fa(MID)m(ASplaySample)p
+eop
+%%Page: 86 92
+86 91 bop 109 208 a Ff(CHAPTER)25 b(5.)56 b(SAMPLE)25
+b(PLA)-10 b(YB)m(A)l(CK)2134 b Fg(86)-57 473 y Fb(5.3.11)118
+b(MID)l(ASsetSampleV)-12 b(olume)109 744 y Fc(BOOL)50
+b(MIDASsetSampleVolume\(MIDASsampleP)o(layHa)o(ndle)45
+b(sample,)312 864 y(unsigned)k(volume\))109 1175 y Fg(Changes)25
+b(the)f(v)n(olume)g(for)h(a)g(sound)f(ef)n(fect)h(sample.)-57
+1524 y Fh(Input)109 1754 y(sample)48 b Fg(Sample)25 b(to)g(be)f
+(changed)109 1957 y Fh(rate)49 b Fg(Ne)n(w)24 b(v)n(olume)g(for)h(the)g
+(sample)f(\(0\22664\))-57 2306 y Fh(Description)109 2577
+y Fg(This)g(function)g(changes)g(the)h(v)n(olume)f(for)h(a)g(sound)f
+(ef)n(fect)h(sample)f(that)h(is)f(being)g(played.)-57
+2926 y Fh(Retur)o(n)h(v)o(alue)109 3196 y Fg(TR)l(UE)g(if)f
+(successful,)h(F)-7 b(ALSE)25 b(if)g(not.)-57 3546 y
+Fh(Operating)g(systems)109 3816 y Fg(All)-57 4165 y Fh(See)g(also)109
+4436 y Fa(MID)m(ASplaySample)p eop
+%%Page: 87 93
+87 92 bop 109 208 a Ff(CHAPTER)25 b(5.)56 b(SAMPLE)25
+b(PLA)-10 b(YB)m(A)l(CK)2134 b Fg(87)-57 473 y Fb(5.3.12)118
+b(MID)l(ASstopSample)109 744 y Fc(BOOL)50 b
+(MIDASstopSample\(MIDASsamplePlayHa)o(ndle)44 b(sample\))109
+1055 y Fg(Stops)24 b(playing)g(a)h(sample.)-57 1404 y
+Fh(Input)109 1633 y(sample)48 b Fg(Sample)25 b(to)g(be)f(stopped)-57
+1982 y Fh(Description)109 2253 y Fg(This)h(function)g(stops)g(playing)h
+(a)g(sound)f(ef)n(fect)i(sample)e(started)h(with)g Fa(MID)m
+(ASplaySample)p Fg(.)33 b(Playing)25 b(the)109 2373 y(sound)35
+b(will)g(stop,)i(and)f(the)g(channel)f(is)h(freed)g(for)h(other)e
+(samples)g(to)h(use.)63 b(Note)36 b(that)f Fh(sample)h
+Fg(is)f(the)109 2494 y(sample)24 b(playing)g(handle)g(returned)h(by)f
+Fa(MID)m(ASplaySample)p Fg(.)-57 2843 y Fh(Retur)o(n)h(v)o(alue)109
+3113 y Fg(TR)l(UE)g(if)f(successful,)h(F)-7 b(ALSE)25
+b(if)g(not.)-57 3463 y Fh(Operating)g(systems)109 3733
+y Fg(All)-57 4082 y Fh(See)g(also)109 4353 y Fa(MID)m(ASplaySample)p
+eop
+%%Page: 88 94
+88 93 bop 109 1220 a Fi(Chapter)51 b(6)109 1718 y(Str)l(eam)g(playback)
+-57 2316 y Fe(6.1)142 b(Constants)109 2623 y Fg(This)21
+b(section)h(describes)h(all)f(constants)f(used)i(in)f(MID)l(AS)g
+(stream)h(playback.)29 b(The)o(y)22 b(are)h(grouped)g(accord-)109
+2743 y(ing)i(to)g(the)h Fc(enum)f Fg(used)h(to)f(de\002ne)i(them.)33
+b(Note)26 b(that)f(stream)h(playback)f(properties,)h(such)g(as)f(v)n
+(olume)g(and)109 2863 y(panning,)e(are)j(controlled)e(similarily)f
+(those)h(of)h(samples.)1949 5943 y(88)p eop
+%%Page: 89 95
+89 94 bop 109 208 a Ff(CHAPTER)25 b(6.)56 b(STREAM)25
+b(PLA)-10 b(YB)m(A)l(CK)2123 b Fg(89)-57 473 y Fe(6.2)142
+b(Data)35 b(types)109 779 y Fg(This)24 b(section)g(describes)g(all)h
+(data)g(types)f(used)h(in)f(MID)l(AS)h(stream)f(playback.)p
+eop
+%%Page: 90 96
+90 95 bop 109 208 a Ff(CHAPTER)25 b(6.)56 b(STREAM)25
+b(PLA)-10 b(YB)m(A)l(CK)2123 b Fg(90)-57 473 y Fb(6.2.1)118
+b(MID)l(ASstr)n(eamHandle)109 744 y Fc(typedef)49 b(...)h
+(MIDASstreamHandle;)-57 1093 y Fh(Description)109 1363
+y Fa(MID)m(ASstr)l(eamHandle)22 b Fg(is)h(a)h(stream)g(handle)g(that)f
+(de\002nes)h(a)h(digital)d(audio)i(stream)f(that)h(is)f(being)h
+(played.)109 1484 y(Streams)29 b(only)g(e)o(xist)g(in)g(the)g(system)g
+(when)g(the)o(y)g(are)h(being)f(played,)i(so)e(there)h(is)f(no)g
+(separate)h(\223playing)109 1604 y(handle\224)24 b(data)h(type.)p
+eop
+%%Page: 91 97
+91 96 bop 109 208 a Ff(CHAPTER)25 b(6.)56 b(STREAM)25
+b(PLA)-10 b(YB)m(A)l(CK)2123 b Fg(91)-57 473 y Fe(6.3)142
+b(Functions)109 779 y Fg(This)24 b(section)g(describes)g(all)h
+(functions)f(a)n(v)n(ailable)g(for)h(MID)l(AS)g(stream)f(playback.)p
+eop
+%%Page: 92 98
+92 97 bop 109 208 a Ff(CHAPTER)25 b(6.)56 b(STREAM)25
+b(PLA)-10 b(YB)m(A)l(CK)2123 b Fg(92)-57 473 y Fb(6.3.1)118
+b(MID)l(ASfeedStr)n(eamData)109 744 y Fc(unsigned)49
+b(MIDASfeedStreamData\(MIDASstreamHan)o(dle)c(stream,)312
+864 y(unsigned)k(char)h(*data,)g(unsigned)f(numBytes,)g(BOOL)h
+(feedAll\);)109 1175 y Fg(Feeds)25 b(sound)f(data)h(to)f(a)h(digital)f
+(audio)g(stream)h(b)n(uf)n(fer)-5 b(.)-57 1524 y Fh(Input)109
+1754 y(str)n(eam)49 b Fg(The)25 b(stream)f(that)h(will)e(play)i(the)g
+(data)109 1957 y Fh(data)49 b Fg(Pointer)24 b(to)h(sound)f(data)109
+2160 y Fh(numBytes)50 b Fg(Number)24 b(of)h(bytes)f(of)h(sound)f(data)h
+(a)n(v)n(ailable)109 2364 y Fh(feedAll)49 b Fg(TR)l(UE)25
+b(if)g(the)f(function)g(should)g(block)g(until)g(all)g(sound)g(data)h
+(can)g(be)g(fed)-57 2713 y Fh(Description)109 2983 y
+Fg(This)42 b(function)h(is)g(used)g(to)g(feed)h(sample)e(data)i(to)f(a)
+g(stream)g(that)g(has)h(been)f(started)g(with)g Fa(MID)m(AS-)109
+3104 y(playStr)l(eamP)-8 b(olling)p Fg(.)70 b(Up)39 b(to)g
+Fh(numBytes)h Fg(bytes)f(of)g(ne)n(w)f(sample)g(data)i(from)e
+Fh(*data)h Fg(will)f(be)i(copied)109 3224 y(to)27 b(the)g(stream)h(b)n
+(uf)n(fer)l(,)g(and)g(the)f(stream)h(b)n(uf)n(fer)f(write)h(position)e
+(is)h(updated)g(accordingly)-6 b(.)38 b(The)28 b(function)109
+3345 y(returns)f(the)g(number)f(of)h(bytes)g(of)g(sound)f(data)i
+(actually)e(used.)38 b(If)27 b Fh(feedAll)h Fg(is)f(TR)l(UE,)g(the)g
+(function)f(will)109 3465 y(block)e(the)h(current)g(thread)g(of)f(e)o
+(x)o(ecution)g(until)f(all)i(sound)f(data)h(is)f(used.)-57
+3814 y Fh(Retur)o(n)h(v)o(alue)109 4085 y Fg(The)f(number)h(of)g(bytes)
+f(of)h(sound)f(data)h(actually)f(used.)-57 4434 y Fh(Operating)h
+(systems)109 4705 y Fg(W)l(in32,)f(Linux)-57 5054 y Fh(See)h(also)109
+5324 y Fa(MID)m(ASplayStr)l(eamP)-8 b(olling)p eop
+%%Page: 93 99
+93 98 bop 109 208 a Ff(CHAPTER)25 b(6.)56 b(STREAM)25
+b(PLA)-10 b(YB)m(A)l(CK)2123 b Fg(93)-57 473 y Fb(6.3.2)118
+b(MID)l(ASgetStr)n(eamBytesBuffer)n(ed)109 744 y Fc(DWORD)50
+b(MIDASgetStreamBytesBuffered\(MIDA)o(Sstre)o(amHand)o(le)45
+b(stream\))109 1055 y Fg(Gets)24 b(the)h(number)f(of)h(bytes)f(of)h
+(stream)g(currently)f(b)n(uf)n(fered.)-57 1404 y Fh(Input)109
+1633 y(str)n(eam)49 b Fg(The)25 b(stream)f(handle)-57
+1982 y Fh(Description)109 2253 y Fg(This)f(function)h(returns)g(the)h
+(number)f(of)g(bytes)g(of)h(sound)f(data)g(currently)g(stored)g(in)h
+(the)f(stream)g(b)n(uf)n(fer)-5 b(.)30 b(It)109 2373
+y(can)23 b(be)h(used)f(to)g(monitor)e(the)i(stream)g(playback,)h(and)f
+(possibly)e(prepare)j(to)f(feed)h(e)o(xtra)f(data)g(if)h(the)f
+(\002gure)109 2494 y(gets)h(too)g(lo)n(w)-6 b(.)-57 2843
+y Fh(Retur)o(n)25 b(v)o(alue)109 3113 y Fg(The)f(number)h(of)g(bytes)f
+(of)h(sound)f(data)h(currently)f(b)n(uf)n(fered.)-57
+3463 y Fh(Operating)h(systems)109 3733 y Fg(W)l(in32,)f(Linux)-57
+4082 y Fh(See)h(also)109 4353 y Fa(MID)m(ASfeedStr)l(eamData)p
+eop
+%%Page: 94 100
+94 99 bop 109 208 a Ff(CHAPTER)25 b(6.)56 b(STREAM)25
+b(PLA)-10 b(YB)m(A)l(CK)2123 b Fg(94)-57 473 y Fb(6.3.3)118
+b(MID)l(ASpauseStr)n(eam)109 744 y Fc(BOOL)50 b
+(MIDASpauseStream\(MIDASstreamHandl)o(e)45 b(stream\))109
+1055 y Fg(P)o(auses)24 b(stream)h(playback.)-57 1404
+y Fh(Input)109 1633 y(str)n(eam)49 b Fg(The)25 b(stream)f(to)h(pause)
+-57 1982 y Fh(Description)109 2253 y Fg(This)30 b(function)h(pauses)g
+(the)g(playback)h(of)f(a)h(stream.)50 b(When)32 b(a)g(stream)f(is)g
+(paused,)i(stream)e(data)g(can)h(be)109 2373 y(fed)f(normally)f(with)g
+Fa(MID)m(ASfeedStr)l(eamData)p Fg(,)h(b)n(ut)g(nothing)e(will)h
+(actually)h(be)g(played.)49 b(Playback)32 b(can)109 2494
+y(be)25 b(resumed)f(with)g Fa(MID)m(ASr)l(esumeStr)l(eam)p
+Fg(.)-57 2843 y Fh(Retur)o(n)h(v)o(alue)109 3113 y Fg(TR)l(UE)g(if)f
+(successful,)h(F)-7 b(ALSE)25 b(if)g(not.)-57 3463 y
+Fh(Operating)g(systems)109 3733 y Fg(W)l(in32,)f(Linux)-57
+4082 y Fh(See)h(also)109 4353 y Fa(MID)m(ASr)l(esumeStr)l(eam)p
+Fg(,)e Fa(MID)m(ASfeedStr)l(eamData)p eop
+%%Page: 95 101
+95 100 bop 109 208 a Ff(CHAPTER)25 b(6.)56 b(STREAM)25
+b(PLA)-10 b(YB)m(A)l(CK)2123 b Fg(95)-57 473 y Fb(6.3.4)118
+b(MID)l(ASplayStr)n(eamFile)109 744 y Fc(MIDASstreamHandle)47
+b(MIDASplayStreamFile\(char)f(*fileName,)312 864 y(unsigned)j
+(sampleType,)g(unsigned)g(sampleRate,)312 984 y(unsigned)g
+(bufferLength,)g(int)h(loopStream\))109 1296 y Fg(Starts)25
+b(playing)e(a)i(digital)f(audio)g(stream)h(from)f(a)h(\002le.)-57
+1645 y Fh(Input)109 1874 y(\002leName)49 b Fg(Stream)25
+b(\002le)g(name)109 2077 y Fh(sampleT)-7 b(ype)49 b Fg(Stream)25
+b(sample)f(type,)g(see)i Fc(enum)e Fa(MID)m(ASsampleT)-7
+b(ypes)109 2281 y Fh(sampleRate)48 b Fg(Stream)26 b(sample)e(rate)109
+2484 y Fh(b)n(ufferLength)51 b Fg(Stream)26 b(playback)e(b)n(uf)n(fer)h
+(length)f(in)g(milliseconds)109 2688 y Fh(loopStr)n(eam)49
+b Fg(1)25 b(if)g(the)f(stream)h(should)e(be)i(looped,)f(0)h(if)g(not)
+-57 3037 y Fh(Description)109 3307 y Fg(This)h(function)g(starts)h
+(playing)f(a)i(digital)d(audio)i(stream)g(from)g(a)g(\002le.)38
+b(The)28 b(\002le)f(must)f(contain)h(ra)o(w)g(audio)109
+3428 y(data)36 b(with)f(no)g(headers)h(\227)g(to)f(play)h(W)-12
+b(A)f(VE)35 b(\002les,)j(use)e Fa(MID)m(ASplayStr)l(eamW)-9
+b(aveF)l(ile)p Fg(.)61 b(The)36 b(function)109 3548 y(allocates)28
+b(the)g(stream)g(b)n(uf)n(fer)l(,)h(creates)g(a)g(ne)n(w)f(thread)g
+(that)g(will)f(read)i(sample)f(data)g(from)h(the)f(\002le)g(to)g(the)
+109 3668 y(stream)h(b)n(uf)n(fer)l(,)h(and)g(starts)f(the)g(Sound)g(De)
+n(vice)g(to)g(play)g(the)g(stream.)45 b(The)29 b(stream)g(will)g
+(continue)f(play-)109 3789 y(ing)g(until)f(it)i(is)f(stopped)g(with)f
+Fa(MID)m(ASstopStr)l(eam)p Fg(.)41 b(A)29 b(Sound)f(De)n(vice)h
+(channel)f(will)g(be)h(automatically)109 3909 y(allocated)24
+b(for)h(the)g(stream.)109 4113 y(The)f(stream)g(b)n(uf)n(fer)h(length)e
+(should)h(be)g(at)h(least)f(around)g(500ms)f(if)i(the)f(stream)g
+(\002le)h(is)f(being)g(read)h(from)f(a)109 4233 y(disc,)g(to)g(a)n(v)n
+(oid)h(breaks)g(in)f(stream)h(playback)-57 4582 y Fh(Retur)o(n)g(v)o
+(alue)109 4853 y Fg(MID)l(AS)g(stream)f(handle)h(if)f(successful,)h
+(NULL)f(if)h(f)o(ailed.)-57 5202 y Fh(Operating)g(systems)109
+5472 y Fg(W)l(in32,)f(Linux)p eop
+%%Page: 96 102
+96 101 bop 109 208 a Ff(CHAPTER)25 b(6.)56 b(STREAM)25
+b(PLA)-10 b(YB)m(A)l(CK)2123 b Fg(96)-57 473 y Fh(See)25
+b(also)109 744 y Fa(MID)m(ASplayStr)l(eamW)-9 b(aveF)l(ile)p
+Fg(,)22 b Fa(MID)m(ASstopStr)l(eam)p eop
+%%Page: 97 103
+97 102 bop 109 208 a Ff(CHAPTER)25 b(6.)56 b(STREAM)25
+b(PLA)-10 b(YB)m(A)l(CK)2123 b Fg(97)-57 473 y Fb(6.3.5)118
+b(MID)l(ASplayStr)n(eamW)-8 b(a)m(v)o(eFile)109 744 y
+Fc(MIDASstreamHandle)47 b(MIDASplayStreamWaveFile\(char)f(*fileName,)
+312 864 y(unsigned)j(bufferLength,)g(int)h(loopStream\))109
+1175 y Fg(Starts)25 b(playing)e(a)i(digital)f(audio)g(stream)h(from)f
+(a)h(RIFF)i(W)-12 b(A)f(VE)24 b(\002le.)-57 1524 y Fh(Input)109
+1754 y(\002leName)49 b Fg(Stream)25 b(\002le)g(name)109
+1957 y Fh(b)n(ufferLength)51 b Fg(Stream)26 b(playback)e(b)n(uf)n(fer)h
+(length)f(in)g(milliseconds)109 2160 y Fh(loopStr)n(eam)49
+b Fg(1)25 b(if)g(the)f(stream)h(should)e(be)i(looped,)f(0)h(if)g(not)
+-57 2509 y Fh(Description)109 2780 y Fg(This)36 b(function)h(starts)g
+(playing)g(a)g(digital)g(audio)g(stream)g(from)g(a)h(\002le.)69
+b(The)38 b(\002le)g(must)e(be)i(a)g(standard)109 2900
+y(RIFF)f(W)-12 b(A)f(VE)36 b(\()p Fc(.wav)p Fg(\))f(sound)g(\002le)i
+(containing)d(ra)o(w)i(PCM)h(sound)e(data)h(\227)f(compressed)h(W)-12
+b(A)f(VE)35 b(\002les)109 3021 y(are)28 b(not)e(supported.)37
+b(The)27 b(function)g(allocates)g(the)g(stream)g(b)n(uf)n(fer)l(,)g
+(creates)h(a)g(ne)n(w)e(thread)i(that)e(will)h(read)109
+3141 y(sample)h(data)h(from)f(the)h(\002le)g(to)g(the)f(stream)h(b)n
+(uf)n(fer)l(,)g(and)g(starts)f(the)h(Sound)g(De)n(vice)f(to)h(play)f
+(the)h(stream.)109 3262 y(The)g(stream)g(will)g(continue)f(playing)h
+(until)f(it)h(is)g(stopped)g(with)f Fa(MID)m(ASstopStr)l(eam)p
+Fg(.)43 b(A)29 b(Sound)h(De)n(vice)109 3382 y(channel)24
+b(will)g(be)h(automatically)f(allocated)g(for)h(the)g(stream.)109
+3585 y(The)f(stream)g(b)n(uf)n(fer)h(length)e(should)h(be)g(at)h(least)
+f(around)g(500ms)f(if)i(the)f(stream)g(\002le)h(is)f(being)g(read)h
+(from)f(a)109 3706 y(disk,)g(to)g(a)n(v)n(oid)g(breaks)h(in)g(stream)f
+(playback)-57 4055 y Fh(Retur)o(n)h(v)o(alue)109 4326
+y Fg(MID)l(AS)g(stream)f(handle)h(if)f(successful,)h(NULL)f(if)h(f)o
+(ailed.)-57 4675 y Fh(Operating)g(systems)109 4945 y
+Fg(W)l(in32,)f(Linux)-57 5294 y Fh(See)h(also)109 5565
+y Fa(MID)m(ASplayStr)l(eamF)l(ile)p Fg(,)d Fa(MID)m(ASstopStr)l(eam)p
+eop
+%%Page: 98 104
+98 103 bop 109 208 a Ff(CHAPTER)25 b(6.)56 b(STREAM)25
+b(PLA)-10 b(YB)m(A)l(CK)2123 b Fg(98)-57 473 y Fb(6.3.6)118
+b(MID)l(ASplayStr)n(eamP)n(olling)109 744 y Fc(MIDASstreamHandle)47
+b(MIDASplayStreamPolling\(unsigned)e(sampleType,)312
+864 y(unsigned)k(sampleRate,)g(unsigned)g(bufferLength\))109
+1175 y Fg(Starts)25 b(playing)e(a)i(digital)f(audio)g(stream)h(in)f
+(polling)f(mode.)-57 1524 y Fh(Input)109 1754 y(sampleT)-7
+b(ype)49 b Fg(Stream)25 b(sample)f(type,)g(see)i Fc(enum)e
+Fa(MID)m(ASsampleT)-7 b(ypes)109 1957 y Fh(sampleRate)48
+b Fg(Stream)26 b(sample)e(rate)109 2160 y Fh(b)n(ufferLength)51
+b Fg(Stream)26 b(playback)e(b)n(uf)n(fer)h(length)f(in)g(milliseconds)
+-57 2509 y Fh(Description)109 2780 y Fg(This)37 b(function)g(starts)h
+(playing)f(a)h(digital)f(audio)g(stream)h(in)g(polling)e(mode.)70
+b(It)38 b(allocates)g(and)g(empty)109 2900 y(stream)31
+b(b)n(uf)n(fer)l(,)i(and)f(starts)e(the)i(Sound)f(De)n(vice)g(to)h
+(play)f(the)g(stream.)51 b(Sample)31 b(data)h(can)g(be)f(fed)h(to)f
+(the)109 3021 y(stream)24 b(b)n(uf)n(fer)g(with)g Fa(MID)m(ASfeedStr)l
+(eamData)p Fg(.)29 b(The)c(stream)f(will)f(continue)h(playing)g(until)f
+(it)h(is)g(stopped)109 3141 y(with)j Fa(MID)m(ASstopStr)l(eam)p
+Fg(.)37 b(This)27 b(function)f(will)h(automatically)f(allocate)i(a)g
+(Sound)f(De)n(vice)g(channel)h(for)109 3262 y(the)c(stream.)109
+3465 y(T)-8 b(o)22 b(a)n(v)n(oid)h(breaks)g(in)g(playback,)g(the)f
+(stream)h(b)n(uf)n(fer)g(size)g(should)f(be)h(at)g(least)g(twice)f(the)
+h(e)o(xpected)g(polling)109 3585 y(period.)30 b(That)25
+b(is,)f(if)h(you)g(will)f(be)h(feeding)g(data)g(5)g(times)f(per)h
+(second)f(\(e)n(v)o(ery)h(200ms\),)f(the)h(b)n(uf)n(fer)f(should)109
+3706 y(be)h(at)f(least)h(400ms)f(long.)-57 4055 y Fh(Retur)o(n)h(v)o
+(alue)109 4326 y Fg(MID)l(AS)g(stream)f(handle)h(if)f(successful,)h
+(NULL)f(if)h(f)o(ailed.)-57 4675 y Fh(Operating)g(systems)109
+4945 y Fg(W)l(in32,)f(Linux)-57 5294 y Fh(See)h(also)109
+5565 y Fa(MID)m(ASstopStr)l(eam)p Fg(,)d Fa(MID)m(ASfeedStr)l(eamData)p
+eop
+%%Page: 99 105
+99 104 bop 109 208 a Ff(CHAPTER)25 b(6.)56 b(STREAM)25
+b(PLA)-10 b(YB)m(A)l(CK)2123 b Fg(99)-57 473 y Fb(6.3.7)118
+b(MID)l(ASr)n(esumeStr)n(eam)109 744 y Fc(BOOL)50 b
+(MIDASresumeStream\(MIDASstreamHand)o(le)45 b(stream\))109
+1055 y Fg(Resumes)24 b(stream)h(playback)f(after)i(pause.)-57
+1404 y Fh(Input)109 1633 y(str)n(eam)49 b Fg(The)25 b(stream)f(to)h
+(resume)-57 1982 y Fh(Description)109 2253 y Fg(This)e(function)g
+(resumes)h(the)g(playback)g(of)g(a)g(stream)g(that)g(has)g(been)g
+(paused)g(with)f Fa(MID)m(ASpauseStr)l(eam)p Fg(.)-57
+2602 y Fh(Retur)o(n)i(v)o(alue)109 2873 y Fg(TR)l(UE)g(if)f
+(successful,)h(F)-7 b(ALSE)25 b(if)g(not.)-57 3222 y
+Fh(Operating)g(systems)109 3492 y Fg(W)l(in32,)f(Linux)-57
+3842 y Fh(See)h(also)109 4112 y Fa(MID)m(ASpauseStr)l(eam)p
+eop
+%%Page: 100 106
+100 105 bop 109 208 a Ff(CHAPTER)25 b(6.)56 b(STREAM)25
+b(PLA)-10 b(YB)m(A)l(CK)2073 b Fg(100)-57 473 y Fb(6.3.8)118
+b(MID)l(ASsetStr)n(eamP)o(anning)109 744 y Fc(BOOL)50
+b(MIDASsetStreamPanning\(MIDASstream)o(Handl)o(e)45 b(stream,)312
+864 y(int)50 b(panning\);)109 1175 y Fg(Changes)25 b(stream)f(panning)g
+(position.)-57 1524 y Fh(Input)109 1754 y(str)n(eam)49
+b Fg(Stream)25 b(handle)f(for)i(the)e(stream)109 1957
+y Fh(panning)49 b Fg(Ne)n(w)25 b(panning)f(position)f(for)i(the)f
+(stream)-57 2306 y Fh(Description)109 2577 y Fg(This)d(function)h
+(changes)h(the)f(panning)g(position)f(for)h(a)h(stream)g(that)f(is)g
+(being)g(played.)30 b(The)22 b(initial)f(v)n(olume)109
+2697 y(is)e(0)g(\(center\).)29 b(See)21 b(description)d(of)h
+Fc(enum)g Fa(MID)m(ASpanning)e Fg(for)j(information)e(about)h(the)g
+(panning)f(position)109 2817 y(v)n(alues.)-57 3167 y
+Fh(Retur)o(n)25 b(v)o(alue)109 3437 y Fg(TR)l(UE)g(if)f(successful,)h
+(F)-7 b(ALSE)25 b(if)g(not.)-57 3786 y Fh(Operating)g(systems)109
+4057 y Fg(W)l(in32,)f(Linux)-57 4406 y Fh(See)h(also)109
+4677 y Fa(MID)m(ASsetStr)l(eamV)-11 b(olume)p Fg(,)22
+b Fa(MID)m(ASsetStr)l(eamRate)p eop
+%%Page: 101 107
+101 106 bop 109 208 a Ff(CHAPTER)25 b(6.)56 b(STREAM)25
+b(PLA)-10 b(YB)m(A)l(CK)2073 b Fg(101)-57 473 y Fb(6.3.9)118
+b(MID)l(ASsetStr)n(eamRate)109 744 y Fc(BOOL)50 b
+(MIDASsetStreamRate\(MIDASstreamHan)o(dle)45 b(stream,)312
+864 y(unsigned)k(rate\);)109 1175 y Fg(Changes)25 b(stream)f(playback)h
+(sample)f(rate.)-57 1524 y Fh(Input)109 1754 y(str)n(eam)49
+b Fg(Stream)25 b(handle)f(for)i(the)e(stream)109 1957
+y Fh(rate)49 b Fg(Ne)n(w)24 b(playback)h(sample)f(rate)h(for)g(the)g
+(stream,)f(in)h(Hertz.)-57 2306 y Fh(Description)109
+2577 y Fg(This)31 b(function)f(changes)i(the)f(playback)h(sample)f
+(rate)h(for)g(a)g(stream)f(that)g(is)g(being)g(played.)51
+b(The)32 b(initial)109 2697 y(sample)24 b(rate)h(is)f(gi)n(v)o(en)g(as)
+h(an)g(ar)n(gument)f(to)g(the)h(function)f(that)g(starts)h(stream)f
+(playback.)109 2900 y(Note)29 b(that)g(the)h(stream)f(playback)h(b)n
+(uf)n(fer)f(size)h(is)f(calculated)h(based)g(on)f(the)h(initial)e
+(sample)h(rate,)i(so)e(the)109 3021 y(stream)35 b(sample)g(rate)h
+(should)f(not)g(be)h(changed)g(v)o(ery)f(f)o(ar)i(from)e(that)g
+(\002gure.)64 b(In)36 b(particular)l(,)j(playback)109
+3141 y(sample)32 b(rates)i(o)o(v)o(er)e(tw)o(o)h(times)f(the)h(initial)
+f(v)n(alue)h(may)g(cause)g(breaks)h(in)f(stream)g(playback.)55
+b(T)-8 b(oo)33 b(lo)n(w)109 3262 y(rates,)25 b(on)f(the)h(other)f
+(hand,)h(will)f(increase)h(latenc)o(y)-6 b(.)-57 3611
+y Fh(Retur)o(n)25 b(v)o(alue)109 3881 y Fg(TR)l(UE)g(if)f(successful,)h
+(F)-7 b(ALSE)25 b(if)g(not.)-57 4230 y Fh(Operating)g(systems)109
+4501 y Fg(W)l(in32,)f(Linux)-57 4850 y Fh(See)h(also)109
+5121 y Fa(MID)m(ASsetStr)l(eamV)-11 b(olume)p Fg(,)22
+b Fa(MID)m(ASsetStr)l(eamP)-8 b(anning)p eop
+%%Page: 102 108
+102 107 bop 109 208 a Ff(CHAPTER)25 b(6.)56 b(STREAM)25
+b(PLA)-10 b(YB)m(A)l(CK)2073 b Fg(102)-57 473 y Fb(6.3.10)118
+b(MID)l(ASsetStr)n(eamV)-12 b(olume)109 744 y Fc(BOOL)50
+b(MIDASsetStreamVolume\(MIDASstreamH)o(andle)44 b(stream,)312
+864 y(unsigned)49 b(volume\);)109 1175 y Fg(Changes)25
+b(stream)f(playback)h(v)n(olume.)-57 1524 y Fh(Input)109
+1754 y(str)n(eam)49 b Fg(Stream)25 b(handle)f(for)i(the)e(stream)109
+1957 y Fh(v)o(olume)48 b Fg(Ne)n(w)25 b(v)n(olume)f(for)h(the)f
+(stream,)h(0\22664.)-57 2306 y Fh(Description)109 2577
+y Fg(This)20 b(function)h(changes)h(the)f(playback)g(v)n(olume)g(for)h
+(a)g(stream)f(that)g(is)g(being)g(played.)30 b(The)21
+b(initial)f(v)n(olume)109 2697 y(is)k(64)h(\(maximum\).)-57
+3046 y Fh(Retur)o(n)g(v)o(alue)109 3317 y Fg(TR)l(UE)g(if)f
+(successful,)h(F)-7 b(ALSE)25 b(if)g(not.)-57 3666 y
+Fh(Operating)g(systems)109 3937 y Fg(W)l(in32,)f(Linux)-57
+4286 y Fh(See)h(also)109 4556 y Fa(MID)m(ASsetStr)l(eamRate)p
+Fg(,)e Fa(MID)m(ASsetStr)l(eamP)-8 b(anning)p eop
+%%Page: 103 109
+103 108 bop 109 208 a Ff(CHAPTER)25 b(6.)56 b(STREAM)25
+b(PLA)-10 b(YB)m(A)l(CK)2073 b Fg(103)-57 473 y Fb(6.3.11)118
+b(MID)l(ASstopStr)n(eam)109 744 y Fc(BOOL)50 b
+(MIDASstopStream\(MIDASstreamHandle)44 b(stream\))109
+1055 y Fg(Stops)24 b(playing)g(a)h(digital)f(audio)g(stream.)-57
+1404 y Fh(Input)109 1633 y(str)n(eam)49 b Fg(The)25 b(stream)f(that)h
+(will)e(be)i(stopped)-57 1982 y Fh(Description)109 2253
+y Fg(This)33 b(function)g(stops)g(playing)g(a)h(digital)f(audio)g
+(stream.)58 b(It)34 b(stops)f(the)h(stream)f(player)h(thread,)j
+(deallo-)109 2373 y(cates)25 b(the)h(stream)f(b)n(uf)n(fer)l(,)h
+(closes)f(the)g(stream)g(\002le)h(\(if)g(playing)e(from)i(a)f(\002le\))
+i(and)e(deallocates)g(the)h(stream)109 2494 y(playback)e(channel.)-57
+2843 y Fh(Retur)o(n)h(v)o(alue)109 3113 y Fg(TR)l(UE)g(if)f
+(successful,)h(F)-7 b(ALSE)25 b(if)g(not.)-57 3463 y
+Fh(Operating)g(systems)109 3733 y Fg(W)l(in32,)f(Linux)-57
+4082 y Fh(See)h(also)109 4353 y Fa(MID)m(ASplayStr)l(eamF)l(ile)p
+Fg(,)d Fa(MID)m(ASplayStr)l(eamP)-8 b(olling)p eop
+%%Page: 104 110
+104 109 bop 109 1220 a Fi(Chapter)51 b(7)109 1718 y(Miscellaneous)-57
+2316 y Fe(7.1)142 b(Constants)109 2623 y Fg(This)42 b(section)g
+(describes)h(all)g(constants)f(used)h(with)f(miscellaneous)g(MID)l(AS)h
+(functions.)84 b(The)o(y)43 b(are)109 2743 y(grouped)24
+b(according)h(to)f(the)h Fc(enum)f Fg(used)h(to)f(de\002ne)h(them.)1924
+5943 y(104)p eop
+%%Page: 105 111
+105 110 bop 109 208 a Ff(CHAPTER)25 b(7.)56 b(MISCELLANEOUS)2191
+b Fg(105)-57 473 y Fb(7.1.1)118 b(MID)l(ASechoFilterT)-9
+b(ypes)109 744 y Fc(enum)50 b(MIDASechoFilterTypes)-57
+1093 y Fh(Description)109 1363 y Fg(These)20 b(constants)g(de\002ne)i
+(dif)n(ferent)e(echo)h(\002lter)g(types)f(for)h(MID)l(AS)g(Digital)f
+(Audio)g(System)g(echo)h(ef)n(fects.)109 1484 y(Each)26
+b(echo)g(in)g(an)g(echo)g(ef)n(fect)h(has)f(a)g(separate)g(\002lter)-5
+b(.)35 b(If)26 b(the)g(echo)g(ef)n(fect)h(contains)e(more)h(than)f(a)i
+(couple)109 1604 y(of)e(echoes,)f(the)h(echoes)g(should)f(usually)f
+(sound)h(best)h(with)f(lo)n(w-pass)f(\002ltering.)-57
+1953 y Fh(V)-9 b(alues)109 2182 y(MID)m(AS)p 444 2182
+30 4 v 35 w(ECHO)p 773 2182 V 35 w(FIL)g(TER)p 1169 2182
+V 37 w(NONE)49 b Fg(No)24 b(\002ltering)109 2386 y Fh(MID)m(AS)p
+444 2386 V 35 w(ECHO)p 773 2386 V 35 w(FIL)-9 b(TER)p
+1169 2386 V 37 w(LO)k(WP)e(ASS)49 b Fg(Lo)n(w-pass)23
+b(\002ltering,)i(higher)f(frequencies)h(are)h(\002ltered)f(out.)109
+2589 y Fh(MID)m(AS)p 444 2589 V 35 w(ECHO)p 773 2589
+V 35 w(FIL)-9 b(TER)p 1169 2589 V 37 w(HIGHP)i(ASS)47
+b Fg(High-pass)24 b(\002ltering,)g(lo)n(wer)g(frequencies)h(are)g
+(\002ltered)g(out.)p eop
+%%Page: 106 112
+106 111 bop 109 208 a Ff(CHAPTER)25 b(7.)56 b(MISCELLANEOUS)2191
+b Fg(106)-57 473 y Fb(7.1.2)118 b(MID)l(ASpostPr)n(ocP)n(osition)109
+744 y Fc(enum)50 b(MIDASpostProcPosition)-57 1093 y Fh(Description)109
+1363 y Fg(These)33 b(constants)f(de\002ne)i(the)f(position)f(of)h(a)h
+(ne)n(w)e(post-processor)h(in)g(the)g(system)f(post-processor)g(list)
+109 1484 y(when)c(it)f(is)h(being)f(added)h(with)g Fa(MID)m(ASaddP)-8
+b(ostPr)l(ocessor)p Fg(.)36 b(The)29 b(order)f(of)g(the)g
+(post-processors)f(in)g(the)109 1604 y(list)c(determines)h(the)h(order)
+g(in)g(which)f(the)o(y)g(are)i(applied)e(to)g(the)h(sound)f(output.)109
+1807 y(MID)l(AS)29 b(internal)h(echo)f(ef)n(fects)h(are)h(al)o(w)o(ays)
+e(inserted)g(to)h(the)f(be)o(ginning)f(of)i(the)f(list,)h(and)f
+(\002lters)h(to)f(the)109 1928 y(end.)h(Most)24 b(user)h
+(post-processors)f(should)f(be)i(inserted)f(to)h(the)g(be)o(ginning)d
+(as)j(well.)-57 2277 y Fh(V)-9 b(alues)109 2506 y(MID)m(AS)p
+444 2506 30 4 v 35 w(POST)p 739 2506 V 36 w(PR)m(OC)p
+1055 2506 V 35 w(FIRST)49 b Fg(The)25 b(post-processor)f(is)h(inserted)
+f(to)g(the)h(be)o(ginning)e(of)i(the)f(list)109 2710
+y Fh(MID)m(AS)p 444 2710 V 35 w(POST)p 739 2710 V 36
+w(PR)m(OC)p 1055 2710 V 35 w(LAST)50 b Fg(The)25 b(post-processor)f(is)
+g(inserted)h(to)f(the)h(end)g(of)f(the)h(list)-57 3132
+y Fe(7.2)142 b(Data)35 b(types)109 3439 y Fg(This)24
+b(section)g(describes)g(all)h(data)g(types)f(used)h(with)f
+(miscellaneous)f(MID)l(AS)i(functions.)p eop
+%%Page: 107 113
+107 112 bop 109 208 a Ff(CHAPTER)25 b(7.)56 b(MISCELLANEOUS)2191
+b Fg(107)-57 473 y Fb(7.2.1)118 b(MID)l(ASecho)109 744
+y Fc(typedef)49 b(struct)109 864 y({)312 984 y(unsigned)202
+b(delay;)312 1105 y(int)457 b(gain;)312 1225 y(int)g(reverseChannels;)
+312 1345 y(unsigned)202 b(filterType;)109 1466 y(})50
+b(MIDASecho;)109 1777 y Fg(MID)l(AS)25 b(echo)g(ef)n(fect)g(echo)g
+(structure.)-57 2126 y Fh(Members)109 2355 y(delay)48
+b Fg(Echo)25 b(delay)g(in)f(milliseconds,)f(in)h(16.16)g(\002x)o(ed)h
+(point)109 2559 y Fh(gain)48 b Fg(Echo)25 b(gain,)f(in)g(16.16)g(\002x)
+o(ed)h(point)109 2762 y Fh(r)n(e)o(v)o(erseChannels)49
+b Fg(1)25 b(if)g(the)g(left)f(and)h(right)f(channels)h(should)e(be)i
+(re)n(v)o(ersed)g(in)f(the)h(echo)109 2966 y Fh(\002lterT)-7
+b(ype)50 b Fg(Echo)24 b(\002lter)h(type,)g(see)g Fc(enum)f
+Fa(MID)m(ASec)o(hoF)l(ilterT)-7 b(ypes)p Fg(.)-57 3315
+y Fh(Description)109 3585 y Fg(This)34 b(structure)g(de\002nes)i(a)f
+(single)f(echo)h(of)g(a)g(MID)l(AS)g(Digital)f(Audio)g(System)h(echo)g
+(ef)n(fect.)61 b(One)35 b(or)109 3706 y(more)23 b(of)h(echoes)g(form)f
+(an)h(echo)f(set)h(\()p Fa(MID)m(ASec)o(hoSet)p Fg(\),)f(which)g(can)h
+(then)f(be)h(acti)n(v)n(ated)e(with)h Fa(MID)m(ASad-)109
+3826 y(dEc)o(hoEf)n(fect)p Fg(.)109 4030 y(The)j Fh(delay)g
+Fg(and)g Fh(gain)g Fg(v)n(alues)f(are)i(gi)n(v)o(en)e(in)g(16.16)h
+(\002x)o(ed)g(point,)f(which)h(essentially)e(means)i(multiplying)109
+4150 y(the)k(v)n(alue)g(with)f(65536.)47 b(Thus,)31 b(a)g(delay)f(of)h
+(32)f(milliseconds)e(becomes)j(2097152)e(\(0x200000\),)i(and)f(a)109
+4270 y(gain)e(of)h(0.5)f(32768)g(\(0x8000\).)42 b(If)29
+b Fh(r)n(e)o(v)o(erseChannels)h Fg(is)f(1,)g(data)g(from)g(the)g(left)f
+(channel)h(is)f(echoed)i(on)109 4391 y(the)24 b(right)g(one)h(and)g
+(vice)g(v)o(ersa.)p eop
+%%Page: 108 114
+108 113 bop 109 208 a Ff(CHAPTER)25 b(7.)56 b(MISCELLANEOUS)2191
+b Fg(108)-57 473 y Fb(7.2.2)118 b(MID)l(ASechoHandle)109
+744 y Fc(typedef)49 b(...)h(MIDASechoHandle;)-57 1093
+y Fh(Description)109 1363 y Fa(MID)m(ASec)o(hoHandle)23
+b Fg(is)h(an)h(echo)g(handle)g(that)f(de\002nes)h(an)g(echo)g(ef)n
+(fect)g(that)g(is)f(being)g(used.)p eop
+%%Page: 109 115
+109 114 bop 109 208 a Ff(CHAPTER)25 b(7.)56 b(MISCELLANEOUS)2191
+b Fg(109)-57 473 y Fb(7.2.3)118 b(MID)l(ASechoSet)109
+744 y Fc(typedef)49 b(struct)109 864 y({)312 984 y(int)457
+b(feedback;)312 1105 y(int)g(gain;)312 1225 y(unsigned)202
+b(numEchoes;)312 1345 y(MIDASecho)151 b(*echoes;)109
+1466 y(})50 b(MIDASechoSet;)109 1777 y Fg(MID)l(AS)25
+b(echo)g(ef)n(fect)g(echo)g(set)f(structure.)-57 2126
+y Fh(Members)109 2355 y(feedback)50 b Fg(Echo)25 b(ef)n(fect)g
+(feedback,)g(in)g(16.16)f(\002x)o(ed)h(point)109 2559
+y Fh(gain)48 b Fg(Echo)25 b(ef)n(fect)g(total)f(gain,)g(in)g(16.16)g
+(\002x)o(ed)h(point)109 2762 y Fh(numEchoes)50 b Fg(T)-8
+b(otal)24 b(number)h(of)f(echoes)h(in)g(the)g(echo)g(ef)n(fect)109
+2966 y Fh(echoes)49 b Fg(Pointer)25 b(to)f(the)h(echoes)-57
+3315 y Fh(Description)109 3585 y Fg(This)19 b(structure)g(de\002nes)h
+(a)g(MID)l(AS)g(Digital)e(Audio)h(System)g(echo)h(set,)h(that)e(can)h
+(be)g(used)f(with)g Fa(MID)m(ASad-)109 3706 y(dEc)o(hoEf)n(fect)p
+Fg(.)41 b(The)29 b(echo)g(set)g(consists)e(of)i(one)g(or)g(more)f
+(echoes)h(\()p Fa(MID)m(ASec)o(ho)p Fg(\),)h(plus)e(tw)o(o)g
+(controlling)109 3826 y(v)n(ariables:)41 b Fh(feedback)32
+b Fg(controls)e(the)g(amount)g(of)g(feedback)h(for)g(the)g(ef)n(fect,)h
+(ie.)48 b(the)30 b(amount)f(of)i(echoed)109 3947 y(data)25
+b(that)f(is)g(rec)o(ycled)h(back)g(to)g(the)f(echo)h(delay)g(line,)f
+(and)h Fh(gain)f Fg(controls)g(the)h(total)f(gain)g(for)h(the)g(ef)n
+(fect.)109 4150 y(The)30 b Fh(feedback)j Fg(and)e Fh(gain)g
+Fg(v)n(alues)e(are)j(gi)n(v)o(en)d(in)i(16.16)f(\002x)o(ed)g(point,)h
+(which)g(essentially)e(means)i(multi-)109 4270 y(plying)22
+b(the)i(v)n(alue)f(with)h(65536.)29 b(Thus,)23 b(a)i(feedback)f(of)g
+(0.8)g(becomes)f(52428,)h(and)f(a)i(gain)e(of)h(0.25)f(16384)109
+4391 y(\(0x1000\).)32 b Fh(feedback)27 b Fg(typically)d(controls)h(the)
+g(strength)f(of)i(the)f(echo)h(ef)n(fect,)g(and)f(is)g(k)o(ept)g(at)g
+(a)h(v)n(alue)f(be-)109 4511 y(lo)n(w)h(1,)h(while)f
+Fh(gain)h Fg(can)g(be)g(used)f(to)h(decrease)g(the)g(total)f(v)n(olume)
+g(from)h(the)f(ef)n(fect)h(to)g(reduce)g(distortion)109
+4631 y(by)h(setting)f(it)g(to)h(a)h(v)n(alue)e(belo)n(w)h(1.)40
+b(V)-11 b(alues)28 b(abo)o(v)o(e)g(1)g(are)h(also)e(possible)g(for)i
+(both)e Fh(feedback)j Fg(and)f Fh(gain)p Fg(,)109 4752
+y(b)n(ut)24 b(should)g(be)g(used)h(with)f(care.)p eop
+%%Page: 110 116
+110 115 bop 109 208 a Ff(CHAPTER)25 b(7.)56 b(MISCELLANEOUS)2191
+b Fg(110)-57 473 y Fb(7.2.4)118 b(MID)l(ASpostPr)n(ocessor)109
+741 y Fc(typedef)49 b(struct)109 861 y({)312 982 y(struct)h
+(_MIDASpostProcessor)d(*next,)i(*prev;)312 1102 y(void)h(*userData;)312
+1223 y(MIDASpostProcFunction)d(floatMono;)312 1343 y
+(MIDASpostProcFunction)g(floatStereo;)312 1463 y(MIDASpostProcFunction)
+g(intMono;)312 1584 y(MIDASpostProcFunction)g(intStereo;)109
+1704 y(})j(MIDASpostProcessor;)109 1993 y Fg(MID)l(AS)25
+b(user)f(post-processor)g(structure.)-57 2336 y Fh(Members)109
+2563 y(next,)h(pr)n(e)o(v)-5 b(,)25 b(userData)49 b Fg(Reserv)o(ed)25
+b(for)g(MID)l(AS)g(use)109 2761 y Fh(\003oatMono)49 b
+Fg(Pointer)35 b(to)g(the)h(\003oating-point)e(mono)h(post-processor)f
+(function,)k(see)d Fa(MID)m(ASpostPr)l(oc-)353 2882 y(Function)109
+3080 y Fh(\003oatSter)n(eo)50 b Fg(Pointer)32 b(to)f(the)h
+(\003oating-point)e(stereo)i(post-processor)f(function,)h(see)g
+Fa(MID)m(ASpostPr)l(oc-)353 3200 y(Function)109 3399
+y Fh(intMono)49 b Fg(Pointer)24 b(to)h(the)g(inte)o(ger)f(mono)f
+(post-processor)h(function,)g(see)h Fa(MID)m(ASpostPr)l(ocFunction)109
+3597 y Fh(intSter)n(eo)50 b Fg(Pointer)25 b(to)f(the)h(inte)o(ger)f
+(stereo)h(post-processor)f(function,)f(see)j Fa(MID)m(ASpostPr)l
+(ocFunction)-57 3941 y Fh(Description)109 4209 y Fg(This)34
+b(structure)h(describes)g(a)g(MID)l(AS)h(Digital)e(Audio)g(System)h
+(user)g(post-processor)l(,)i(used)d(with)h Fa(MI-)109
+4329 y(D)m(ASaddP)-8 b(ostPr)l(ocessor)29 b Fg(and)j
+Fa(MID)m(ASr)l(emo)o(veP)-8 b(ostPr)l(ocessor)p Fg(.)52
+b(The)32 b(structure)g(consists)g(of)g(four)h(func-)109
+4450 y(tion)24 b(pointers,)g(for)h(all)g(possible)e(post-processing)h
+(functions,)g(plus)g(three)h(reserv)o(ed)g(members.)30
+b(If)c(an)o(y)e(of)109 4570 y(the)g(post-processor)g(function)g
+(pointers)g(is)g(NULL,)h(it)f(is)h(simply)e(ignored.)109
+4771 y(The)28 b(functions)f(actually)g(used)h(depend)g(on)g(the)g
+(mixing)f(and)h(output)e(mode,)j(b)n(ut)e(to)h(be)g(safe)h(all)f(of)g
+(them)109 4891 y(should)e(be)j(implemented.)38 b(The)28
+b(\003oating-point)f(functions)g(will)g(recei)n(v)o(e)h(32-bit)f
+(\003oating-point)f(data)j(\(C)109 5012 y Fc(float)p
+Fg(\),)g(and)f(the)h(inte)o(ger)f(ones)h(32-bit)f(inte)o(gers)g(\(C)h
+Fc(int)p Fg(\).)42 b(The)29 b(sample)f(data)h(range)h(is)e(normal)g
+(signed)109 5132 y(16-bit)c(range,)i(-32768\22632767,)d(b)n(ut)i(the)g
+(data)g(has)g(not)g(been)g(clipped)g(yet,)g(so)g(smaller)f(and)h(lar)n
+(ger)h(v)n(alues)109 5253 y(are)32 b(also)e(possible)g(\227)h(the)g
+(user)h(should)e(clip)h(them)f(if)h(necessary)-6 b(.)50
+b(The)31 b(data)h(needs)f(to)g(be)g(modi\002ed)g(in)109
+5373 y(place.)109 5574 y(Note)g(that)h(it)f(is)g(not)g(necessary)i(to)e
+(use)h(the)f(post-processing)g(functions)f(to)i(actually)f(modify)g
+(the)g(data.)109 5694 y(The)o(y)37 b(could)h(also)g(be)h(used,)i(for)e
+(e)o(xample,)i(to)d(gather)g(statistics)f(about)g(the)i(output)e
+(sample)h(data)g(for)p eop
+%%Page: 111 117
+111 116 bop 109 208 a Ff(CHAPTER)25 b(7.)56 b(MISCELLANEOUS)2191
+b Fg(111)109 473 y(spectrum)33 b(analyzers.)59 b(Ho)n(we)n(v)o(er)l(,)
+35 b(remember)f(that)g(the)g(post-processing)f(functions)g(are)i
+(called)f(in)f(the)109 593 y(conte)o(xt)19 b(of)i(the)f(MID)l(AS)h
+(player)g(thread)f(or)h(interrupt.)29 b(Therefore)21
+b(the)o(y)f(may)g(not)g(call)h(MID)l(AS)f(functions,)109
+714 y(and)k(should)g(be)h(k)o(ept)f(as)h(simple)f(and)h(short)f(as)h
+(possible.)p eop
+%%Page: 112 118
+112 117 bop 109 208 a Ff(CHAPTER)25 b(7.)56 b(MISCELLANEOUS)2191
+b Fg(112)-57 473 y Fb(7.2.5)118 b(MID)l(ASpostPr)n(ocFunction)109
+744 y Fc(typedef)49 b(void)h(\(MIDAS_CALL)f
+(*MIDASpostProcFunction\)\(void)c(*data,)312 864 y(unsigned)k
+(numSamples,)g(void)h(*user\);)-57 1213 y Fh(Description)109
+1484 y Fg(A)34 b(MID)l(AS)h(user)g(post-processing)e(function,)k(used)d
+(with)g(in)h Fa(MID)m(ASpostPr)l(ocessor)c Fg(structures.)60
+b(The)109 1604 y(function)30 b(recei)n(v)o(es)h(three)h(ar)n(guments:)
+43 b(pointer)31 b(to)g(the)h(sample)e(data)i(to)f(be)h(processed,)h
+(the)e(number)g(of)109 1724 y(samples)24 b(of)g(data)h(to)g(process,)f
+(and)h(an)g(user)g(pointer)f(passed)h(to)f Fa(MID)m(ASaddP)-8
+b(ostPr)l(ocessor)p Fg(.)p eop
+%%Page: 113 119
+113 118 bop 109 208 a Ff(CHAPTER)25 b(7.)56 b(MISCELLANEOUS)2191
+b Fg(113)-57 473 y Fe(7.3)142 b(Functions)109 779 y Fg(This)24
+b(section)g(describes)g(all)h(a)n(v)n(ailable)f(miscellaneous)f(MID)l
+(AS)i(Digital)f(Audio)g(System)g(functions.)p eop
+%%Page: 114 120
+114 119 bop 109 208 a Ff(CHAPTER)25 b(7.)56 b(MISCELLANEOUS)2191
+b Fg(114)-57 473 y Fb(7.3.1)118 b(MID)l(ASaddEchoEffect)109
+744 y Fc(MIDASechoHandle)48 b(MIDASaddEchoEffect\(MIDASechoSet)d
+(*echoSet\);)109 1055 y Fg(Adds)24 b(an)h(echo)g(ef)n(fect)g(to)f(the)h
+(output.)-57 1404 y Fh(Input)109 1633 y(echoSet)50 b
+Fg(The)25 b(echo)g(set)f(that)h(describes)f(the)h(ef)n(fect,)g(see)g
+Fa(MID)m(ASec)o(hoSet)-57 1982 y Fh(Description)109 2253
+y Fg(This)d(function)g(adds)g(an)h(echo)g(ef)n(fect)g(to)f(the)h
+(output.)29 b(An)22 b(echo)h(ef)n(fect)g(is)f(described)h(by)f(a)i
+Fa(MID)m(ASec)o(hoSet)109 2373 y Fg(structure,)35 b(and)e(can)h
+(consist)e(of)i(one)f(or)h(more)f(echoes.)57 b(An)o(y)32
+b(number)h(of)h(echo)f(ef)n(fects)h(can)g(be)f(acti)n(v)o(e)109
+2494 y(simultaneously)-6 b(,)27 b(the)j(ef)n(fects)g(added)f(last)g
+(are)i(processed)e(\002rst.)46 b(After)30 b(this)e(function)h(returns,)
+i(the)e(echo)109 2614 y(set)24 b(structure)h(is)f(no)h(longer)f(used)h
+(by)f(MID)l(AS)h(and)g(may)f(be)h(deallocated.)109 2817
+y(Note)i(that)g(echo)h(ef)n(fects)f(can)h(use)g(lar)n(ge)g(amounts)e
+(of)i(CPU)g(time,)f(and)h(may)f(e)n(v)o(en)g(be)h(unusable)e(on)i(486-)
+109 2938 y(class)c(and)h(slo)n(wer)f(computers.)-57 3287
+y Fh(Retur)o(n)h(v)o(alue)109 3558 y Fg(MID)l(AS)g(echo)g(handle)f(for)
+h(the)g(echo)g(ef)n(fect)g(if)g(successful,)f(NULL)h(if)f(not.)-57
+3907 y Fh(Operating)h(systems)109 4177 y Fg(All)-57 4526
+y Fh(See)g(also)109 4797 y Fa(MID)m(ASr)l(emo)o(veEc)o(hoEf)n(fect)p
+eop
+%%Page: 115 121
+115 120 bop 109 208 a Ff(CHAPTER)25 b(7.)56 b(MISCELLANEOUS)2191
+b Fg(115)-57 473 y Fb(7.3.2)118 b(MID)l(ASaddP)n(ostPr)n(ocessor)109
+744 y Fc(BOOL)50 b(MIDASaddPostProcessor\(MIDASpostPr)o(ocess)o(or)45
+b(*postProc,)312 864 y(unsigned)k(procPos,)g(void)i(*userData\);)109
+1175 y Fg(Adds)24 b(a)h(user)g(post-processor)f(to)g(the)h(output.)-57
+1524 y Fh(Input)109 1754 y(postPr)n(oc)49 b Fg(A)25 b(pointer)f(to)g(a)
+h Fa(MID)m(ASpostPr)l(ocessor)d Fg(structure)j(that)f(describes)h(the)f
+(post-processor)-5 b(.)109 1957 y Fh(pr)n(ocP)n(os)49
+b Fg(The)25 b(post-processor)e(position)g(in)i(the)g(post-processor)e
+(list,)h(see)h Fc(enum)f Fa(MID)m(ASpostPr)l(ocP)-8 b(osi-)353
+2077 y(tion)p Fg(.)109 2281 y Fh(userData)49 b Fg(An)24
+b(user)h(data)g(pointer)f(that)h(will)f(be)h(passed)f(to)g(the)h
+(post-processing)e(functions.)-57 2630 y Fh(Description)109
+2900 y Fg(This)j(function)g(adds)g(a)h(user)g(post-processor)f(to)g
+(the)h(output.)35 b(The)27 b(post-processor)e(can)i(be)g(used)g(to)f
+(alter)109 3021 y(the)g(output)f(sound)g(data)i(in)f(interesting)f(w)o
+(ays,)h(or)h(to)f(gather)g(information)e(about)i(the)g(data)h(for)f
+(graphical)109 3141 y(displays)19 b(and)i(such.)29 b(See)22
+b(the)f Fa(MID)m(ASpostPr)l(ocessor)c Fg(structure)k(documentation)e
+(for)i(more)g(information.)109 3345 y(The)33 b Fh(postPr)n(oc)h
+Fg(structure)f(may)g Fh(not)g Fg(be)h(deallocated)f(or)g(re-used)h
+(after)g(this)e(function)h(returns,)i(as)e(it)g(is)109
+3465 y(used)24 b(by)h(MID)l(AS)g(Digital)f(Audio)g(System)g(internally)
+-6 b(.)30 b(The)25 b(post-processor)f(can)h(be)g(remo)o(v)o(ed)f(from)g
+(the)109 3585 y(output)f(with)h Fa(MID)m(ASr)l(emo)o(veP)-8
+b(ostPr)l(ocessor)p Fg(,)23 b(after)i(which)f(the)h(structure)f(can)i
+(be)f(deallocated.)-57 3935 y Fh(Retur)o(n)g(v)o(alue)109
+4205 y Fg(TR)l(UE)g(if)f(successful,)h(F)-7 b(ALSE)25
+b(if)g(not.)-57 4554 y Fh(Operating)g(systems)109 4825
+y Fg(All)-57 5174 y Fh(See)g(also)109 5445 y Fa(MID)m(ASr)l(emo)o(veP)
+-8 b(ostPr)l(ocessor)p eop
+%%Page: 116 122
+116 121 bop 109 208 a Ff(CHAPTER)25 b(7.)56 b(MISCELLANEOUS)2191
+b Fg(116)-57 473 y Fb(7.3.3)118 b(MID)l(ASr)n(emo)o(v)o(eEchoEffect)109
+744 y Fc(BOOL)50 b(MIDASremoveEchoEffect\(MIDASechoHa)o(ndle)44
+b(echoHandle\);)109 1055 y Fg(Remo)o(v)o(es)23 b(an)i(echo)g(ef)n(fect)
+h(from)e(the)h(output.)-57 1404 y Fh(Input)109 1633 y(echoHandle)49
+b Fg(Echo)25 b(handle)f(for)h(the)g(ef)n(fect)g(that)g(will)e(be)i
+(remo)o(v)o(ed)-57 1982 y Fh(Description)109 2253 y Fg(This)h(function)
+g(remo)o(v)o(es)g(an)h(echo)g(ef)n(fect,)h(added)f(with)f
+Fa(MID)m(ASaddEc)o(hoEf)n(fect)p Fg(,)f(from)i(the)f(output.)36
+b(The)109 2373 y(echo)23 b(handle)g(will)f(no)h(longer)f(be)i(v)n(alid)
+d(after)j(this)e(function)g(has)h(been)h(called.)30 b(Echo)23
+b(ef)n(fects)g(do)g(not)f(need)109 2494 y(to)f(be)g(remo)o(v)o(ed)f(in)
+h(the)h(same)f(order)h(the)o(y)e(were)i(added)g(in,)f(b)n(ut)g(can)h
+(be)g(added)f(and)g(remo)o(v)o(ed)g(in)g(an)o(y)g(order)-5
+b(.)-57 2843 y Fh(Retur)o(n)25 b(v)o(alue)109 3113 y
+Fg(TR)l(UE)g(if)f(successful,)h(F)-7 b(ALSE)25 b(if)g(not)-57
+3463 y Fh(Operating)g(systems)109 3733 y Fg(All)-57 4082
+y Fh(See)g(also)109 4353 y Fa(MID)m(ASaddEc)o(hoEf)n(fect)p
+eop
+%%Page: 117 123
+117 122 bop 109 208 a Ff(CHAPTER)25 b(7.)56 b(MISCELLANEOUS)2191
+b Fg(117)-57 473 y Fb(7.3.4)118 b(MID)l(ASr)n(emo)o(v)o(eP)n(ostPr)n
+(ocessor)109 744 y Fc(BOOL)50 b(MIDASremovePostProcessor\(MIDASpos)o
+(tProc)o(essor)44 b(*postProc\);)109 1055 y Fg(Remo)o(v)o(es)23
+b(a)j(user)e(post-processor)g(from)h(the)g(output.)-57
+1404 y Fh(Input)109 1633 y(postPr)n(oc)49 b Fg(A)25 b(pointer)f(to)g(a)
+h Fa(MID)m(ASpostPr)l(ocessor)d Fg(structure)j(that)f(describes)h(the)f
+(post-processor)-5 b(.)-57 1982 y Fh(Description)109
+2253 y Fg(This)21 b(function)g(remo)o(v)o(es)f(a)i(user)g
+(post-processor)f(added)g(with)g Fa(MID)m(ASaddP)-8 b(ostPr)l(ocessor)
+19 b Fg(from)i(the)h(out-)109 2373 y(put.)53 b(The)33
+b(post-processing)d(functions)i(will)g(no)g(longer)g(be)h(called,)h
+(and)f(the)f(post-processor)g(structure)109 2494 y(may)24
+b(be)h(deallocated.)-57 2843 y Fh(Retur)o(n)g(v)o(alue)109
+3113 y Fg(TR)l(UE)g(if)f(successful,)h(F)-7 b(ALSE)25
+b(if)g(not.)-57 3463 y Fh(Operating)g(systems)109 3733
+y Fg(All)-57 4082 y Fh(See)g(also)109 4353 y Fa(MID)m(ASaddP)-8
+b(ostPr)l(ocessor)p eop
+%%Trailer
+end
+userdict /end-hook known{end-hook}if
+%%EOF

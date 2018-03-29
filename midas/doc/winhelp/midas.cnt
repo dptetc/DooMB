@@ -1,0 +1,214 @@
+:Base midas
+:Title MIDAS Digital Audio System
+1 Programmer's Guide
+2 Introduction
+3 Welcome=section1
+3 What is MIDAS?=section2
+2 Getting started
+2 Getting started=section3
+3 Installing MIDAS=section4
+3 Compiling with MIDAS=section5
+3 Linking with MIDAS
+3 Linking with MIDAS=section6
+4 Windows NT/95=section7
+4 MS-DOS=section8
+4 Linux=section9
+3 Using MIDAS from the IDE
+3 Using MIDAS from the IDE=section10
+4 Using MIDAS with Visual C Developer Studio=section11
+4 Using MIDAS with Watcom C IDE=section12
+3 A simple module player example
+3 A simple module player example=section13
+4 C module player example=section14
+4 Delphi module player example=section15
+4 Module player example description=section16
+2 Using MIDAS Digital Audio System
+2 Using MIDAS Digital Audio System=section17
+3 Initializing and configuring MIDAS=section18
+3 Uninitializing MIDAS=section19
+3 Using modules
+3 Using modules=section20
+4 Loading and deallocating modules=section21
+4 Playing modules=section22
+4 Controlling module playback=section23
+4 Getting module information=section24
+3 Using samples
+3 Using samples=section25
+4 Loading samples=section26
+4 Playing samples=section27
+4 Samples and channels=section28
+4 Controlling sample playback=section29
+4 Getting sample information=section30
+3 Using streams=section31
+3 Playing streams
+3 Playing streams=section32
+4 Controlling stream playback=section33
+4 Getting stream information=section34
+3 Using echo effects
+3 Using echo effects=section35
+4 Adding echo effects=section36
+4 The echo effect structure=section37
+2 Advanced topics
+2 Advanced topics=section38
+3 Optimizing MIDAS performance
+3 Optimizing MIDAS performance=section39
+4 The number of channels=section40
+4 Sample types=section41
+4 Output settings=section42
+3 Using µ-law compression
+3 Using µ-law compression=section43
+4 Encoding µ-law samples=section44
+4 Using µ-law samples=section45
+3 Using ADPCM compression
+3 Using ADPCM compression=section46
+4 Encoding ADPCM streams=section47
+4 Using ADPCM streams=section48
+2 Operating system specific information
+2 Operating system specific information=section49
+3 Using DirectSound
+3 Using DirectSound=section50
+4 Initialization=section51
+4 DirectSound modes=section52
+4 Buffer sizes=section53
+4 Using other DirectSound services with MIDAS=section54
+4 When to use DirectSound?=section55
+4 DirectSound and multiple windows=section56
+3 MS-DOS timer callbacks
+3 MS-DOS timer callbacks=section57
+4 Introduction=section58
+4 Using timer callbacks=section59
+4 Synchronizing to display refresh=section60
+4 The callback functions=section61
+4 Framerate control=section62
+1 API Reference
+2 Introduction
+3 About this document=section64
+3 Document organization=section65
+2 Configuration, initialization and control
+3 Constants
+3 Constants=section67
+4 MIDASdsoundModes=MIDASdsoundModes
+4 MIDASfilterModes=MIDASfilterModes
+4 MIDASmixingModes=MIDASmixingModes
+4 MIDASmodes=MIDASmodes
+4 MIDASoptions=MIDASoptions
+3 Data types=section73
+3 Functions
+3 Functions=section74
+4 MIDASclose=MIDASclose
+4 MIDASconfig=MIDASconfig
+4 MIDASdetectSoundCard=MIDASdetectSoundCard
+4 MIDASgetDisplayRefreshRate=MIDASgetDisplayRefreshRate
+4 MIDASgetOption=MIDASgetOption
+4 MIDASinit=MIDASinit
+4 MIDASloadConfig=MIDASloadConfig
+4 MIDASreadConfigRegistry=MIDASreadConfigRegistry
+4 MIDASsaveConfig=MIDASsaveConfig
+4 MIDASsetOption=MIDASsetOption
+4 MIDASstartup=MIDASstartup
+4 MIDASwriteConfigRegistry=MIDASwriteConfigRegistry
+2 System control
+3 Constants=section88
+3 Data types=section89
+3 Functions
+3 Functions=section90
+4 MIDASallocateChannel=MIDASallocateChannel
+4 MIDAScloseChannels=MIDAScloseChannels
+4 MIDASfreeChannel=MIDASfreeChannel
+4 MIDASgetErrorMessage=MIDASgetErrorMessage
+4 MIDASgetLastError=MIDASgetLastError
+4 MIDASgetVersionString=MIDASgetVersionString
+4 MIDASopenChannels=MIDASopenChannels
+4 MIDASpoll=MIDASpoll
+4 MIDASremoveTimerCallbacks=MIDASremoveTimerCallbacks
+4 MIDASresume=MIDASresume
+4 MIDASsetAmplification=MIDASsetAmplification
+4 MIDASsetTimerCallbacks=MIDASsetTimerCallbacks
+4 MIDASstartBackgroundPlay=MIDASstartBackgroundPlay
+4 MIDASstopBackgroundPlay=MIDASstopBackgroundPlay
+4 MIDASsuspend=MIDASsuspend
+2 Module playback
+3 Constants=section107
+3 Data types
+3 Data types=section108
+4 MIDASinstrumentInfo=MIDASinstrumentInfo
+4 MIDASmodule=MIDASmodule
+4 MIDASmoduleInfo=MIDASmoduleInfo
+4 MIDASmodulePlayHandle=MIDASmodulePlayHandle
+4 MIDASplayStatus=MIDASplayStatus
+3 Functions
+3 Functions=section114
+4 MIDASfadeMusicChannel=MIDASfadeMusicChannel
+4 MIDASfreeModule=MIDASfreeModule
+4 MIDASgetInstrumentInfo=MIDASgetInstrumentInfo
+4 MIDASgetModuleInfo=MIDASgetModuleInfo
+4 MIDASgetPlayStatus=MIDASgetPlayStatus
+4 MIDASloadModule=MIDASloadModule
+4 MIDASplayModule=MIDASplayModule
+4 MIDASplayModuleSection=MIDASplayModuleSection
+4 MIDASsetMusicSyncCallback=MIDASsetMusicSyncCallback
+4 MIDASsetMusicVolume=MIDASsetMusicVolume
+4 MIDASsetPosition=MIDASsetPosition
+4 MIDASstopModule=MIDASstopModule
+2 Sample playback
+3 Constants
+3 Constants=section128
+4 MIDASchannels=MIDASchannels
+4 MIDASloop=MIDASloop
+4 MIDASpanning=MIDASpanning
+4 MIDASsamplePlayStatus=MIDASsamplePlayStatus
+4 MIDASsampleTypes=MIDASsampleTypes
+3 Data types
+3 Data types=section134
+4 MIDASsample=MIDASsample
+4 MIDASsamplePlayHandle=MIDASsamplePlayHandle
+3 Functions
+3 Functions=section137
+4 MIDASallocAutoEffectChannels=MIDASallocAutoEffectChannels
+4 MIDASfreeAutoEffectChannels=MIDASfreeAutoEffectChannels
+4 MIDASfreeSample=MIDASfreeSample
+4 MIDASgetSamplePlayStatus=MIDASgetSamplePlayStatus
+4 MIDASloadRawSample=MIDASloadRawSample
+4 MIDASloadWaveSample=MIDASloadWaveSample
+4 MIDASplaySample=MIDASplaySample
+4 MIDASsetSamplePanning=MIDASsetSamplePanning
+4 MIDASsetSamplePriority=MIDASsetSamplePriority
+4 MIDASsetSampleRate=MIDASsetSampleRate
+4 MIDASsetSampleVolume=MIDASsetSampleVolume
+4 MIDASstopSample=MIDASstopSample
+2 Stream playback
+3 Constants=section151
+3 Data types
+3 Data types=section152
+4 MIDASstreamHandle=MIDASstreamHandle
+3 Functions
+3 Functions=section154
+4 MIDASfeedStreamData=MIDASfeedStreamData
+4 MIDASgetStreamBytesBuffered=MIDASgetStreamBytesBuffered
+4 MIDASpauseStream=MIDASpauseStream
+4 MIDASplayStreamFile=MIDASplayStreamFile
+4 MIDASplayStreamWaveFile=MIDASplayStreamWaveFile
+4 MIDASplayStreamPolling=MIDASplayStreamPolling
+4 MIDASresumeStream=MIDASresumeStream
+4 MIDASsetStreamPanning=MIDASsetStreamPanning
+4 MIDASsetStreamRate=MIDASsetStreamRate
+4 MIDASsetStreamVolume=MIDASsetStreamVolume
+4 MIDASstopStream=MIDASstopStream
+2 Miscellaneous
+3 Constants
+3 Constants=section167
+4 MIDASechoFilterTypes=MIDASechoFilterTypes
+4 MIDASpostProcPosition=MIDASpostProcPosition
+3 Data types
+3 Data types=section170
+4 MIDASecho=MIDASecho
+4 MIDASechoHandle=MIDASechoHandle
+4 MIDASechoSet=MIDASechoSet
+4 MIDASpostProcessor=MIDASpostProcessor
+4 MIDASpostProcFunction=MIDASpostProcFunction
+3 Functions
+3 Functions=section176
+4 MIDASaddEchoEffect=MIDASaddEchoEffect
+4 MIDASaddPostProcessor=MIDASaddPostProcessor
+4 MIDASremoveEchoEffect=MIDASremoveEchoEffect
+4 MIDASremovePostProcessor=MIDASremovePostProcessor

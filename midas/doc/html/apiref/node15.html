@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 96.1-h (September 30, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<HTML>
+<HEAD>
+<TITLE>Data types</TITLE>
+<META NAME="description" CONTENT="Data types">
+<META NAME="keywords" CONTENT="apiref">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<LINK REL=STYLESHEET HREF="apiref.css">
+</HEAD>
+<BODY LANG="EN" >
+ <A NAME="tex2html411" HREF="node16.html"><IMG WIDTH=37 HEIGHT=24 ALIGN=BOTTOM ALT="next" SRC="../icons/next_motif.gif"></A> <A NAME="tex2html409" HREF="node13.html"><IMG WIDTH=26 HEIGHT=24 ALIGN=BOTTOM ALT="up" SRC="../icons/up_motif.gif"></A> <A NAME="tex2html403" HREF="node14.html"><IMG WIDTH=63 HEIGHT=24 ALIGN=BOTTOM ALT="previous" SRC="../icons/previous_motif.gif"></A> <A NAME="tex2html413" HREF="node1.html"><IMG WIDTH=65 HEIGHT=24 ALIGN=BOTTOM ALT="contents" SRC="../icons/contents_motif.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html412" HREF="node16.html">Functions</A>
+<B>Up:</B> <A NAME="tex2html410" HREF="node13.html">4 Module playback</A>
+<B> Previous:</B> <A NAME="tex2html404" HREF="node14.html">Constants</A>
+<BR> <P>
+<H1><A NAME="SECTION00520000000000000000">Data types</A></H1>
+<P>
+This section describes all data types used in MIDAS module playback.
+<P>
+<BR> <HR><A NAME="MIDASinstrumentInfo">&#160;</A><H2><A NAME="SECTION00521000000000000000">4.2.1 MIDASinstrumentInfo</A></H2>
+<A NAME="1943">&#160;</A> <PRE>typedef struct
+{
+    char        instName[32];
+} MIDASinstrumentInfo;</PRE>
+<P>
+Instrument information structure.
+<P>
+<H3><A NAME="SECTION00521100000000000000">Members</A></H3>
+<P>
+<DL ><DT><STRONG>instName</STRONG>
+<DD> Instrument name, an ASCIIZ string
+<P>
+</DL><H3><A NAME="SECTION00521200000000000000">Description</A></H3>
+<P>
+This structure is used with the function <A HREF="node16.html#MIDASgetInstrumentInfo">MIDASgetInstrumentInfo</A> to
+query information about an instrument in a module.
+<A HREF="node16.html#MIDASgetInstrumentInfo">MIDASgetInstrumentInfo</A> fills a <A HREF="node15.html#MIDASinstrumentInfo">MIDASinstrumentInfo</A>
+structure with the information.
+<P>
+<BR> <HR><A NAME="MIDASmodule">&#160;</A><H2><A NAME="SECTION00522000000000000000">4.2.2 MIDASmodule</A></H2>
+<A NAME="1958">&#160;</A> <PRE>typedef ... MIDASmodule;</PRE>
+<P>
+<H3><A NAME="SECTION00522100000000000000">Description</A></H3>
+<P>
+<A HREF="node15.html#MIDASmodule">MIDASmodule</A> is a module handle that defines a module that has been
+loaded into memory.
+<P>
+<BR> <HR><A NAME="MIDASmoduleInfo">&#160;</A><H2><A NAME="SECTION00523000000000000000">4.2.3 MIDASmoduleInfo</A></H2>
+<A NAME="1965">&#160;</A> <PRE>typedef struct
+{
+    char        songName[32];
+    unsigned    songLength;
+    unsigned    numPatterns;
+    unsigned    numInstruments;
+    unsigned    numChannels;
+} MIDASmoduleInfo;</PRE>
+<P>
+Module information structure.
+<P>
+<H3><A NAME="SECTION00523100000000000000">Members</A></H3>
+<P>
+<DL ><DT><STRONG>songName</STRONG>
+<DD> Module song name, an ASCIIZ string
+    <DT><STRONG>songLength</STRONG>
+<DD> Module song length in number of positions
+    <DT><STRONG>numPatterns</STRONG>
+<DD> Number of patterns in module
+    <DT><STRONG>numInstruments</STRONG>
+<DD> Number of instruments in module
+    <DT><STRONG>numChannels</STRONG>
+<DD> The number of channels the module uses
+<P>
+</DL><H3><A NAME="SECTION00523200000000000000">Description</A></H3>
+<P>
+This structure is used with the function <A HREF="node16.html#MIDASgetModuleInfo">MIDASgetModuleInfo</A> to
+query information about an module. <A HREF="node16.html#MIDASgetModuleInfo">MIDASgetModuleInfo</A> fills a
+<A HREF="node15.html#MIDASmoduleInfo">MIDASmoduleInfo</A> structure with the information.
+<P>
+<BR> <HR><A NAME="MIDASmodulePlayHandle">&#160;</A><H2><A NAME="SECTION00524000000000000000">4.2.4 MIDASmodulePlayHandle</A></H2>
+<A NAME="1980">&#160;</A> <PRE>typedef ... MIDASmodulePlayHandle;</PRE>
+<P>
+<H3><A NAME="SECTION00524100000000000000">Description</A></H3>
+<P>
+<A HREF="node15.html#MIDASmodulePlayHandle">MIDASmodulePlayHandle</A> is a module playback handle that defines
+a module or module section that is being played. One module can be
+played several times simultaneously.
+<P>
+<BR> <HR><A NAME="MIDASplayStatus">&#160;</A><H2><A NAME="SECTION00525000000000000000">4.2.5 MIDASplayStatus</A></H2>
+<A NAME="1987">&#160;</A> <PRE>typedef struct
+{
+    unsigned    position;
+    unsigned    pattern;
+    unsigned    row;
+    int         syncInfo;
+    unsigned    songLoopCount;
+} MIDASplayStatus;</PRE>
+<P>
+Module status information structure.
+<P>
+<H3><A NAME="SECTION00525100000000000000">Members</A></H3>
+<P>
+<DL ><DT><STRONG>position</STRONG>
+<DD> Current playback position number
+    <DT><STRONG>pattern</STRONG>
+<DD> Current playback pattern number
+    <DT><STRONG>row</STRONG>
+<DD> Current playback row number
+    <DT><STRONG>syncInfo</STRONG>
+<DD> Latest synchronization command infobyte, -1 if no
+        synchronization command has been encountered yet.
+    <DT><STRONG>songLoopCount</STRONG>
+<DD> Module song loop counter -- incremented by 1
+        every time the song loops around. Module looping can be detected
+        by checking if this field is nonzero.
+<P>
+</DL><H3><A NAME="SECTION00525200000000000000">Description</A></H3>
+<P>
+This structure is used with the function <A HREF="node16.html#MIDASgetPlayStatus">MIDASgetPlayStatus</A> to
+query the current module playback status. <A HREF="node16.html#MIDASgetPlayStatus">MIDASgetPlayStatus</A> fills
+a <A HREF="node15.html#MIDASplayStatus">MIDASplayStatus</A> structure with the information.
+<P>
+Some more information about the synchronization commands: In FastTracker 2 and
+Scream Tracker 3 modules, the command <TT>Wxx</TT> is used as a music
+synchronization command. The infobyte of this command is available as the
+music synchronization command infobyte above.
+<P>
+<HR><A NAME="tex2html411" HREF="node16.html"><IMG WIDTH=37 HEIGHT=24 ALIGN=BOTTOM ALT="next" SRC="../icons/next_motif.gif"></A> <A NAME="tex2html409" HREF="node13.html"><IMG WIDTH=26 HEIGHT=24 ALIGN=BOTTOM ALT="up" SRC="../icons/up_motif.gif"></A> <A NAME="tex2html403" HREF="node14.html"><IMG WIDTH=63 HEIGHT=24 ALIGN=BOTTOM ALT="previous" SRC="../icons/previous_motif.gif"></A> <A NAME="tex2html413" HREF="node1.html"><IMG WIDTH=65 HEIGHT=24 ALIGN=BOTTOM ALT="contents" SRC="../icons/contents_motif.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html412" HREF="node16.html">Functions</A>
+<B>Up:</B> <A NAME="tex2html410" HREF="node13.html">4 Module playback</A>
+<B> Previous:</B> <A NAME="tex2html404" HREF="node14.html">Constants</A>
+<P><ADDRESS>
+<I>Petteri Kangaslampi <BR>
+Sun Mar  1 22:15:08 EET 1998</I>
+</ADDRESS>
+</BODY>
+</HTML>

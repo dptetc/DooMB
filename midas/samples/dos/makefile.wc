@@ -1,0 +1,29 @@
+# Compilers and options:
+
+MIDASDIR = ..\..
+LIBDIR = $(MIDASDIR)\lib\dos\wcretail
+MIDASINCS = $(MIDASDIR)\include
+MIDASLIB = $(LIBDIR)\midas.lib
+
+CC = wcc386
+#CCOPTS = -w3 -d2 -fpi87 -fp5 -zdp -zu -bt=dos -i$(MIDASINCS) -dDEBUG
+CCOPTS = -w3 -fpi87 -fp5 -zdp -zu -bt=dos -i$(MIDASINCS) -oneatx -s
+
+# Remove "-fpi87 -fp5" if you don't want to require an FPU
+
+
+all : demo.exe timer.exe
+
+demo.exe :	demo.obj $(MIDASLIB)
+	wlink name demo system dos4g file demo library $(MIDASLIB) option caseexact
+
+demo.obj :	demo.c vga.h
+	$(CC) demo.c $(CCOPTS)
+
+
+timer.exe :	timer.obj $(MIDASLIB)
+	wlink name timer system dos4g file timer library $(MIDASLIB) option caseexact
+
+timer.obj :	timer.c vga.h
+	$(CC) timer.c $(CCOPTS)
+

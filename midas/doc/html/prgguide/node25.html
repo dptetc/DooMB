@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 96.1-h (September 30, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<HTML>
+<HEAD>
+<TITLE>MS-DOS timer callbacks</TITLE>
+<META NAME="description" CONTENT="MS-DOS timer callbacks">
+<META NAME="keywords" CONTENT="prgguide">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<LINK REL=STYLESHEET HREF="prgguide.css">
+</HEAD>
+<BODY LANG="EN" >
+ <A NAME="tex2html374" HREF="node26.html"><IMG WIDTH=37 HEIGHT=24 ALIGN=BOTTOM ALT="next" SRC="../icons/next_motif.gif"></A> <A NAME="tex2html372" HREF="node23.html"><IMG WIDTH=26 HEIGHT=24 ALIGN=BOTTOM ALT="up" SRC="../icons/up_motif.gif"></A> <A NAME="tex2html368" HREF="node24.html"><IMG WIDTH=63 HEIGHT=24 ALIGN=BOTTOM ALT="previous" SRC="../icons/previous_motif.gif"></A> <A NAME="tex2html376" HREF="node1.html"><IMG WIDTH=65 HEIGHT=24 ALIGN=BOTTOM ALT="contents" SRC="../icons/contents_motif.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html375" HREF="node26.html">  About this document </A>
+<B>Up:</B> <A NAME="tex2html373" HREF="node23.html">5 Operating system specific </A>
+<B> Previous:</B> <A NAME="tex2html369" HREF="node24.html">5.1 Using DirectSound</A>
+<BR> <P>
+<H1><A NAME="SECTION00620000000000000000">MS-DOS timer callbacks</A></H1>
+<P>
+This section describes how MIDAS Digital Audio System uses the MS-DOS system
+timer, and how to install user timer callbacks. This information is not
+relevant in other operating systems.
+<P>
+<H2><A NAME="SECTION00621000000000000000">Introduction</A></H2>
+<P>
+To be able to play music in the background in MS-DOS, and to keep proper
+tempo with all sound cards, MIDAS needs to use the system timer (IRQ 0,
+interrupt 8) for music playback. Because of this, user programs may not
+access the timer directly, as this would cause conflicts with MIDAS
+music playback. As the system timer is often used for controlling
+program speed, and
+running some tasks in the background, MIDAS provides a separate user
+timer callback for these purposes. This callback should used instead of
+accessing the timer hardware directly.
+<P>
+The callbacks can be ran at any speed, and can optionally be
+synchronized to display refresh.
+<P>
+<H2><A NAME="SECTION00622000000000000000">5.2.2 Using timer callbacks</A></H2>
+<P>
+Basic MIDAS timer callback usage is very simple: Simply call 
+<EM>MIDASsetTimerCallbacks</EM>, passing it the desired callback rate
+and pointers to the callback functions. After that, the callback
+functions will be called periodically until 
+<EM>MIDASremoveTimerCallbacks</EM> is
+called. <EM>MIDASsetTimerCallbacks</EM> takes the callback rate in
+milliHertz (one thousandth of a Hertz) units, so to get a callback that 
+will be called 70 times per second, set the rate to 70000. The callback
+functions need to use <B>MIDAS_CALL</B> calling convention
+(<TT>__cdecl</TT> for Watcom C, empty for DJGPP), take no
+arguments and return no value.
+<P>
+For example, this code snippet will use the timer to increment a variable
+<B>tickCount</B> 100 times per second:
+<P>
+<PRE>    void MIDAS_CALL TimerCallback(void)
+    {
+        tickCount++;
+    }
+    ...
+    MIDASinit();
+    ...
+    MIDASsetTimerCallbacks(100000, FALSE, &amp;TimerCallback, NULL, NULL);
+    ...</PRE>
+<P>
+<H2><A NAME="SECTION00623000000000000000">5.2.3 Synchronizing to display refresh</A></H2>
+<P>
+The MIDAS timer supports synchronizing the user callbacks to display
+refresh under some circumstances. Display synchronization does not work
+when running under Windows 95 and similar systems, and may fail in SVGA
+modes with many SVGA cards. As display synchronization is somewhat
+unreliable, and also more difficult to use than normal callbacks, using
+it is not recommended if a normal callback is sufficient.
+<P>
+To synchronize the timer callbacks to screen refresh, use the following
+procedure:
+<P>
+1. <B>BEFORE</B> MIDAS Digital Audio System is initialized, set up the display
+mode you are going to use, and get the display refresh rate corresponding to
+that mode using <EM>MIDASgetDisplayRefreshRate</EM>. If your application uses
+several different display modes, you will need to set up each of them in turn
+and read the refresh rate for each separately. If
+<EM>MIDASgetDisplayRefreshRate</EM> returns zero, it was unable to determine
+the display refresh rate, and you should use some default value
+instead. Display refresh rates, like timer callback rates, are specified in
+milliHertz (1000*Hz), so 70Hz refresh rate becomes 70000.
+<P>
+2. Initialize MIDAS Digital Audio System etc.
+<P>
+3. Set up the display mode
+<P>
+4. Start the timer callbacks by calling
+<EM>MIDASsetTimerCallbacks</EM>. The first argument is the refresh
+rate from step 1, second argument should be set to TRUE (to enable display
+synchronization), and the remaining three arguments are pointers to the
+<B>preVR</B>, <B>immVR</B> and <B>inVR</B> callback
+functions (see descriptions below).
+<P>
+5. When the callbacks are no longer used, remove them by calling 
+<EM>MIDASremoveTimerCallbacks</EM>.
+<P>
+When you are changing display modes, you must first remove the existing
+timer callbacks, change the display modes, and restart the callbacks
+with the correct rate. Please note that synchronizing the timer to
+the screen update takes a while, and as the timer is disabled for that time
+it may introduce breaks in the music. Therefore we suggest you handle the
+timer screen synchronization before you start playing music.
+<P>
+If MIDAS is unable to synchronize the timer to display refresh, it will
+simply run the callbacks like normal user callbacks. Therefore there is
+no guarantee that the callbacks will actually get synchronized to
+display, and your program should not depend on that. For example, you
+should not use the timer callbacks for double buffering the display, as
+<B>preVR</B> might not be called at the correct time -- use triple
+buffering instead to prevent possible flicker.
+<P>
+<H2><A NAME="SECTION00624000000000000000">5.2.4 The callback functions</A></H2>
+<P>
+<EM>MIDASsetTimerCallbacks</EM> takes as its three last arguments three
+pointers to the timer callback functions. These functions are:
+<P>
+<EM>preVR()</EM> -- if the callbacks are synchronized to display refresh,
+this function is called immediately <B>before</B> Vertical Retrace
+starts. It should be kept as short as possible, and can be used for
+changing a couple of hardware registers (in particular the display start
+address) or updating a counter.
+<P>
+<EM>immVR()</EM> -- if the callbacks are synchronized to display refresh,
+this function is called immediately after Vertical Retrace starts. As
+<EM>preVR()</EM>, it should be kept as short as possible.
+<P>
+<EM>inVR()</EM> -- if the callbacks are synchronized to display refresh,
+this function is called some time later during Vertical Retrace. It can
+take a longer time than the two previous functions, and can be used, for
+example, for setting the VGA palette. It should not take longer than a
+quarter of the time between callbacks though.
+<P>
+If the callbacks are not synchronized to display refresh, the functions
+are simply called one after another. The same timing requirements still
+hold though.
+<P>
+<H2><A NAME="SECTION00625000000000000000">5.2.5 Framerate control</A></H2>
+<P>
+DOS programs typically control their framerate by checking the Vertical
+Retrace from the VGA hardware. If MIDAS is playing music in the
+background, this is not a good idea, since the music player can cause
+the program to miss retraces. Instead, the program should set up a timer
+callback, possibly synchronize it to display refresh, use that callback
+to increment a counter, and wait until the counter changes.
+<P>
+For example:
+<P>
+<PRE>    volatile unsigned frameCount;
+    ...
+    void MIDAS_CALL PreVR(void)
+    {
+        frameCount++;
+    }
+    ...
+    MIDASsetTimerCallbacks(70000, FALSE, &amp;PreVR, NULL, NULL);
+    ...
+    while ( !quit )
+    {
+       DoFrame();
+       oldCount = frameCount;
+       while ( frameCount == oldCount );
+    }</PRE>
+<P>
+Note that <B>frameCount</B> needs to be declared <B>volatile</B>,
+otherwise the compiler might optimize the wait completely away.
+<P>
+A similar strategy can be used to keep the program run at the same speed
+on different computers. You can use the frame counter to determine how
+many frames rendering the display takes, and run the movements for all
+those frames before rendering the next display.
+<P>
+<HR><A NAME="tex2html374" HREF="node26.html"><IMG WIDTH=37 HEIGHT=24 ALIGN=BOTTOM ALT="next" SRC="../icons/next_motif.gif"></A> <A NAME="tex2html372" HREF="node23.html"><IMG WIDTH=26 HEIGHT=24 ALIGN=BOTTOM ALT="up" SRC="../icons/up_motif.gif"></A> <A NAME="tex2html368" HREF="node24.html"><IMG WIDTH=63 HEIGHT=24 ALIGN=BOTTOM ALT="previous" SRC="../icons/previous_motif.gif"></A> <A NAME="tex2html376" HREF="node1.html"><IMG WIDTH=65 HEIGHT=24 ALIGN=BOTTOM ALT="contents" SRC="../icons/contents_motif.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html375" HREF="node26.html">  About this document </A>
+<B>Up:</B> <A NAME="tex2html373" HREF="node23.html">5 Operating system specific </A>
+<B> Previous:</B> <A NAME="tex2html369" HREF="node24.html">5.1 Using DirectSound</A>
+<P><ADDRESS>
+<I>Petteri Kangaslampi <BR>
+Sun Mar  1 22:25:31 EET 1998</I>
+</ADDRESS>
+</BODY>
+</HTML>

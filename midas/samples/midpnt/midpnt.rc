@@ -1,0 +1,306 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "midpres.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "midpres.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+MAINMENU MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Open...\tCtrl+O",            MENU_FILE_OPEN
+        MENUITEM "&Close",                      MENU_FILE_CLOSE
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       MENU_FILE_EXIT
+    END
+    POPUP "&Playing"
+    BEGIN
+        MENUITEM "&Next Position\tCtrl+.",      MENU_PLAYING_NEXTPOSITION
+        MENUITEM "&Prev. Position\tCtrl+,",     MENU_PLAYING_PREVPOSITION
+        MENUITEM "&Center Channels\tCtrl-E",    MENU_PLAYING_CENTERCHANNELS
+        MENUITEM "&List Instruments",           MENU_PLAYING_LIST_INSTRUMENTS
+
+        MENUITEM "Change &Filter\tCtrl-F",      MENU_PLAYING_FILTER
+    END
+    POPUP "&Options"
+    BEGIN
+        MENUITEM "&Preferences",                MENU_OPTIONS_PREFERENCES
+        MENUITEM "&Sound Options",              MENU_OPTIONS_SOUND
+        MENUITEM SEPARATOR
+        MENUITEM "S&ave Window Arrangement",    MENU_OPTIONS_SAVE_WIN
+        MENUITEM "&Restore Window Arrangement", MENU_OPTIONS_RESTORE_WIN
+    END
+    POPUP "&Views"
+    BEGIN
+        MENUITEM "&Song Information",           MENU_VIEWS_SONGINFO
+        MENUITEM "&Instrument List",            MENU_VIEWS_INSTLIST
+        MENUITEM "&Echo Effects",               MENU_VIEWS_ECHOEFFECTS
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About",                      MENU_HELP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+SOUNDOPTIONS DIALOG DISCARDABLE  41, 27, 142, 102
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Sound Options"
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        SOUNDOPTIONS_MIXRATE,52,4,46,51,CBS_DROPDOWN | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Stereo",SOUNDOPTIONS_STEREO,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,4,22,37,12
+    CONTROL         "8-bit",SOUNDOPTIONS_8BIT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,4,38,28,12
+    CONTROL         "Oversampling",SOUNDOPTIONS_OVERSAMPLING,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,4,54,82,12
+    EDITTEXT        SOUNDOPTIONS_BUFFERSIZE,52,70,46,12
+    EDITTEXT        SOUNDOPTIONS_BUFFERBLOCKS,52,86,46,12
+    DEFPUSHBUTTON   "OK",IDOK,104,4,33,14
+    PUSHBUTTON      "Cancel",IDCANCEL,104,22,33,14
+    LTEXT           "Buffer Size:",-1,4,70,39,8
+    LTEXT           "Buffer Blocks:",-1,4,86,47,8
+    LTEXT           "Mixing Rate:",-1,4,4,43,8
+END
+
+SONGINFO DIALOG DISCARDABLE  27, 33, 200, 54
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Song Information"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Song:",-1,4,4,23,8
+    LTEXT           "Composer:",-1,4,20,35,8
+    EDITTEXT        SONGINFO_SONG,44,3,106,12,ES_AUTOHSCROLL
+    EDITTEXT        SONGINFO_COMPOSER,44,20,106,12,ES_AUTOHSCROLL
+    LTEXT           "Comment:",-1,4,36,34,8
+    EDITTEXT        SONGINFO_COMMENT,44,36,106,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Close",IDCANCEL,164,4,32,14
+    PUSHBUTTON      "Save",SONGINFO_SAVE,164,22,32,14,WS_DISABLED
+END
+
+PREFERENCES DIALOG DISCARDABLE  47, 75, 248, 73
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Preferences"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        PREFERENCES_DEFAULTDIR,64,4,128,12
+    CONTROL         "Open views as child windows",PREFERENCES_VIEWSCHILDREN,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,58,154,12
+    DEFPUSHBUTTON   "OK",IDOK,208,4,36,14
+    PUSHBUTTON      "Cancel",IDCANCEL,208,22,36,14
+    RTEXT           "Default Directory:",-1,4,4,56,8
+    RTEXT           "Unzip Directory:",-1,4,22,56,8
+    EDITTEXT        PREFERENCES_UNZIPDIR,64,22,128,12
+    RTEXT           "Default Stereo Separation:",-1,4,40,88,8
+    EDITTEXT        PREFERENCES_DEFAULTSTEREOSEPARATION,96,40,32,12,
+                    ES_NUMBER
+END
+
+ECHOEDITOR DIALOG DISCARDABLE  33, 18, 232, 221
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Echo Effect Editor"
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        ECHOEDITOR_EFFECTNAME,60,16,100,60,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        ECHOEDITOR_NUMECHOES,56,36,28,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        ECHOEDITOR_GAINEDIT,128,36,32,14,ES_AUTOHSCROLL
+    EDITTEXT        ECHOEDITOR_FEEDBACKEDIT,56,56,32,14,ES_AUTOHSCROLL
+    EDITTEXT        ECHOEDITOR_DELAY1,16,108,32,12,ES_AUTOHSCROLL
+    EDITTEXT        ECHOEDITOR_GAIN1,56,108,32,12,ES_AUTOHSCROLL
+    CONTROL         "",ECHOEDITOR_REVERSE1,"Button",BS_AUTOCHECKBOX | 
+                    BS_VCENTER | WS_TABSTOP,96,108,12,12
+    COMBOBOX        ECHOEDITOR_FILTER1,112,108,48,44,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        ECHOEDITOR_DELAY2,16,120,32,12,ES_AUTOHSCROLL
+    EDITTEXT        ECHOEDITOR_GAIN2,56,120,32,12,ES_AUTOHSCROLL
+    CONTROL         "",ECHOEDITOR_REVERSE2,"Button",BS_AUTOCHECKBOX | 
+                    BS_VCENTER | WS_TABSTOP,96,120,8,12
+    COMBOBOX        ECHOEDITOR_FILTER2,112,120,48,44,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        ECHOEDITOR_DELAY3,16,132,32,12,ES_AUTOHSCROLL
+    EDITTEXT        ECHOEDITOR_GAIN3,56,132,32,12,ES_AUTOHSCROLL
+    CONTROL         "",ECHOEDITOR_REVERSE3,"Button",BS_AUTOCHECKBOX | 
+                    BS_VCENTER | WS_TABSTOP,96,132,8,12
+    COMBOBOX        ECHOEDITOR_FILTER3,112,132,48,44,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        ECHOEDITOR_DELAY4,16,144,32,12,ES_AUTOHSCROLL
+    EDITTEXT        ECHOEDITOR_GAIN4,56,144,32,12,ES_AUTOHSCROLL
+    CONTROL         "",ECHOEDITOR_REVERSE4,"Button",BS_AUTOCHECKBOX | 
+                    BS_VCENTER | WS_TABSTOP,96,144,8,12
+    COMBOBOX        ECHOEDITOR_FILTER4,112,144,48,44,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        ECHOEDITOR_DELAY5,16,156,32,12,ES_AUTOHSCROLL
+    EDITTEXT        ECHOEDITOR_GAIN5,56,156,32,12,ES_AUTOHSCROLL
+    CONTROL         "",ECHOEDITOR_REVERSE5,"Button",BS_AUTOCHECKBOX | 
+                    BS_VCENTER | WS_TABSTOP,96,156,8,12
+    COMBOBOX        ECHOEDITOR_FILTER5,112,156,48,44,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        ECHOEDITOR_DELAY6,16,168,32,12,ES_AUTOHSCROLL
+    EDITTEXT        ECHOEDITOR_GAIN6,56,168,32,12,ES_AUTOHSCROLL
+    CONTROL         "",ECHOEDITOR_REVERSE6,"Button",BS_AUTOCHECKBOX | 
+                    BS_VCENTER | WS_TABSTOP,96,168,8,12
+    COMBOBOX        ECHOEDITOR_FILTER6,112,168,48,44,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        ECHOEDITOR_DELAY7,16,180,32,12,ES_AUTOHSCROLL
+    EDITTEXT        ECHOEDITOR_GAIN7,56,180,32,12,ES_AUTOHSCROLL
+    CONTROL         "",ECHOEDITOR_REVERSE7,"Button",BS_AUTOCHECKBOX | 
+                    BS_VCENTER | WS_TABSTOP,96,180,8,12
+    COMBOBOX        ECHOEDITOR_FILTER7,112,180,48,44,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        ECHOEDITOR_DELAY8,16,192,32,12,ES_AUTOHSCROLL
+    EDITTEXT        ECHOEDITOR_GAIN8,56,192,32,12,ES_AUTOHSCROLL
+    CONTROL         "",ECHOEDITOR_REVERSE8,"Button",BS_AUTOCHECKBOX | 
+                    BS_VCENTER | WS_TABSTOP,96,192,8,12
+    COMBOBOX        ECHOEDITOR_FILTER8,112,192,48,44,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "&Close",IDCANCEL,176,4,50,14
+    DEFPUSHBUTTON   "&Apply",ECHOEDITOR_APPLY,176,24,50,14
+    PUSHBUTTON      "&New",ECHOEDITOR_NEW,176,44,50,14
+    PUSHBUTTON      "&Delete",ECHOEDITOR_DELETE,176,64,50,14
+    PUSHBUTTON      "&Save",ECHOEDITOR_SAVE,176,84,50,14
+    PUSHBUTTON      "&Rename...",ECHOEDITOR_RENAME,176,104,50,14
+    PUSHBUTTON      "+",ECHOEDITOR_ADDECHOBUTTON,84,36,6,6,BS_CENTER | 
+                    BS_VCENTER | NOT WS_TABSTOP
+    PUSHBUTTON      "-",ECHOEDITOR_DELECHOBUTTON,84,44,6,6,BS_CENTER | 
+                    BS_VCENTER | NOT WS_TABSTOP
+    RTEXT           "Effect Name:",ECHOEDITOR_EFFECTNAMETEXT,12,16,44,8
+    LTEXT           "Delay (ms)",ECHOEDITOR_DELAYTEXT,16,92,34,8
+    RTEXT           "Echoes:",ECHOEDITOR_ECHOESTEXT,20,36,31,8
+    CTEXT           "Gain",ECHOEDITOR_GAINTEXT,60,92,24,8
+    LTEXT           "Feedback:",ECHOEDITOR_FEEDBACKTEXT,16,56,35,8
+    LTEXT           "Rvs.Ch.",ECHOEDITOR_REVERSECHANNELSTEXT,88,92,28,8
+    GROUPBOX        "Effect Information",ECHOEDITOR_EFFECTSETUPGROUP,8,4,160,
+                    72
+    GROUPBOX        "Echoes",ECHOEDITOR_ECHOESGROUP,8,80,160,132
+    RTEXT           "Gain:",ECHOEDITOR_TOTALGAINTEXT,100,36,22,8
+    LTEXT           "Filter",ECHOEDITOR_FILTERTEXT,124,92,16,8
+END
+
+ECHORENAME DIALOG DISCARDABLE  0, 0, 186, 45
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Rename Echo Effect"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        ECHORENAME_NAME,8,12,116,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,129,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,24,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+MAINACCELERATORS ACCELERATORS MOVEABLE PURE 
+BEGIN
+    "^O",           MENU_FILE_OPEN,         ASCII   
+    "^E",           MENU_PLAYING_CENTERCHANNELS, ASCII 
+    "^F",           MENU_PLAYING_FILTER,    ASCII   
+    190,            MENU_PLAYING_NEXTPOSITION, VIRTKEY, CONTROL
+    188,            MENU_PLAYING_PREVPOSITION, VIRTKEY, CONTROL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+MIDP_ICON               ICON    DISCARDABLE     "midpnt.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    "ECHORENAME", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 38
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

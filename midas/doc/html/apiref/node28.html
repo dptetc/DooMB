@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 96.1-h (September 30, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<HTML>
+<HEAD>
+<TITLE>Functions</TITLE>
+<META NAME="description" CONTENT="Functions">
+<META NAME="keywords" CONTENT="apiref">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<LINK REL=STYLESHEET HREF="apiref.css">
+</HEAD>
+<BODY LANG="EN" >
+ <A NAME="tex2html555" HREF="node29.html"><IMG WIDTH=37 HEIGHT=24 ALIGN=BOTTOM ALT="next" SRC="../icons/next_motif.gif"></A> <A NAME="tex2html553" HREF="node25.html"><IMG WIDTH=26 HEIGHT=24 ALIGN=BOTTOM ALT="up" SRC="../icons/up_motif.gif"></A> <A NAME="tex2html549" HREF="node27.html"><IMG WIDTH=63 HEIGHT=24 ALIGN=BOTTOM ALT="previous" SRC="../icons/previous_motif.gif"></A> <A NAME="tex2html557" HREF="node1.html"><IMG WIDTH=65 HEIGHT=24 ALIGN=BOTTOM ALT="contents" SRC="../icons/contents_motif.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html556" HREF="node29.html">  About this document </A>
+<B>Up:</B> <A NAME="tex2html554" HREF="node25.html">7 Miscellaneous</A>
+<B> Previous:</B> <A NAME="tex2html550" HREF="node27.html">Data types</A>
+<BR> <P>
+<H1><A NAME="SECTION00830000000000000000">Functions</A></H1>
+<P>
+This section describes all available miscellaneous MIDAS Digital Audio System
+functions.
+<P>
+<BR> <HR><A NAME="MIDASaddEchoEffect">&#160;</A><H2><A NAME="SECTION00831000000000000000">7.3.1 MIDASaddEchoEffect</A></H2>
+<A NAME="2737">&#160;</A> <PRE>MIDASechoHandle MIDASaddEchoEffect(MIDASechoSet *echoSet);</PRE>
+<P>
+Adds an echo effect to the output.
+<P>
+<H3><A NAME="SECTION00831100000000000000">Input</A></H3>
+<P>
+<DL ><DT><STRONG>echoSet</STRONG>
+<DD> The echo set that describes the effect, see
+        <A HREF="node27.html#MIDASechoSet">MIDASechoSet</A>
+<P>
+</DL><H3><A NAME="SECTION00831200000000000000">Description</A></H3>
+<P>
+This function adds an echo effect to the output. An echo effect is described
+by a <A HREF="node27.html#MIDASechoSet">MIDASechoSet</A> structure, and can consist of one or more
+echoes. Any number of echo effects can be active simultaneously, the effects
+added last are processed first. After this function returns, the echo set
+structure is no longer used by MIDAS and may be deallocated.
+<P>
+Note that echo effects can use large amounts of CPU time, and may even be
+unusable on 486-class and slower computers.
+<P>
+<H3><A NAME="SECTION00831300000000000000">Return value</A></H3>
+<P>
+MIDAS echo handle for the echo effect if successful, NULL if not.
+<P>
+<H3><A NAME="SECTION00831400000000000000">Operating systems</A></H3>
+<P>
+All
+<P>
+<H3><A NAME="SECTION00831500000000000000">See also</A></H3>
+<P>
+<A HREF="node28.html#MIDASremoveEchoEffect">MIDASremoveEchoEffect</A>
+<P>
+<BR> <HR><A NAME="MIDASaddPostProcessor">&#160;</A><H2><A NAME="SECTION00832000000000000000">7.3.2 MIDASaddPostProcessor</A></H2>
+<A NAME="2752">&#160;</A> <PRE>BOOL MIDASaddPostProcessor(MIDASpostProcessor *postProc,
+    unsigned procPos, void *userData);</PRE>
+<P>
+Adds a user post-processor to the output.
+<P>
+<H3><A NAME="SECTION00832100000000000000">Input</A></H3>
+<P>
+<DL ><DT><STRONG>postProc</STRONG>
+<DD> A pointer to a <A HREF="node27.html#MIDASpostProcessor">MIDASpostProcessor</A> structure
+        that describes the post-processor.
+    <DT><STRONG>procPos</STRONG>
+<DD> The post-processor position in the post-processor list,
+        see <TT>enum</TT> <EM>MIDASpostProcPosition</EM>.
+    <DT><STRONG>userData</STRONG>
+<DD> An user data pointer that will be passed to the
+        post-processing functions.
+<P>
+</DL><H3><A NAME="SECTION00832200000000000000">Description</A></H3>
+<P>
+This function adds a user post-processor to the output. The post-processor can
+be used to alter the output sound data in interesting ways, or to gather
+information about the data for graphical displays and such. See the
+<A HREF="node27.html#MIDASpostProcessor">MIDASpostProcessor</A> structure documentation for more information.
+<P>
+The <B>postProc</B> structure may <B>not</B> be deallocated or re-used
+after this function returns, as it is used by MIDAS Digital Audio System
+internally. The post-processor can be removed from the output with
+<A HREF="node28.html#MIDASremovePostProcessor">MIDASremovePostProcessor</A>, after which the structure can be
+deallocated.
+<P>
+<H3><A NAME="SECTION00832300000000000000">Return value</A></H3>
+<P>
+TRUE if successful, FALSE if not.
+<P>
+<H3><A NAME="SECTION00832400000000000000">Operating systems</A></H3>
+<P>
+All
+<P>
+<H3><A NAME="SECTION00832500000000000000">See also</A></H3>
+<P>
+<A HREF="node28.html#MIDASremovePostProcessor">MIDASremovePostProcessor</A>
+<P>
+<BR> <HR><A NAME="MIDASremoveEchoEffect">&#160;</A><H2><A NAME="SECTION00833000000000000000">7.3.3 MIDASremoveEchoEffect</A></H2>
+<A NAME="2774">&#160;</A> <PRE>BOOL MIDASremoveEchoEffect(MIDASechoHandle echoHandle);</PRE>
+<P>
+Removes an echo effect from the output.
+<P>
+<H3><A NAME="SECTION00833100000000000000">Input</A></H3>
+<P>
+<DL ><DT><STRONG>echoHandle</STRONG>
+<DD> Echo handle for the effect that will be removed
+<P>
+</DL><H3><A NAME="SECTION00833200000000000000">Description</A></H3>
+<P>
+This function removes an echo effect, added with <A HREF="node28.html#MIDASaddEchoEffect">MIDASaddEchoEffect</A>,
+from the output. The echo handle will no longer be valid after this function
+has been called. Echo effects do not need to be removed in the same order they
+were added in, but can be added and removed in any order.
+<P>
+<H3><A NAME="SECTION00833300000000000000">Return value</A></H3>
+<P>
+TRUE if successful, FALSE if not
+<P>
+<H3><A NAME="SECTION00833400000000000000">Operating systems</A></H3>
+<P>
+All
+<P>
+<H3><A NAME="SECTION00833500000000000000">See also</A></H3>
+<P>
+<A HREF="node28.html#MIDASaddEchoEffect">MIDASaddEchoEffect</A>
+<P>
+<BR> <HR><A NAME="MIDASremovePostProcessor">&#160;</A><H2><A NAME="SECTION00834000000000000000">7.3.4 MIDASremovePostProcessor</A></H2>
+<A NAME="2785">&#160;</A> <PRE>BOOL MIDASremovePostProcessor(MIDASpostProcessor *postProc);</PRE>
+<P>
+Removes a user post-processor from the output.
+<P>
+<H3><A NAME="SECTION00834100000000000000">Input</A></H3>
+<P>
+<DL ><DT><STRONG>postProc</STRONG>
+<DD> A pointer to a <A HREF="node27.html#MIDASpostProcessor">MIDASpostProcessor</A> structure
+        that describes the post-processor.
+<P>
+</DL><H3><A NAME="SECTION00834200000000000000">Description</A></H3>
+<P>
+This function removes a user post-processor added with
+<EM>MIDASaddPostProcessor</EM> from the output. The post-processing functions
+will no longer be called, and the post-processor structure may be deallocated.
+<P>
+<H3><A NAME="SECTION00834300000000000000">Return value</A></H3>
+<P>
+TRUE if successful, FALSE if not.
+<P>
+<H3><A NAME="SECTION00834400000000000000">Operating systems</A></H3>
+<P>
+All
+<P>
+<H3><A NAME="SECTION00834500000000000000">See also</A></H3>
+<P>
+<A HREF="node28.html#MIDASaddPostProcessor">MIDASaddPostProcessor</A>
+<P>
+<HR><A NAME="tex2html555" HREF="node29.html"><IMG WIDTH=37 HEIGHT=24 ALIGN=BOTTOM ALT="next" SRC="../icons/next_motif.gif"></A> <A NAME="tex2html553" HREF="node25.html"><IMG WIDTH=26 HEIGHT=24 ALIGN=BOTTOM ALT="up" SRC="../icons/up_motif.gif"></A> <A NAME="tex2html549" HREF="node27.html"><IMG WIDTH=63 HEIGHT=24 ALIGN=BOTTOM ALT="previous" SRC="../icons/previous_motif.gif"></A> <A NAME="tex2html557" HREF="node1.html"><IMG WIDTH=65 HEIGHT=24 ALIGN=BOTTOM ALT="contents" SRC="../icons/contents_motif.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html556" HREF="node29.html">  About this document </A>
+<B>Up:</B> <A NAME="tex2html554" HREF="node25.html">7 Miscellaneous</A>
+<B> Previous:</B> <A NAME="tex2html550" HREF="node27.html">Data types</A>
+<P><ADDRESS>
+<I>Petteri Kangaslampi <BR>
+Sun Mar  1 22:15:08 EET 1998</I>
+</ADDRESS>
+</BODY>
+</HTML>

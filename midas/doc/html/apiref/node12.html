@@ -1,0 +1,588 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 96.1-h (September 30, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<HTML>
+<HEAD>
+<TITLE>Functions</TITLE>
+<META NAME="description" CONTENT="Functions">
+<META NAME="keywords" CONTENT="apiref">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<LINK REL=STYLESHEET HREF="apiref.css">
+</HEAD>
+<BODY LANG="EN" >
+ <A NAME="tex2html375" HREF="node13.html"><IMG WIDTH=37 HEIGHT=24 ALIGN=BOTTOM ALT="next" SRC="../icons/next_motif.gif"></A> <A NAME="tex2html373" HREF="node9.html"><IMG WIDTH=26 HEIGHT=24 ALIGN=BOTTOM ALT="up" SRC="../icons/up_motif.gif"></A> <A NAME="tex2html369" HREF="node11.html"><IMG WIDTH=63 HEIGHT=24 ALIGN=BOTTOM ALT="previous" SRC="../icons/previous_motif.gif"></A> <A NAME="tex2html377" HREF="node1.html"><IMG WIDTH=65 HEIGHT=24 ALIGN=BOTTOM ALT="contents" SRC="../icons/contents_motif.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html376" HREF="node13.html">4 Module playback</A>
+<B>Up:</B> <A NAME="tex2html374" HREF="node9.html">3 System control</A>
+<B> Previous:</B> <A NAME="tex2html370" HREF="node11.html">Data types</A>
+<BR> <P>
+<H1><A NAME="SECTION00430000000000000000">Functions</A></H1>
+<P>
+This section describes all functions available for MIDAS system
+control. This includes error handling.
+<P>
+<BR> <HR><A NAME="MIDASallocateChannel">&#160;</A><H2><A NAME="SECTION00431000000000000000">3.3.1 MIDASallocateChannel</A></H2>
+<A NAME="1664">&#160;</A> <PRE>DWORD MIDASallocateChannel(void)</PRE>
+<P>
+Allocates a single Sound Device channel.
+<P>
+<H3><A NAME="SECTION00431100000000000000">Input</A></H3>
+<P>
+None.
+<P>
+<H3><A NAME="SECTION00431200000000000000">Description</A></H3>
+<P>
+This function allocates a single Sound Device channel, and returns its
+number. Sound Device are used for all sound playback, but most functions
+take care of allocating and deallocating channels automatically. If you
+wish to play a sample on a specific channel, to ensure it won't be
+replaced by other samples, you'll need to pass <A HREF="node20.html#MIDASplaySample">MIDASplaySample</A>
+a specific channel number, and this function is used to allocate those
+channels.
+<P>
+Channels allocated with this function need to be deallocated with
+<A HREF="node12.html#MIDASfreeChannel">MIDASfreeChannel</A>. Before any channels can be allocated, some
+sound channels need to be opened with <A HREF="node12.html#MIDASopenChannels">MIDASopenChannels</A>.
+<P>
+<H3><A NAME="SECTION00431300000000000000">Return value</A></H3>
+<P>
+Channel number for the allocated channel, or MIDAS_ILLEGAL_CHANNEL
+if failed.
+<P>
+<H3><A NAME="SECTION00431400000000000000">Operating systems</A></H3>
+<P>
+All
+<P>
+<H3><A NAME="SECTION00431500000000000000">See also</A></H3>
+<P>
+<A HREF="node12.html#MIDASopenChannels">MIDASopenChannels</A>, <A HREF="node12.html#MIDASfreeChannel">MIDASfreeChannel</A>.
+<P>
+<BR> <HR><A NAME="MIDAScloseChannels">&#160;</A><H2><A NAME="SECTION00432000000000000000">3.3.2 MIDAScloseChannels</A></H2>
+<A NAME="1687">&#160;</A> <PRE>BOOL MIDAScloseChannels(void)</PRE>
+<P>
+Closes Sound Device channels opened with <A HREF="node12.html#MIDASopenChannels">MIDASopenChannels</A>.
+<P>
+<H3><A NAME="SECTION00432100000000000000">Input</A></H3>
+<P>
+None.
+<P>
+<H3><A NAME="SECTION00432200000000000000">Description</A></H3>
+<P>
+This function closes Sound Device channels that were opened with
+<A HREF="node12.html#MIDASopenChannels">MIDASopenChannels</A>. Note that you may <B>not</B> use this function to
+close channels that were opened by <A HREF="node16.html#MIDASplayModule">MIDASplayModule</A> --
+<A HREF="node16.html#MIDASstopModule">MIDASstopModule</A> will do that automatically.
+<P>
+<H3><A NAME="SECTION00432300000000000000">Return value</A></H3>
+<P>
+TRUE if successful, FALSE if not.
+<P>
+<H3><A NAME="SECTION00432400000000000000">Operating systems</A></H3>
+<P>
+All
+<P>
+<H3><A NAME="SECTION00432500000000000000">See also</A></H3>
+<P>
+<A HREF="node12.html#MIDASopenChannels">MIDASopenChannels</A>, <A HREF="node16.html#MIDASplayModule">MIDASplayModule</A>,
+<A HREF="node16.html#MIDASstopModule">MIDASstopModule</A>
+<P>
+<BR> <HR><A NAME="MIDASfreeChannel">&#160;</A><H2><A NAME="SECTION00433000000000000000">3.3.3 MIDASfreeChannel</A></H2>
+<A NAME="1718">&#160;</A> <PRE>BOOL MIDASfreeChannel(DWORD channel)</PRE>
+<P>
+Deallocates a single Sound Device channel.
+<P>
+<H3><A NAME="SECTION00433100000000000000">Input</A></H3>
+<P>
+<DL ><DT><STRONG>channel</STRONG>
+<DD> The channel number to deallocate, from
+        <A HREF="node12.html#MIDASallocateChannel">MIDASallocateChannel</A>
+<P>
+</DL><H3><A NAME="SECTION00433200000000000000">Description</A></H3>
+<P>
+This function deallocates a single Sound Device channel that has
+previously been allocated with <A HREF="node12.html#MIDASallocateChannel">MIDASallocateChannel</A>. Any sound
+playback on the channel should be stopped before deallocating it.
+<P>
+<H3><A NAME="SECTION00433300000000000000">Return value</A></H3>
+<P>
+TRUE if successful, FALSE if not.
+<P>
+<H3><A NAME="SECTION00433400000000000000">Operating systems</A></H3>
+<P>
+All
+<P>
+<H3><A NAME="SECTION00433500000000000000">See also</A></H3>
+<P>
+<A HREF="node12.html#MIDASallocateChannel">MIDASallocateChannel</A>
+<P>
+<BR> <HR><A NAME="MIDASgetErrorMessage">&#160;</A><H2><A NAME="SECTION00434000000000000000">3.3.4 MIDASgetErrorMessage</A></H2>
+<A NAME="1733">&#160;</A> <PRE>char *MIDASgetErrorMessage(int errorCode)</PRE>
+<P>
+Gets an error message corresponding to an error code.
+<P>
+<H3><A NAME="SECTION00434100000000000000">Input</A></H3>
+<P>
+<DL ><DT><STRONG>errorCode</STRONG>
+<DD> The error code from <A HREF="node12.html#MIDASgetLastError">MIDASgetLastError</A>
+<P>
+</DL><H3><A NAME="SECTION00434200000000000000">Description</A></H3>
+<P>
+This function returns a textual error message corresponding to a MIDAS error
+code. It can be used for displaying an error message to the user. Use
+<A HREF="node12.html#MIDASgetLastError">MIDASgetLastError</A> to determine the error code.
+<P>
+This function can be called at any point after <A HREF="node8.html#MIDASstartup">MIDASstartup</A> has
+been called.
+<P>
+<H3><A NAME="SECTION00434300000000000000">Return value</A></H3>
+<P>
+Error message string corresponding to the error code.
+<P>
+<H3><A NAME="SECTION00434400000000000000">Operating systems</A></H3>
+<P>
+All
+<P>
+<H3><A NAME="SECTION00434500000000000000">See also</A></H3>
+<P>
+<A HREF="node12.html#MIDASgetLastError">MIDASgetLastError</A>
+<P>
+<BR> <HR><A NAME="MIDASgetLastError">&#160;</A><H2><A NAME="SECTION00435000000000000000">3.3.5 MIDASgetLastError</A></H2>
+<A NAME="1752">&#160;</A> <PRE>int MIDASgetLastError(void)</PRE>
+<P>
+Gets the MIDAS error code for last error.
+<P>
+<H3><A NAME="SECTION00435100000000000000">Input</A></H3>
+<P>
+None.
+<P>
+<H3><A NAME="SECTION00435200000000000000">Description</A></H3>
+<P>
+This function can be used to read the error code for most recent failure.
+When a MIDAS API function returns an error condition, this function can be
+used to determine the actual cause of the error, and this error can then be
+reported to the user or ignored, depending on the kind of response needed.
+Use <A HREF="node12.html#MIDASgetErrorMessage">MIDASgetErrorMessage</A> to get a textual message corresponding to
+an error code.
+<P>
+This function can be called at any point after <A HREF="node8.html#MIDASstartup">MIDASstartup</A> has
+been called.
+<P>
+<H3><A NAME="SECTION00435300000000000000">Return value</A></H3>
+<P>
+MIDAS error code for the most recent error.
+<P>
+<H3><A NAME="SECTION00435400000000000000">Operating systems</A></H3>
+<P>
+All
+<P>
+<H3><A NAME="SECTION00435500000000000000">See also</A></H3>
+<P>
+<A HREF="node12.html#MIDASgetErrorMessage">MIDASgetErrorMessage</A>
+<P>
+<BR> <HR><A NAME="MIDASgetVersionString">&#160;</A><H2><A NAME="SECTION00436000000000000000">3.3.6 MIDASgetVersionString</A></H2>
+<A NAME="1767">&#160;</A>
+<PRE>char *MIDASgetVersionString(void)</PRE>
+<P>
+Gets the current MIDAS version as a string.
+<P>
+<H3><A NAME="SECTION00436100000000000000">Input</A></H3>
+<P>
+None.
+<P>
+<H3><A NAME="SECTION00436200000000000000">Description</A></H3>
+<P>
+This function can be used to determine the MIDAS version being loaded. It
+returns a text string description of the version. Version numbers are usually
+of form ``x.y.z'', where ``x'' is the major version number, ``y'' minor
+version number and ``z'' patch level. In some occasions, ``z'' can be
+replaced with a textual message such as ``rc1'' for Release Candidate 1. All
+MIDAS versions with the major and minor version numbers equal have a
+compatible DLL API, and can be used interchangeably.
+<P>
+<H3><A NAME="SECTION00436300000000000000">Return value</A></H3>
+<P>
+MIDAS Digital Audio System version number as a string.
+<P>
+<H3><A NAME="SECTION00436400000000000000">Operating systems</A></H3>
+<P>
+Win32, Linux
+<P>
+<H3><A NAME="SECTION00436500000000000000">See also</A></H3>
+<P>
+<BR> <HR><A NAME="MIDASopenChannels">&#160;</A><H2><A NAME="SECTION00437000000000000000">3.3.7 MIDASopenChannels</A></H2>
+<A NAME="1770">&#160;</A> <PRE>BOOL MIDASopenChannels(int numChans)</PRE>
+<P>
+Opens Sound Device channels for sound and music output.
+<P>
+<H3><A NAME="SECTION00437100000000000000">Input</A></H3>
+<P>
+<DL ><DT><STRONG>numChans</STRONG>
+<DD> Number of channels to open
+<P>
+</DL><H3><A NAME="SECTION00437200000000000000">Description</A></H3>
+<P>
+This function opens a specified number of channels for digital sound and
+music output. The channels opened can be used for playing streams, samples
+and modules.
+<P>
+If this function has not been called before <A HREF="node16.html#MIDASplayModule">MIDASplayModule</A> is
+called, <A HREF="node16.html#MIDASplayModule">MIDASplayModule</A> will open the channels it needs for
+module playback. However, if this function has been called, but the number of
+available channels is inadequate for the module,
+<A HREF="node16.html#MIDASplayModule">MIDASplayModule</A> will return an error and refuse to play the
+module.
+<P>
+<H3><A NAME="SECTION00437300000000000000">Return value</A></H3>
+<P>
+TRUE if successful, FALSE if not.
+<P>
+<H3><A NAME="SECTION00437400000000000000">Operating systems</A></H3>
+<P>
+All
+<P>
+<H3><A NAME="SECTION00437500000000000000">See also</A></H3>
+<P>
+<A HREF="node12.html#MIDAScloseChannels">MIDAScloseChannels</A>, <A HREF="node16.html#MIDASplayModule">MIDASplayModule</A>
+<P>
+<BR> <HR><A NAME="MIDASpoll">&#160;</A><H2><A NAME="SECTION00438000000000000000">3.3.8 MIDASpoll</A></H2>
+<A NAME="1793">&#160;</A>
+<PRE>BOOL MIDASpoll(void)</PRE>
+<P>
+Polls the MIDAS sound and music player.
+<P>
+<H3><A NAME="SECTION00438100000000000000">Input</A></H3>
+<P>
+None.
+<P>
+<H3><A NAME="SECTION00438200000000000000">Description</A></H3>
+<P>
+This function can be used to poll MIDAS sound and music player manually. It
+plays music forward, mixes sound data, and sends it to output. When using
+manual polling, make sure you call <A HREF="node12.html#MIDASpoll">MIDASpoll</A> often enough to make
+sure there are no breaks in sound output -- at least two times during buffer
+length, preferably four times or more. Under multitasking operating systems
+such as Win32 and Linux, this may be difficult, so very short buffer sizes
+can't be used reliably.
+<P>
+Also note that <B>currently this function is not available under MS-DOS.</B>
+Under MS-DOS, playback is always done in background using the system timer
+(IRQ 0).
+<P>
+<H3><A NAME="SECTION00438300000000000000">Return value</A></H3>
+<P>
+TRUE if successful, FALSE if not.
+<P>
+<H3><A NAME="SECTION00438400000000000000">Operating systems</A></H3>
+<P>
+Win32, Linux
+<P>
+<H3><A NAME="SECTION00438500000000000000">See also</A></H3>
+<P>
+<A HREF="node12.html#MIDASstartBackgroundPlay">MIDASstartBackgroundPlay</A>, <A HREF="node12.html#MIDASstopBackgroundPlay">MIDASstopBackgroundPlay</A>
+<P>
+<BR> <HR><A NAME="MIDASremoveTimerCallbacks">&#160;</A><H2><A NAME="SECTION00439000000000000000">3.3.9 MIDASremoveTimerCallbacks</A></H2>
+<A NAME="1808">&#160;</A> <PRE>BOOL MIDASremoveTimerCallbacks(void)</PRE>
+<P>
+Removes the user timer callbacks.
+<P>
+<H3><A NAME="SECTION00439100000000000000">Input</A></H3>
+<P>
+None.
+<P>
+<H3><A NAME="SECTION00439200000000000000">Description</A></H3>
+<P>
+This function removes the user timer callbacks set with
+<A HREF="node12.html#MIDASsetTimerCallbacks">MIDASsetTimerCallbacks</A>. The callback functions will no longer
+be called. This function <B>may not</B> be called if
+<A HREF="node12.html#MIDASsetTimerCallbacks">MIDASsetTimerCallbacks</A> has not been called before.
+<P>
+It is not necessary to call this function without exiting even if the
+callbacks have been used -- <A HREF="node8.html#MIDASclose">MIDASclose</A> will remove the
+callbacks automatically. On the other hand, if the callback functions or
+rate are changed with <A HREF="node12.html#MIDASsetTimerCallbacks">MIDASsetTimerCallbacks</A>, this function
+must be called to remove the previous ones first.
+<P>
+<H3><A NAME="SECTION00439300000000000000">Return value</A></H3>
+<P>
+TRUE if successful, FALSE if not.
+<P>
+<H3><A NAME="SECTION00439400000000000000">Operating systems</A></H3>
+<P>
+MS-DOS
+<P>
+<H3><A NAME="SECTION00439500000000000000">See also</A></H3>
+<P>
+<A HREF="node12.html#MIDASsetTimerCallbacks">MIDASsetTimerCallbacks</A>
+<P>
+<BR> <HR><A NAME="MIDASresume">&#160;</A><H2><A NAME="SECTION004310000000000000000">3.3.10 MIDASresume</A></H2>
+<A NAME="1831">&#160;</A>
+<PRE>BOOL MIDASresume(void)</PRE>
+<P>
+Resumes MIDAS sound playback.
+<P>
+<H3><A NAME="SECTION004310100000000000000">Input</A></H3>
+<P>
+None.
+<P>
+<H3><A NAME="SECTION004310200000000000000">Description</A></H3>
+<P>
+This function re-allocates the system audio device to MIDAS, and resumes
+sound playback, after being suspended with <A HREF="node12.html#MIDASsuspend">MIDASsuspend</A>. See
+<A HREF="node12.html#MIDASsuspend">MIDASsuspend</A> documentation for more information about suspending
+MIDAS.
+<P>
+Note that this function may fail, if another application has captured the
+sound output device while MIDAS was suspended.
+<P>
+<H3><A NAME="SECTION004310300000000000000">Return value</A></H3>
+<P>
+TRUE if successful, FALSE if not.
+<P>
+<H3><A NAME="SECTION004310400000000000000">Operating systems</A></H3>
+<P>
+Win32
+<P>
+<H3><A NAME="SECTION004310500000000000000">See also</A></H3>
+<P>
+<A HREF="node12.html#MIDASsuspend">MIDASsuspend</A>
+<P>
+<BR> <HR><A NAME="MIDASsetAmplification">&#160;</A><H2><A NAME="SECTION004311000000000000000">3.3.11 MIDASsetAmplification</A></H2>
+<A NAME="1846">&#160;</A>
+<PRE>BOOL MIDASsetAmplification(DWORD amplification)</PRE>
+<P>
+Sets sound output amplification level.
+<P>
+<H3><A NAME="SECTION004311100000000000000">Input</A></H3>
+<P>
+<DL ><DT><STRONG>amplification</STRONG>
+<DD> New output amplification level
+<P>
+</DL><H3><A NAME="SECTION004311200000000000000">Description</A></H3>
+<P>
+This function changes the output amplification level. Amplification can be
+used to boost the volume of the music, if the sounds played are unusually
+quiet, or lower it if the output seems distorted.. The amplification level is
+given as a percentage -- 100 stands for no amplification, 200 for double
+volume, 400 for quadruple volue, 50 for half volume etc.
+<P>
+MIDAS has some build-in amplification, but the default amplification is
+designed for situations where most channels have data played at moderate
+volumes (eg. module playback). If a lot of the channels are empty, or sounds
+are played at low volumes, adding amplification with this function can help
+to get the total sound output at a reasonable level. The amplification set
+with this function acts on top of the default MIDAS amplification, so nothing
+will be overridden.
+<P>
+This function can be called at any point after <A HREF="node8.html#MIDASstartup">MIDASstartup</A>.
+<P>
+<H3><A NAME="SECTION004311300000000000000">Return value</A></H3>
+<P>
+TRUE if successful, FALSE if not.
+<P>
+<H3><A NAME="SECTION004311400000000000000">Operating systems</A></H3>
+<P>
+All
+<P>
+<H3><A NAME="SECTION004311500000000000000">See also</A></H3>
+<P>
+<BR> <HR><A NAME="MIDASsetTimerCallbacks">&#160;</A><H2><A NAME="SECTION004312000000000000000">3.3.12 MIDASsetTimerCallbacks</A></H2>
+<A NAME="1853">&#160;</A> <PRE>BOOL MIDASsetTimerCallbacks(DWORD rate, BOOL displaySync,
+    void (MIDAS_CALL *preVR)(), void (MIDAS_CALL *immVR)(),
+    void (MIDAS_CALL *inVR)());</PRE>
+<P>
+Sets the user timer callback functions and their rate.
+<P>
+<H3><A NAME="SECTION004312100000000000000">Input</A></H3>
+<P>
+<DL ><DT><STRONG>rate</STRONG>
+<DD> Timer callback rate, in milliHertz (1000*Hz, 100Hz
+        becomes 100000 etc)
+    <DT><STRONG>displaySync</STRONG>
+<DD> TRUE if the callbacks should be synchronized to
+        display refresh, FALSE if not.
+    <DT><STRONG>preVR</STRONG>
+<DD> preVR callback function pointer or NULL
+    <DT><STRONG>immVR</STRONG>
+<DD> immVR callback function pointer or NULL
+    <DT><STRONG>inVR</STRONG>
+<DD> inVR callback function pointer or NULL
+<P>
+</DL><H3><A NAME="SECTION004312200000000000000">Description</A></H3>
+<P>
+This function sets the user timer callback functions and their call
+rate. The functions will be called periodically by the MIDAS timer
+interrupt, one after another. Any of the callback function pointers may
+be set to NULL -- the callback is then ignored.
+<P>
+If <B>displaySync</B> is TRUE, the timer system attempts to
+synchronize the callbacks to the display refresh. In that case,
+<B>preVR</B> is called just before the Vertical Retrace starts,
+<B>immVR</B> immediately after it has started, and <B>inVR</B>
+later during retrace. <B>preVR</B> can then be used for changing
+the display start address, for example. If display synchronization is
+used, <B>rate</B> has to be set to the value returned by
+<A HREF="node8.html#MIDASgetDisplayRefreshRate">MIDASgetDisplayRefreshRate</A>.
+<P>
+If <B>displaySync</B> is FALSE, or the timer system is unable to
+synchronize to display refresh (running under Win95, for example), the
+functions are simply called one after another: first <B>preVR</B>,
+then <B>immVR</B> and last <B>inVR</B>. Note that display
+synchronization is not always possible, and this may happen even if
+<B>displaySync</B> is set to 1.
+<P>
+In either case, both the <B>preVR</B> and <B>immVR</B>
+functions have to be kept as short as possible, to prevent timing
+problems. They should not do more than update a few counters, or set a
+couple of hardware registers. <B>inVR</B> can take somewhat longer
+time, and be used for, for example, setting the VGA palette. It should
+not take more than one quarter of the time between callbacks though.
+<P>
+The most common use for the timer callback functions is to use them for
+controlling the program speed. There one of the callbacks, usually
+<B>preVR</B> is simply used for incrementing a counter. This
+counter then can be used to determine when to display a new frame of
+graphics, for example, or how many frames of movement needs to be
+skipped to maintain correct speed.
+<P>
+Note that this function may cause a small break to music playback with
+some sound cards. Therefore it should not be called more often than
+necessary. Also, if the application changes display modes, any
+display-synchronized timer callbacks <B>must</B> be resetted, and a
+separate refresh rate must be read for each display mode used.
+<P>
+<TT>MIDAS_CALL</TT> is the calling convention used for the callback
+functions -- <TT>__cdecl</TT> for Watcom C, empty (default) 
+for DJGPP. As the functions will be called from an interrupt, the module
+containing the callback functions must be compiled with the ``SS==DS''
+setting disabled (command line argument ``-zu'' for Watcom C, default 
+setting for DJGPP).
+<P>
+<H3><A NAME="SECTION004312300000000000000">Return value</A></H3>
+<P>
+TRUE if successful, FALSE if not.
+<P>
+<H3><A NAME="SECTION004312400000000000000">Operating systems</A></H3>
+<P>
+MS-DOS
+<P>
+<H3><A NAME="SECTION004312500000000000000">See also</A></H3>
+<P>
+<A HREF="node12.html#MIDASremoveTimerCallbacks">MIDASremoveTimerCallbacks</A>,
+<A HREF="node8.html#MIDASgetDisplayRefreshRate">MIDASgetDisplayRefreshRate</A>
+<P>
+<BR> <HR><A NAME="MIDASstartBackgroundPlay">&#160;</A><H2><A NAME="SECTION004313000000000000000">3.3.13 MIDASstartBackgroundPlay</A></H2>
+<A NAME="1888">&#160;</A>
+<PRE>BOOL MIDASstartBackgroundPlay(DWORD pollRate)</PRE>
+<P>
+Starts playing music and sound in the background.
+<P>
+<H3><A NAME="SECTION004313100000000000000">Input</A></H3>
+<P>
+<DL ><DT><STRONG>pollRate</STRONG>
+<DD> Polling rate (number of polls per second), 0 for default
+<P>
+</DL><H3><A NAME="SECTION004313200000000000000">Description</A></H3>
+<P>
+This function starts playing sound and music in the background.
+<B>pollRate</B> controls the target polling rate -- number of polls per
+second. Polling might not be done at actually the set rate, although usually
+it will be faster. Under Win32 and Linux, a new thread will be created for
+playing. <B>Under MS-DOS this function is currently ignored, and background
+playback starts immediately when MIDAS is initialized.</B>
+<P>
+<H3><A NAME="SECTION004313300000000000000">Return value</A></H3>
+<P>
+TRUE if successful, FALSE if not.
+<P>
+<H3><A NAME="SECTION004313400000000000000">Operating systems</A></H3>
+<P>
+All, but see MS-DOS note above.
+<P>
+<H3><A NAME="SECTION004313500000000000000">See also</A></H3>
+<P>
+<A HREF="node12.html#MIDASstopBackgroundPlay">MIDASstopBackgroundPlay</A>, <A HREF="node12.html#MIDASpoll">MIDASpoll</A>
+<P>
+<BR> <HR><A NAME="MIDASstopBackgroundPlay">&#160;</A><H2><A NAME="SECTION004314000000000000000">3.3.14 MIDASstopBackgroundPlay</A></H2>
+<A NAME="1900">&#160;</A>
+<PRE>BOOL MIDASstopBackgroundPlay(void)</PRE>
+<P>
+Stops playing sound and music in the background.
+<P>
+<H3><A NAME="SECTION004314100000000000000">Input</A></H3>
+<P>
+None.
+<P>
+<H3><A NAME="SECTION004314200000000000000">Description</A></H3>
+<P>
+This function stops music and sound background playback that has been started
+with <A HREF="node12.html#MIDASstartBackgroundPlay">MIDASstartBackgroundPlay</A>. Under Win32 and Linux, this function
+also destroys the thread created for playback. <B>Under MS-DOS this
+function is currently ignored, and background playback starts immediately
+when MIDAS is initialized.</B>
+<P>
+If background playback has been started with
+<A HREF="node12.html#MIDASstartBackgroundPlay">MIDASstartBackgroundPlay</A>, this function bf must be called before
+the program exits.
+<P>
+<H3><A NAME="SECTION004314300000000000000">Return value</A></H3>
+<P>
+TRUE if successful, FALSE if not.
+<P>
+<H3><A NAME="SECTION004314400000000000000">Operating systems</A></H3>
+<P>
+All, but see MS-DOS note above.
+<P>
+<H3><A NAME="SECTION004314500000000000000">See also</A></H3>
+<P>
+<A HREF="node12.html#MIDASstartBackgroundPlay">MIDASstartBackgroundPlay</A>, <A HREF="node12.html#MIDASpoll">MIDASpoll</A>
+<P>
+<BR> <HR><A NAME="MIDASsuspend">&#160;</A><H2><A NAME="SECTION004315000000000000000">3.3.15 MIDASsuspend</A></H2>
+<A NAME="1919">&#160;</A>
+<PRE>BOOL MIDASsuspend(void)</PRE>
+<P>
+Suspends MIDAS Digital Audio System.
+<P>
+<H3><A NAME="SECTION004315100000000000000">Input</A></H3>
+<P>
+None.
+<P>
+<H3><A NAME="SECTION004315200000000000000">Description</A></H3>
+<P>
+This function suspends all MIDAS Digital Audio System output, and releases the
+system audio device to other programs. Playback can be resumed with
+<A HREF="node12.html#MIDASresume">MIDASresume</A>. Suspending and resuming MIDAS can be used to change
+some of the initial configuration options (set with <A HREF="node8.html#MIDASsetOption">MIDASsetOption</A>)
+on the fly. In particular, the DirectSound mode and DirectSound window handle
+can be changed while MIDAS is suspended, and the new values take effect when
+MDIAS is restarted. Buffer size can also be changed, although this is not
+recommended. Output mode and mixing rate cannot be changed without completely
+uninitializing MIDAS.
+<P>
+While MIDAS is suspended, all MIDAS functions can be called normally -- the
+sound simply is not played. Also, stream, module and sample playback
+positions do not change while MIDAS is suspended.
+<P>
+Note that <A HREF="node12.html#MIDASsuspend">MIDASsuspend</A> and <A HREF="node12.html#MIDASresume">MIDASresume</A> are only available
+in Win32 systems at the moment.
+<P>
+<H3><A NAME="SECTION004315300000000000000">Return value</A></H3>
+<P>
+TRUE if successful, FALSE if not.
+<P>
+<H3><A NAME="SECTION004315400000000000000">Operating systems</A></H3>
+<P>
+Win32
+<P>
+<H3><A NAME="SECTION004315500000000000000">See also</A></H3>
+<P>
+<A HREF="node12.html#MIDASresume">MIDASresume</A>
+<P>
+<HR><A NAME="tex2html375" HREF="node13.html"><IMG WIDTH=37 HEIGHT=24 ALIGN=BOTTOM ALT="next" SRC="../icons/next_motif.gif"></A> <A NAME="tex2html373" HREF="node9.html"><IMG WIDTH=26 HEIGHT=24 ALIGN=BOTTOM ALT="up" SRC="../icons/up_motif.gif"></A> <A NAME="tex2html369" HREF="node11.html"><IMG WIDTH=63 HEIGHT=24 ALIGN=BOTTOM ALT="previous" SRC="../icons/previous_motif.gif"></A> <A NAME="tex2html377" HREF="node1.html"><IMG WIDTH=65 HEIGHT=24 ALIGN=BOTTOM ALT="contents" SRC="../icons/contents_motif.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html376" HREF="node13.html">4 Module playback</A>
+<B>Up:</B> <A NAME="tex2html374" HREF="node9.html">3 System control</A>
+<B> Previous:</B> <A NAME="tex2html370" HREF="node11.html">Data types</A>
+<P><ADDRESS>
+<I>Petteri Kangaslampi <BR>
+Sun Mar  1 22:15:08 EET 1998</I>
+</ADDRESS>
+</BODY>
+</HTML>

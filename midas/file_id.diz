@@ -1,0 +1,9 @@
+  MIDAS Digital Audio System v1.1.2
+
+MIDAS is a 32-bit digital sound and music
+library for MS-DOS, Win32 and Linux users.
+It supports C, C++ and Delphi (Win32), and
+plays samples, streams and Protracker 
+(.MOD), Scream Tracker 3 (.S3M), 
+FastTracker 2 (.XM) and Impulse Tracker
+(.IT) modules.

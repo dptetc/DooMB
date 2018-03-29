@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 96.1-h (September 30, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<HTML>
+<HEAD>
+<TITLE>4.3 Using ADPCM compression</TITLE>
+<META NAME="description" CONTENT="4.3 Using ADPCM compression">
+<META NAME="keywords" CONTENT="prgguide">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<LINK REL=STYLESHEET HREF="prgguide.css">
+</HEAD>
+<BODY LANG="EN" >
+ <A NAME="tex2html341" HREF="node23.html"><IMG WIDTH=37 HEIGHT=24 ALIGN=BOTTOM ALT="next" SRC="../icons/next_motif.gif"></A> <A NAME="tex2html339" HREF="node19.html"><IMG WIDTH=26 HEIGHT=24 ALIGN=BOTTOM ALT="up" SRC="../icons/up_motif.gif"></A> <A NAME="tex2html335" HREF="node21.html"><IMG WIDTH=63 HEIGHT=24 ALIGN=BOTTOM ALT="previous" SRC="../icons/previous_motif.gif"></A> <A NAME="tex2html343" HREF="node1.html"><IMG WIDTH=65 HEIGHT=24 ALIGN=BOTTOM ALT="contents" SRC="../icons/contents_motif.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html342" HREF="node23.html">5 Operating system specific </A>
+<B>Up:</B> <A NAME="tex2html340" HREF="node19.html">4 Advanced topics</A>
+<B> Previous:</B> <A NAME="tex2html336" HREF="node21.html">Using µ-law compression</A>
+<BR> <P>
+<H1><A NAME="SECTION00530000000000000000">4.3 Using ADPCM compression</A></H1>
+<P>
+ADPCM streams provide a space-effective way of storing long sections of audio
+with a fairly good sound quality. Although ADPCM streams have lower sound
+quality than uncompressed 16-bit ones, they do sound better than 8-bit ones,
+and, as they only use effectively 4-bit samples, they provide 1:4 compression
+to the sound. This section descibes how ADPCM streams are encoded and used
+with MIDAS Digital Audio System.
+<P>
+<H2><A NAME="SECTION00531000000000000000">4.3.1 Encoding ADPCM streams</A></H2>
+<P>
+Encoding ADPCM streams is fairly simple. The <TT>tools/</TT> directory in the
+MIDAS distribution contains directories for each supported platform, and these
+directories contain a program called <TT>adpcm</TT>. This program can be
+used to encode 16-bit streams into ADPCM ones, and decode ADPCM streams back
+to 16-bit. The syntax is similar to the µ-law encoder, although a bit more
+complicated. To encode a 16-bit stream into ADPCM, use:
+<P>
+<PRE>        adpcm e input-file-name output-file-name channels frame-length</PRE>
+<P>
+Where <B>channels</B> is the number of channels in the stream (1 for
+mono, 2 for stereo) and <B>frame-length</B> the ADPCM frame length in
+bytes, including the frame header. As ADPCM sample data is adaptative delta
+encoded, it is normally impossible to start decoding an ADPCM stream from the
+middle. To get around this problem, MIDAS divides the ADPCM stream into
+``frames'', and is able to start decoding from the beginning of any frame.
+<P>
+The frame length you should use depends on the needs of your application. If
+your application will always play the streams from beginning to end, any value
+will do -- 1024 is a reasonable choice. However, if stream playback can start
+from the middle of the stream, you should consider how the stream is
+accessed. In particular, if the stream is read in blocks of a set number of
+bytes, the frame length should be equal to the block size.
+<P>
+If you wish to make the ADPCM frames of a given length of time, remember that
+each ADPCM sample is 4 bits. Therefore, one byte of ADPCM data will contain
+data for two mono samples or one stereo sample. The ADPCM frame header is 9
+bytes long for mono streams and 12 bytes long for stereo ones. Therefore, to
+get 59ms long frames for a stereo stream played at 22050Hz, the frame length
+should be 453 bytes.
+<P>
+To decode an ADPCM stream back to a 16-bit one, use:
+<P>
+<PRE>        adpcm d input-file-name output-file-name channels frame-length</PRE>
+<P>
+Like with the µ-law encoder/decoder, the files should contain just raw sample
+data, with no headers.
+<P>
+<H2><A NAME="SECTION00532000000000000000">4.3.2 Using ADPCM streams</A></H2>
+<P>
+ADPCM streams are used just like other streams in MIDAS Digital Audio
+System. Simply pass
+<EM>MIDAS_SAMPLE_ADPCM_MONO</EM> or
+<EM>MIDAS_SAMPLE_ADPCM_STEREO</EM> as the
+sample type to the MIDAS stream playback functions, and everything will work
+normally. ADPCM sample data can only be used for streams. If you are feeding
+the stream data manually, however, remember that playback can only start from
+the beginning of an ADPCM frame.
+<P>
+<HR><A NAME="tex2html341" HREF="node23.html"><IMG WIDTH=37 HEIGHT=24 ALIGN=BOTTOM ALT="next" SRC="../icons/next_motif.gif"></A> <A NAME="tex2html339" HREF="node19.html"><IMG WIDTH=26 HEIGHT=24 ALIGN=BOTTOM ALT="up" SRC="../icons/up_motif.gif"></A> <A NAME="tex2html335" HREF="node21.html"><IMG WIDTH=63 HEIGHT=24 ALIGN=BOTTOM ALT="previous" SRC="../icons/previous_motif.gif"></A> <A NAME="tex2html343" HREF="node1.html"><IMG WIDTH=65 HEIGHT=24 ALIGN=BOTTOM ALT="contents" SRC="../icons/contents_motif.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html342" HREF="node23.html">5 Operating system specific </A>
+<B>Up:</B> <A NAME="tex2html340" HREF="node19.html">4 Advanced topics</A>
+<B> Previous:</B> <A NAME="tex2html336" HREF="node21.html">Using µ-law compression</A>
+<P><ADDRESS>
+<I>Petteri Kangaslampi <BR>
+Sun Mar  1 22:25:31 EET 1998</I>
+</ADDRESS>
+</BODY>
+</HTML>

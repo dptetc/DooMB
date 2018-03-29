@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 96.1-h (September 30, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<HTML>
+<HEAD>
+<TITLE>3.7 Using echo effects</TITLE>
+<META NAME="description" CONTENT="3.7 Using echo effects">
+<META NAME="keywords" CONTENT="prgguide">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<LINK REL=STYLESHEET HREF="prgguide.css">
+</HEAD>
+<BODY LANG="EN" >
+ <A NAME="tex2html296" HREF="node19.html"><IMG WIDTH=37 HEIGHT=24 ALIGN=BOTTOM ALT="next" SRC="../icons/next_motif.gif"></A> <A NAME="tex2html294" HREF="node11.html"><IMG WIDTH=26 HEIGHT=24 ALIGN=BOTTOM ALT="up" SRC="../icons/up_motif.gif"></A> <A NAME="tex2html290" HREF="node17.html"><IMG WIDTH=63 HEIGHT=24 ALIGN=BOTTOM ALT="previous" SRC="../icons/previous_motif.gif"></A> <A NAME="tex2html298" HREF="node1.html"><IMG WIDTH=65 HEIGHT=24 ALIGN=BOTTOM ALT="contents" SRC="../icons/contents_motif.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html297" HREF="node19.html">4 Advanced topics</A>
+<B>Up:</B> <A NAME="tex2html295" HREF="node11.html">3 Using MIDAS Digital </A>
+<B> Previous:</B> <A NAME="tex2html291" HREF="node17.html">3.6 Playing streams</A>
+<BR> <P>
+<H1><A NAME="SECTION00470000000000000000">3.7 Using echo effects</A></H1>
+<P>
+The MIDAS Digital Audio System Echo Effects Engine can be used to add
+different echo and reverb effects to the sound output. These effects can range
+from simple echoes and filtering effects to heavy hall reverbs and stereo
+enhancements. This section describes how the echo effects are used
+<P>
+<H2><A NAME="SECTION00471000000000000000">3.7.1 Adding echo effects</A></H2>
+<P>
+Echo effects are added to the sound output with
+<EM>MIDASaddEchoEffect</EM>. It takes as an argument a pointer to a filled
+<EM>MIDASechoSet</EM> structure (described below), and returns and echo
+handle that can then be used to refer to the effect. The echo set structure is
+not used after <EM>MIDASaddEchoEffect</EM> returns, and may be
+deallocated. Any number of echo effects can be active simultaneously.
+<P>
+After the echo effect is no longer wanted, it can be removed from the output
+with <EM>MIDASremoveEchoEffect</EM>. Note that modifying the
+<EM>MIDASechoSet</EM> structure of an echo effect that is already being used
+has no effect.
+<P>
+<H2><A NAME="SECTION00472000000000000000">3.7.2 The echo effect structure</A></H2>
+<P>
+A MIDAS Digital Audio System echo effect is described by a
+<EM>MIDASechoSet</EM> structure. The echo set contains three common fields
+plus one or more echoes. The <B>feedback</B> field controls the amount of
+feedback in the echo set, <B>gain</B> the echo effect total gain, and
+<B>numEchoes</B> simply the number of echoes in the echo set. See the
+<EM>MIDASechoSet</EM> description in the API Reference for more details.
+<P>
+The echoes of an echo set are described by an array of <EM>MIDASecho</EM>
+structures. Each echo has fields that describe its delay, gain, filtering and
+channel reverse status. The delay of an echo controls how far back from the
+echo effect delay line the data for the echo is taken -- the greater the
+delay, the longer the echo is. Gain controls the strength of the echo, the
+echo data is essentially multiplied by the gain. Each echo can optionally be
+low-pass or high-pass filtered, in a system with more than a couple of echoes,
+low-pass filtering can reduce the build-up of high-frequency noise. Finally,
+the left and right channels of the echo can be reversed, producing an
+interesting stereo effect in some cases.
+<P>
+<HR><A NAME="tex2html296" HREF="node19.html"><IMG WIDTH=37 HEIGHT=24 ALIGN=BOTTOM ALT="next" SRC="../icons/next_motif.gif"></A> <A NAME="tex2html294" HREF="node11.html"><IMG WIDTH=26 HEIGHT=24 ALIGN=BOTTOM ALT="up" SRC="../icons/up_motif.gif"></A> <A NAME="tex2html290" HREF="node17.html"><IMG WIDTH=63 HEIGHT=24 ALIGN=BOTTOM ALT="previous" SRC="../icons/previous_motif.gif"></A> <A NAME="tex2html298" HREF="node1.html"><IMG WIDTH=65 HEIGHT=24 ALIGN=BOTTOM ALT="contents" SRC="../icons/contents_motif.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html297" HREF="node19.html">4 Advanced topics</A>
+<B>Up:</B> <A NAME="tex2html295" HREF="node11.html">3 Using MIDAS Digital </A>
+<B> Previous:</B> <A NAME="tex2html291" HREF="node17.html">3.6 Playing streams</A>
+<P><ADDRESS>
+<I>Petteri Kangaslampi <BR>
+Sun Mar  1 22:25:31 EET 1998</I>
+</ADDRESS>
+</BODY>
+</HTML>

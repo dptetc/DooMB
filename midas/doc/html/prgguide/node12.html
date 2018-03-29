@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 96.1-h (September 30, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<HTML>
+<HEAD>
+<TITLE>3.1 Initializing and configuring MIDAS</TITLE>
+<META NAME="description" CONTENT="3.1 Initializing and configuring MIDAS">
+<META NAME="keywords" CONTENT="prgguide">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<LINK REL=STYLESHEET HREF="prgguide.css">
+</HEAD>
+<BODY LANG="EN" >
+ <A NAME="tex2html232" HREF="node13.html"><IMG WIDTH=37 HEIGHT=24 ALIGN=BOTTOM ALT="next" SRC="../icons/next_motif.gif"></A> <A NAME="tex2html230" HREF="node11.html"><IMG WIDTH=26 HEIGHT=24 ALIGN=BOTTOM ALT="up" SRC="../icons/up_motif.gif"></A> <A NAME="tex2html224" HREF="node11.html"><IMG WIDTH=63 HEIGHT=24 ALIGN=BOTTOM ALT="previous" SRC="../icons/previous_motif.gif"></A> <A NAME="tex2html234" HREF="node1.html"><IMG WIDTH=65 HEIGHT=24 ALIGN=BOTTOM ALT="contents" SRC="../icons/contents_motif.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html233" HREF="node13.html">3.2 Uninitializing MIDAS</A>
+<B>Up:</B> <A NAME="tex2html231" HREF="node11.html">3 Using MIDAS Digital </A>
+<B> Previous:</B> <A NAME="tex2html225" HREF="node11.html">3 Using MIDAS Digital </A>
+<BR> <P>
+<H1><A NAME="SECTION00410000000000000000">3.1 Initializing and configuring MIDAS</A></H1>
+<P>
+MIDAS Digital Audio System initialization consists of five basic steps, which
+are outlined below. The last two steps are not necessary in all cases.
+<P>
+1. Call <EM>MIDASstartup</EM>. This should be done as early in the program as
+possible, preferably at the very beginning. <EM>MIDASstartup</EM> does not
+take a significant amount of time, and does not allocate any memory, it simply
+initializes MIDAS to a safe and stable state and resets all configration
+options. Calling <EM>MIDASclose</EM> is always safe after
+<EM>MIDASstartup</EM> has been called.
+<P>
+2. Configure MIDAS. This can be done by setting different MIDAS options with
+<EM>MIDASsetOption</EM>, or by calling <EM>MIDASconfig</EM> to prompt the
+user for the settings. The configuration can also be loaded from a file (with
+<EM>MIDASloadConfig</EM>) or registry (with
+<EM>MIDASreadConfigRegistry</EM>) at this point. Apart from the configuration
+functions, no MIDAS functions may be called yet.
+<P>
+3. Initialize MIDAS by calling <EM>MIDASinit</EM>. All MIDAS functions are
+usable after this, and the program can fully start using MIDAS. Most MIDAS
+configuration options can <B>not</B> be changed while MIDAS is initialized, so
+to change the options it is necessary to uninitialize MIDAS first.
+<P>
+4. Start background sound playback. Unless you want to poll MIDAS manually
+(with <EM>MIDASpoll</EM>), you should now call
+<EM>MIDASstartBackgroundPlay</EM> to start background sound
+playback. <EM>MIDASstartBackgroundPlay</EM> starts a playback thread (in
+multithreaded systems) or a timer, and polls MIDAS automatically from it.
+<P>
+5. Open sound channels with <EM>MIDASopenChannels</EM>. The number of open
+sound channel limits the number of sounds that can be played simultaneously
+-- one sound channel can play one sound. The number of sound channels needed
+depends on the application, typical values might be 8-32 channels for a
+module, one channel per stream and 1-8 channels for sound effects. Having
+more channels open than necessary will not increase the CPU use, as inactive
+channels do not need CPU attention. However, some sound cards may place
+limitations on the maximum number of open channels. If you are only playing a
+single module, opening the channels manually is not necessary, as
+<EM>MIDASplayModule</EM> can open the needed channels automatically.
+<P>
+<HR><A NAME="tex2html232" HREF="node13.html"><IMG WIDTH=37 HEIGHT=24 ALIGN=BOTTOM ALT="next" SRC="../icons/next_motif.gif"></A> <A NAME="tex2html230" HREF="node11.html"><IMG WIDTH=26 HEIGHT=24 ALIGN=BOTTOM ALT="up" SRC="../icons/up_motif.gif"></A> <A NAME="tex2html224" HREF="node11.html"><IMG WIDTH=63 HEIGHT=24 ALIGN=BOTTOM ALT="previous" SRC="../icons/previous_motif.gif"></A> <A NAME="tex2html234" HREF="node1.html"><IMG WIDTH=65 HEIGHT=24 ALIGN=BOTTOM ALT="contents" SRC="../icons/contents_motif.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html233" HREF="node13.html">3.2 Uninitializing MIDAS</A>
+<B>Up:</B> <A NAME="tex2html231" HREF="node11.html">3 Using MIDAS Digital </A>
+<B> Previous:</B> <A NAME="tex2html225" HREF="node11.html">3 Using MIDAS Digital </A>
+<P><ADDRESS>
+<I>Petteri Kangaslampi <BR>
+Sun Mar  1 22:25:31 EET 1998</I>
+</ADDRESS>
+</BODY>
+</HTML>

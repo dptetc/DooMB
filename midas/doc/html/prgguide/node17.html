@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 96.1-h (September 30, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<HTML>
+<HEAD>
+<TITLE>3.6 Playing streams</TITLE>
+<META NAME="description" CONTENT="3.6 Playing streams">
+<META NAME="keywords" CONTENT="prgguide">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<LINK REL=STYLESHEET HREF="prgguide.css">
+</HEAD>
+<BODY LANG="EN" >
+ <A NAME="tex2html287" HREF="node18.html"><IMG WIDTH=37 HEIGHT=24 ALIGN=BOTTOM ALT="next" SRC="../icons/next_motif.gif"></A> <A NAME="tex2html285" HREF="node11.html"><IMG WIDTH=26 HEIGHT=24 ALIGN=BOTTOM ALT="up" SRC="../icons/up_motif.gif"></A> <A NAME="tex2html279" HREF="node16.html"><IMG WIDTH=63 HEIGHT=24 ALIGN=BOTTOM ALT="previous" SRC="../icons/previous_motif.gif"></A> <A NAME="tex2html289" HREF="node1.html"><IMG WIDTH=65 HEIGHT=24 ALIGN=BOTTOM ALT="contents" SRC="../icons/contents_motif.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html288" HREF="node18.html">3.7 Using echo effects</A>
+<B>Up:</B> <A NAME="tex2html286" HREF="node11.html">3 Using MIDAS Digital </A>
+<B> Previous:</B> <A NAME="tex2html280" HREF="node16.html">3.5 Using streams</A>
+<BR> <P>
+<H1><A NAME="SECTION00460000000000000000">3.6 Playing streams</A></H1>
+<P>
+There are two different ways of playing streams in MIDAS Digital Audio System:
+stream file playback and polling stream playback. In stream file playback,
+MIDAS creates a new thread that will read the stream data from a given file
+and plays it automatically on the background. In polling stream playback the
+user needs to read or generate the stream data, and feed it to MIDAS.
+<P>
+Stream files are played with <EM>MIDASplayStreamFile</EM> and
+<EM>MIDASplayStreamWaveFile</EM>. Both functions require as arguments the
+stream file name, stream playback buffer length and stream looping flag. The
+files played with <EM>MIDASplayStreamFile</EM> should contain only raw sample
+data, and the function will therefore require as arguments also the stream
+data sample type and playback rate. <EM>MIDASplayStreamWaveFile</EM> plays
+RIFF WAVE files, and can read the information from the file header. The
+playback functions will return a stream handle that can be used to refer to
+the stream.
+<P>
+Polling stream playback is started with <EM>MIDASplayStreamPolling</EM>. It
+requires as its arguments the stream sample type, playback rate and buffer
+length. The actual stream playback will not start, however, until some stream
+data is fed to the system with <EM>MIDASfeedStreamData</EM>. After the
+playback has starter, <EM>MIDASfeedStreamData</EM> needs to be called
+periodically to feed the system new stream data to play, otherwise the system
+will run out of stream data and stop playback.
+<P>
+The stream playback buffer length controls the amount of stream data buffered
+for stream playback. The longer the buffer is, the longer the system can play
+the stream when new data is not available until the playback needs to be
+stopped. Running out of stream data will result in irritating breaks in the
+sound and should be avoided. Longer playback buffers will, however, add delay
+to the stream playback, and consume more memory. For stream file playback, a
+stream buffer length of 500ms should be suitable. For polling stream
+playback, the buffer length should be at least twice the longest expected
+delay between two calls to <EM>MIDASfeedStreamData</EM>.
+<P>
+Stream playback is stopped with <EM>MIDASstopStream</EM>, regardless of the
+stream type.
+<P>
+<H2><A NAME="SECTION00461000000000000000">3.6.1 Controlling stream playback</A></H2>
+<P>
+The stream playback properties can be changed while it is being
+played. <EM>MIDASsetStreamRate</EM> can be used to change its playback rate,
+<EM>MIDASsetStreamVolume</EM> its volume and <EM>MIDASsetStreamPanning</EM>
+its panning position. All of these functions take as an argument the stream
+handle from the stream playback function, and the new value for the playback
+property.
+<P>
+The playback of the stream can also be paused with <EM>MIDASpauseStream</EM>,
+and resumed after pausing with <EM>MIDASresumeStream</EM>. This can be useful
+if your application knows it will run out of stream data soon, and wishes to
+fade the stream out and pause it until more data is available. Stream data
+reading and feeding can continue while the stream is paused until the stream
+buffer is full.
+<P>
+<H2><A NAME="SECTION00462000000000000000">3.6.2 Getting stream information</A></H2>
+<P>
+The amount of data currently in the stream buffer can be monitored with
+<EM>MIDASgetStreamBytesBuffered</EM>. The information could be used to
+determine how soon new stream data is needed to continue playback, or whether
+or not enough space exists in the stream buffer for a complete new block of
+data.
+<P>
+Note that with ADPCM streams the stream buffer contains the decompressed data,
+as 16-bit samples, instead of the compressed ADPCM data.
+<P>
+<HR><A NAME="tex2html287" HREF="node18.html"><IMG WIDTH=37 HEIGHT=24 ALIGN=BOTTOM ALT="next" SRC="../icons/next_motif.gif"></A> <A NAME="tex2html285" HREF="node11.html"><IMG WIDTH=26 HEIGHT=24 ALIGN=BOTTOM ALT="up" SRC="../icons/up_motif.gif"></A> <A NAME="tex2html279" HREF="node16.html"><IMG WIDTH=63 HEIGHT=24 ALIGN=BOTTOM ALT="previous" SRC="../icons/previous_motif.gif"></A> <A NAME="tex2html289" HREF="node1.html"><IMG WIDTH=65 HEIGHT=24 ALIGN=BOTTOM ALT="contents" SRC="../icons/contents_motif.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html288" HREF="node18.html">3.7 Using echo effects</A>
+<B>Up:</B> <A NAME="tex2html286" HREF="node11.html">3 Using MIDAS Digital </A>
+<B> Previous:</B> <A NAME="tex2html280" HREF="node16.html">3.5 Using streams</A>
+<P><ADDRESS>
+<I>Petteri Kangaslampi <BR>
+Sun Mar  1 22:25:31 EET 1998</I>
+</ADDRESS>
+</BODY>
+</HTML>

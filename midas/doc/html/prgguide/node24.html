@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 96.1-h (September 30, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<HTML>
+<HEAD>
+<TITLE>5.1 Using DirectSound</TITLE>
+<META NAME="description" CONTENT="5.1 Using DirectSound">
+<META NAME="keywords" CONTENT="prgguide">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<LINK REL=STYLESHEET HREF="prgguide.css">
+</HEAD>
+<BODY LANG="EN" >
+ <A NAME="tex2html365" HREF="node25.html"><IMG WIDTH=37 HEIGHT=24 ALIGN=BOTTOM ALT="next" SRC="../icons/next_motif.gif"></A> <A NAME="tex2html363" HREF="node23.html"><IMG WIDTH=26 HEIGHT=24 ALIGN=BOTTOM ALT="up" SRC="../icons/up_motif.gif"></A> <A NAME="tex2html357" HREF="node23.html"><IMG WIDTH=63 HEIGHT=24 ALIGN=BOTTOM ALT="previous" SRC="../icons/previous_motif.gif"></A> <A NAME="tex2html367" HREF="node1.html"><IMG WIDTH=65 HEIGHT=24 ALIGN=BOTTOM ALT="contents" SRC="../icons/contents_motif.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html366" HREF="node25.html">MS-DOS timer callbacks</A>
+<B>Up:</B> <A NAME="tex2html364" HREF="node23.html">5 Operating system specific </A>
+<B> Previous:</B> <A NAME="tex2html358" HREF="node23.html">5 Operating system specific </A>
+<BR> <P>
+<H1><A NAME="SECTION00610000000000000000">5.1 Using DirectSound</A></H1>
+<P>
+Beginning from version 0.7, MIDAS Digital Audio System supports DirectSound
+for sound output.  Although most of the time this is done completely
+transparently to the user, there are some decisions that need to be made in
+the initialization phase.
+<P>
+<H2><A NAME="SECTION00611000000000000000">5.1.1 Initialization</A></H2>
+<P>
+By default, DirectSound support in MIDAS Digital Audio System is disabled. To
+enable it, set
+<EM>MIDAS_OPTION__DSOUND_MODE</EM> to a value
+other than <EM>MIDAS_DSOUND_DISABLED</EM>.  The
+DirectSound mode you choose depends on the needs of your application, and the
+available modes are described in detail in the next section.
+<P>
+In addition to the DirectSound mode, you also need to set the window handle
+that MIDAS will in turn pass to DirectSound. DirectSound uses this window
+handle to determine the active window, as only the sound played by the active
+application will be heard. To set the window handle, simply call
+<PRE>        MIDASsetOption(MIDAS_OPTION_DSOUND_HWND, (DWORD) hwnd);</PRE>
+where <B>hwnd</B> is the window handle of your application's main
+window.
+<P>
+<H2><A NAME="SECTION00612000000000000000">5.1.2 DirectSound modes</A></H2>
+<P>
+Apart from <EM>MIDAS_DSOUND_DISABLED</EM>, three
+different DirectSound modes are available in MIDAS Digital Audio System. This
+section describes them in detail.
+<P>
+<B>MIDAS_DSOUND_STREAM</B>: DirectSound stream mode. MIDAS will play its
+sound to a DirectSound stream buffer, which will then be mixed to the primary
+buffer by DirectSound. If the DirectSound object hasn't explicitly been set,
+MIDAS will initialize DirectSound and set the primary buffer format to the
+same as MIDAS output format. This mode allows arbitrary buffer length, and
+possibly smoother playback than primary buffer mode, but has a larger CPU
+overhead.
+<P>
+<B>MIDAS_DSOUND_PRIMARY</B>: DirectSound primary buffer mode. The sound
+data will be played directly to the DirectSound primary buffer. This mode has
+the smallest CPU overhead of all available DirectSound modes, and provides
+smallest possible latency, but is not without its drawbacks: The primary
+buffer size is set by the driver, and cannot be changed, so the buffer size
+may be limited.
+<P>
+<B>MIDAS_DSOUND_FORCE_STREAM</B>: This mode behaves exactly like the
+stream mode, except that DirectSound usage is forced. Normally, MIDAS will
+not use DirectSound if it is running in emulation mode (as the standard
+Windows WAVE output device will provide better performance), so this mode
+must be used to force DirectSound usage. Forcing MIDAS to use DirectSound in
+stream mode will also the applications to use DirectSound themselves
+simultaneously.
+<P>
+By default, MIDAS an automatical fallback mechanism for DirectSound modes: If
+DirectSound support is set to primary mode, but primary buffer is not
+available for writing, MIDAS will use stream mode instead. And, if
+DirectSound is running in emulation mode, MIDAS will automatically use normal
+Win32 audio services instead. This way it is possible to simply set the
+desired DirectSound mode, and let MIDAS decide the best of the alternatives
+available.
+<P>
+<H2><A NAME="SECTION00613000000000000000">5.1.3 Buffer sizes</A></H2>
+<P>
+When MIDAS Digital Audio System is using DirectSound with proper drivers
+(ie. not in emulation mode), much smaller buffer sizes can be used than
+normal. Because of this, the DirectSound buffer size is set with a different
+option setting --
+<EM>MIDAS_OPTION_DSOUND_BUFLEN</EM> -- from the
+normal mixing buffer length.  When playing in emulation mode, MIDAS will use
+the normal mixing buffer length, as smaller buffers can't be used as reliably.
+<P>
+Selecting the correct buffer size is a compromise between sound latency and
+reliability: the longer the buffer is, the greater latency the sound has, and
+the longer it takes the sound to actually reach output, but the smaller the
+buffer is made, the more often the music player needs to be called. To ensure
+that there are no breaks in sound playback, the music player needs to be
+called at least twice, preferably four times, during each buffer length: for
+a 100ms buffer, for example, the sound player needs to be called at least
+every 50ms, or 20 times per second.
+<P>
+Although the calling frequency requirements don't seem to be very severe, in
+practise trying to guarantee that a function gets called even 20 times per
+second can be difficult. The realtime capabilities of the Win32 platform,
+especially Windows 95, leave a lot to be desired: A 16-bit program or system
+service can easily block the system for long periods of time. By default,
+MIDAS uses a separate thread for background playback, but although this
+thread runs at a higher priority than the rest of the program, you may find
+that using manual polling will help you get more consistent and reliable
+sound playback.
+<P>
+Unfortunately there is no single buffer size that works for everybody, so
+some experimentation will be needed. The default MIDAS DirectSound buffer
+size is 100ms, which should be a reasonable compromise for most applications,
+but, depending on your applications, buffer sizes at 50ms or below should be
+usable.
+<P>
+<H2><A NAME="SECTION00614000000000000000">5.1.4 Using other DirectSound services with MIDAS</A></H2>
+<P>
+If necessary, it is also possible to use other DirectSound services
+simultaneously with MIDAS Digital Audio System. In this case, MIDAS should be
+set to use DirectSound in forced stream mode, and the DirectSound object needs
+to be explicitly given to MIDAS before initialization:
+<PRE>        MIDASsetOption{MIDAS_OPTION_DSOUND_OBJECT, (DWORD) ds);</PRE>
+Where <B>ds</B> is a pointer to the DirectSound object used, returned by
+<EM>DirectSoundCreate()</EM>. The user is also responsible for setting
+DirectSound cooperative level and primary buffer format.
+<P>
+Although this DirectSound usage is not recommended, it can be used, for
+example, to play music with MIDAS while using the DirectSound services
+directly for playing sound effects.
+<P>
+<H2><A NAME="SECTION00615000000000000000">5.1.5 When to use DirectSound?</A></H2>
+<P>
+Although DirectSound provides a smaller latency than the normal Windows sound
+devices, and possibly smaller CPU overhead, it is not suitable of all
+applications. This section gives a quick overview on what applications should
+use DirectSound, what shouldn't, and which DirectSound mode is most
+appropriate.
+<P>
+The most important drawback of DirectSound is, that only the active
+application gets its sound played. While this can be useful with games that
+run fullscreen, it makes DirectSound completely unusable for applications
+such as music players, as background playback is impossible with DirectSound.
+Therefore standalone music player programs should never use DirectSound.
+<P>
+Also, if your application does not benefit from the reduced latency that
+DirectSound provides, it is safer not to use DirectSound. The DirectSound
+drivers currently available are not very mature, and the DirectX setup
+included in the DirectX SDK is far from trouble-free. In addition, programs
+using DirectSound need to distribute the DirectX runtime with them, making
+them considerably larger.
+<P>
+However, if you are writing an interactive high-performance application,
+where strict graphics and sound synchronization is essential, DirectSound is
+clearly the way to go. For these kind of applications, DirectSound primary
+buffer should be the best solution, unless there are clear reasons for using
+stream mode.
+<P>
+<H2><A NAME="SECTION00616000000000000000">5.1.6 DirectSound and multiple windows</A></H2>
+<P>
+When the application uses DirectSound for sound output, only the sound from
+the active window is played. Therefore DirectSound requires a window handle
+to be able to determine which window is active. If the application has
+multiple windows that it needs to activate separately, however, this can
+cause problems. DirectSound provides no documented way to change the window
+handle on the fly.
+<P>
+To get around this problem, MIDAS Digital Audio System provides two functions
+to suspend and resume playback: <EM>MIDASsuspend</EM> and
+<EM>MIDASresume</EM>.  <EM>MIDASsuspend</EM> stops all sound playback,
+uninitializes the sound output device, and returns it to the operating system.
+<EM>MIDASresume</EM> in turn resumes sound playback after suspension. These
+functions can be used to change the DirectSound window handle on the fly:
+First call <EM>MIDASsuspend</EM>, set the new window handle, and call
+<EM>MIDASresume</EM> to resume playback. This will cause a break to the
+sound, and the sound data currently buffered to the sound output device will
+be lost.
+<P>
+Depending on the application, it may also be possible to get around the
+DirectSound multiple window problem by creating a hidden parent window for
+all windows that will be used, and pass the window handle of that parent
+window to DirectSound.
+<P>
+<HR><A NAME="tex2html365" HREF="node25.html"><IMG WIDTH=37 HEIGHT=24 ALIGN=BOTTOM ALT="next" SRC="../icons/next_motif.gif"></A> <A NAME="tex2html363" HREF="node23.html"><IMG WIDTH=26 HEIGHT=24 ALIGN=BOTTOM ALT="up" SRC="../icons/up_motif.gif"></A> <A NAME="tex2html357" HREF="node23.html"><IMG WIDTH=63 HEIGHT=24 ALIGN=BOTTOM ALT="previous" SRC="../icons/previous_motif.gif"></A> <A NAME="tex2html367" HREF="node1.html"><IMG WIDTH=65 HEIGHT=24 ALIGN=BOTTOM ALT="contents" SRC="../icons/contents_motif.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html366" HREF="node25.html">MS-DOS timer callbacks</A>
+<B>Up:</B> <A NAME="tex2html364" HREF="node23.html">5 Operating system specific </A>
+<B> Previous:</B> <A NAME="tex2html358" HREF="node23.html">5 Operating system specific </A>
+<P><ADDRESS>
+<I>Petteri Kangaslampi <BR>
+Sun Mar  1 22:25:31 EET 1998</I>
+</ADDRESS>
+</BODY>
+</HTML>

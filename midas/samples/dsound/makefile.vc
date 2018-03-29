@@ -1,0 +1,7 @@
+INCDIR = ..\\..\\src\\midas
+LIBRARY = ..\\..\\lib\\win32\\vcretail\\midasdll.lib
+
+all :		dsmod.exe
+
+dsmod.exe :	dsmod.c $(LIBRARY)
+	CL -MT -W3 -Zi -I$(INCDIR) dsmod.c $(LIBRARY) winmm.lib user32.lib advapi32.lib

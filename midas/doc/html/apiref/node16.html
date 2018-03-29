@@ -1,0 +1,462 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 96.1-h (September 30, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<HTML>
+<HEAD>
+<TITLE>Functions</TITLE>
+<META NAME="description" CONTENT="Functions">
+<META NAME="keywords" CONTENT="apiref">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<LINK REL=STYLESHEET HREF="apiref.css">
+</HEAD>
+<BODY LANG="EN" >
+ <A NAME="tex2html420" HREF="node17.html"><IMG WIDTH=37 HEIGHT=24 ALIGN=BOTTOM ALT="next" SRC="../icons/next_motif.gif"></A> <A NAME="tex2html418" HREF="node13.html"><IMG WIDTH=26 HEIGHT=24 ALIGN=BOTTOM ALT="up" SRC="../icons/up_motif.gif"></A> <A NAME="tex2html414" HREF="node15.html"><IMG WIDTH=63 HEIGHT=24 ALIGN=BOTTOM ALT="previous" SRC="../icons/previous_motif.gif"></A> <A NAME="tex2html422" HREF="node1.html"><IMG WIDTH=65 HEIGHT=24 ALIGN=BOTTOM ALT="contents" SRC="../icons/contents_motif.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html421" HREF="node17.html">5 Sample playback</A>
+<B>Up:</B> <A NAME="tex2html419" HREF="node13.html">4 Module playback</A>
+<B> Previous:</B> <A NAME="tex2html415" HREF="node15.html">Data types</A>
+<BR> <P>
+<H1><A NAME="SECTION00530000000000000000">Functions</A></H1>
+<P>
+This section describes all functions available for MIDAS module playback.
+<P>
+<BR> <HR><A NAME="MIDASfadeMusicChannel">&#160;</A><H2><A NAME="SECTION00531000000000000000">4.3.1 MIDASfadeMusicChannel</A></H2>
+<A NAME="2003">&#160;</A> <PRE>BOOL MIDASfadeMusicChannel(MIDASmodulePlayHandle playHandle,
+    unsigned channel, unsigned fade)</PRE>
+<P>
+Fades a music channel.
+<P>
+<H3><A NAME="SECTION00531100000000000000">Input</A></H3>
+<P>
+<DL ><DT><STRONG>playHandle</STRONG>
+<DD> Module playback handle for the music
+    <DT><STRONG>channel</STRONG>
+<DD> Module channel number to control
+    <DT><STRONG>fade</STRONG>
+<DD> Channel fade value: 64 is normal volume, 0 silence
+<P>
+</DL><H3><A NAME="SECTION00531200000000000000">Description</A></H3>
+<P>
+This function is used to control the ``fade'' of a music
+channel. Channel fade acts as a channel-specific master volume: it can
+be used to quiet down the general volume of the sounds played on the
+channel, while any volume changes in the music still take effect.
+<P>
+<B>channel</B> if the <B>module</B> channel number for the sounds to
+control, not a Sound Device channel number. Module channels are numbered
+from zero upwards.
+<P>
+<H3><A NAME="SECTION00531300000000000000">Return value</A></H3>
+<P>
+TRUE if successful, FALSE if not.
+<P>
+<H3><A NAME="SECTION00531400000000000000">Operating systems</A></H3>
+<P>
+All
+<P>
+<H3><A NAME="SECTION00531500000000000000">See also</A></H3>
+<P>
+<A HREF="node16.html#MIDASsetMusicVolume">MIDASsetMusicVolume</A>
+<P>
+<BR> <HR><A NAME="MIDASfreeModule">&#160;</A><H2><A NAME="SECTION00532000000000000000">4.3.2 MIDASfreeModule</A></H2>
+<A NAME="2011">&#160;</A> <PRE>BOOL MIDASfreeModule(MIDASmodule module)</PRE>
+<P>
+Deallocates a module.
+<P>
+<H3><A NAME="SECTION00532100000000000000">Input</A></H3>
+<P>
+<DL ><DT><STRONG>module</STRONG>
+<DD> Module that should be deallocated
+<P>
+</DL><H3><A NAME="SECTION00532200000000000000">Description</A></H3>
+<P>
+This function deallocates a module loaded with <A HREF="node16.html#MIDASloadModule">MIDASloadModule</A>. It
+should be called to free unused modules from memory, after they are no longer
+being played, to avoid memory leaks.
+<P>
+<H3><A NAME="SECTION00532300000000000000">Return value</A></H3>
+<P>
+TRUE if successful, FALSE if not.
+<P>
+<H3><A NAME="SECTION00532400000000000000">Operating systems</A></H3>
+<P>
+All
+<P>
+<H3><A NAME="SECTION00532500000000000000">See also</A></H3>
+<P>
+<A HREF="node16.html#MIDASloadModule">MIDASloadModule</A>
+<P>
+<BR> <HR><A NAME="MIDASgetInstrumentInfo">&#160;</A><H2><A NAME="SECTION00533000000000000000">4.3.3 MIDASgetInstrumentInfo</A></H2>
+<A NAME="2022">&#160;</A> <PRE>BOOL MIDASgetInstrumentInfo(MIDASmodule module,
+    int instNum, MIDASinstrumentInfo *info)</PRE>
+<P>
+Gets information about an instrument in a module.
+<P>
+<H3><A NAME="SECTION00533100000000000000">Input</A></H3>
+<P>
+<DL ><DT><STRONG>module</STRONG>
+<DD> Module handle for the module
+    <DT><STRONG>instNum</STRONG>
+<DD> Instrument number
+    <DT><STRONG>info</STRONG>
+<DD> Pointer to an instrument info structure where the information
+        willl be written
+<P>
+</DL><H3><A NAME="SECTION00533200000000000000">Description</A></H3>
+<P>
+This function returns information about an instrument in a module, including
+the instrument name. The user needs to pass it a valid pointer to a
+<A HREF="node15.html#MIDASinstrumentInfo">MIDASinstrumentInfo</A> structure (<B>*info</B>), where the
+information will be written. You should ensure that <B>instNum</B> is a
+valid instrument number. Instrument numbers start from 0, although trackers
+traditionally number them from 1, and you can use<A HREF="node16.html#MIDASgetModuleInfo">MIDASgetModuleInfo</A>
+to get the number of instruments available in a module.
+<P>
+<H3><A NAME="SECTION00533300000000000000">Return value</A></H3>
+<P>
+TRUE if successful, FALSE if not. The instrument information is written to
+<B>*info</B>.
+<P>
+<H3><A NAME="SECTION00533400000000000000">Operating systems</A></H3>
+<P>
+All
+<P>
+<H3><A NAME="SECTION00533500000000000000">See also</A></H3>
+<P>
+<A HREF="node16.html#MIDASplayModule">MIDASplayModule</A>, <A HREF="node16.html#MIDASgetModuleInfo">MIDASgetModuleInfo</A>,
+<A HREF="node15.html#MIDASmoduleInfo">MIDASmoduleInfo</A>
+<P>
+<BR> <HR><A NAME="MIDASgetModuleInfo">&#160;</A><H2><A NAME="SECTION00534000000000000000">4.3.4 MIDASgetModuleInfo</A></H2>
+<A NAME="2048">&#160;</A> <PRE>BOOL MIDASgetModuleInfo(MIDASmodule module,
+    MIDASmoduleInfo *info)</PRE>
+<P>
+Gets information about a module.
+<P>
+<H3><A NAME="SECTION00534100000000000000">Input</A></H3>
+<P>
+<DL ><DT><STRONG>module</STRONG>
+<DD> Module handle for the module
+    <DT><STRONG>info</STRONG>
+<DD> Pointer to a module info structure where the information
+        will be written
+<P>
+</DL><H3><A NAME="SECTION00534200000000000000">Description</A></H3>
+<P>
+This function returns information about a module, including the module name
+and the number of channels used. The user needs to pass it a valid pointer to
+a <A HREF="node15.html#MIDASmoduleInfo">MIDASmoduleInfo</A> structure (<B>*info</B>), where the
+information will be written.
+<P>
+<H3><A NAME="SECTION00534300000000000000">Return value</A></H3>
+<P>
+TRUE if successful, FALSE if not. The module information is written to
+<B>*info</B>.
+<P>
+<H3><A NAME="SECTION00534400000000000000">Operating systems</A></H3>
+<P>
+All
+<P>
+<H3><A NAME="SECTION00534500000000000000">See also</A></H3>
+<P>
+<A HREF="node16.html#MIDASplayModule">MIDASplayModule</A>, <A HREF="node15.html#MIDASmoduleInfo">MIDASmoduleInfo</A>
+<P>
+<BR> <HR><A NAME="MIDASgetPlayStatus">&#160;</A><H2><A NAME="SECTION00535000000000000000">4.3.5 MIDASgetPlayStatus</A></H2>
+<A NAME="2065">&#160;</A> <PRE>BOOL MIDASgetPlayStatus(MIDASmodulePlayHandle playHandle,
+    MIDASplayStatus *status)</PRE>
+<P>
+Gets module playback status.
+<P>
+<H3><A NAME="SECTION00535100000000000000">Input</A></H3>
+<P>
+<DL ><DT><STRONG>playHandle</STRONG>
+<DD> Module playback handle for the music
+    <DT><STRONG>status</STRONG>
+<DD> Pointer to playback status structure where the status will
+        be written.
+<P>
+</DL><H3><A NAME="SECTION00535200000000000000">Description</A></H3>
+<P>
+This function reads the current module playback status, and writes it to
+<B>*status</B>. The user needs to pass it a valid pointer to a
+<A HREF="node15.html#MIDASplayStatus">MIDASplayStatus</A> structure, which will be updated.
+<P>
+<H3><A NAME="SECTION00535300000000000000">Return value</A></H3>
+<P>
+TRUE if successful, FALSE if not. The current playback status is written to
+<B>*status</B>.
+<P>
+<H3><A NAME="SECTION00535400000000000000">Operating systems</A></H3>
+<P>
+All
+<P>
+<H3><A NAME="SECTION00535500000000000000">See also</A></H3>
+<P>
+<A HREF="node16.html#MIDASplayModule">MIDASplayModule</A>, <A HREF="node15.html#MIDASplayStatus">MIDASplayStatus</A>
+<P>
+<BR> <HR><A NAME="MIDASloadModule">&#160;</A><H2><A NAME="SECTION00536000000000000000">4.3.6 MIDASloadModule</A></H2>
+<A NAME="2082">&#160;</A> <PRE>MIDASmodule MIDASloadModule(char *fileName)</PRE>
+<P>
+Loads a module file into memory.
+<P>
+<H3><A NAME="SECTION00536100000000000000">Input</A></H3>
+<P>
+<DL ><DT><STRONG>fileName</STRONG>
+<DD> Module file name
+<P>
+</DL><H3><A NAME="SECTION00536200000000000000">Description</A></H3>
+<P>
+This function loads a module file into memory. It checks the module format
+based on the module file header, and invokes the correct loader to load the
+module into memory in GMPlayer internal format. The module can then be played
+using <A HREF="node16.html#MIDASplayModule">MIDASplayModule</A>, and deallocated from memory with
+<A HREF="node16.html#MIDASfreeModule">MIDASfreeModule</A>.
+<P>
+<H3><A NAME="SECTION00536300000000000000">Return value</A></H3>
+<P>
+Module handle if successful, NULL if not.
+<P>
+<H3><A NAME="SECTION00536400000000000000">Operating systems</A></H3>
+<P>
+All
+<P>
+<H3><A NAME="SECTION00536500000000000000">See also</A></H3>
+<P>
+<A HREF="node16.html#MIDASplayModule">MIDASplayModule</A>, <A HREF="node16.html#MIDASfreeModule">MIDASfreeModule</A>
+<P>
+<BR> <HR><A NAME="MIDASplayModule">&#160;</A><H2><A NAME="SECTION00537000000000000000">4.3.7 MIDASplayModule</A></H2>
+<A NAME="2101">&#160;</A> <PRE>MIDASmodulePlayHandle MIDASplayModule(MIDASmodule module, 
+    BOOL loopSong)</PRE>
+<P>
+Starts playing a module.
+<P>
+<H3><A NAME="SECTION00537100000000000000">Input</A></H3>
+<P>
+<DL ><DT><STRONG>module</STRONG>
+<DD> Module to be played
+    <DT><STRONG>loopSong</STRONG>
+<DD> TRUE if the song should be looped, FALSE if not
+<P>
+</DL><H3><A NAME="SECTION00537200000000000000">Description</A></H3>
+<P>
+This functions starts playing a module that has been previously loaded with
+<A HREF="node16.html#MIDASloadModule">MIDASloadModule</A>. If channels have not been previously opened using
+<A HREF="node12.html#MIDASopenChannels">MIDASopenChannels</A>, this function opens the channels necessary to
+play the module. This function plays the complete module -- to play
+just a section of the song data, use <A HREF="node16.html#MIDASplayModuleSection">MIDASplayModuleSection</A>.
+<P>
+<B>Note!</B> Currently, when multiple modules or module sections are
+played simultaneously, all modules should have the same (BPM)
+<B>tempo</B>. Otherwise some modules may be played at the wrong tempo. All
+modules can have different <B>speed</B> setting though.
+<P>
+<H3><A NAME="SECTION00537300000000000000">Return value</A></H3>
+<P>
+MIDAS module playback handle for the module, or 0 if failed.
+<P>
+<H3><A NAME="SECTION00537400000000000000">Operating systems</A></H3>
+<P>
+All
+<P>
+<H3><A NAME="SECTION00537500000000000000">See also</A></H3>
+<P>
+<A HREF="node16.html#MIDASloadModule">MIDASloadModule</A>, <A HREF="node16.html#MIDASstopModule">MIDASstopModule</A>,
+<A HREF="node16.html#MIDASplayModuleSection">MIDASplayModuleSection</A>
+<P>
+<BR> <HR><A NAME="MIDASplayModuleSection">&#160;</A><H2><A NAME="SECTION00538000000000000000">4.3.8 MIDASplayModuleSection</A></H2>
+<A NAME="2128">&#160;</A> <PRE>MIDASmodulePlayHandle MIDASplayModuleSection(MIDASmodule module, 
+    unsigned startPos, unsigned endPos, unsigned restartPos,
+    BOOL loopSong)</PRE>
+<P>
+Starts playing a module section.
+<P>
+<H3><A NAME="SECTION00538100000000000000">Input</A></H3>
+<P>
+<DL ><DT><STRONG>module</STRONG>
+<DD> Module to be played
+    <DT><STRONG>startPos</STRONG>
+<DD> Start song position for the section to play
+    <DT><STRONG>endPos</STRONG>
+<DD> End song position for the section to play
+    <DT><STRONG>restartPos</STRONG>
+<DD> Restart position to use when the section loops
+    <DT><STRONG>loopSong</STRONG>
+<DD> TRUE if the playback should be looped, FALSE if not
+<P>
+</DL><H3><A NAME="SECTION00538200000000000000">Description</A></H3>
+<P>
+This module starts playing a section of a module that has been
+previously loaded with <A HREF="node16.html#MIDASloadModule">MIDASloadModule</A>. If channels have not
+been previously opened using
+<A HREF="node12.html#MIDASopenChannels">MIDASopenChannels</A>, this function opens the channels necessary to
+play the module. Playback will start from the pattern at position
+<B>startPos</B>, and after the pattern at position
+<B>endPos</B> has been played, playback will resume from the pattern at
+<B>restartPos</B>. This function can thus be used to play a section
+of a module, and a single module can be used to store several songs.
+<P>
+<B>Note!</B> Currently, when multiple modules or module sections are
+played simultaneously, all modules should have the same (BPM)
+<B>tempo</B>. Otherwise some modules may be played at the wrong tempo. All
+modules can have different <B>speed</B> setting though.
+<P>
+<H3><A NAME="SECTION00538300000000000000">Return value</A></H3>
+<P>
+MIDAS module playback handle for the module, or 0 if failed.
+<P>
+<H3><A NAME="SECTION00538400000000000000">Operating systems</A></H3>
+<P>
+All
+<P>
+<H3><A NAME="SECTION00538500000000000000">See also</A></H3>
+<P>
+<A HREF="node16.html#MIDASloadModule">MIDASloadModule</A>, <A HREF="node16.html#MIDASstopModule">MIDASstopModule</A>,
+<A HREF="node16.html#MIDASplayModule">MIDASplayModule</A>
+<P>
+<BR> <HR><A NAME="MIDASsetMusicSyncCallback">&#160;</A><H2><A NAME="SECTION00539000000000000000">4.3.9 MIDASsetMusicSyncCallback</A></H2>
+<A NAME="2154">&#160;</A> <PRE>BOOL MIDASsetMusicSyncCallback(MIDASmodulePlayHandle playHandle,
+    void (MIDAS_CALL *callback)
+    (unsigned syncInfo, unsigned position, unsigned row))</PRE>
+<P>
+Sets the music synchronization callback.
+<P>
+<H3><A NAME="SECTION00539100000000000000">Input</A></H3>
+<P>
+<DL ><DT><STRONG>playHandle</STRONG>
+<DD> Module playback handle for the music
+    <DT><STRONG>callback</STRONG>
+<DD> Pointer to the callback function, NULL to disable
+<P>
+</DL><H3><A NAME="SECTION00539200000000000000">Description</A></H3>
+<P>
+This function sets the music synchronization callback function. It will be
+called by the MIDAS music player each time a <B>Wxx</B> command is played from
+a FastTracker 2 or Scream Tracker 3 module, or a <B>Zxx</B> command from an
+Impulse Tracker module. The function will receive as its arguments the
+synchronization command infobyte (xx), the current playback position and the
+current playback row. Setting <B>callback</B> to NULL disables it.
+<P>
+<TT>MIDAS_CALL</TT> is the calling convention used for the callback
+function -- <TT>__cdecl</TT> for Watcom and Visual C/C++, empty
+(default) for GCC. Under MS-DOS the function will be called from the
+MIDAS timer interrupt, so the module
+containing the callback function must be compiled with the ``SS==DS''
+setting disabled (command line argument ``-zu'' for Watcom C, default 
+setting for DJGPP). Under Win32 and Linux the function will be called
+in the context of the MIDAS player thread.
+<P>
+<H3><A NAME="SECTION00539300000000000000">Return value</A></H3>
+<P>
+TRUE if successful, FALSE if not.
+<P>
+<H3><A NAME="SECTION00539400000000000000">Operating systems</A></H3>
+<P>
+All
+<P>
+<H3><A NAME="SECTION00539500000000000000">See also</A></H3>
+<P>
+<BR> <HR><A NAME="MIDASsetMusicVolume">&#160;</A><H2><A NAME="SECTION005310000000000000000">4.3.10 MIDASsetMusicVolume</A></H2>
+<A NAME="2163">&#160;</A> <PRE>BOOL MIDASsetMusicVolume(MIDASmodulePlayHandle playHandle, 
+    unsigned volume)</PRE>
+<P>
+Changes music playback volume.
+<P>
+<H3><A NAME="SECTION005310100000000000000">Input</A></H3>
+<P>
+<DL ><DT><STRONG>playHandle</STRONG>
+<DD> Module playback handle for the music
+    <DT><STRONG>volume</STRONG>
+<DD> New music playback volume (0-64)
+<P>
+</DL><H3><A NAME="SECTION005310200000000000000">Description</A></H3>
+<P>
+This function changes the music playback master volume. It can be used, for
+example, for fading music in or out smoothly, or for adjusting the music
+volume relative to sound effects. The volume change only affects the song
+that is currently being played -- if a new song is started, the volume is
+reset. The default music volume is 64 (the maximum).
+<P>
+<H3><A NAME="SECTION005310300000000000000">Return value</A></H3>
+<P>
+TRUE if successful, FALSE if not.
+<P>
+<H3><A NAME="SECTION005310400000000000000">Operating systems</A></H3>
+<P>
+All
+<P>
+<H3><A NAME="SECTION005310500000000000000">See also</A></H3>
+<P>
+<BR> <HR><A NAME="MIDASsetPosition">&#160;</A><H2><A NAME="SECTION005311000000000000000">4.3.11 MIDASsetPosition</A></H2>
+<A NAME="2166">&#160;</A> <PRE>BOOL MIDASsetPosition(MIDASmodulePlayHandle playHandle,
+    int newPosition)</PRE>
+<P>
+Changes module playback position.
+<P>
+<H3><A NAME="SECTION005311100000000000000">Input</A></H3>
+<P>
+<DL ><DT><STRONG>playHandle</STRONG>
+<DD> Module playback handle for the music
+    <DT><STRONG>newPosition</STRONG>
+<DD> New playback position
+<P>
+</DL><H3><A NAME="SECTION005311200000000000000">Description</A></H3>
+<P>
+This function changes the current module playback position. The song starts
+at position 0, and the length is available in the <A HREF="node15.html#MIDASmoduleInfo">MIDASmoduleInfo</A>
+structure. You should make sure that <B>position</B> lies inside those
+limits. To skip backward or forward a single position, first read the current
+position with <A HREF="node16.html#MIDASgetPlayStatus">MIDASgetPlayStatus</A>, and substract or add one to the
+current position.
+<P>
+<H3><A NAME="SECTION005311300000000000000">Return value</A></H3>
+<P>
+TRUE if successful, FALSE if not.
+<P>
+<H3><A NAME="SECTION005311400000000000000">Operating systems</A></H3>
+<P>
+All
+<P>
+<H3><A NAME="SECTION005311500000000000000">See also</A></H3>
+<P>
+<A HREF="node16.html#MIDASplayModule">MIDASplayModule</A>, <A HREF="node16.html#MIDASgetPlayStatus">MIDASgetPlayStatus</A>,
+<A HREF="node16.html#MIDASgetModuleInfo">MIDASgetModuleInfo</A>
+<P>
+<BR> <HR><A NAME="MIDASstopModule">&#160;</A><H2><A NAME="SECTION005312000000000000000">4.3.12 MIDASstopModule</A></H2>
+<A NAME="2190">&#160;</A> 
+<PRE>BOOL MIDASstopModule(MIDASmodulePlayHandle playHandle)</PRE>
+<P>
+Stops playing a module.
+<P>
+<H3><A NAME="SECTION005312100000000000000">Input</A></H3>
+<P>
+<DL ><DT><STRONG>playHandle</STRONG>
+<DD> Module playback handle for the music that should be
+        stopped.
+<P>
+</DL><H3><A NAME="SECTION005312200000000000000">Description</A></H3>
+<P>
+This function stops playing a module that has been played with
+<A HREF="node16.html#MIDASplayModule">MIDASplayModule</A>. If the channels were opened automatically by
+<A HREF="node16.html#MIDASplayModule">MIDASplayModule</A>, this function will close them, but if they were
+opened manually with <A HREF="node12.html#MIDASopenChannels">MIDASopenChannels</A>, they will be left open.
+<P>
+<H3><A NAME="SECTION005312300000000000000">Return value</A></H3>
+<P>
+TRUE if successful, FALSE if not.
+<P>
+<H3><A NAME="SECTION005312400000000000000">Operating systems</A></H3>
+<P>
+All
+<P>
+<H3><A NAME="SECTION005312500000000000000">See also</A></H3>
+<P>
+<A HREF="node16.html#MIDASplayModule">MIDASplayModule</A>, <A HREF="node12.html#MIDASopenChannels">MIDASopenChannels</A>
+<P>
+<HR><A NAME="tex2html420" HREF="node17.html"><IMG WIDTH=37 HEIGHT=24 ALIGN=BOTTOM ALT="next" SRC="../icons/next_motif.gif"></A> <A NAME="tex2html418" HREF="node13.html"><IMG WIDTH=26 HEIGHT=24 ALIGN=BOTTOM ALT="up" SRC="../icons/up_motif.gif"></A> <A NAME="tex2html414" HREF="node15.html"><IMG WIDTH=63 HEIGHT=24 ALIGN=BOTTOM ALT="previous" SRC="../icons/previous_motif.gif"></A> <A NAME="tex2html422" HREF="node1.html"><IMG WIDTH=65 HEIGHT=24 ALIGN=BOTTOM ALT="contents" SRC="../icons/contents_motif.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html421" HREF="node17.html">5 Sample playback</A>
+<B>Up:</B> <A NAME="tex2html419" HREF="node13.html">4 Module playback</A>
+<B> Previous:</B> <A NAME="tex2html415" HREF="node15.html">Data types</A>
+<P><ADDRESS>
+<I>Petteri Kangaslampi <BR>
+Sun Mar  1 22:15:08 EET 1998</I>
+</ADDRESS>
+</BODY>
+</HTML>

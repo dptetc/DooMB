@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 96.1-h (September 30, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<HTML>
+<HEAD>
+<TITLE>Constants</TITLE>
+<META NAME="description" CONTENT="Constants">
+<META NAME="keywords" CONTENT="apiref">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<LINK REL=STYLESHEET HREF="apiref.css">
+</HEAD>
+<BODY LANG="EN" >
+ <A NAME="tex2html535" HREF="node27.html"><IMG WIDTH=37 HEIGHT=24 ALIGN=BOTTOM ALT="next" SRC="../icons/next_motif.gif"></A> <A NAME="tex2html533" HREF="node25.html"><IMG WIDTH=26 HEIGHT=24 ALIGN=BOTTOM ALT="up" SRC="../icons/up_motif.gif"></A> <A NAME="tex2html527" HREF="node25.html"><IMG WIDTH=63 HEIGHT=24 ALIGN=BOTTOM ALT="previous" SRC="../icons/previous_motif.gif"></A> <A NAME="tex2html537" HREF="node1.html"><IMG WIDTH=65 HEIGHT=24 ALIGN=BOTTOM ALT="contents" SRC="../icons/contents_motif.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html536" HREF="node27.html">Data types</A>
+<B>Up:</B> <A NAME="tex2html534" HREF="node25.html">7 Miscellaneous</A>
+<B> Previous:</B> <A NAME="tex2html528" HREF="node25.html">7 Miscellaneous</A>
+<BR> <P>
+<H1><A NAME="SECTION00810000000000000000">Constants</A></H1>
+<P>
+This section describes all constants used with miscellaneous MIDAS
+functions. They are grouped according to the <TT>enum</TT> used to define
+them.
+<P>
+<BR> <HR><A NAME="MIDASechoFilterTypes">&#160;</A><H2><A NAME="SECTION00811000000000000000">7.1.1 MIDASechoFilterTypes</A></H2>
+<A NAME="2654">&#160;</A> <PRE>enum MIDASechoFilterTypes</PRE>
+<P>
+<H3><A NAME="SECTION00811100000000000000">Description</A></H3>
+<P>
+These constants define different echo filter types for MIDAS Digital Audio
+System echo effects. Each echo in an echo effect has a separate filter. If the
+echo effect contains more than a couple of echoes, the echoes should usually
+sound best with low-pass filtering.
+<P>
+<H3><A NAME="SECTION00811200000000000000">Values</A></H3>
+<P>
+<DL ><DT><STRONG>MIDAS_ECHO_FILTER_NONE</STRONG>
+<DD> No filtering
+    <DT><STRONG>MIDAS_ECHO_FILTER_LOWPASS</STRONG>
+<DD> Low-pass filtering, higher
+        frequencies are filtered out.
+    <DT><STRONG>MIDAS_ECHO_FILTER_HIGHPASS</STRONG>
+<DD> High-pass filtering, lower
+        frequencies are filtered out.
+<P>
+</DL>
+<P>
+<BR> <HR><A NAME="MIDASpostProcPosition">&#160;</A><H2><A NAME="SECTION00812000000000000000">7.1.2 MIDASpostProcPosition</A></H2>
+<A NAME="2657">&#160;</A> <PRE>enum MIDASpostProcPosition</PRE>
+<P>
+<H3><A NAME="SECTION00812100000000000000">Description</A></H3>
+<P>
+These constants define the position of a new post-processor in the system
+post-processor list when it is being added with
+<A HREF="node28.html#MIDASaddPostProcessor">MIDASaddPostProcessor</A>. The order of the post-processors in the list
+determines the order in which they are applied to the sound output.
+<P>
+MIDAS internal echo effects are always inserted to the beginning of the list,
+and filters to the end. Most user post-processors should be inserted to the
+beginning as well.
+<P>
+<H3><A NAME="SECTION00812200000000000000">Values</A></H3>
+<P>
+<DL ><DT><STRONG>MIDAS_POST_PROC_FIRST</STRONG>
+<DD> The post-processor is inserted to
+        the beginning of the list
+    <DT><STRONG>MIDAS_POST_PROC_LAST</STRONG>
+<DD> The post-processor is inserted to
+        the end of the list
+<P>
+</DL><BR> <HR>
+<P><ADDRESS>
+<I>Petteri Kangaslampi <BR>
+Sun Mar  1 22:15:08 EET 1998</I>
+</ADDRESS>
+</BODY>
+</HTML>

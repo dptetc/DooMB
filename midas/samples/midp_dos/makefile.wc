@@ -1,0 +1,21 @@
+# Compilers and options:
+
+MIDASDIR = ..\..
+LIBDIR = $(MIDASDIR)\lib\dos\wcretail
+MIDASINCS = $(MIDASDIR)\src\midas
+MIDASLIB = $(LIBDIR)\midas.lib
+
+CC = wcc386
+#CCOPTS = -w3 -d2 -zdp -zu -bt=dos -i$(MIDASINCS) -dDEBUG
+CCOPTS = -w3 -zdp -zu -bt=dos -i$(MIDASINCS) -oneatx -s
+
+LINKCMD = midp.wlk
+
+midp.exe :      midp.obj midpdisp.obj $(MIDASLIB)
+        wlink libpath $(LIBDIR) name midp system dos4g library midas.lib file midp,midpdisp option caseexact
+
+midp.obj : midp.c midp.h
+        $(CC) midp.c $(CCOPTS)
+
+midpdisp.obj : midpdisp.c midp.h
+	$(CC) midpdisp.c $(CCOPTS)

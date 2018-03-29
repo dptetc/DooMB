@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 96.1-h (September 30, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<HTML>
+<HEAD>
+<TITLE>4.1 Optimizing MIDAS performance</TITLE>
+<META NAME="description" CONTENT="4.1 Optimizing MIDAS performance">
+<META NAME="keywords" CONTENT="prgguide">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<LINK REL=STYLESHEET HREF="prgguide.css">
+</HEAD>
+<BODY LANG="EN" >
+ <A NAME="tex2html321" HREF="node21.html"><IMG WIDTH=37 HEIGHT=24 ALIGN=BOTTOM ALT="next" SRC="../icons/next_motif.gif"></A> <A NAME="tex2html319" HREF="node19.html"><IMG WIDTH=26 HEIGHT=24 ALIGN=BOTTOM ALT="up" SRC="../icons/up_motif.gif"></A> <A NAME="tex2html313" HREF="node19.html"><IMG WIDTH=63 HEIGHT=24 ALIGN=BOTTOM ALT="previous" SRC="../icons/previous_motif.gif"></A> <A NAME="tex2html323" HREF="node1.html"><IMG WIDTH=65 HEIGHT=24 ALIGN=BOTTOM ALT="contents" SRC="../icons/contents_motif.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html322" HREF="node21.html">Using µ-law compression</A>
+<B>Up:</B> <A NAME="tex2html320" HREF="node19.html">4 Advanced topics</A>
+<B> Previous:</B> <A NAME="tex2html314" HREF="node19.html">4 Advanced topics</A>
+<BR> <P>
+<H1><A NAME="SECTION00510000000000000000">4.1 Optimizing MIDAS performance</A></H1>
+<P>
+Although MIDAS Digital Audio System has been carefully optimized for maximum
+performance, playing multichannel digital audio can still be fairly
+time-consuming. To get around the limitations of current PC sound cards, MIDAS
+needs to mix the sound channels in software, and this mixing process accounts
+for most of CPU usage caused by MIDAS. In many cases tradeoffs can be made
+between sound quality and CPU usage, although it is also possible in some
+cases to lower CPU usage dramatically without affecting sound quality.
+<P>
+In some cases the opposite is also true: It can be possible to get better
+sound quality out of MIDAS without using much additional CPU power. This
+section therefore describes how you can get best possible sound quality of
+MIDAS while using as little CPU time as possible, and how to find the right
+balance between sound quality and CPU usage for your application.
+<P>
+<H2><A NAME="SECTION00511000000000000000">4.1.1 The number of channels</A></H2>
+<P>
+First and foremost, the CPU time used for mixing depends on the number of
+active sound channels in use. Each channel needs to mixed to the output
+separately, and thus requires CPU time. Note, however, that the total number
+of open channels is not very significant, only the number of channels that are
+actually playing sound. Also, sounds played at zero volume take very little
+CPU time.
+<P>
+On a computer with a 90MHz Pentium CPU, with the default sound quality
+settings, the CPU time used is roughly 0.6%-0.9% of the total CPU time per
+channel. The number can vary greatly depending on the type of samples used and
+other factors, but can be used as a guideline in deciding how many sound
+channels to use. Regardless of the output mode settings, however, minimizing
+the number of channels used is an easy way to increase MIDAS performance.
+<P>
+Using fewer sound channels does not necessarily mean sacrificing sound quality
+or richness. Music modules do not necessarily need to have over 10 channels to
+sound good -- talented musicians have composed stunning songs with the Amiga
+Protracker program which only supports 4 channels. Unnecessary or very quiet
+sound effects could be eliminated, making way for more important
+ones. Finally, instead of playing two or more sounds simultaneously, the
+sounds could be mixed beforehand with a sample editor into one.
+<P>
+<H2><A NAME="SECTION00512000000000000000">4.1.2 Sample types</A></H2>
+<P>
+Another factor that has a great effect on MIDAS Digital Audio System CPU usage
+is the type of the samples played. The simplest sample type, and therefore the
+fastest to play, is a 8-bit mono sample. 16-bit samples take typically 50%
+more CPU time to play than 8-bit samples, and stereo samples more than 50%
+than corresponding mono samples. In addition, ADPCM streams take additional
+CPU time for decompressing the ADPCM data to 16-bit before it can be played.
+<P>
+However, 16-bit samples do sound much better than 8-bit ones. A good
+compromise is to use <I>mu</I>-law samples instead. <I>mu</I>-law samples have almost
+the same sound quality as 16-bit samples, while being as fast to mix as 8-bit
+samples. In addition, they only take as much space as 8-bit samples, and thus
+lower the memory requirements of the program as well. In some mixing modes
+MIDAS will actually automatically convert 16-bit samples to <I>mu</I>-law if it is
+beneficial. The option
+<EM>MIDAS_OPTION_16BIT_ULAW_AUTOCONVERT</EM>
+can be used to control this behaviour.
+<P>
+ADPCM compression yields a 1:4 compression on 16-bit sound data, using
+effectively only 4 bits per sample, while maintaining sound quality better
+than 8-bit samples. As ADPCM sample data cannot easily be played without
+decompressing it first, however, MIDAS only supports ADPCM sample data in
+streams. Although ADPCM streams take somewhat more CPU time to play than
+16-bit streams, as the data needs to be decompressed, they can still turn out
+to be faster in practise, as the amount of data that needs to be read from
+disk is much smaller.
+<P>
+<H2><A NAME="SECTION00513000000000000000">4.1.3 Output settings</A></H2>
+<P>
+Finally perhaps the most important factor in determining MIDAS CPU usage and
+sound quality: output sound quality settings. Several different sound quality
+settings can be adjusted, and each can be used to adjust the balance of sound
+quality and CPU usage.
+<P>
+The most important of all output quality settings is the mixing mode. By
+default, MIDAS Digital Audio System uses normal mixing mode, which has very
+good performance. High-quality mixing mode with sound interpolation is
+available, and it greatly enhances the sound quality in some cases, but also
+requires much more CPU power. High-quality mixing can use two to three times
+as much CPU time as normal quality mixing, and should be reserved for
+applications that only use a few sound channels or do not require the CPU time
+for other uses. The mixing mode settings can be changed by setting the option
+<EM>MIDAS_OPTION_MIXING_MODE</EM> with
+<EM>MIDASsetOption</EM>.
+<P>
+Another setting that greatly affects CPU usage and sound quality is the output
+mixing rate. CPU usage depends almost linearly on the mixing rate, with higher
+mixing rates using more CPU power but also sounding better. The default mixing
+rate is 44100Hz, but in many cases it can be lowered to 32000Hz or 22050Hz
+without too great sound quality loss. In addition, if all of your sounds are
+played at the same rate (eg. 22050Hz), the mixing rate should be set at the
+same rate -- using a higher rate would not bring any better sound quality and
+could actually increase noise in the output.
+<P>
+Experimenting with different mixing rate and mode combinations can also be
+worthwhile, as in some cases using a lower mixing rate with high-quality
+mixing can sound better than a higher mixing rate with normal quality.
+<P>
+The last setting to consider is the output mode setting. The output mode
+should normally be set to a 16-bit mode, as using 8-bit modes does not
+decrease CPU usage, only sound quality. If the sound card used doesn't support
+16-bit output, MIDAS will use 8-bit output automatically. Using mono output
+instead of stereo, however, can decrease CPU usage by up to 50%. Therefore,
+if your application does not use stereo effects in its sound output, consider
+using mono output mode instead. The output mode can be changed by setting the
+option <EM>MIDAS_OPTION_OUTPUTMODE</EM> with
+<EM>MIDASsetOption</EM>.
+<P>
+<HR><A NAME="tex2html321" HREF="node21.html"><IMG WIDTH=37 HEIGHT=24 ALIGN=BOTTOM ALT="next" SRC="../icons/next_motif.gif"></A> <A NAME="tex2html319" HREF="node19.html"><IMG WIDTH=26 HEIGHT=24 ALIGN=BOTTOM ALT="up" SRC="../icons/up_motif.gif"></A> <A NAME="tex2html313" HREF="node19.html"><IMG WIDTH=63 HEIGHT=24 ALIGN=BOTTOM ALT="previous" SRC="../icons/previous_motif.gif"></A> <A NAME="tex2html323" HREF="node1.html"><IMG WIDTH=65 HEIGHT=24 ALIGN=BOTTOM ALT="contents" SRC="../icons/contents_motif.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html322" HREF="node21.html">Using µ-law compression</A>
+<B>Up:</B> <A NAME="tex2html320" HREF="node19.html">4 Advanced topics</A>
+<B> Previous:</B> <A NAME="tex2html314" HREF="node19.html">4 Advanced topics</A>
+<P><ADDRESS>
+<I>Petteri Kangaslampi <BR>
+Sun Mar  1 22:25:31 EET 1998</I>
+</ADDRESS>
+</BODY>
+</HTML>

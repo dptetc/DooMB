@@ -1,0 +1,61 @@
+# Compilers and options:
+
+ALLEGRODIR = c:/djgpp/allegro
+MIDASDIR = ../..
+LIBDIR = $(MIDASDIR)/lib/dos/gcretail
+MIDASINCS = $(MIDASDIR)/include
+
+CC = gcc
+CCOPTS = -c -fpack-struct -Wall -Werror -DDEBUG -I$(MIDASINCS)
+
+
+all : demo.exe timer.exe
+
+.PHONY : all
+
+demo.exe :	demo.o $(MIDASLIB)
+	gcc demo.o -L$(ALLEGRODIR) -L$(LIBDIR) -lmidas -lalleg -o demo
+
+demo.o :	demo.c vga.h
+	$(CC) demo.c $(CCOPTS)
+
+
+timer.exe :	timer.o $(MIDASLIB)
+	gcc timer.o -L$(ALLEGRODIR) -L$(LIBDIR) -lmidas -lalleg -o timer
+
+timer.o :	timer.c vga.h
+	$(CC) timer.c $(CCOPTS)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

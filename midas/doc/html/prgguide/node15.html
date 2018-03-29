@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 96.1-h (September 30, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<HTML>
+<HEAD>
+<TITLE>3.4 Using samples</TITLE>
+<META NAME="description" CONTENT="3.4 Using samples">
+<META NAME="keywords" CONTENT="prgguide">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<LINK REL=STYLESHEET HREF="prgguide.css">
+</HEAD>
+<BODY LANG="EN" >
+ <A NAME="tex2html265" HREF="node16.html"><IMG WIDTH=37 HEIGHT=24 ALIGN=BOTTOM ALT="next" SRC="../icons/next_motif.gif"></A> <A NAME="tex2html263" HREF="node11.html"><IMG WIDTH=26 HEIGHT=24 ALIGN=BOTTOM ALT="up" SRC="../icons/up_motif.gif"></A> <A NAME="tex2html257" HREF="node14.html"><IMG WIDTH=63 HEIGHT=24 ALIGN=BOTTOM ALT="previous" SRC="../icons/previous_motif.gif"></A> <A NAME="tex2html267" HREF="node1.html"><IMG WIDTH=65 HEIGHT=24 ALIGN=BOTTOM ALT="contents" SRC="../icons/contents_motif.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html266" HREF="node16.html">3.5 Using streams</A>
+<B>Up:</B> <A NAME="tex2html264" HREF="node11.html">3 Using MIDAS Digital </A>
+<B> Previous:</B> <A NAME="tex2html258" HREF="node14.html">3.3 Using modules</A>
+<BR> <P>
+<H1><A NAME="SECTION00440000000000000000">3.4 Using samples</A></H1>
+<P>
+Using samples is the easiest way to add sound effects and other miscellaneous
+sounds to a program with MIDAS Digital Audio System. This section describes
+how samples are used in MIDAS.
+<P>
+<H2><A NAME="SECTION00441000000000000000">3.4.1 Loading samples</A></H2>
+<P>
+Before samples can be used, they naturally need to be loaded into
+memory. MIDAS Digital Audio System currently supports samples in two formats:
+raw audio data files and RIFF WAVE files. Raw sample files can be loaded with
+<EM>MIDASloadRawSample</EM>, and RIFF WAVE samples with
+<EM>MIDASloadWaveSample</EM>. Both functions require as arguments the name of
+the sample file, and sample looping flag -- 1 if the sample should be looped,
+0 if not. <EM>MIDASloadRawSample</EM> also requires the sample type as an
+argument, <EM>MIDASloadWaveSample</EM> determines it from the file
+header. Both functions return a sample handle of type
+<EM>MIDASsample</EM> that can be used to refer to the sample.
+<P>
+After the samples are no longer used, they should be deallocated with
+<EM>MIDASfreeSample</EM>. You need to make sure, however, that the sample is
+no longer being played on any sound channel when it is deallocated.
+<P>
+<H2><A NAME="SECTION00442000000000000000">3.4.2 Playing samples</A></H2>
+<P>
+Samples that have been loaded into memory can be played with the function
+<EM>MIDASplaySample</EM>. It takes as arguments the sample handle, playback
+channel number, and initial values for sample priority, playback rate, volume
+and panning. The function returns a MIDAS sample playback handle of type
+<EM>MIDASsamplePlayHandle</EM> that can be used to refer to the sample as it
+is being played. A single sample can be played any number of times
+simultaneously.
+<P>
+Sample playback can be stopped with <EM>MIDASstopSample</EM>, but this is not
+necessary before the sample will be deallocated -- a new sample can simply be
+played on the same channel, and it will then replace the previous one. The
+sample handles will be recycled as necessary, so there is no danger of memory
+leaks.
+<P>
+<H2><A NAME="SECTION00443000000000000000">3.4.3 Samples and channels</A></H2>
+<P>
+One sound channel can be used to play a single sample, and therefore
+<EM>MIDASplaySample</EM> requires the number of the channel that is used to
+play the sample as an argument. The channel number can be set manually, or
+MIDAS Digital Audio System can handle the channel selection automatically.
+<P>
+If the channel number for the sample is set manually, the channel used should
+be allocated with <EM>MIDASallocateChannel</EM> to ensure that the channel is
+not being used for other purposes. If a free channel is available, the
+function will return its number that can then be used with
+<EM>MIDASplaySample</EM>. After the channel is no longer used, it should be
+deallocated with <EM>MIDASfreeChannel</EM>.
+<P>
+Another possibility is to let MIDAS select the channel automatically. A number
+of channels can be allocated for use as automatic effect channels with
+<EM>MIDASallocAutoEffectChannels</EM>. <EM>MIDASplaySample</EM> can then be
+passed <B>MIDAS_CHANNEL_AUTO</B> as the channel number, and it will
+automatically select the channel that will be used to play the effect. After
+the automatic effect channels are no longer used, they should be deallocated
+with <EM>MIDASfreeAutoEffectChannels</EM>.
+<P>
+<H2><A NAME="SECTION00444000000000000000">3.4.4 Controlling sample playback</A></H2>
+<P>
+Most sample playback properties can be changed while it is being
+played. <EM>MIDASsetSampleRate</EM> can be used to change its playback rate,
+<EM>MIDASsetSampleVolume</EM> its volume, <EM>MIDASsetSamplePanning</EM> its
+panning position and <EM>MIDASsetSamplePriority</EM> its playback
+priority. All of these functions take as an argument the sample playback
+handle from <EM>MIDASplaySample</EM>, and the new value for the playback
+property.
+<P>
+The sample playback properties can be changed at any point after the sample
+playback has been started until the sample playback is stopped with
+<EM>MIDASstopSample</EM>. If the sample has reached its end, or has been
+replaced by another sample with automatic channel selection, the function call
+is simply ignored.
+<P>
+<H2><A NAME="SECTION00445000000000000000">3.4.5 Getting sample information</A></H2>
+<P>
+The sample playback status can be monitored with
+<EM>MIDASgetSamplePlayStatus</EM>. It takes as an argument the sample
+playback handle, and returns the current sample playback status. The playback
+status information can be used to determine whether or not a sample has
+already reached its end.
+<P>
+<HR><A NAME="tex2html265" HREF="node16.html"><IMG WIDTH=37 HEIGHT=24 ALIGN=BOTTOM ALT="next" SRC="../icons/next_motif.gif"></A> <A NAME="tex2html263" HREF="node11.html"><IMG WIDTH=26 HEIGHT=24 ALIGN=BOTTOM ALT="up" SRC="../icons/up_motif.gif"></A> <A NAME="tex2html257" HREF="node14.html"><IMG WIDTH=63 HEIGHT=24 ALIGN=BOTTOM ALT="previous" SRC="../icons/previous_motif.gif"></A> <A NAME="tex2html267" HREF="node1.html"><IMG WIDTH=65 HEIGHT=24 ALIGN=BOTTOM ALT="contents" SRC="../icons/contents_motif.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html266" HREF="node16.html">3.5 Using streams</A>
+<B>Up:</B> <A NAME="tex2html264" HREF="node11.html">3 Using MIDAS Digital </A>
+<B> Previous:</B> <A NAME="tex2html258" HREF="node14.html">3.3 Using modules</A>
+<P><ADDRESS>
+<I>Petteri Kangaslampi <BR>
+Sun Mar  1 22:25:31 EET 1998</I>
+</ADDRESS>
+</BODY>
+</HTML>

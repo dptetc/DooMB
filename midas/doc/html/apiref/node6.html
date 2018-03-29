@@ -1,0 +1,206 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 96.1-h (September 30, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<HTML>
+<HEAD>
+<TITLE>7.1 Constants</TITLE>
+<META NAME="description" CONTENT="7.1 Constants">
+<META NAME="keywords" CONTENT="apiref">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<LINK REL=STYLESHEET HREF="apiref.css">
+</HEAD>
+<BODY LANG="EN" >
+ <A NAME="tex2html310" HREF="node7.html"><IMG WIDTH=37 HEIGHT=24 ALIGN=BOTTOM ALT="next" SRC="../icons/next_motif.gif"></A> <A NAME="tex2html308" HREF="node5.html"><IMG WIDTH=26 HEIGHT=24 ALIGN=BOTTOM ALT="up" SRC="../icons/up_motif.gif"></A> <A NAME="tex2html302" HREF="node5.html"><IMG WIDTH=63 HEIGHT=24 ALIGN=BOTTOM ALT="previous" SRC="../icons/previous_motif.gif"></A> <A NAME="tex2html312" HREF="node1.html"><IMG WIDTH=65 HEIGHT=24 ALIGN=BOTTOM ALT="contents" SRC="../icons/contents_motif.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html311" HREF="node7.html">7.2 Data types</A>
+<B>Up:</B> <A NAME="tex2html309" HREF="node5.html">2 Configurationinitialization and </A>
+<B> Previous:</B> <A NAME="tex2html303" HREF="node5.html">2 Configurationinitialization and </A>
+<BR> <P>
+<H1><A NAME="SECTION00310000000000000000">7.1 Constants</A></H1>
+<P>
+This section describes all constants used in MIDAS initialization and
+configuration. They are grouped according to the <TT>enum</TT> used to
+define them.
+<P>
+<BR> <HR><A NAME="MIDASdsoundModes">&#160;</A><H2><A NAME="SECTION00311000000000000000">2.1.1 MIDASdsoundModes</A></H2>
+<A NAME="1270">&#160;</A> <PRE>enum MIDASdsoundModes</PRE>
+<P>
+<H3><A NAME="SECTION00311100000000000000">Description</A></H3>
+<P>
+These constants are used to describe different MIDAS DirectSound usage modes.
+By default MIDAS does not use DirectSound at all, and DirectSound usage can
+be enabled by setting
+<A HREF="node6.html#MIDASoptions">MIDAS_OPTION_DSOUND_MODE</A>. Note that
+<A HREF="node6.html#MIDASoptions">MIDAS_OPTION_DSOUND_HWND</A> needs to
+be set when using DirectSound. A complete discussion of using DirectSound with
+MIDAS is available at <A NAME="tex2html3" HREF="../prgguide/prgguide.html">MIDAS Programmer's
+Guide</A>.
+<P>
+<H3><A NAME="SECTION00311200000000000000">Values</A></H3>
+<P>
+<DL ><DT><STRONG>MIDAS_DSOUND_DISABLED</STRONG>
+<DD> DirectSound usage is disabled
+    <DT><STRONG>MIDAS_DSOUND_STREAM</STRONG>
+<DD> DirectSound is used in stream mode -
+        MIDAS will play to a DirectSound stream buffer. DirectSound usage is
+        disabled if DirectSound runs in emulation mode.
+    <DT><STRONG>MIDAS_DSOUND_PRIMARY</STRONG>
+<DD> DirectSound is used in primary buffer
+        mode if possible - MIDAS will play directly to DirectSound primary
+        buffer. If primary buffer is not available for writing, this mode
+        behaves like MIDAS_DSOUND_STREAM.
+    <DT><STRONG>MIDAS_DSOUND_FORCE_STREAM</STRONG>
+<DD> Behaves like
+        MIDAS_DSOUND_STREAM, except that DirectSound is used always,
+        even in emulation mode.
+<P>
+</DL>
+<P>
+<BR> <HR><A NAME="MIDASfilterModes">&#160;</A><H2><A NAME="SECTION00312000000000000000">2.1.2 MIDASfilterModes</A></H2>
+<A NAME="1287">&#160;</A> <PRE>enum MIDASfilterModes</PRE>
+<P>
+<H3><A NAME="SECTION00312100000000000000">Description</A></H3>
+<P>
+These constants are used to describe different MIDAS output filter modes.
+By default, MIDAS Digital Audio System will select the most appropriate filter
+for the mixing mode automatically, but in some cases manually overriding the
+selection can result in better sound. Also, if all sounds are played exactly
+at the mixing rate, the output filtering should be disabled to get better
+sound quality. Finally, filtering is not normally used with high-quality
+mixing, and is therefore disabled with it by default.
+<P>
+The filter mode can be set by changing the option 
+<A HREF="node6.html#MIDASoptions">MIDAS_OPTION_FILTER_MODE</A> with
+the function <A HREF="node8.html#MIDASsetOption">MIDASsetOption</A>.
+<P>
+<H3><A NAME="SECTION00312200000000000000">Values</A></H3>
+<P>
+<DL ><DT><STRONG>MIDAS_FILTER_NONE</STRONG>
+<DD> No filtering
+    <DT><STRONG>MIDAS_FILTER_LESS</STRONG>
+<DD> Some filtering
+    <DT><STRONG>MIDAS_FILTER_MORE</STRONG>
+<DD> More filtering
+    <DT><STRONG>MIDAS_FILTER_AUTO</STRONG>
+<DD> Automatic filter selection (default)
+<P>
+</DL>
+<P>
+<BR> <HR><A NAME="MIDASmixingModes">&#160;</A><H2><A NAME="SECTION00313000000000000000">2.1.3 MIDASmixingModes</A></H2>
+<A NAME="1301">&#160;</A> <PRE>enum MIDASmixingModes</PRE>
+<P>
+<H3><A NAME="SECTION00313100000000000000">Description</A></H3>
+<P>
+These constants define the different MIDAS Digital Audio System mixing modes
+available. The high-quality mixing mode yields better sound quality, with
+virtually no aliasing noise, but uses much more CPU power than normal mixing,
+and is mainly intended for stand-alone module players and similar
+applications. By default, MIDAS uses the normal mixing quality.
+<P>
+The mixing mode can be set by changing the option 
+<A HREF="node6.html#MIDASoptions">MIDAS_OPTION_MIXING_MODE</A> with
+the function <A HREF="node8.html#MIDASsetOption">MIDASsetOption</A>.
+<P>
+<H3><A NAME="SECTION00313200000000000000">Values</A></H3>
+<P>
+<DL ><DT><STRONG>MIDAS_MIX_NORMAL_QUALITY</STRONG>
+<DD> Normal quality mixing
+    <DT><STRONG>MIDAS_MIX_HIGH_QUALITY</STRONG>
+<DD> High-quality interpolating mixing
+<P>
+</DL>
+<P>
+<BR> <HR><A NAME="MIDASmodes">&#160;</A><H2><A NAME="SECTION00314000000000000000">2.1.4 MIDASmodes</A></H2>
+<A NAME="1315">&#160;</A> <PRE>enum MIDASmodes</PRE>
+<P>
+<H3><A NAME="SECTION00314100000000000000">Description</A></H3>
+<P>
+These constants are used to describe different MIDAS output modes. They are
+used with the function <A HREF="node8.html#MIDASsetOption">MIDASsetOption</A>, when changing the setting
+<A HREF="node6.html#MIDASoptions">MIDAS_OPTION_OUTPUTMODE</A>.
+<P>
+<H3><A NAME="SECTION00314200000000000000">Values</A></H3>
+<P>
+<DL ><DT><STRONG>MIDAS_MODE_8BIT_MONO</STRONG>
+<DD> 8-bit mono output
+    <DT><STRONG>MIDAS_MODE_16BIT_MONO</STRONG>
+<DD> 16-bit mono output
+    <DT><STRONG>MIDAS_MODE_8BIT_STEREO</STRONG>
+<DD> 8-bit stereo output
+    <DT><STRONG>MIDAS_MODE_16BIT_STEREO</STRONG>
+<DD> 16-bit stereo output
+<P>
+</DL>
+<P>
+<BR> <HR><A NAME="MIDASoptions">&#160;</A><H2><A NAME="SECTION00315000000000000000">2.1.5 MIDASoptions</A></H2>
+<A NAME="1328">&#160;</A> <PRE>enum MIDASoptions</PRE>
+<P>
+<H3><A NAME="SECTION00315100000000000000">Description</A></H3>
+<P>
+These constants are used with the function <A HREF="node8.html#MIDASsetOption">MIDASsetOption</A>
+to change different MIDAS configuration options, and <A HREF="node8.html#MIDASgetOption">MIDASgetOption</A>
+to query their current settings.
+<P>
+<H3><A NAME="SECTION00315200000000000000">Values</A></H3>
+<P>
+<DL ><DT><STRONG>MIDAS_OPTION_MIXRATE</STRONG>
+<DD> Output mixing rate
+    <DT><STRONG>MIDAS_OPTION_OUTPUTMODE</STRONG>
+<DD> Output mode, see <TT>enum</TT>
+        <A HREF="node6.html#MIDASmodes">MIDASmodes</A>
+    <DT><STRONG>MIDAS_OPTION_MIXBUFLEN</STRONG>
+<DD> Mixing buffer length, in
+        milliseconds
+    <DT><STRONG>MIDAS_OPTION_MIXBUFBLOCKS</STRONG>
+<DD> The number of blocks the buffer
+        should be divided into
+    <DT><STRONG>MIDAS_OPTION_DSOUND_MODE</STRONG>
+<DD> DirectSound mode to use, see
+        <TT>enum</TT> <A HREF="node6.html#MIDASdsoundModes">MIDASdsoundModes</A>
+    <DT><STRONG>MIDAS_OPTION_DSOUND_HWND</STRONG>
+<DD> Window handle for DirectSound
+        support. The window handle is used by DirectSound to determine which
+        window has the focus. The window handle has to be set when using
+        DirectSound.
+    <DT><STRONG>MIDAS_OPTION_DSOUND_OBJECT</STRONG>
+<DD> The DirectSound object that
+        should be used. Setting this option forces DirectSound support on.
+    <DT><STRONG>MIDAS_OPTION_DSOUND_BUFLEN</STRONG>
+<DD> Output buffer
+        length fot DirectSound, in milliseconds.
+        This option is used instead of MIDAS_OPTION_MIXBUFLEN
+        when using DirectSound without emulation.
+    <DT><STRONG>MIDAS_OPTION_16BIT_ULAW_AUTOCONVERT</STRONG>
+<DD> Controls
+        whether 16-bit samples will be automatically converted to u-law or
+        not. Enabled by default. The autoconversion only applies to
+        Sound Devices which can natively play u-law format data, and will only
+        be used if it results in smaller CPU use.
+    <DT><STRONG>MIDAS_OPTION_FILTER_MODE</STRONG>
+<DD> Output filter mode, see
+        <TT>enum</TT> <A HREF="node6.html#MIDASfilterModes">MIDASfilterModes</A>. The filter is selected
+        automatically by default.
+    <DT><STRONG>MIDAS_OPTION_MIXING_MODE</STRONG>
+<DD> Mixing mode, affects the output
+        sound quality. See <TT>enum</TT> <A HREF="node6.html#MIDASmixingModes">MIDASmixingModes</A>.
+    <DT><STRONG>MIDAS_OPTION_DEFAULT_STEREO_SEPARATION</STRONG>
+<DD> Controls the
+        default stereo separation for modules with no panning information
+        (MODs and old S3Ms). 64 is maximum stereo separation, 0 none. Default
+        64.
+    <DT><STRONG>MIDAS_OPTION_FORCE_NO_SOUND</STRONG>
+<DD> Forces the No Sound Sound
+        Device to be used for playback. Useful for trying to run MIDAS with no
+        sound if <A HREF="node8.html#MIDASinit">MIDASinit</A> fails.
+<P>
+</DL>
+<P>
+<HR><A NAME="tex2html310" HREF="node7.html"><IMG WIDTH=37 HEIGHT=24 ALIGN=BOTTOM ALT="next" SRC="../icons/next_motif.gif"></A> <A NAME="tex2html308" HREF="node5.html"><IMG WIDTH=26 HEIGHT=24 ALIGN=BOTTOM ALT="up" SRC="../icons/up_motif.gif"></A> <A NAME="tex2html302" HREF="node5.html"><IMG WIDTH=63 HEIGHT=24 ALIGN=BOTTOM ALT="previous" SRC="../icons/previous_motif.gif"></A> <A NAME="tex2html312" HREF="node1.html"><IMG WIDTH=65 HEIGHT=24 ALIGN=BOTTOM ALT="contents" SRC="../icons/contents_motif.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html311" HREF="node7.html">7.2 Data types</A>
+<B>Up:</B> <A NAME="tex2html309" HREF="node5.html">2 Configurationinitialization and </A>
+<B> Previous:</B> <A NAME="tex2html303" HREF="node5.html">2 Configurationinitialization and </A>
+<P><ADDRESS>
+<I>Petteri Kangaslampi <BR>
+Sun Mar  1 22:15:08 EET 1998</I>
+</ADDRESS>
+</BODY>
+</HTML>

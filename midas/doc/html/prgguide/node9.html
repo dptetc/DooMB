@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 96.1-h (September 30, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<HTML>
+<HEAD>
+<TITLE>2.4 Using MIDAS from the IDE</TITLE>
+<META NAME="description" CONTENT="2.4 Using MIDAS from the IDE">
+<META NAME="keywords" CONTENT="prgguide">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<LINK REL=STYLESHEET HREF="prgguide.css">
+</HEAD>
+<BODY LANG="EN" >
+ <A NAME="tex2html194" HREF="node10.html"><IMG WIDTH=37 HEIGHT=24 ALIGN=BOTTOM ALT="next" SRC="../icons/next_motif.gif"></A> <A NAME="tex2html192" HREF="node5.html"><IMG WIDTH=26 HEIGHT=24 ALIGN=BOTTOM ALT="up" SRC="../icons/up_motif.gif"></A> <A NAME="tex2html186" HREF="node8.html"><IMG WIDTH=63 HEIGHT=24 ALIGN=BOTTOM ALT="previous" SRC="../icons/previous_motif.gif"></A> <A NAME="tex2html196" HREF="node1.html"><IMG WIDTH=65 HEIGHT=24 ALIGN=BOTTOM ALT="contents" SRC="../icons/contents_motif.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html195" HREF="node10.html">2.5 A simple module </A>
+<B>Up:</B> <A NAME="tex2html193" HREF="node5.html">2 Getting started</A>
+<B> Previous:</B> <A NAME="tex2html187" HREF="node8.html">2.3 Linking with MIDAS</A>
+<BR> <P>
+<H1><A NAME="SECTION00340000000000000000">2.4 Using MIDAS from the IDE</A></H1>
+<P>
+This section contains step-by-step instructions on building applications that
+use MIDAS Digital Audio System with the Integrated Developent Environments of
+popular compilers.
+<P>
+<H2><A NAME="SECTION00341000000000000000">2.4.1 Using MIDAS with Visual C Developer Studio</A></H2>
+<P>
+This section contains contains simple step-by-step instructions for
+using MIDAS Digital Audio System with Microsoft Developer Studio.
+<P>
+1. Begin the project as usual. If you already have an existing project,
+it should need no modifications.
+<P>
+2. Add some simple code for testing MIDAS -- either copy the module
+player example below, or just add a call to <EM>MIDASstartup</EM> to
+the beginning of the program and <TT>#include</TT> 
+<TT>midasdll.h</TT> at the beginning of the module.
+<P>
+3. Add the MIDAS include directories to the include search path:
+Open ``Build/Project Settings'' -dialog, choose the ``C/C++'' tab, 
+select ``Preprocessor'' from the Category list, and add the MIDAS
+include directory to ``Additional include directories''. For example,
+if you installed MIDAS in <TT>d:/midas</TT>, add
+<TT>d:/midas/include</TT>.
+<P>
+4. Add a MIDAS library to the project. In most cases, you should use
+the retail import library, and thus link dynamically. Open
+``Insert/Files into Project'' -dialog, and select the library file
+you want to use, typically
+<TT>d:/midas/lib/win32/vcretail/midasdll.lib</TT>.
+<P>
+Now you should be able to build the project normally. To be able to 
+run the program, you must make sure that the MIDAS DLL is available
+either in the same directory with the produced executable, or in some
+directory in the system search path. You can simply copy the DLL
+from (for example) <TT>d:/midas/lib/win32/retail</TT> 
+to the project directory.
+<P>
+<H2><A NAME="SECTION00342000000000000000">2.4.2 Using MIDAS with Watcom C IDE</A></H2>
+<P>
+This section contains contains simple step-by-step instructions for
+using MIDAS Digital Audio System with Watcom C IDE.
+<P>
+1. Begin the project as usual. If you already have an existing project,
+it should need no modifications.
+<P>
+2. Add some simple code for testing MIDAS -- either copy the module
+player example below, or just add a call to <EM>MIDASstartup</EM> to
+the beginning of the program and <TT>#include</TT> 
+<TT>midasdll.h</TT> at the beginning of the module.
+<P>
+3. Add the MIDAS include directories to the include search path:
+Open ``Options/C Compiler Switches'' -dialog, choose ``1. File
+Option Switches'' from the switches list, and add the MIDAS
+include directory to ``Include directories''. For example,
+if you installed MIDAS in <TT>d:/midas</TT>, add
+<TT>d:/midas/include</TT>.
+<P>
+4. Add a MIDAS library to the project. In most cases, you should use
+the retail import library, and thus link dynamically. Open
+``Sources/New Source'' -dialog, and select the library file
+you want to use, typically 
+<TT>d:/midas/lib/win32/wcretail/midasdll.lib</TT>.
+<P>
+Now you should be able to build the project normally. To be able to 
+run the program, you must make sure that the MIDAS DLL is available
+either in the same directory with the produced executable, or in some
+directory in the system search path. You can simply copy the DLL
+from (for example) <TT>d:/midas/lib/win32/retail</TT> 
+to the project directory.
+<P>
+<HR><A NAME="tex2html194" HREF="node10.html"><IMG WIDTH=37 HEIGHT=24 ALIGN=BOTTOM ALT="next" SRC="../icons/next_motif.gif"></A> <A NAME="tex2html192" HREF="node5.html"><IMG WIDTH=26 HEIGHT=24 ALIGN=BOTTOM ALT="up" SRC="../icons/up_motif.gif"></A> <A NAME="tex2html186" HREF="node8.html"><IMG WIDTH=63 HEIGHT=24 ALIGN=BOTTOM ALT="previous" SRC="../icons/previous_motif.gif"></A> <A NAME="tex2html196" HREF="node1.html"><IMG WIDTH=65 HEIGHT=24 ALIGN=BOTTOM ALT="contents" SRC="../icons/contents_motif.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html195" HREF="node10.html">2.5 A simple module </A>
+<B>Up:</B> <A NAME="tex2html193" HREF="node5.html">2 Getting started</A>
+<B> Previous:</B> <A NAME="tex2html187" HREF="node8.html">2.3 Linking with MIDAS</A>
+<P><ADDRESS>
+<I>Petteri Kangaslampi <BR>
+Sun Mar  1 22:25:31 EET 1998</I>
+</ADDRESS>
+</BODY>
+</HTML>

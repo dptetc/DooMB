@@ -1,0 +1,60 @@
+#*      makedos.wc
+#*
+#* GCC DOS make script for common examples
+#*
+#* Copyright 1996,1997 Housemarque Inc.
+#*
+#* This file is part of MIDAS Digital Audio System, and may only be
+#* used, modified and distributed under the terms of the MIDAS
+#* Digital Audio System license, "license.txt". By continuing to use,
+#* modify or distribute this file you indicate that you have
+#* read the license and understand and accept it fully.
+#*
+
+# Directories:
+MIDASDIR = ../..
+MIDASINCDIR = $(MIDASDIR)/include
+MIDASLIBDIR = $(MIDASDIR)/lib/dos/gcretail
+ALLEGROLIBDIR = c:/djgpp/allegro
+
+
+# Compiler: Watcom C:
+CC = gcc
+
+# Compiler options: Compile only, speed optimizations, all warnings, 
+# warnings are errors, MIDAS include directory
+CCOPTS = -c -O2 -Wall -Werror -I$(MIDASINCDIR)
+
+# Linker: gcc
+LINK = gcc
+
+# Linker options: Include MIDAS and Allegro library directories, MIDAS and
+# allegro libraries:
+LINKOPTS = -L$(MIDASLIBDIR) -L$(ALLEGROLIBDIR) -lmidas -lalleg
+
+
+
+
+# Targets:
+
+all :           effects.exe all.exe module.exe
+
+.PHONY : all
+
+all.exe :	all.o
+		$(LINK) all.o $(LINKOPTS) -o all
+
+all.o :		all.c
+		$(CC) $(CCOPTS) all.c -o all.o
+
+effects.exe :   effects.o
+		$(LINK) effects.o $(LINKOPTS) -o effects
+
+effects.o :	effects.c
+		$(CC) $(CCOPTS) effects.c -o effects.o
+
+module.exe :    module.o
+		$(LINK) module.o $(LINKOPTS) -o module
+
+module.o :	module.c
+		$(CC) $(CCOPTS) module.c -o module.o

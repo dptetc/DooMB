@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 96.1-h (September 30, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<HTML>
+<HEAD>
+<TITLE>3.2 Uninitializing MIDAS</TITLE>
+<META NAME="description" CONTENT="3.2 Uninitializing MIDAS">
+<META NAME="keywords" CONTENT="prgguide">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<LINK REL=STYLESHEET HREF="prgguide.css">
+</HEAD>
+<BODY LANG="EN" >
+ <A NAME="tex2html243" HREF="node14.html"><IMG WIDTH=37 HEIGHT=24 ALIGN=BOTTOM ALT="next" SRC="../icons/next_motif.gif"></A> <A NAME="tex2html241" HREF="node11.html"><IMG WIDTH=26 HEIGHT=24 ALIGN=BOTTOM ALT="up" SRC="../icons/up_motif.gif"></A> <A NAME="tex2html235" HREF="node12.html"><IMG WIDTH=63 HEIGHT=24 ALIGN=BOTTOM ALT="previous" SRC="../icons/previous_motif.gif"></A> <A NAME="tex2html245" HREF="node1.html"><IMG WIDTH=65 HEIGHT=24 ALIGN=BOTTOM ALT="contents" SRC="../icons/contents_motif.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html244" HREF="node14.html">3.3 Using modules</A>
+<B>Up:</B> <A NAME="tex2html242" HREF="node11.html">3 Using MIDAS Digital </A>
+<B> Previous:</B> <A NAME="tex2html236" HREF="node12.html">3.1 Initializing and configuring </A>
+<BR> <P>
+<H1><A NAME="SECTION00420000000000000000">3.2 Uninitializing MIDAS</A></H1>
+<P>
+MIDAS Digital Audio System uninitialization is essentially the reverse process
+of initialization. Actually only the last step is (calling
+<EM>MIDASclose</EM>) is absolutely necessary, but it is good practise to
+uninitialize everything that has been initialized. In addition, all modules
+and samples that have been loaded should be deallocated before uninitializing
+MIDAS, as failing to do so may lead to memory leaks.
+<P>
+Basic MIDAS uninitialization consists of three steps:
+<P>
+1. If sound channels have been opened with <EM>MIDASopenChannels</EM>, close
+them by calling <EM>MIDAScloseChannels</EM>.
+<P>
+2. If background sound playback is used, stop it by calling
+<EM>MIDASstopBackgroundPlay</EM>.
+<P>
+3. Finally, uninitialize the rest of MIDAS Digital Audio System by calling
+<EM>MIDASclose</EM>.
+<P>
+<BR> <HR>
+<P><ADDRESS>
+<I>Petteri Kangaslampi <BR>
+Sun Mar  1 22:25:31 EET 1998</I>
+</ADDRESS>
+</BODY>
+</HTML>

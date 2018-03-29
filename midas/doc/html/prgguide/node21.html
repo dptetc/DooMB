@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 96.1-h (September 30, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<HTML>
+<HEAD>
+<TITLE>Using µ-law compression</TITLE>
+<META NAME="description" CONTENT="Using µ-law compression">
+<META NAME="keywords" CONTENT="prgguide">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<LINK REL=STYLESHEET HREF="prgguide.css">
+</HEAD>
+<BODY LANG="EN" >
+ <A NAME="tex2html332" HREF="node22.html"><IMG WIDTH=37 HEIGHT=24 ALIGN=BOTTOM ALT="next" SRC="../icons/next_motif.gif"></A> <A NAME="tex2html330" HREF="node19.html"><IMG WIDTH=26 HEIGHT=24 ALIGN=BOTTOM ALT="up" SRC="../icons/up_motif.gif"></A> <A NAME="tex2html324" HREF="node20.html"><IMG WIDTH=63 HEIGHT=24 ALIGN=BOTTOM ALT="previous" SRC="../icons/previous_motif.gif"></A> <A NAME="tex2html334" HREF="node1.html"><IMG WIDTH=65 HEIGHT=24 ALIGN=BOTTOM ALT="contents" SRC="../icons/contents_motif.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html333" HREF="node22.html">4.3 Using ADPCM compression</A>
+<B>Up:</B> <A NAME="tex2html331" HREF="node19.html">4 Advanced topics</A>
+<B> Previous:</B> <A NAME="tex2html325" HREF="node20.html">4.1 Optimizing MIDAS performance</A>
+<BR> <P>
+<H1><A NAME="SECTION00520000000000000000">Using µ-law compression</A></H1>
+<P>
+In MIDAS Digital Audio System, µ-law samples and streams can be used as an
+effective compromise between CPU and space usage and sound quality, as they
+provide sound quality almost equivalent to 16-bit samples while using only as
+much CPU time and space as 8-bit samples. This section describes how µ-law
+samples are encoded and used with MIDAS.
+<P>
+<H2><A NAME="SECTION00521000000000000000">Encoding µ-law samples</A></H2>
+<P>
+Encoding µ-law samples is simple. The <TT>tools/</TT> directory in the
+MIDAS distribution contains directories for each supported platform, and these
+directories contain a program called <TT>ulaw</TT>. This program can be
+used to encode 16-bit samples into µ-law samples, and decode µ-law samples
+back to 16-bit ones. The syntax is simple. To encode a 16-bit sample file to
+µ-law, use:
+<P>
+<PRE>        ulaw e input-file-name output-file-name</PRE>
+<P>
+And to decode a µ-law file to a 16-bit one, use:
+<P>
+<PRE>        ulaw d input-file-name output-file-name</PRE>
+<P>
+The files should contain just raw sample data, with no headers. Stereo and
+mono samples and streams are processed exactly the same way.
+<P>
+<H2><A NAME="SECTION00522000000000000000">Using µ-law samples</A></H2>
+<P>
+µ-law samples and streams are used just like any other samples and streams in
+MIDAS Digital Audio System. Simply pass the playback function
+<EM>MIDAS_SAMPLE_ULAW_MONO</EM> or
+<EM>MIDAS_SAMPLE_ULAW_STEREO</EM> as the
+sample type, and everything will work normally. µ-law sample data can be used
+for both samples and streams.
+<P>
+<BR> <HR>
+<P><ADDRESS>
+<I>Petteri Kangaslampi <BR>
+Sun Mar  1 22:25:31 EET 1998</I>
+</ADDRESS>
+</BODY>
+</HTML>
